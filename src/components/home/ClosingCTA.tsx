@@ -22,7 +22,7 @@ export function ClosingCTA() {
             href="https://parceria.grupodama.com.br"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--gold)] px-7 py-3.5 text-sm font-medium text-[var(--navy)] transition-all hover:bg-[var(--gold-light)] hover:shadow-[var(--shadow-gold)]"
+            className="btn-gold"
           >
             Conhecer a Parceria <ArrowRight className="h-4 w-4" />
           </a>
