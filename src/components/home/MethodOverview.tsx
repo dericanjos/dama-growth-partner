@@ -50,8 +50,8 @@ export function MethodOverview() {
               delay={i * 100}
               className="card-dark group p-7 hover:border-[var(--gold)]/55"
             >
-              <div className="font-serif text-6xl leading-none text-[var(--gold)]">
-                {s.letter}
+              <div className="font-serif text-7xl leading-none">
+                <span className="gold-text">{s.letter}</span>
               </div>
               <h3 className="mt-6 font-serif text-xl text-white">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-white/65">
