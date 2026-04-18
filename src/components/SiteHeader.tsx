@@ -72,7 +72,7 @@ export function SiteHeader() {
             href={PARCERIA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md bg-[var(--gold)] px-5 py-2.5 text-sm font-medium text-[var(--navy)] transition-all hover:bg-[var(--gold-light)] hover:shadow-[var(--shadow-gold)]"
+            className="btn-gold !py-2.5 !px-5 !text-sm"
           >
             Seja um Parceiro <span aria-hidden>→</span>
           </a>
