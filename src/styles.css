@@ -174,19 +174,82 @@
   );
 }
 
-/* Hero radial decoration */
+/* Texto com gradiente dourado (estilo hero do site de parceria) */
+@utility gold-text {
+  background: var(--gradient-gold-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Pill badge escura com ponto dourado */
+@utility badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--navy-light) 90%, white 6%) 0%,
+    color-mix(in oklab, var(--navy-dark) 95%, black 4%) 100%
+  );
+  border: 1px solid color-mix(in oklab, var(--gold) 22%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--gold-light) 85%, white);
+}
+@utility badge-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--gold) 80%, transparent);
+}
+
+/* Hero radial — orbe dourado central */
 @utility hero-glow {
   background:
     radial-gradient(
-      ellipse 60% 50% at 85% 0%,
-      color-mix(in oklab, var(--gold) 22%, transparent) 0%,
-      transparent 60%
+      ellipse 65% 55% at 50% 30%,
+      color-mix(in oklab, var(--gold) 16%, transparent) 0%,
+      transparent 65%
     ),
     radial-gradient(
-      ellipse 50% 40% at 10% 100%,
-      color-mix(in oklab, var(--gold) 10%, transparent) 0%,
+      ellipse 90% 60% at 50% 100%,
+      color-mix(in oklab, var(--navy-dark) 80%, transparent) 0%,
       transparent 70%
     );
+}
+
+/* Botão dourado brilhante (CTA primário) */
+@utility btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.75rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #f5d27a 0%, #e8b84a 55%, #d3a334 100%);
+  color: var(--navy-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid color-mix(in oklab, var(--gold-deep) 60%, transparent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 10px 30px -8px color-mix(in oklab, var(--gold) 55%, transparent);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+.btn-gold:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 14px 40px -8px color-mix(in oklab, var(--gold) 70%, transparent);
 }
 
 /* Reveal-on-scroll */
