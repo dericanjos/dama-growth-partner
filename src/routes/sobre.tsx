@@ -17,7 +17,9 @@ export const Route = createFileRoute("/sobre")({
         content:
           "A história do Grupo DAMA e da fundadora Jéssica Anjos — autoridade, método e atendimento humanizado.",
       },
+      { property: "og:url", content: "https://grupodama.com.br/sobre" },
     ],
+    links: [{ rel: "canonical", href: "https://grupodama.com.br/sobre" }],
   }),
   component: AboutPage,
 });
@@ -56,7 +58,7 @@ function AboutPage() {
             </span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[16px] leading-[1.75] text-white/75 md:text-[17px]">
-            Não somos agência. Não somos secretariado. Somos o time que opera a frente comercial do consultório como se fosse nosso.
+            Não somos agência. Não somos terceirização avulsa. Somos o time que opera a frente comercial do consultório como se fosse nosso.
           </p>
         </div>
       </section>

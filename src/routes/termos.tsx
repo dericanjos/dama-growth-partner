@@ -5,7 +5,9 @@ export const Route = createFileRoute("/termos")({
     meta: [
       { title: "Termos de Uso | Grupo DAMA" },
       { name: "description", content: "Termos de uso do site do Grupo DAMA." },
+      { name: "robots", content: "noindex, follow" },
     ],
+    links: [{ rel: "canonical", href: "https://grupodama.com.br/termos" }],
   }),
   component: TermsPage,
 });

@@ -2,6 +2,29 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Search, Megaphone, CalendarCheck, Activity } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
+const FAQ_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "O que é o Método D.A.M.A?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "O Método D.A.M.A é a filosofia proprietária do Grupo DAMA composta por 4 pilares: Diagnosticar, Atrair, Marcar e Acompanhar.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Como funciona a operação comercial da DAMA?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "O Grupo DAMA integra time comercial, growth marketing e marketing 360 numa operação que funciona como extensão do consultório do médico.",
+      },
+    },
+  ],
+};
+
 export const Route = createFileRoute("/metodo")({
   head: () => ({
     meta: [
@@ -17,6 +40,11 @@ export const Route = createFileRoute("/metodo")({
         content:
           "Diagnosticar, Atrair, Marcar, Acompanhar — o método que guia a operação DAMA.",
       },
+      { property: "og:url", content: "https://grupodama.com.br/metodo" },
+    ],
+    links: [{ rel: "canonical", href: "https://grupodama.com.br/metodo" }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(FAQ_JSONLD) },
     ],
   }),
   component: MethodPage,

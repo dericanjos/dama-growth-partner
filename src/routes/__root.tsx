@@ -3,6 +3,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 
 function NotFoundComponent() {
@@ -42,9 +43,15 @@ export const Route = createRootRoute({
       },
       { name: "author", content: "Grupo DAMA" },
       { name: "theme-color", content: "#0D1B2A" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:site_name", content: "Grupo DAMA" },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
     ],
   }),
   shellComponent: RootShell,
@@ -74,6 +81,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <SiteFooter />
+      <WhatsAppFloat />
     </div>
   );
 }

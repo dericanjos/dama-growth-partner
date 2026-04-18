@@ -12,7 +12,7 @@ export function WhoWeAreShort() {
             Quem é o Grupo DAMA
           </div>
           <h2 className="heading-display mt-6 text-3xl md:text-[2.5rem]">
-            Não somos agência. Não somos secretariado.
+            Não somos agência. Não somos terceirização avulsa.
           </h2>
         </Reveal>
 

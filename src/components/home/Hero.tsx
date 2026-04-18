@@ -18,7 +18,7 @@ export function Hero() {
         {/* Badge */}
         <div className="badge-pill">
           <span className="badge-pill-dot" />
-          Solução Completa para Médicos
+          Operação Comercial para Médicos
         </div>
 
         {/* Title */}

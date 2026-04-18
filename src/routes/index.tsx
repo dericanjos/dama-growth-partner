@@ -5,7 +5,21 @@ import { WhoWeAreShort } from "@/components/home/WhoWeAreShort";
 import { SolutionOverview } from "@/components/home/SolutionOverview";
 import { MethodOverview } from "@/components/home/MethodOverview";
 import { Testimonials } from "@/components/home/Testimonials";
+import { BlogHighlights } from "@/components/home/BlogHighlights";
 import { ClosingCTA } from "@/components/home/ClosingCTA";
+
+const ORG_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Grupo DAMA",
+  description: "Operação comercial estratégica para médicos",
+  url: "https://grupodama.com.br",
+  telephone: "+5521959214292",
+  email: "contato@grupodama.com.br",
+  sameAs: ["https://www.instagram.com/damacomercialmedico"],
+  founder: { "@type": "Person", name: "Jéssica Anjos" },
+  areaServed: { "@type": "Country", name: "BR" },
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,7 +36,14 @@ export const Route = createFileRoute("/")({
         content:
           "Time comercial, growth marketing e marketing 360 em uma operação só. 90+ médicos parceiros em 16+ estados.",
       },
-      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://grupodama.com.br/" },
+    ],
+    links: [{ rel: "canonical", href: "https://grupodama.com.br/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORG_JSONLD),
+      },
     ],
   }),
   component: HomePage,
@@ -37,6 +58,7 @@ function HomePage() {
       <SolutionOverview />
       <MethodOverview />
       <Testimonials />
+      <BlogHighlights />
       <ClosingCTA />
     </>
   );

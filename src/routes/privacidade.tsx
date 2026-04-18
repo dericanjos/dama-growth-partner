@@ -8,7 +8,9 @@ export const Route = createFileRoute("/privacidade")({
         name: "description",
         content: "Política de Privacidade e tratamento de dados do Grupo DAMA, em conformidade com a LGPD.",
       },
+      { name: "robots", content: "noindex, follow" },
     ],
+    links: [{ rel: "canonical", href: "https://grupodama.com.br/privacidade" }],
   }),
   component: PrivacyPage,
 });

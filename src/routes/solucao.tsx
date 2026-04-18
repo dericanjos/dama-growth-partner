@@ -2,6 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Headset, LineChart, Target, ShieldCheck, Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
+const SERVICE_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Operação Comercial Estratégica para Médicos",
+  provider: { "@type": "Organization", name: "Grupo DAMA" },
+  description:
+    "Time comercial, growth marketing e marketing 360 integrados para consultórios médicos",
+  areaServed: { "@type": "Country", name: "BR" },
+  serviceType: "Operação Comercial para Consultórios Médicos",
+};
+
 export const Route = createFileRoute("/solucao")({
   head: () => ({
     meta: [
@@ -17,6 +28,11 @@ export const Route = createFileRoute("/solucao")({
         content:
           "Time comercial + growth marketing + marketing 360 em uma operação integrada para médicos.",
       },
+      { property: "og:url", content: "https://grupodama.com.br/solucao" },
+    ],
+    links: [{ rel: "canonical", href: "https://grupodama.com.br/solucao" }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(SERVICE_JSONLD) },
     ],
   }),
   component: SolutionPage,
@@ -82,7 +98,7 @@ function SolutionPage() {
             </span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[16px] leading-[1.75] text-white/75 md:text-[17px]">
-            Uma operação integrada em três frentes. Não é agência. Não é secretariado. É o time que opera o crescimento do seu consultório.
+            Uma operação integrada em três frentes. Não é agência. Não é terceirização avulsa. É o time que opera o crescimento do seu consultório.
           </p>
         </div>
       </section>
