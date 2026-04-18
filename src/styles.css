@@ -229,17 +229,18 @@
   box-shadow: 0 0 10px color-mix(in oklab, var(--gold) 80%, transparent);
 }
 
-/* Hero radial — orbe dourado central, suave para preservar contraste */
+/* Hero radial — orbe dourado central sobre o navy base */
 @utility hero-glow {
-  background:
+  background-color: var(--navy);
+  background-image:
     radial-gradient(
       ellipse 60% 45% at 50% 28%,
-      color-mix(in oklab, var(--gold) 9%, transparent) 0%,
+      color-mix(in oklab, var(--gold) 14%, transparent) 0%,
       transparent 70%
     ),
     radial-gradient(
       ellipse 80% 55% at 50% 100%,
-      color-mix(in oklab, var(--navy-dark) 85%, transparent) 0%,
+      color-mix(in oklab, var(--navy-dark) 90%, transparent) 0%,
       transparent 75%
     );
 }
