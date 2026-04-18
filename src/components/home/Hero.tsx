@@ -4,13 +4,13 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 export function Hero() {
   return (
     <section className="surface-dark hero-glow relative overflow-hidden">
-      {/* Decorative crown / orb */}
+      {/* Decorative crown / orb — sutil, atrás do conteúdo */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-[120%] opacity-100"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-[120%]"
         style={{
           background:
-            "radial-gradient(ellipse 55% 45% at 50% 28%, color-mix(in oklab, var(--gold) 14%, transparent) 0%, transparent 70%)",
+            "radial-gradient(ellipse 50% 40% at 50% 30%, color-mix(in oklab, var(--gold) 8%, transparent) 0%, transparent 70%)",
         }}
       />
 
@@ -29,17 +29,17 @@ export function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90 md:text-lg">
           O Grupo DAMA integra{" "}
-          <span className="font-medium text-[var(--gold-light)]">
+          <span className="font-semibold text-[var(--gold-light)]">
             time comercial
           </span>
           ,{" "}
-          <span className="font-medium text-[var(--gold-light)]">
+          <span className="font-semibold text-[var(--gold-light)]">
             growth marketing
           </span>{" "}
           e{" "}
-          <span className="font-medium text-[var(--gold-light)]">
+          <span className="font-semibold text-[var(--gold-light)]">
             tecnologia
           </span>{" "}
           em uma parceria exclusiva para médicos que querem crescer com
