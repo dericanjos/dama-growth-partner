@@ -50,17 +50,17 @@ export function SiteHeader() {
         >
           <img
             src={damaLogo}
-            alt=""
-            width={40}
-            height={40}
-            className="h-9 w-9 md:h-11 md:w-11 object-contain drop-shadow-[0_2px_8px_rgba(212,175,55,0.35)]"
+            alt="Logo Grupo DAMA"
+            width={56}
+            height={56}
+            className="h-12 w-12 md:h-14 md:w-14 object-contain"
           />
-          <span className="flex flex-col">
-            <span className="font-serif text-xl font-semibold tracking-wide text-white md:text-2xl">
-              DAMA
+          <span className="hidden sm:flex flex-col">
+            <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--gold)]">
+              Grupo
             </span>
-            <span className="mt-0.5 text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">
-              Grupo DAMA
+            <span className="text-[11px] uppercase tracking-[0.28em] text-white/70">
+              DAMA
             </span>
           </span>
         </Link>
