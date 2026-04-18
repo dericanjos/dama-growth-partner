@@ -6,6 +6,8 @@ export interface BlogPost {
   excerpt: string;
   category: BlogCategory;
   date: string; // ISO yyyy-mm-dd
+  /** Quick Answer: 2-3 frases que respondem diretamente o tema do post. */
+  quickAnswer: string;
   /** Markdown-lite content. Supports: ## H2, ### H3, > quote, - list, blank line paragraphs. */
   content: string;
 }
@@ -20,6 +22,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "A maioria dos médicos sabe quanto fatura por mês. Poucos sabem quanto deixam de faturar. Os 7 vazamentos mais comuns que vemos em 90+ consultórios.",
     category: "Crescimento",
     date: "2026-04-18",
+    quickAnswer:
+      "Os 7 principais vazamentos de receita em consultórios médicos são: leads sem resposta rápida, secretária que informa mas não converte, no-shows sem confirmação, pacientes inativos sem reativação, marketing que gera likes mas não consultas, consulta subprecificada e buracos na agenda sem lista de espera.",
     content: `A maioria dos médicos sabe quanto fatura por mês. Poucos sabem quanto deixam de faturar.
 
 A diferença entre os dois números é onde mora o crescimento real. E na nossa experiência com mais de 90 consultórios, esses são os 7 vazamentos mais comuns:
@@ -71,6 +75,8 @@ O primeiro passo é diagnosticar. O segundo é corrigir com método.`,
       "O marketing médico opera dentro de regras que poucos profissionais de marketing — e poucos médicos — conhecem bem. Um guia direto sobre o permitido e o proibido.",
     category: "Marketing",
     date: "2026-04-15",
+    quickAnswer:
+      "O CFM permite conteúdo educativo, divulgação de formação e especialidade, uso de redes sociais e depoimentos espontâneos. Proíbe garantia de resultados, antes/depois sensacionalista, divulgação de preços em peças publicitárias e uso de termos como 'o melhor' sem comprovação.",
     content: `O marketing médico no Brasil opera dentro de regras que a maioria dos profissionais de marketing desconhece. E a maioria dos médicos conhece mal.
 
 O resultado: ou o médico não faz marketing por medo, ou faz errado e se expõe a processos éticos. As duas situações custam dinheiro.
@@ -116,6 +122,8 @@ O médico que entende isso para de ter medo do marketing e começa a tratar a pr
       "Treinar a secretária ou contratar um time externo? A resposta honesta depende de onde você está — e de quanto está deixando na mesa.",
     category: "Crescimento",
     date: "2026-04-12",
+    quickAnswer:
+      "Vale a pena quando o volume de contatos cresce e a conversão não acompanha, quando o marketing gera leads mas a agenda não enche, ou quando a secretária está sobrecarregada. Não vale quando o consultório recebe menos de 30 contatos novos por mês.",
     content: `A pergunta aparece toda semana nas nossas conversas com médicos: "Vale a pena ter um time comercial externo ou é melhor eu mesmo treinar minha secretária?"
 
 A resposta honesta: depende de onde você está.

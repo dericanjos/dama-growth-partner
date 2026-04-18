@@ -76,6 +76,22 @@ function PostPage() {
       {/* Conteúdo */}
       <section className="bg-[var(--cream)] py-16 md:py-20">
         <article className="container-dama mx-auto max-w-[720px]">
+          {/* Quick Answer Block */}
+          <aside
+            className="mb-10 rounded-[12px] border-l-[3px] p-6 md:p-7"
+            style={{
+              background: "var(--navy-light)",
+              borderLeftColor: "var(--gold)",
+            }}
+          >
+            <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold)]">
+              Resposta rápida
+            </div>
+            <p className="text-[15px] leading-[1.65] text-white/85 md:text-[16px]">
+              {post.quickAnswer}
+            </p>
+          </aside>
+
           <MarkdownContent content={post.content} />
 
           <div className="mt-12 border-t border-[var(--border)] pt-8">
