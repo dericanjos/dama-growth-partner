@@ -74,7 +74,7 @@ export function SiteHeader() {
             href={PARCERIA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold !py-2.5 !px-5 !text-sm"
+            className="btn-gold !py-2.5 !px-4 !text-[13px] whitespace-nowrap"
           >
             Seja um Parceiro <span aria-hidden>→</span>
           </a>

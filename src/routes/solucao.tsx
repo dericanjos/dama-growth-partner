@@ -82,7 +82,7 @@ function SolutionPage() {
             </span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[16px] leading-[1.75] text-white/75 md:text-[17px]">
-            Uma operação integrada em três frentes. Não é agência. Não é secretariado. É o time que opera o crescimento do seu consultório.
+            Uma operação integrada em três frentes. Não é agência. Não é terceirização avulsa. É o time que opera o crescimento do seu consultório.
           </p>
         </div>
       </section>
