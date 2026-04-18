@@ -44,7 +44,7 @@ export function SiteHeader() {
       <div className="container-dama flex h-16 items-center justify-between md:h-20">
         <Link
           to="/"
-          className="group flex items-center gap-3 leading-none"
+          className="group flex items-center leading-none shrink-0"
           onClick={() => setOpen(false)}
           aria-label="Grupo DAMA — Início"
         >
@@ -55,14 +55,6 @@ export function SiteHeader() {
             height={56}
             className="h-12 w-12 md:h-14 md:w-14 object-contain"
           />
-          <span className="hidden sm:flex flex-col">
-            <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--gold)]">
-              Grupo
-            </span>
-            <span className="text-[11px] uppercase tracking-[0.28em] text-white/70">
-              DAMA
-            </span>
-          </span>
         </Link>
 
         {/* Desktop nav */}
