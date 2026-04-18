@@ -31,9 +31,12 @@ export function MethodOverview() {
       <div className="absolute inset-0 hero-glow opacity-60" aria-hidden />
       <div className="container-dama relative">
         <Reveal className="max-w-2xl">
-          <span className="eyebrow">Método Proprietário</span>
-          <h2 className="heading-display mt-4 text-3xl text-[var(--gold)] md:text-[2.5rem]">
-            Método D.A.M.A
+          <div className="badge-pill">
+            <span className="badge-pill-dot" />
+            Método Proprietário
+          </div>
+          <h2 className="heading-display mt-6 text-3xl md:text-[2.75rem]">
+            <span className="gold-text">Método D.A.M.A</span>
           </h2>
           <p className="mt-4 text-base text-white/60 md:text-lg">
             A filosofia que guia cada decisão dentro da operação.
