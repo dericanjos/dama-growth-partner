@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import damaLogo from "@/assets/dama-logo.png";
 
 const NAV_LINKS = [
   { to: "/", label: "Início" },
@@ -43,14 +44,24 @@ export function SiteHeader() {
       <div className="container-dama flex h-16 items-center justify-between md:h-20">
         <Link
           to="/"
-          className="group flex flex-col leading-none"
+          className="group flex items-center gap-3 leading-none"
           onClick={() => setOpen(false)}
+          aria-label="Grupo DAMA — Início"
         >
-          <span className="font-serif text-xl font-semibold tracking-wide text-white md:text-2xl">
-            DAMA
-          </span>
-          <span className="mt-0.5 text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">
-            Grupo DAMA
+          <img
+            src={damaLogo}
+            alt=""
+            width={40}
+            height={40}
+            className="h-9 w-9 md:h-11 md:w-11 object-contain drop-shadow-[0_2px_8px_rgba(212,175,55,0.35)]"
+          />
+          <span className="flex flex-col">
+            <span className="font-serif text-xl font-semibold tracking-wide text-white md:text-2xl">
+              DAMA
+            </span>
+            <span className="mt-0.5 text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">
+              Grupo DAMA
+            </span>
           </span>
         </Link>
 
