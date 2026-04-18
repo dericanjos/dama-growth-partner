@@ -1,4 +1,5 @@
-import { type BlogCategory, type NewsCategory } from "@/data/blog";
+import { type BlogCategory } from "@/data/blog";
+import { type NewsCategory } from "@/data/news";
 
 type AnyCategory = BlogCategory | NewsCategory | string;
 
