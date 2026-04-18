@@ -54,8 +54,11 @@
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
 
-  --shadow-card: 0 1px 2px rgba(10, 20, 32, 0.04), 0 8px 24px -12px rgba(10, 20, 32, 0.12);
-  --shadow-gold: 0 8px 30px -10px color-mix(in oklab, var(--gold) 45%, transparent);
+  --shadow-card: 0 1px 2px rgba(5, 13, 28, 0.05), 0 8px 24px -12px rgba(5, 13, 28, 0.18);
+  --shadow-gold: 0 10px 40px -8px color-mix(in oklab, var(--gold) 55%, transparent);
+  --shadow-gold-strong: 0 14px 50px -10px color-mix(in oklab, var(--gold) 70%, transparent);
+
+  --gradient-gold-text: linear-gradient(180deg, #f5d27a 0%, #e8b84a 45%, #c89227 100%);
 }
 
 :root {
