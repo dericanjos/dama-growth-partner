@@ -7,8 +7,11 @@ export function WhoWeAreShort() {
     <section className="bg-[var(--cream)] py-24 md:py-32">
       <div className="container-dama max-w-3xl">
         <Reveal>
-          <span className="eyebrow">Quem é o Grupo DAMA</span>
-          <h2 className="heading-display mt-4 text-3xl md:text-[2.5rem]">
+          <div className="badge-pill-light">
+            <span className="badge-pill-dot" />
+            Quem é o Grupo DAMA
+          </div>
+          <h2 className="heading-display mt-6 text-3xl md:text-[2.5rem]">
             Não somos agência. Não somos secretariado.
           </h2>
         </Reveal>
