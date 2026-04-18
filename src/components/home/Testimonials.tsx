@@ -71,8 +71,11 @@ export function Testimonials() {
     <section className="bg-[var(--cream)] py-24 md:py-32">
       <div className="container-dama">
         <Reveal className="max-w-2xl">
-          <span className="eyebrow">Depoimentos</span>
-          <h2 className="heading-display mt-4 text-3xl md:text-[2.5rem]">
+          <div className="badge-pill-light">
+            <span className="badge-pill-dot" />
+            Depoimentos
+          </div>
+          <h2 className="heading-display mt-6 text-3xl md:text-[2.5rem]">
             O que médicos parceiros dizem sobre a DAMA
           </h2>
         </Reveal>

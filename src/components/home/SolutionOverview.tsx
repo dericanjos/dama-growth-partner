@@ -25,8 +25,11 @@ export function SolutionOverview() {
     <section id="solucao" className="bg-[var(--cream)] pb-28 pt-4 md:pb-36">
       <div className="container-dama">
         <Reveal className="max-w-2xl">
-          <span className="eyebrow">Nossa Solução</span>
-          <h2 className="heading-display mt-4 text-3xl md:text-[2.5rem]">
+          <div className="badge-pill-light">
+            <span className="badge-pill-dot" />
+            Nossa Solução
+          </div>
+          <h2 className="heading-display mt-6 text-3xl md:text-[2.5rem]">
             O que fazemos pelos médicos parceiros
           </h2>
         </Reveal>
