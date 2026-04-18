@@ -17,7 +17,9 @@ export const Route = createFileRoute("/sobre")({
         content:
           "A história do Grupo DAMA e da fundadora Jéssica Anjos — autoridade, método e atendimento humanizado.",
       },
+      { property: "og:url", content: "https://grupodama.com.br/sobre" },
     ],
+    links: [{ rel: "canonical", href: "https://grupodama.com.br/sobre" }],
   }),
   component: AboutPage,
 });

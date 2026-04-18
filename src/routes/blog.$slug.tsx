@@ -19,7 +19,8 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Artigo | Blog — Grupo DAMA" }] };
     const { post } = loaderData;
-    const desc = post.excerpt.slice(0, 160);
+    const desc = post.excerpt.slice(0, 155);
+    const url = `https://grupodama.com.br/blog/${post.slug}`;
     return {
       meta: [
         { title: `${post.title} | Blog — Grupo DAMA` },
@@ -27,6 +28,30 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: post.title },
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        { property: "article:published_time", content: post.date },
+        { property: "article:section", content: post.category },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: desc,
+            datePublished: post.date,
+            author: { "@type": "Organization", name: "Grupo DAMA" },
+            publisher: {
+              "@type": "Organization",
+              name: "Grupo DAMA",
+              url: "https://grupodama.com.br",
+            },
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+            articleSection: post.category,
+          }),
+        },
       ],
     };
   },

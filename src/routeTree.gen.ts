@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermosRouteImport } from './routes/termos'
 import { Route as SolucaoRouteImport } from './routes/solucao'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as MetodoRouteImport } from './routes/metodo'
@@ -33,6 +34,11 @@ const SolucaoRoute = SolucaoRouteImport.update({
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacidadeRoute = PrivacidadeRouteImport.update({
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/metodo': typeof MetodoRoute
   '/noticias': typeof NoticiasRoute
   '/privacidade': typeof PrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/metodo': typeof MetodoRoute
   '/noticias': typeof NoticiasRoute
   '/privacidade': typeof PrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/metodo': typeof MetodoRoute
   '/noticias': typeof NoticiasRoute
   '/privacidade': typeof PrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/metodo'
     | '/noticias'
     | '/privacidade'
+    | '/sitemap.xml'
     | '/sobre'
     | '/solucao'
     | '/termos'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/metodo'
     | '/noticias'
     | '/privacidade'
+    | '/sitemap.xml'
     | '/sobre'
     | '/solucao'
     | '/termos'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/metodo'
     | '/noticias'
     | '/privacidade'
+    | '/sitemap.xml'
     | '/sobre'
     | '/solucao'
     | '/termos'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   MetodoRoute: typeof MetodoRoute
   NoticiasRoute: typeof NoticiasRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   SolucaoRoute: typeof SolucaoRoute
   TermosRoute: typeof TermosRoute
@@ -180,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacidade': {
@@ -251,6 +271,7 @@ const rootRouteChildren: RootRouteChildren = {
   MetodoRoute: MetodoRoute,
   NoticiasRoute: NoticiasRoute,
   PrivacidadeRoute: PrivacidadeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   SolucaoRoute: SolucaoRoute,
   TermosRoute: TermosRoute,
@@ -258,3 +279,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

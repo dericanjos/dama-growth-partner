@@ -11,7 +11,9 @@ export const Route = createFileRoute("/contato")({
       },
       { property: "og:title", content: "Contato | Grupo DAMA" },
       { property: "og:description", content: "Fale com o Grupo DAMA." },
+      { property: "og:url", content: "https://grupodama.com.br/contato" },
     ],
+    links: [{ rel: "canonical", href: "https://grupodama.com.br/contato" }],
   }),
   component: ContactPage,
 });
