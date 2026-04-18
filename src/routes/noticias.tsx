@@ -21,7 +21,9 @@ export const Route = createFileRoute("/noticias")({
           "As principais atualizações do mundo da saúde, curadas pela equipe DAMA.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://grupodama.com.br/noticias" },
     ],
+    links: [{ rel: "canonical", href: "https://grupodama.com.br/noticias" }],
   }),
   component: NewsPage,
 });
