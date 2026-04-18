@@ -18,8 +18,8 @@ export function StatsBand() {
               delay={i * 80}
               className="text-center md:border-l md:border-white/10 md:first:border-l-0 md:px-6"
             >
-              <div className="font-serif text-4xl text-[var(--gold)] md:text-5xl">
-                {s.value}
+              <div className="font-serif text-4xl md:text-5xl">
+                <span className="gold-text">{s.value}</span>
               </div>
               <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-white/55">
                 {s.label}
