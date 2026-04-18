@@ -61,13 +61,15 @@
 :root {
   --radius: 0.625rem;
 
-  /* Brand palette (hex preserved from briefing) */
-  --navy-dark: #0a1420;
-  --navy: #0d1b2a;
-  --navy-light: #1b2d41;
-  --gold: #b8975a;
-  --gold-light: #d4b483;
-  --gold-soft: #f5edd8;
+  /* Brand palette — alinhada ao site de parceria DAMA (royal navy + ouro vibrante) */
+  --navy-dark: #050d1c;
+  --navy: #0a1733;
+  --navy-light: #142348;
+  --navy-pill: #1a2240;
+  --gold: #e8b84a;
+  --gold-light: #f5d27a;
+  --gold-deep: #c89227;
+  --gold-soft: #f7e8b8;
   --cream: #faf8f4;
   --text-primary: #1a2535;
   --text-secondary: #4a5e72;
