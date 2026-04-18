@@ -6,6 +6,8 @@ export interface BlogPost {
   excerpt: string;
   category: BlogCategory;
   date: string; // ISO yyyy-mm-dd
+  /** Quick Answer: 2-3 frases que respondem diretamente o tema do post. */
+  quickAnswer: string;
   /** Markdown-lite content. Supports: ## H2, ### H3, > quote, - list, blank line paragraphs. */
   content: string;
 }
