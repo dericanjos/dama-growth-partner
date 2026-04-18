@@ -1,45 +1,74 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="surface-dark hero-glow relative overflow-hidden pt-28 md:pt-36">
-      <div className="container-dama relative grid min-h-[90vh] items-center pb-20 md:pb-28">
-        <div className="max-w-3xl">
-          <div className="reveal reveal-in flex items-center gap-3">
-            <span className="h-px w-10 bg-[var(--gold)]" />
-            <span className="eyebrow">Operação Comercial para Médicos</span>
-          </div>
+    <section className="surface-dark hero-glow relative overflow-hidden">
+      {/* Decorative crown / orb */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-[120%] opacity-100"
+        style={{
+          background:
+            "radial-gradient(ellipse 55% 45% at 50% 28%, color-mix(in oklab, var(--gold) 14%, transparent) 0%, transparent 70%)",
+        }}
+      />
 
-          <h1 className="heading-display mt-6 text-4xl text-white md:text-5xl lg:text-6xl">
-            A operação que cuida do crescimento do seu consultório{" "}
-            <span className="italic text-[var(--gold-light)]">por inteiro</span>.
-          </h1>
+      <div className="container-dama relative flex min-h-[100svh] flex-col items-center justify-center pb-24 pt-32 text-center md:pt-40">
+        {/* Badge */}
+        <div className="badge-pill">
+          <span className="badge-pill-dot" />
+          Operação Comercial para Médicos
+        </div>
 
-          <p className="mt-7 max-w-xl text-base leading-relaxed text-white/65 md:text-lg">
-            O Grupo DAMA integra time comercial, growth marketing e tecnologia em
-            uma parceria exclusiva para médicos que querem crescer com consistência.
-          </p>
+        {/* Title */}
+        <h1 className="heading-display mt-8 max-w-5xl text-[2.6rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[5rem]">
+          <span className="gold-text">
+            A operação que cuida do crescimento do seu consultório por inteiro.
+          </span>
+        </h1>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-            <a
-              href="#solucao"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--gold)] px-6 py-3.5 text-sm font-medium text-[var(--navy)] transition-all hover:bg-[var(--gold-light)] hover:shadow-[var(--shadow-gold)]"
-            >
-              Conheça nossa solução <ArrowRight className="h-4 w-4" />
-            </a>
-            <Link
-              to="/contato"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-white/20 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/5"
-            >
-              Falar com a equipe <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+        {/* Subtitle */}
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+          O Grupo DAMA integra{" "}
+          <span className="font-medium text-[var(--gold-light)]">
+            time comercial
+          </span>
+          ,{" "}
+          <span className="font-medium text-[var(--gold-light)]">
+            growth marketing
+          </span>{" "}
+          e{" "}
+          <span className="font-medium text-[var(--gold-light)]">
+            tecnologia
+          </span>{" "}
+          em uma parceria exclusiva para médicos que querem crescer com
+          consistência.
+        </p>
+
+        {/* CTA */}
+        <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row">
+          <a href="#solucao" className="btn-gold group">
+            <MessageCircle className="h-4 w-4" />
+            Conheça nossa solução
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </a>
+          <Link
+            to="/contato"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 px-6 py-3.5 text-sm font-medium text-white/85 transition-colors hover:border-white/30 hover:bg-white/5 hover:text-white"
+          >
+            Falar com a equipe <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        {/* Scroll indicator */}
+        <div
+          aria-hidden
+          className="mt-20 flex h-10 w-6 items-start justify-center rounded-full border border-white/15 pt-2 opacity-60"
+        >
+          <span className="h-2 w-[2px] animate-pulse rounded-full bg-[var(--gold)]" />
         </div>
       </div>
-
-      {/* Hairline transition */}
-      <div className="absolute inset-x-0 bottom-0 h-px hairline-gold opacity-50" aria-hidden />
     </section>
   );
 }
