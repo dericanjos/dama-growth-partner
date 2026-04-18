@@ -229,18 +229,18 @@
   box-shadow: 0 0 10px color-mix(in oklab, var(--gold) 80%, transparent);
 }
 
-/* Hero radial — orbe dourado central */
+/* Hero radial — orbe dourado central, suave para preservar contraste */
 @utility hero-glow {
   background:
     radial-gradient(
-      ellipse 65% 55% at 50% 30%,
-      color-mix(in oklab, var(--gold) 16%, transparent) 0%,
-      transparent 65%
+      ellipse 60% 45% at 50% 28%,
+      color-mix(in oklab, var(--gold) 9%, transparent) 0%,
+      transparent 70%
     ),
     radial-gradient(
-      ellipse 90% 60% at 50% 100%,
-      color-mix(in oklab, var(--navy-dark) 80%, transparent) 0%,
-      transparent 70%
+      ellipse 80% 55% at 50% 100%,
+      color-mix(in oklab, var(--navy-dark) 85%, transparent) 0%,
+      transparent 75%
     );
 }
 
