@@ -21,6 +21,8 @@ export function SiteFooter() {
             <FooterLink to="/sobre">Quem Somos</FooterLink>
             <FooterLink to="/solucao">Nossa Solução</FooterLink>
             <FooterLink to="/metodo">Método</FooterLink>
+            <FooterLink to="/blog">Blog</FooterLink>
+            <FooterLink to="/noticias">Notícias Médicas</FooterLink>
             <FooterLink to="/contato">Contato</FooterLink>
           </FooterCol>
 
