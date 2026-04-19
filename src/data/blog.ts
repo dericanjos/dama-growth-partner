@@ -66,7 +66,7 @@ Horários vagos que aparecem por cancelamento de última hora e ficam abertos. S
 
 Cada um desses sinais, isoladamente, parece pequeno. Juntos, representam milhares de reais por mês em receita que simplesmente evapora.
 
-O primeiro passo é diagnosticar. O segundo é corrigir com método.`,
+O primeiro passo é diagnosticar. O segundo é corrigir com método — exatamente o que estrutura o nosso [Método D.A.M.A](/metodo): diagnosticar, atrair, marcar e acompanhar.`,
   },
   {
     slug: "marketing-medico-cfm-2026",
@@ -113,7 +113,7 @@ O caminho que funciona combina três coisas: conteúdo educativo que posiciona a
 
 > Conteúdo que ensina sobre uma condição médica não é propaganda — é serviço público. E é o tipo de conteúdo que o algoritmo do Instagram e o Google mais distribuem.
 
-O médico que entende isso para de ter medo do marketing e começa a tratar a presença digital como parte da prática profissional.`,
+O médico que entende isso para de ter medo do marketing e começa a tratar a presença digital como parte da prática profissional — uma das frentes que estruturamos dentro do nosso [Método D.A.M.A](/metodo).`,
   },
   {
     slug: "time-comercial-terceirizado-consultorio",
@@ -158,7 +158,7 @@ O risco real não é terceirizar — é terceirizar sem critério. Um time que u
 
 Faça a conta simples: quantos leads chegam por mês × ticket médio × taxa de conversão atual. Depois calcule quanto faturaria se a conversão subisse 10-20 pontos percentuais. Se a diferença pagar o time comercial e ainda sobrar, a resposta é clara.
 
-Na maioria dos consultórios que atendem, o investimento em time comercial se paga no primeiro mês — porque o médico já tem os leads. Só não tem quem converta.`,
+Na maioria dos consultórios que atendem, o investimento em time comercial se paga no primeiro mês — porque o médico já tem os leads. Só não tem quem converta. É exatamente isso que entregamos dentro da [nossa solução](/solucao): time comercial, growth marketing e marketing 360 numa operação só.`,
   },
 ];
 
