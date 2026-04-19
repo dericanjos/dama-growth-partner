@@ -102,8 +102,10 @@ export function Testimonials() {
               <div className="mt-6 flex items-center gap-3 border-t border-[var(--border)] pt-5">
                 <img
                   src={t.photo}
-                  alt={t.name}
+                  alt={`${t.name} — ${t.specialty}`}
                   loading="lazy"
+                  width={48}
+                  height={48}
                   className="h-12 w-12 rounded-full object-cover ring-1 ring-[color-mix(in_oklab,var(--gold)_40%,var(--border))]"
                 />
                 <div>

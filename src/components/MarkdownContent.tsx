@@ -1,9 +1,39 @@
-import { Fragment, type JSX } from "react";
+import { Fragment, type JSX, type ReactNode } from "react";
 
 /**
  * Minimal markdown renderer for blog posts (no deps).
- * Supports: ## H2, ### H3, > blockquote, - lists, paragraphs.
+ * Supports: ## H2, ### H3, > blockquote, - lists, paragraphs, [text](url) links.
  */
+
+// Inline parser: handles [text](url) — internal vs external auto-detected.
+function renderInline(text: string, keyPrefix: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let i = 0;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(text.slice(lastIndex, match.index));
+    }
+    const [, label, href] = match;
+    const isExternal = /^https?:\/\//.test(href);
+    nodes.push(
+      <a
+        key={`${keyPrefix}-a-${i++}`}
+        href={href}
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className="font-medium text-[var(--gold-deep)] underline decoration-[color-mix(in_oklab,var(--gold)_50%,transparent)] underline-offset-4 transition-colors hover:text-[var(--navy)]"
+      >
+        {label}
+      </a>,
+    );
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
+
 export function MarkdownContent({ content }: { content: string }) {
   const blocks = content.split(/\n{2,}/);
   const elements: JSX.Element[] = [];
@@ -18,7 +48,7 @@ export function MarkdownContent({ content }: { content: string }) {
             key={i}
             className="relative text-[16px] leading-[1.85] text-[var(--text-secondary)] before:absolute before:-left-5 before:top-[0.7em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-[var(--gold)]"
           >
-            {item.replace(/^[-*]\s+/, "")}
+            {renderInline(item.replace(/^[-*]\s+/, ""), `li-${key}-${i}`)}
           </li>
         ))}
       </ul>,
@@ -62,7 +92,7 @@ export function MarkdownContent({ content }: { content: string }) {
           key={idx}
           className="my-7 border-l-[3px] border-[var(--gold)] bg-[color-mix(in_oklab,var(--gold)_8%,white)] px-5 py-4 font-serif text-[17px] italic leading-[1.7] text-[var(--navy)]"
         >
-          {block.slice(2)}
+          {renderInline(block.slice(2), `bq-${idx}`)}
         </blockquote>,
       );
     } else {
@@ -71,7 +101,7 @@ export function MarkdownContent({ content }: { content: string }) {
         <p key={idx} className="my-5 text-[16px] leading-[1.9] text-[var(--text-secondary)]">
           {lines.map((line, i) => (
             <Fragment key={i}>
-              {line}
+              {renderInline(line, `p-${idx}-${i}`)}
               {i < lines.length - 1 && <br />}
             </Fragment>
           ))}
