@@ -37,6 +37,10 @@ export const Route = createFileRoute("/")({
           "Time comercial, growth marketing e marketing 360 em uma operação só. 90+ médicos parceiros em 16+ estados.",
       },
       { property: "og:url", content: "https://grupodama.com.br/" },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Grupo DAMA" },
+      { property: "og:locale", content: "pt_BR" },
+      { name: "robots", content: "index, follow" },
     ],
     links: [{ rel: "canonical", href: "https://grupodama.com.br/" }],
     scripts: [
