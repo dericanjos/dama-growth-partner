@@ -14,7 +14,7 @@ export function Hero() {
         }}
       />
 
-      <div className="container-dama relative flex min-h-[100svh] flex-col items-center justify-center pb-24 pt-32 text-center md:pt-40">
+      <div className="container-dama relative flex flex-col items-center justify-center pb-20 pt-28 text-center md:pb-24 md:pt-36">
         {/* Badge */}
         <div className="badge-pill">
           <span className="badge-pill-dot" />
