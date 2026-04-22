@@ -16,8 +16,8 @@ import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as NoticiasRouteImport } from './routes/noticias'
 import { Route as MetodoRouteImport } from './routes/metodo'
 import { Route as ContatoRouteImport } from './routes/contato'
-import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const TermosRoute = TermosRouteImport.update({
@@ -55,14 +55,14 @@ const ContatoRoute = ContatoRouteImport.update({
   path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -73,7 +73,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/metodo': typeof MetodoRoute
   '/noticias': typeof NoticiasRoute
@@ -82,10 +81,10 @@ export interface FileRoutesByFullPath {
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/metodo': typeof MetodoRoute
   '/noticias': typeof NoticiasRoute
@@ -94,11 +93,11 @@ export interface FileRoutesByTo {
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/metodo': typeof MetodoRoute
   '/noticias': typeof NoticiasRoute
@@ -107,12 +106,12 @@ export interface FileRoutesById {
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/blog'
     | '/contato'
     | '/metodo'
     | '/noticias'
@@ -121,10 +120,10 @@ export interface FileRouteTypes {
     | '/solucao'
     | '/termos'
     | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/blog'
     | '/contato'
     | '/metodo'
     | '/noticias'
@@ -133,10 +132,10 @@ export interface FileRouteTypes {
     | '/solucao'
     | '/termos'
     | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
-    | '/blog'
     | '/contato'
     | '/metodo'
     | '/noticias'
@@ -145,11 +144,11 @@ export interface FileRouteTypes {
     | '/solucao'
     | '/termos'
     | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
   MetodoRoute: typeof MetodoRoute
   NoticiasRoute: typeof NoticiasRoute
@@ -157,6 +156,7 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   SolucaoRoute: typeof SolucaoRoute
   TermosRoute: typeof TermosRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -210,18 +210,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -234,19 +234,8 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
   MetodoRoute: MetodoRoute,
   NoticiasRoute: NoticiasRoute,
@@ -254,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   SolucaoRoute: SolucaoRoute,
   TermosRoute: TermosRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

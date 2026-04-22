@@ -4,7 +4,7 @@ import { FileText } from "lucide-react";
 import { BLOG_CATEGORIES, BLOG_POSTS, formatDateBR } from "@/data/blog";
 import { CategoryBadge } from "@/components/CategoryBadge";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Blog | Grupo DAMA — Insights para Médicos que Pensam como Empresários" },
