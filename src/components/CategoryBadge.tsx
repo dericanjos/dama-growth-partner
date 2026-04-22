@@ -10,6 +10,7 @@ const COLORS: Record<string, { bg: string; fg: string }> = {
   Regulamentação: { bg: "#142348", fg: "#f5d27a" },
   Congressos: { bg: "#2a1f3a", fg: "#d4b4f5" },
   Pesquisa: { bg: "#1f3a3a", fg: "#a8d8e6" },
+  "Gestão Comercial": { bg: "#3a1f2a", fg: "#f5a8c4" },
 };
 
 export function CategoryBadge({ category }: { category: AnyCategory }) {

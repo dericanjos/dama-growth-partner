@@ -1,4 +1,4 @@
-export type BlogCategory = "Crescimento" | "Marketing" | "Mercado";
+export type BlogCategory = "Crescimento" | "Marketing" | "Mercado" | "Gestão Comercial";
 
 export interface BlogPost {
   slug: string;
@@ -12,7 +12,7 @@ export interface BlogPost {
   content: string;
 }
 
-export const BLOG_CATEGORIES: BlogCategory[] = ["Crescimento", "Marketing", "Mercado"];
+export const BLOG_CATEGORIES: BlogCategory[] = ["Crescimento", "Marketing", "Mercado", "Gestão Comercial"];
 
 export const BLOG_POSTS: BlogPost[] = [
   {
@@ -159,6 +159,85 @@ O risco real não é terceirizar — é terceirizar sem critério. Um time que u
 Faça a conta simples: quantos leads chegam por mês × ticket médio × taxa de conversão atual. Depois calcule quanto faturaria se a conversão subisse 10-20 pontos percentuais. Se a diferença pagar o time comercial e ainda sobrar, a resposta é clara.
 
 Na maioria dos consultórios que atendem, o investimento em time comercial se paga no primeiro mês — porque o médico já tem os leads. Só não tem quem converta. É exatamente isso que entregamos dentro da [nossa solução](/solucao): time comercial, growth marketing e marketing 360 numa operação só.`,
+  },
+  {
+    slug: "como-reduzir-faltas-no-consultorio",
+    title: "Como Reduzir Faltas no Consultório: 5 Estratégias que Funcionam",
+    excerpt:
+      "A taxa média de faltas em consultórios brasileiros é de 20-30%. Conheça 5 estratégias comprovadas para reduzir no-shows e proteger o faturamento da sua agenda.",
+    category: "Gestão Comercial",
+    date: "2026-04-21",
+    quickAnswer:
+      "A taxa média de faltas em consultórios brasileiros é de 20-30%. As 5 estratégias mais eficazes são: confirmação 48h e 2h antes da consulta, política de remarcação clara desde o agendamento, lista de espera ativa para preencher buracos na agenda, follow-up humanizado por WhatsApp com tom de cuidado, e análise semanal de métricas de absenteísmo para identificar padrões.",
+    content: `## Quanto custa cada falta para o seu consultório
+
+Cada horário vazio na agenda tem um custo real. Se a consulta vale R$ 400 e o consultório tem 20 horários por semana, uma taxa de faltas de 25% significa **R$ 2.000 por semana perdidos** — ou R$ 8.000 por mês. Em 12 meses, são quase R$ 100 mil que simplesmente evaporam.
+
+E o prejuízo vai além do financeiro: o médico que mantém a agenda ociosa não consegue reinvestir em marketing, contratar melhor, ou expandir. A falta não é só um "paciente que não veio" — é receita que saiu do fluxo de caixa.
+
+## Por que pacientes faltam (e não é só por esquecimento)
+
+A maioria dos consultórios assume que o paciente faltou porque esqueceu. Mas os motivos reais são mais complexos:
+
+**Falta de compromisso no agendamento.** Quando agendar é fácil demais e sem qualquer compromisso, o paciente trata a consulta como opcional. Ele agendou num impulso e cancelou mentalmente no dia seguinte.
+
+**Medo ou ansiedade.** Especialmente em especialidades que envolvem procedimentos, muitos pacientes adiam por medo — e a falta é a forma silenciosa de cancelar.
+
+**Desorganização logística.** O paciente agendou para daqui 3 semanas. Sem lembrete, a vida aconteceu e ele genuinamente esqueceu.
+
+**Falta de percepção de valor.** Se o paciente não entende por que aquela consulta é importante, ela vira a primeira coisa a ser descartada quando surge um compromisso concorrente.
+
+## 1. Confirmação em dois momentos — 48h e 2h
+
+A confirmação em dois estágios é a estratégia mais básica e mais eficaz. O primeiro contato, 48 horas antes, dá tempo para o paciente reagendar se precisar — e permite preencher o horário. O segundo, 2 horas antes, funciona como lembrete final.
+
+O canal ideal é **WhatsApp** — taxa de abertura acima de 90% no Brasil, muito superior a SMS ou email. A mensagem deve ser curta, com tom de cuidado (não de cobrança), e incluir opção fácil de confirmar ou reagendar.
+
+Exemplo: "Olá, [nome]! Lembrando da sua consulta amanhã às [horário] com Dr. [nome]. Pode confirmar? Se precisar reagendar, responde aqui que ajustamos."
+
+## 2. Política de remarcação clara desde o agendamento
+
+Consultórios que não têm política de remarcação treinam o paciente a faltar sem consequência. A política não precisa ser punitiva — precisa ser **clara**.
+
+No momento do agendamento, a equipe comercial deve informar: "Pedimos que avise com pelo menos 24h de antecedência caso precise reagendar. Isso nos permite oferecer o horário para outro paciente que está na fila de espera."
+
+Quando o paciente sabe que há fila, o senso de compromisso aumenta. É psicologia básica: escassez percebida gera valorização.
+
+## 3. Lista de espera ativa para preencher buracos
+
+Manter uma lista de pacientes que aceitariam horários de encaixe é uma das estratégias mais subutilizadas. Quando um paciente cancela com 24-48h de antecedência, a equipe comercial entra em contato com a lista de espera e preenche o horário.
+
+O resultado: a taxa de ocupação da agenda sobe mesmo quando há cancelamentos. Em consultórios que implementam lista de espera ativa, a perda real com faltas cai de 25% para menos de 10%.
+
+O [Método D.A.M.A](/metodo) inclui a etapa de **Acompanhar** exatamente por isso — o follow-up não é só pós-consulta, é monitoramento ativo de toda a agenda.
+
+## 4. Follow-up humanizado por WhatsApp
+
+O follow-up não é cobrar o paciente que faltou. É **reconectar** com empatia. A mensagem ideal reconhece que a vida é corrida, reafirma o valor da consulta e facilita o reagendamento.
+
+Exemplo para paciente que faltou: "Oi, [nome]! Sentimos sua falta hoje. Sabemos que a rotina é corrida. Quer que a gente encontre um novo horário que funcione melhor pra você?"
+
+O tom faz toda a diferença: "sentimos sua falta" (cuidado) vs. "você não compareceu" (cobrança). Um [time comercial dedicado](/solucao) consegue manter esse padrão de atendimento porque é treinado para vendas consultivas com empatia — não para cobranças.
+
+## 5. Análise semanal de métricas de absenteísmo
+
+O que não se mede não se melhora. Toda semana, o consultório deveria saber:
+
+**Taxa de faltas da semana** — quantos pacientes não compareceram vs. quantos estavam agendados.
+
+**Dia e horário com mais faltas** — se segunda-feira de manhã tem 40% de no-show mas quinta à tarde tem 5%, isso revela um padrão que pode ser ajustado.
+
+**Taxa por tipo de paciente** — pacientes novos faltam mais que recorrentes? Se sim, o processo de agendamento do primeiro contato precisa ser revisado.
+
+**Correlação com fonte de captação** — leads vindos de Instagram faltam mais que leads vindos de indicação? Essa informação direciona investimento de marketing.
+
+## Como o Grupo DAMA aplica isso na prática
+
+Reduzir faltas não é uma ação isolada — é parte de uma operação comercial completa. O time comercial da DAMA aplica confirmação em dois estágios, lista de espera ativa, follow-up humanizado e análise semanal como parte do serviço contínuo para médicos parceiros.
+
+O resultado: consultórios que implementam essas 5 estratégias de forma consistente reduzem a taxa de faltas para abaixo de 10% — e recuperam dezenas de milhares de reais por ano que estavam sendo perdidos em silêncio.
+
+Se o seu consultório perde mais de 15% da agenda com faltas, o diagnóstico da operação comercial é o primeiro passo. [Conheça como funciona a parceria](https://parceria.grupodama.com.br).`,
   },
 ];
 
