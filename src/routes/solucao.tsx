@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Headset, LineChart, Target, ShieldCheck, Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
