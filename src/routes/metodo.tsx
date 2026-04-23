@@ -194,26 +194,20 @@ function MethodPage() {
         <div className="absolute inset-0 hero-glow opacity-70" aria-hidden />
         <div className="container-dama relative mx-auto max-w-2xl text-center">
           <h2 className="heading-display text-[28px] md:text-[42px]">
-            <span className="gold-text">Quer aplicar o Método no seu consultório?</span>
+            <span className="gold-text">Quer o Método D.A.M.A operando no seu consultório?</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.75] text-white/70 md:text-base">
-            Conheça a parceria que coloca o Método D.A.M.A operando dentro do seu consultório, todos os dias.
+            Entenda como estruturamos consultórios para crescerem com previsibilidade e consistência através de processos bem definidos.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          <div className="mt-10 flex justify-center">
             <a
-              href="https://parceria.grupodama.com.br"
+              href={`https://wa.me/5521959214292?text=${encodeURIComponent("Olá, Jessica! Vim do site do Grupo DAMA e gostaria de saber mais sobre os serviços e como funciona a parceria.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold"
             >
-              Conhecer a Parceria <ArrowRight className="h-4 w-4" />
+              Falar com um especialista <ArrowRight className="h-4 w-4" />
             </a>
-            <Link
-              to="/contato"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/5"
-            >
-              Falar com a equipe <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
         </div>
       </section>
