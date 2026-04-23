@@ -43,7 +43,7 @@ const PILLARS = [
     icon: Headset,
     title: "Time Comercial",
     pitch:
-      "Profissionais treinados que atendem, qualificam e agendam. Vender consulta médica é uma especialidade — e ela exige técnica, empatia e processo.",
+      "Profissionais treinados que atendem, qualificam e agendam seus pacientes. De nada adianta atrair se ninguém converte. Nosso time atua na linha de frente com empatia, técnica de vendas consultivas e acompanhamento de cada lead através do nosso método D.A.M.A.",
     deliveries: [
       "Atendimento de leads em WhatsApp, Instagram, Google e telefone",
       "Qualificação e tratamento de objeções com abordagem consultiva",
@@ -55,9 +55,9 @@ const PILLARS = [
   },
   {
     icon: LineChart,
-    title: "Growth Marketing",
+    title: "Growth",
     pitch:
-      "Crescimento orientado por dados. Cada decisão é baseada em número, não em achismo. Funil mapeado, métricas semanais, otimizações contínuas.",
+      "Estruturamos o crescimento do seu consultório através de uma solução completa baseada em estudo e análise de dados para criação de processos e alavancas. Nosso growth conecta marketing, comercial, gestão e tecnologia para aumentar conversão, retenção e recorrência de pacientes, construindo uma operação preparada para crescer de forma sustentável no longo prazo e à prova de crises.",
     deliveries: [
       "Mapeamento e análise de funil de conversão",
       "Definição de KPIs e dashboards semanais",
@@ -69,9 +69,9 @@ const PILLARS = [
   },
   {
     icon: Target,
-    title: "Marketing 360",
+    title: "Marketing Médico",
     pitch:
-      "Tráfego pago, presença digital, reputação online e SEO local. Colocamos o consultório na frente de quem já procura o que ele oferece.",
+      "Posicionamos o médico de forma estratégica para atrair os pacientes certos. Conteúdo, tráfego pago, SEO, branding e autoridade trabalhando juntos para gerar reconhecimento e demanda de novas oportunidades diariamente.",
     deliveries: [
       "Gestão de tráfego pago (Google, Meta) com criativos próprios",
       "Conteúdo educativo para Instagram dentro das normas do CFM",
@@ -94,7 +94,7 @@ function SolutionPage() {
           </span>
           <h1 className="heading-display text-[34px] leading-[1.1] md:text-[56px]">
             <span className="gold-text">
-              O que o Grupo DAMA faz pelos médicos parceiros.
+              O que fazemos pelos nossos médicos parceiros.
             </span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[16px] leading-[1.75] text-white/75 md:text-[17px]">
@@ -160,7 +160,7 @@ function SolutionPage() {
         <div className="container-dama mx-auto max-w-3xl text-center">
           <Reveal>
             <p className="font-serif text-[22px] italic leading-[1.5] text-[var(--navy)] md:text-[28px]">
-              “Time comercial sem marketing é operação sem combustível. Marketing sem time comercial é investimento jogado fora. A DAMA integra os dois — e adiciona dados em cima.”
+              “Marketing gera oportunidades. O comercial transforma interesse em faturamento. O growth organiza toda a operação para sustentar o seu crescimento no longo prazo. É assim que a DAMA opera.”
             </p>
           </Reveal>
         </div>
