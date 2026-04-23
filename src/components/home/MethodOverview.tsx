@@ -11,7 +11,7 @@ const STEPS = [
   {
     letter: "A",
     title: "Atrair",
-    text: "Ativamos as alavancas certas: tráfego pago, presença digital, SEO, conteúdo estratégico. Pacientes qualificados, não volume vazio.",
+    text: "Ativamos as alavancas certas: tráfego pago, presença digital, SEO, conteúdo estratégico. Pacientes qualificados, não volume desqualificado.",
   },
   {
     letter: "M",
