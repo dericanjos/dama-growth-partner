@@ -13,7 +13,11 @@ const NAV_LINKS = [
   { to: "/contato", label: "Contato" },
 ] as const;
 
-const PARCERIA_URL = "https://parceria.grupodama.com.br";
+const PARCERIA_URL =
+  "https://wa.me/5521959214292?text=" +
+  encodeURIComponent(
+    "Olá, Jessica! Vim do site do Grupo DAMA e gostaria de saber mais sobre os serviços e como funciona a parceria."
+  );
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
