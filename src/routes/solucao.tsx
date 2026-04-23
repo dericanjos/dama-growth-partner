@@ -45,12 +45,11 @@ const PILLARS = [
     pitch:
       "Profissionais treinados que atendem, qualificam e agendam seus pacientes. De nada adianta atrair se ninguém converte. Nosso time atua na linha de frente com empatia, técnica de vendas consultivas e acompanhamento de cada lead através do nosso método D.A.M.A.",
     deliveries: [
-      "Atendimento de leads em WhatsApp, Instagram, Google e telefone",
+      "Atendimento humanizado de leads em WhatsApp para agendamento de consultas e avaliações",
       "Qualificação e tratamento de objeções com abordagem consultiva",
-      "Agendamento, confirmação e reagendamento de consultas",
       "Follow-up de leads não agendados",
       "Reativação de pacientes inativos da base",
-      "Controle de faltas e otimização de agenda",
+      "Prospecção ativa de pacientes indicados",
     ],
   },
   {
