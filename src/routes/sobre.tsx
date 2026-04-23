@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
@@ -204,12 +204,14 @@ function AboutPage() {
             Quer entender como isso funciona na prática? Fale diretamente com a nossa equipe.
           </p>
           <div className="mt-10 flex items-center justify-center">
-            <Link
-              to="/contato"
+            <a
+              href={`https://wa.me/5521959214292?text=${encodeURIComponent("Olá, Jessica! Vim do site do Grupo DAMA e gostaria de saber mais sobre os serviços e como funciona a parceria.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-gold"
             >
-              Falar com a equipe <ArrowRight className="h-4 w-4" />
-            </Link>
+              Falar com um especialista <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>

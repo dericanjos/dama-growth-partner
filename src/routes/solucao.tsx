@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Headset, LineChart, Target, ShieldCheck, Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
@@ -193,21 +193,15 @@ function SolutionPage() {
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.75] text-[var(--text-secondary)] md:text-base">
               A parceria DAMA é exclusiva e seletiva. Conheça os critérios e as condições.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <div className="mt-10 flex items-center justify-center">
               <a
-                href="https://parceria.grupodama.com.br"
+                href={`https://wa.me/5521959214292?text=${encodeURIComponent("Olá, Jessica! Vim do site do Grupo DAMA e gostaria de saber mais sobre os serviços e como funciona a parceria.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gold"
               >
-                Conhecer a Parceria <ArrowRight className="h-4 w-4" />
+                Falar com um especialista <ArrowRight className="h-4 w-4" />
               </a>
-              <Link
-                to="/contato"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-[var(--border)] bg-white px-7 py-3.5 text-sm font-medium text-[var(--navy)] transition-colors hover:border-[var(--gold)] hover:text-[var(--gold-deep)]"
-              >
-                Falar com a equipe <ArrowRight className="h-4 w-4" />
-              </Link>
             </div>
           </Reveal>
         </div>
