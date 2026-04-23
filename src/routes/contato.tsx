@@ -11,9 +11,9 @@ export const Route = createFileRoute("/contato")({
       },
       { property: "og:title", content: "Contato | Grupo DAMA" },
       { property: "og:description", content: "Fale com o Grupo DAMA." },
-      { property: "og:url", content: "https://grupodama.com.br/contato" },
+      { property: "og:url", content: "https://grupodamahealth.com.br/contato" },
     ],
-    links: [{ rel: "canonical", href: "https://grupodama.com.br/contato" }],
+    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/contato" }],
   }),
   component: ContactPage,
 });
@@ -71,7 +71,7 @@ function ContactPage() {
               </a>
 
               <a
-                href="mailto:contato@grupodama.com.br"
+                href="mailto:contato@grupodamahealth.com.br"
                 className="card-dama flex items-center gap-4 p-5"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--gold-soft)] text-[var(--navy)]">
@@ -82,7 +82,7 @@ function ContactPage() {
                     E-mail
                   </div>
                   <div className="font-medium text-[var(--navy)]">
-                    contato@grupodama.com.br
+                    contato@grupodamahealth.com.br
                   </div>
                 </div>
               </a>
@@ -129,10 +129,10 @@ function ContactPage() {
               Em construção. Será conectado ao e-mail corporativo do Grupo DAMA
               em breve. Por ora, use o WhatsApp ou envie diretamente para{" "}
               <a
-                href="mailto:contato@grupodama.com.br"
+                href="mailto:contato@grupodamahealth.com.br"
                 className="text-[var(--navy)] underline-offset-4 hover:underline"
               >
-                contato@grupodama.com.br
+                contato@grupodamahealth.com.br
               </a>
               .
             </p>

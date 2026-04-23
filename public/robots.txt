@@ -16,4 +16,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://grupodama.com.br/sitemap.xml
+Sitemap: https://grupodamahealth.com.br/sitemap.xml

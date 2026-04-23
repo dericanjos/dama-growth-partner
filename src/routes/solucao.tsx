@@ -28,9 +28,9 @@ export const Route = createFileRoute("/solucao")({
         content:
           "Time comercial + growth marketing + marketing 360 em uma operação integrada para médicos.",
       },
-      { property: "og:url", content: "https://grupodama.com.br/solucao" },
+      { property: "og:url", content: "https://grupodamahealth.com.br/solucao" },
     ],
-    links: [{ rel: "canonical", href: "https://grupodama.com.br/solucao" }],
+    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/solucao" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(SERVICE_JSONLD) },
     ],

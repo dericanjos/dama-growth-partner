@@ -10,7 +10,7 @@ export const Route = createFileRoute("/privacidade")({
       },
       { name: "robots", content: "noindex, follow" },
     ],
-    links: [{ rel: "canonical", href: "https://grupodama.com.br/privacidade" }],
+    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/privacidade" }],
   }),
   component: PrivacyPage,
 });
@@ -60,7 +60,7 @@ function PrivacyPage() {
           <p>
             Você pode, a qualquer momento, solicitar acesso, correção, portabilidade
             ou exclusão dos seus dados pessoais escrevendo para
-            contato@grupodama.com.br.
+            contato@grupodamahealth.com.br.
           </p>
 
           <h2 className="font-serif text-xl text-[var(--navy)]">5. Cookies</h2>
@@ -72,7 +72,7 @@ function PrivacyPage() {
           <h2 className="font-serif text-xl text-[var(--navy)]">6. Encarregado de Dados (DPO)</h2>
           <p>
             Para questões relativas à LGPD, fale com nosso encarregado pelo
-            e-mail contato@grupodama.com.br.
+            e-mail contato@grupodamahealth.com.br.
           </p>
         </div>
       </div>

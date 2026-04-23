@@ -13,9 +13,9 @@ const ORG_JSONLD = {
   "@type": "Organization",
   name: "Grupo DAMA",
   description: "Operação comercial estratégica para médicos",
-  url: "https://grupodama.com.br",
+  url: "https://grupodamahealth.com.br",
   telephone: "+5521959214292",
-  email: "contato@grupodama.com.br",
+  email: "contato@grupodamahealth.com.br",
   sameAs: ["https://www.instagram.com/damacomercialmedico"],
   founder: { "@type": "Person", name: "Jéssica Anjos" },
   areaServed: { "@type": "Country", name: "BR" },
@@ -36,13 +36,13 @@ export const Route = createFileRoute("/")({
         content:
           "Time comercial, growth marketing e marketing 360 em uma operação só. 90+ médicos parceiros em 16+ estados.",
       },
-      { property: "og:url", content: "https://grupodama.com.br/" },
+      { property: "og:url", content: "https://grupodamahealth.com.br/" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Grupo DAMA" },
       { property: "og:locale", content: "pt_BR" },
       { name: "robots", content: "index, follow" },
     ],
-    links: [{ rel: "canonical", href: "https://grupodama.com.br/" }],
+    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/" }],
     scripts: [
       {
         type: "application/ld+json",

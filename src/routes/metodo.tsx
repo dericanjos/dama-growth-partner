@@ -40,9 +40,9 @@ export const Route = createFileRoute("/metodo")({
         content:
           "Diagnosticar, Atrair, Marcar, Acompanhar — o método que guia a operação DAMA.",
       },
-      { property: "og:url", content: "https://grupodama.com.br/metodo" },
+      { property: "og:url", content: "https://grupodamahealth.com.br/metodo" },
     ],
-    links: [{ rel: "canonical", href: "https://grupodama.com.br/metodo" }],
+    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/metodo" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(FAQ_JSONLD) },
     ],

@@ -37,11 +37,11 @@ export function SiteFooter() {
               (21) 95921-4292
             </a>
             <a
-              href="mailto:contato@grupodama.com.br"
+              href="mailto:contato@grupodamahealth.com.br"
               className="inline-flex items-center gap-2 text-sm text-white/65 hover:text-white"
             >
               <Mail className="h-3.5 w-3.5 text-[var(--gold)]" />
-              contato@grupodama.com.br
+              contato@grupodamahealth.com.br
             </a>
             <a
               href="https://instagram.com/damacomercialmedico"

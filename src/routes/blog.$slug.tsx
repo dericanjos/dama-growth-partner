@@ -20,7 +20,7 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!loaderData) return { meta: [{ title: "Artigo | Blog — Grupo DAMA" }] };
     const { post } = loaderData;
     const desc = post.excerpt.slice(0, 155);
-    const url = `https://grupodama.com.br/blog/${post.slug}`;
+    const url = `https://grupodamahealth.com.br/blog/${post.slug}`;
     return {
       meta: [
         { title: `${post.title} | Blog — Grupo DAMA` },
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/blog/$slug")({
             publisher: {
               "@type": "Organization",
               name: "Grupo DAMA",
-              url: "https://grupodama.com.br",
+              url: "https://grupodamahealth.com.br",
             },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             articleSection: post.category,
@@ -76,7 +76,7 @@ function PostPage() {
   const minutes = readingTimeMinutes(post.content);
   const related = getRelatedPosts(post.slug, post.category, 3);
   const url =
-    typeof window !== "undefined" ? window.location.href : `https://grupodama.com.br/blog/${post.slug}`;
+    typeof window !== "undefined" ? window.location.href : `https://grupodamahealth.com.br/blog/${post.slug}`;
 
   return (
     <>

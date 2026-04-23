@@ -7,7 +7,7 @@ export const Route = createFileRoute("/termos")({
       { name: "description", content: "Termos de uso do site do Grupo DAMA." },
       { name: "robots", content: "noindex, follow" },
     ],
-    links: [{ rel: "canonical", href: "https://grupodama.com.br/termos" }],
+    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/termos" }],
   }),
   component: TermsPage,
 });
@@ -25,7 +25,7 @@ function TermsPage() {
         <div className="mt-10 space-y-6 text-[15px] leading-relaxed text-[var(--text-secondary)]">
           <p>
             Bem-vindo ao site institucional do Grupo DAMA (“DAMA”, “nós”). Ao
-            navegar por grupodama.com.br, você concorda com os termos abaixo.
+            navegar por grupodamahealth.com.br, você concorda com os termos abaixo.
           </p>
 
           <h2 className="font-serif text-xl text-[var(--navy)]">1. Objeto</h2>
@@ -62,7 +62,7 @@ function TermsPage() {
 
           <h2 className="font-serif text-xl text-[var(--navy)]">6. Contato</h2>
           <p>
-            Dúvidas: contato@grupodama.com.br · (21) 95921-4292.
+            Dúvidas: contato@grupodamahealth.com.br · (21) 95921-4292.
           </p>
         </div>
       </div>
