@@ -195,23 +195,18 @@ function AboutPage() {
         <div className="absolute inset-0 hero-glow opacity-70" aria-hidden />
         <div className="container-dama relative mx-auto max-w-2xl text-center">
           <h2 className="heading-display text-[28px] md:text-[42px]">
-            <span className="gold-text">Quer fazer parte dessa história?</span>
+            <span className="gold-text">Quer fazer parte dessa história de crescimento?</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.75] text-white/70 md:text-base">
-            A DAMA cresce escolhendo bem com quem caminha. Conheça a parceria — ou fale diretamente com a equipe.
+            Buscamos parceiros decididos a crescer através de processo e construção de médio e longo prazo, sem fórmulas mágicas ou promessas mentirosas.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <a
-              href="https://parceria.grupodama.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold"
-            >
-              Conhecer a Parceria <ArrowRight className="h-4 w-4" />
-            </a>
+          <p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.75] text-white/70 md:text-base">
+            Quer entender como isso funciona na prática? Fale diretamente com a nossa equipe.
+          </p>
+          <div className="mt-10 flex items-center justify-center">
             <Link
               to="/contato"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/5"
+              className="btn-gold"
             >
               Falar com a equipe <ArrowRight className="h-4 w-4" />
             </Link>
