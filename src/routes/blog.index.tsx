@@ -20,9 +20,9 @@ export const Route = createFileRoute("/blog/")({
           "Insights para médicos que pensam como empresários. Crescimento, marketing e mercado.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://grupodama.com.br/blog" },
+      { property: "og:url", content: "https://grupodamahealth.com.br/blog" },
     ],
-    links: [{ rel: "canonical", href: "https://grupodama.com.br/blog" }],
+    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/blog" }],
   }),
   component: BlogIndex,
 });
