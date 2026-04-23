@@ -65,9 +65,8 @@ const STEPS = [
     icon: Megaphone,
     title: "Atrair",
     paragraphs: [
-      "Com o diagnóstico em mãos, ativamos as alavancas certas para o momento do consultório: tráfego pago bem segmentado, presença digital consistente, SEO local, conteúdo estratégico que educa e posiciona autoridade.",
-      "O objetivo não é gerar volume vazio. É atrair pacientes qualificados — pessoas que têm a queixa que o médico trata, condição financeira para a consulta particular e disposição real para agendar.",
-      "Cada peça publicada respeita 100% as normas do CFM. Marketing médico ético não é uma limitação — é o caminho.",
+      "Após identificar os gargalos da operação, estruturamos a captação estratégica de pacientes através de marketing médico, posicionamento digital, tráfego pago, SEO local, branding e produção de conteúdo alinhado à percepção de valor do médico.",
+      "O objetivo não é apenas gerar volume, mas atrair pacientes mais qualificados e alinhados ao perfil do seu consultório. A atração precisa acontecer de forma inteligente para alimentar a operação comercial com oportunidades reais de conversão.",
     ],
   },
   {
