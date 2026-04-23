@@ -106,14 +106,23 @@ export function Testimonials() {
                 {t.text}
               </p>
               <div className="mt-6 flex items-center gap-3 border-t border-[var(--border)] pt-5">
-                <img
-                  src={t.photo}
-                  alt={`${t.name} — ${t.specialty}`}
-                  loading="lazy"
-                  width={48}
-                  height={48}
-                  className="h-12 w-12 rounded-full object-cover ring-1 ring-[color-mix(in_oklab,var(--gold)_40%,var(--border))]"
-                />
+                {t.photo ? (
+                  <img
+                    src={t.photo}
+                    alt={`${t.name} — ${t.specialty}`}
+                    loading="lazy"
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 rounded-full object-cover ring-1 ring-[color-mix(in_oklab,var(--gold)_40%,var(--border))]"
+                  />
+                ) : (
+                  <div
+                    aria-hidden
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--gold-soft)] font-serif text-lg text-[var(--gold-deep)] ring-1 ring-[color-mix(in_oklab,var(--gold)_40%,var(--border))]"
+                  >
+                    {t.name.replace(/^Dr[a]?\.\s*/i, "").charAt(0)}
+                  </div>
+                )}
                 <div>
                   <div className="text-sm font-semibold text-[var(--navy)]">
                     {t.name}
