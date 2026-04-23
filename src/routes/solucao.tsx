@@ -160,7 +160,7 @@ function SolutionPage() {
         <div className="container-dama mx-auto max-w-3xl text-center">
           <Reveal>
             <p className="font-serif text-[22px] italic leading-[1.5] text-[var(--navy)] md:text-[28px]">
-              “Time comercial sem marketing é operação sem combustível. Marketing sem time comercial é investimento jogado fora. A DAMA integra os dois — e adiciona dados em cima.”
+              “Marketing gera oportunidades. O comercial transforma interesse em faturamento. O growth organiza toda a operação para sustentar o seu crescimento no longo prazo. É assim que a DAMA opera.”
             </p>
           </Reveal>
         </div>
