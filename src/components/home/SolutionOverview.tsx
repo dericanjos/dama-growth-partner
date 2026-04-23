@@ -10,7 +10,7 @@ const PILLARS = [
   },
   {
     icon: LineChart,
-    title: "Growth Marketing",
+    title: "Growth",
     text: "Crescimento orientado por dados. Análise de métricas, funis de conversão, testes e otimizações contínuas. Cada decisão é baseada em números, não em achismo.",
   },
   {
