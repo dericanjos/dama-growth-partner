@@ -106,7 +106,7 @@ function MethodPage() {
             <span className="gold-text">Método D.A.M.A</span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[17px] leading-[1.7] text-white/80 md:text-[19px]">
-            Mais do que um método de atendimento, um sistema operacional construído para transformar relacionamento em crescimento previsível através de processos à prova de crises.
+            Crescimento previsível não é sorte. É método. É processo.
           </p>
         </div>
       </section>
