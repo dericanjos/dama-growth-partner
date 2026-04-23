@@ -5,6 +5,7 @@ import { WhoWeAreShort } from "@/components/home/WhoWeAreShort";
 import { SolutionOverview } from "@/components/home/SolutionOverview";
 import { MethodOverview } from "@/components/home/MethodOverview";
 import { Testimonials } from "@/components/home/Testimonials";
+import { PatientTestimonials } from "@/components/home/PatientTestimonials";
 import { BlogHighlights } from "@/components/home/BlogHighlights";
 import { ClosingCTA } from "@/components/home/ClosingCTA";
 
@@ -62,6 +63,7 @@ function HomePage() {
       <SolutionOverview />
       <MethodOverview />
       <Testimonials />
+      <PatientTestimonials />
       <BlogHighlights />
       <ClosingCTA />
     </>
