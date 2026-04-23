@@ -74,9 +74,8 @@ const STEPS = [
     icon: CalendarCheck,
     title: "Marcar",
     paragraphs: [
-      "Aqui entra o time comercial. Cada lead que chega é atendido por profissionais treinados em vendas consultivas para o contexto médico — não atendentes genéricos com script de e-commerce.",
-      "Resposta rápida, escuta atenta, qualificação técnica, tratamento de objeções com empatia, apresentação de valor antes do preço, fechamento da consulta com data e hora.",
-      "Cada lead vira uma oportunidade real. Cada agendamento é confirmado. Cada não-comparecimento gera uma tentativa de reagendamento. Nada se perde por desatenção.",
+      "Lead sem conversão não traz faturamento. Seguidores em Instagram é métrica de vaidade. Por isso, o time comercial da DAMA atua diretamente na linha de frente do atendimento, conduzindo cada paciente com comunicação estratégica através de um atendimento humanizado e técnicas consultivas de conversão.",
+      "Nosso foco é transformar interesse em agendamento através de processos claros, acompanhamento estruturado e redução das perdas comerciais que normalmente acontecem dentro da operação do consultório.",
     ],
   },
   {
@@ -84,9 +83,8 @@ const STEPS = [
     icon: Activity,
     title: "Acompanhar",
     paragraphs: [
-      "Crescimento monitorado é crescimento sustentável. Acompanhamos métricas semanais, fazemos follow-up de leads não agendados, reativamos pacientes inativos da base, reduzimos faltas com lembretes inteligentes.",
-      "Reuniões mensais com o médico transformam dados em decisão: o que escalar, o que cortar, onde dobrar a aposta.",
-      "Não abandonamos o consultório com um relatório. Andamos junto, mês após mês, ajustando rota até a meta virar realidade.",
+      "Crescimento sustentável exige acompanhamento contínuo. Monitoramos métricas, analisamos indicadores estratégicos e realizamos ajustes constantes na operação para aumentar previsibilidade, retenção de pacientes e performance comercial.",
+      "Mais do que executar processos, acompanhamos a evolução do consultório de forma ativa, garantindo que marketing, comercial e growth continuem operando de maneira integrada, inteligente e sustentável no longo prazo.",
     ],
   },
 ];
