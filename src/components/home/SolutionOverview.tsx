@@ -15,7 +15,7 @@ const PILLARS = [
   },
   {
     icon: Target,
-    title: "Marketing 360",
+    title: "Marketing Médico",
     text: "Gestão de tráfego pago, presença digital, reputação online e estratégias que colocam seu consultório na frente de quem já procura o que você oferece.",
   },
 ];
