@@ -72,6 +72,12 @@ const TESTIMONIALS: T[] = [
     text: "Vocês são incríveis!",
     photo: joao,
   },
+  {
+    name: "Dra. Larissa Quitude",
+    specialty: "Médica parceira",
+    text: "Jessica, bom dia! Só para deixar você e a equipe cientes: iniciamos há 1 mês e, ontem, quando fui contabilizar, percebi que, mesmo ainda estando na metade do mês, já alcançamos o melhor faturamento do consultório até agora. Queria agradecer a vocês pelo trabalho e dedicação. Estou muito feliz com os resultados que já estamos conquistando juntas.",
+    photo: null,
+  },
 ];
 
 export function Testimonials() {
