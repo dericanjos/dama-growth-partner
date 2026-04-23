@@ -41,7 +41,7 @@ export function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-dama flex h-16 items-center justify-between md:h-20">
+      <div className="container-dama flex h-20 items-center justify-between md:h-28">
         <Link
           to="/"
           className="group flex items-center gap-3 leading-none shrink-0"
@@ -51,9 +51,9 @@ export function SiteHeader() {
           <img
             src={damaLogo}
             alt="Logo Grupo DAMA"
-            width={56}
-            height={56}
-            className="h-12 w-12 md:h-14 md:w-14 object-contain"
+            width={96}
+            height={96}
+            className="h-16 w-16 md:h-24 md:w-24 object-contain"
           />
           <span className="hidden lg:inline-block border-l border-[color-mix(in_oklab,var(--gold)_30%,transparent)] pl-3 text-[10px] uppercase tracking-[0.28em] text-white/70">
             Grupo<br />DAMA
@@ -101,7 +101,7 @@ export function SiteHeader() {
       <div
         className={`md:hidden ${
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        } fixed inset-0 top-16 bg-[var(--navy-dark)] transition-opacity duration-300`}
+        } fixed inset-0 top-20 bg-[var(--navy-dark)] transition-opacity duration-300`}
       >
         <div className="container-dama flex flex-col gap-1 pt-8">
           {NAV_LINKS.map((link) => (
