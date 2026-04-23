@@ -30,8 +30,11 @@ export function SolutionOverview() {
             Nossa Solução
           </div>
           <h2 className="heading-display mt-6 text-3xl md:text-[2.5rem]">
-            O que fazemos pelos médicos parceiros
+            O que o Grupo DAMA faz pelos médicos parceiros.
           </h2>
+          <p className="mt-5 text-[15.5px] leading-[1.7] text-[var(--text-secondary)] md:text-base">
+            Uma operação inteligente integrada em três frentes.
+          </p>
         </Reveal>
 
         <div className="card-dama mt-12 overflow-hidden p-2 md:p-4">
