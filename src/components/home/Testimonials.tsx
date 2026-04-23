@@ -14,7 +14,7 @@ interface T {
   name: string;
   specialty: string;
   text: string;
-  photo: string;
+  photo: string | null;
 }
 
 const TESTIMONIALS: T[] = [
@@ -72,6 +72,12 @@ const TESTIMONIALS: T[] = [
     text: "Vocês são incríveis!",
     photo: joao,
   },
+  {
+    name: "Dra. Larissa Quitude",
+    specialty: "Médica parceira",
+    text: "Jessica, bom dia! Só para deixar você e a equipe cientes: iniciamos há 1 mês e, ontem, quando fui contabilizar, percebi que, mesmo ainda estando na metade do mês, já alcançamos o melhor faturamento do consultório até agora. Queria agradecer a vocês pelo trabalho e dedicação. Estou muito feliz com os resultados que já estamos conquistando juntas.",
+    photo: null,
+  },
 ];
 
 export function Testimonials() {
@@ -100,14 +106,23 @@ export function Testimonials() {
                 {t.text}
               </p>
               <div className="mt-6 flex items-center gap-3 border-t border-[var(--border)] pt-5">
-                <img
-                  src={t.photo}
-                  alt={`${t.name} — ${t.specialty}`}
-                  loading="lazy"
-                  width={48}
-                  height={48}
-                  className="h-12 w-12 rounded-full object-cover ring-1 ring-[color-mix(in_oklab,var(--gold)_40%,var(--border))]"
-                />
+                {t.photo ? (
+                  <img
+                    src={t.photo}
+                    alt={`${t.name} — ${t.specialty}`}
+                    loading="lazy"
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 rounded-full object-cover ring-1 ring-[color-mix(in_oklab,var(--gold)_40%,var(--border))]"
+                  />
+                ) : (
+                  <div
+                    aria-hidden
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--gold-soft)] font-serif text-lg text-[var(--gold-deep)] ring-1 ring-[color-mix(in_oklab,var(--gold)_40%,var(--border))]"
+                  >
+                    {t.name.replace(/^Dr[a]?\.\s*/i, "").charAt(0)}
+                  </div>
+                )}
                 <div>
                   <div className="text-sm font-semibold text-[var(--navy)]">
                     {t.name}
