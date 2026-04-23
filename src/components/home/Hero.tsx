@@ -40,10 +40,10 @@ export function Hero() {
           </span>{" "}
           e{" "}
           <span className="font-semibold text-[var(--gold-light)]">
-            tecnologia
+            tecnologia avançada
           </span>{" "}
-          em uma parceria exclusiva para médicos que querem crescer com
-          consistência.
+          em uma parceria exclusiva para médicos que querem crescer sua
+          autoridade e faturamento com previsibilidade e sustentabilidade.
         </p>
 
         {/* CTA */}
