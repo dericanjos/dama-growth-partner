@@ -94,7 +94,7 @@ function SolutionPage() {
           </span>
           <h1 className="heading-display text-[34px] leading-[1.1] md:text-[56px]">
             <span className="gold-text">
-              O que o Grupo DAMA faz pelos médicos parceiros.
+              O que fazemos pelos nossos médicos parceiros.
             </span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[16px] leading-[1.75] text-white/75 md:text-[17px]">
