@@ -9,27 +9,15 @@ export function ClosingCTA() {
       <div className="container-dama relative max-w-3xl text-center">
         <Reveal>
           <h2 className="heading-display text-3xl text-white md:text-5xl">
-            Quer conhecer nossa parceria?
+            Crescimento previsível exige mais do que marketing.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base text-white/60 md:text-lg">
-            Conheça como o Grupo DAMA pode operar a frente comercial do seu
-            consultório — ou fale diretamente com nossa equipe.
+            Exige uma operação estratégica comprometida com o seu resultado. Conheça os critérios da parceria com o Grupo DAMA.
           </p>
         </Reveal>
 
-        <Reveal delay={120} className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-          <a
-            href="https://parceria.grupodama.com.br"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-gold"
-          >
-            Conhecer a Parceria <ArrowRight className="h-4 w-4" />
-          </a>
-          <Link
-            to="/contato"
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/5"
-          >
+        <Reveal delay={120} className="mt-10 flex items-center justify-center">
+          <Link to="/contato" className="btn-gold">
             Falar com a equipe <ArrowRight className="h-4 w-4" />
           </Link>
         </Reveal>
