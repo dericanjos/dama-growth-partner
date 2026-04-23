@@ -63,6 +63,7 @@ function HomePage() {
       <SolutionOverview />
       <MethodOverview />
       <Testimonials />
+      <PatientTestimonials />
       <BlogHighlights />
       <ClosingCTA />
     </>
