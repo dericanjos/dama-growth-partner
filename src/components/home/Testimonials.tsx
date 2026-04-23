@@ -14,7 +14,7 @@ interface T {
   name: string;
   specialty: string;
   text: string;
-  photo: string;
+  photo: string | null;
 }
 
 const TESTIMONIALS: T[] = [
