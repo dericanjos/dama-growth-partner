@@ -58,12 +58,12 @@ const PILLARS = [
     pitch:
       "Estruturamos o crescimento do seu consultório através de uma solução completa baseada em estudo e análise de dados para criação de processos e alavancas. Nosso growth conecta marketing, comercial, gestão e tecnologia para aumentar conversão, retenção e recorrência de pacientes, construindo uma operação preparada para crescer de forma sustentável no longo prazo e à prova de crises.",
     deliveries: [
-      "Mapeamento e análise de funil de conversão",
-      "Definição de KPIs e dashboards semanais",
-      "Testes A/B em campanhas e abordagens comerciais",
-      "Análise de ticket médio e taxa de conversão por canal",
-      "Reuniões mensais de performance com o médico",
-      "Recomendações estratégicas baseadas em dados",
+      "Estruturação de funis, processos comerciais e estratégias de crescimento",
+      "Desenvolvimento de planos de acompanhamento e recorrência para pacientes",
+      "Mapeamento da jornada do paciente e otimização de conversão",
+      "Definição de KPIs, metas e dashboards de performance",
+      "Análise contínua de dados, métricas e indicadores estratégicos",
+      "Reuniões periódicas de (re)alinhamento, performance e tomada de decisão",
     ],
   },
   {
