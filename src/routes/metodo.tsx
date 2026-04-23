@@ -56,9 +56,8 @@ const STEPS = [
     icon: Search,
     title: "Diagnosticar",
     paragraphs: [
-      "Antes de investir um centavo em mídia ou contratar uma única pessoa, mapeamos a operação inteira: como funciona a agenda, quem atende os contatos, qual o tempo médio de resposta, qual a taxa de conversão por canal, qual o ticket médio, quais especialidades performam mais.",
-      "Identificamos onde o faturamento está vazando. Quase sempre o problema não é a falta de pacientes — é a perda silenciosa em pontos invisíveis para quem está dentro da operação no dia a dia.",
-      "Esse diagnóstico é o que dá direção a tudo o que vem depois. Sem ele, qualquer ação é tiro no escuro.",
+      "Antes de qualquer estratégia, analisamos profundamente a operação do seu consultório. Agenda, atendimento, taxa de conversão, posicionamento, processos comerciais, retenção de pacientes e indicadores financeiros são avaliados para identificar exatamente onde estão os gargalos que limitam o seu crescimento.",
+      "Acreditamos que crescimento sem diagnóstico gera desperdício. Por isso, o Método D.A.M.A começa entendendo o cenário real da operação para construir decisões estratégicas baseadas em dados, previsibilidade e oportunidades concretas de melhoria.",
     ],
   },
   {
