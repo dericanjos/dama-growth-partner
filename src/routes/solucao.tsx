@@ -72,12 +72,12 @@ const PILLARS = [
     pitch:
       "Posicionamos o médico de forma estratégica para atrair os pacientes certos. Conteúdo, tráfego pago, SEO, branding e autoridade trabalhando juntos para gerar reconhecimento e demanda de novas oportunidades diariamente.",
     deliveries: [
-      "Gestão de tráfego pago (Google, Meta) com criativos próprios",
-      "Conteúdo educativo para Instagram dentro das normas do CFM",
-      "Otimização de Google Meu Negócio e SEO local",
-      "Gestão de reputação online e respostas a avaliações",
-      "Identidade visual e padronização da presença digital",
-      "Relatórios mensais consolidados",
+      "Gestão estratégica de tráfego pago (Google e Meta Ads) com criativos autorais e campanhas orientadas por performance",
+      "Planejamento e produção de conteúdo para Instagram alinhado às diretrizes do CFM",
+      "Otimização de Google Meu Negócio e estratégias de SEO local para aumento de visibilidade",
+      "Gestão de reputação online, avaliações e fortalecimento da autoridade digital",
+      "Padronização da identidade visual e posicionamento estratégico da marca médica",
+      "Relatórios gerenciais e acompanhamento contínuo de métricas e performance",
     ],
   },
 ];
