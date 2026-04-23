@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Heart, HandHeart, Crown, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
+import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/sobre")({
@@ -25,14 +25,13 @@ export const Route = createFileRoute("/sobre")({
 });
 
 const VALUES = [
-  { icon: Heart, label: "Empatia", text: "Entender antes de agir. Cada paciente é uma história, não um lead." },
-  { icon: HandHeart, label: "Bondade", text: "Tratar pessoas com gentileza — médicos, equipes e pacientes." },
-  { icon: Crown, label: "Honra", text: "A palavra dada vale mais do que qualquer contrato." },
-  { icon: GraduationCap, label: "Educação", text: "Aprendizado contínuo. O time DAMA estuda todos os dias." },
-  { icon: ShieldCheck, label: "Responsabilidade", text: "Assumir o que é nosso. Reportar, corrigir, evoluir." },
-  { icon: Handshake, label: "Confiabilidade", text: "Médico parceiro dorme tranquilo sabendo que sua operação anda." },
-  { icon: Sparkles, label: "Honestidade", text: "Verdade sempre. Mesmo quando dói. Mesmo quando custa." },
-  { icon: Flame, label: "Determinação", text: "Não soltamos a mão até a meta virar realidade." },
+  { icon: Heart, label: "Empatia", text: "Nos interessamos genuinamente pelo problema para entregarmos uma solução." },
+  { icon: HandHeart, label: "Bondade", text: "Gentileza também é uma forma de excelência." },
+  { icon: GraduationCap, label: "Educação", text: "A forma como falamos define a experiência que entregamos." },
+  { icon: ShieldCheck, label: "Responsabilidade", text: "Cuidamos dos detalhes como quem cuida do próprio negócio." },
+  { icon: Handshake, label: "Confiabilidade", text: "Médico parceiro dorme tranquilo porque sabe que pode confiar na nossa equipe." },
+  { icon: Sparkles, label: "Honestidade", text: "A verdade é inegociável, mesmo quando exige conversas difíceis." },
+  { icon: Flame, label: "Determinação", text: "Não soltamos a mão até a meta virar realidade. Aqui focamos em entregar resultado e não serviço." },
 ];
 
 const TIMELINE = [
@@ -139,7 +138,7 @@ function AboutPage() {
               <span className="badge-pill-dot" /> Nossos Valores
             </span>
             <h2 className="heading-display mt-6 text-[30px] md:text-[44px]">
-              <span className="gold-text">8 valores que orientam tudo</span>
+              <span className="gold-text">7 valores que orientam tudo</span>
             </h2>
             <p className="mt-5 text-[15px] leading-[1.75] text-white/65 md:text-base">
               Não são frases bonitas na parede. São critérios reais de contratação, de decisão e de operação.
