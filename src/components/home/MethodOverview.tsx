@@ -6,22 +6,22 @@ const STEPS = [
   {
     letter: "D",
     title: "Diagnosticar",
-    text: "Mapeamos a operação: agenda, atendimento, funil de conversão, ticket médio. Identificamos onde o faturamento está vazando antes de investir um centavo.",
+    text: "Analisamos toda a operação do consultório: atendimento, agenda, conversão, posicionamento e processos. Antes de crescer, identificamos exatamente onde o faturamento está sendo perdido.",
   },
   {
     letter: "A",
     title: "Atrair",
-    text: "Ativamos as alavancas certas: tráfego pago, presença digital, SEO, conteúdo estratégico. Pacientes qualificados, não volume desqualificado.",
+    text: "Estruturamos a presença e a captação do consultório através de tráfego pago, posicionamento, conteúdo estratégico, GEO e SEO local para atrair pacientes mais qualificados.",
   },
   {
     letter: "M",
     title: "Marcar",
-    text: "Nosso time comercial entra em campo: aborda, qualifica, argumenta e agenda. Cada lead vira uma oportunidade real de consulta.",
+    text: "Nosso time comercial conduz cada lead com atendimento humanizado, comunicação empática e técnica consultiva para transformar interesse em agendamento. Além de follow-up, reativação de pacientes e prospecção ativa de pacientes indicados.",
   },
   {
     letter: "A",
     title: "Acompanhar",
-    text: "Follow-up, reativação de inativos, redução de faltas, análise semanal de métricas. Crescimento monitorado, não abandonado.",
+    text: "Monitoramos métricas, acompanhamos a operação e ajustamos continuamente os processos para aumentar previsibilidade, retenção e crescimento sustentável.",
   },
 ];
 
