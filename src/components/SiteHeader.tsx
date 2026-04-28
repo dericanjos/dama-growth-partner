@@ -88,10 +88,9 @@ export function SiteHeader() {
             href={PARCERIA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold !px-2.5 !py-2 !text-xs whitespace-nowrap min-[900px]:!px-3 lg:!px-4 lg:!text-sm"
+            className="btn-gold !px-3 !py-2 !text-xs whitespace-nowrap lg:!px-4 lg:!text-sm"
           >
-            <span className="hidden min-[900px]:inline">Seja um </span>
-            Parceiro <span aria-hidden>→</span>
+            Seja Parceiro <span aria-hidden>→</span>
           </a>
         </div>
 
