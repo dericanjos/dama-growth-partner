@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
@@ -52,11 +52,6 @@ export function Hero() {
 
         {/* CTA */}
         <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row">
-          <a href="#solucao" className="btn-gold group">
-            <MessageCircle className="h-4 w-4" />
-            Conheça nossa solução
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
           <Link
             to="/contato"
             className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 px-6 py-3.5 text-sm font-medium text-white/85 transition-colors hover:border-white/30 hover:bg-white/5 hover:text-white"

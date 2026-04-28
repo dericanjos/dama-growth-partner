@@ -29,6 +29,13 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
+        ...(post.coverImage
+          ? [
+              { property: "og:image", content: post.coverImage },
+              { name: "twitter:image", content: post.coverImage },
+              { name: "twitter:card", content: "summary_large_image" },
+            ]
+          : []),
         { property: "article:published_time", content: post.date },
         { property: "article:section", content: post.category },
       ],
@@ -102,6 +109,15 @@ function PostPage() {
       {/* Conteúdo */}
       <section className="bg-[var(--cream)] py-16 md:py-20">
         <article className="container-dama mx-auto max-w-[720px]">
+          {post.coverImage && (
+            <div className="mb-10 h-64 w-full overflow-hidden rounded-[14px] md:h-80">
+              <img
+                src={post.coverImage}
+                alt={post.coverImageAlt ?? post.title}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          )}
           {/* Quick Answer Block */}
           <aside
             className="mb-10 rounded-[12px] border-l-[3px] p-6 md:p-7"

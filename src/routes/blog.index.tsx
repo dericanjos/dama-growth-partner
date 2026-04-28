@@ -85,19 +85,33 @@ function BlogIndex() {
                   className="card-dama group flex flex-col overflow-hidden hover:[&]:[transform:translateY(-4px)] hover:[&]:[border-color:color-mix(in_oklab,var(--gold)_50%,var(--border))] hover:[&]:[box-shadow:var(--shadow-gold)]"
                 >
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--navy-light)]">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <FileText
-                        className="h-12 w-12 text-[color-mix(in_oklab,var(--gold)_60%,transparent)] transition-transform duration-500 group-hover:scale-110"
-                        strokeWidth={1.2}
-                      />
-                    </div>
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        background:
-                          "radial-gradient(ellipse at center, transparent 40%, color-mix(in oklab, var(--navy-dark) 50%, transparent) 100%)",
-                      }}
-                    />
+                    {post.coverImage ? (
+                      <>
+                        <img
+                          src={post.coverImage}
+                          alt={post.coverImageAlt ?? post.title}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+                      </>
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <FileText
+                            className="h-12 w-12 text-[color-mix(in_oklab,var(--gold)_60%,transparent)] transition-transform duration-500 group-hover:scale-110"
+                            strokeWidth={1.2}
+                          />
+                        </div>
+                        <div
+                          className="absolute inset-0"
+                          style={{
+                            background:
+                              "radial-gradient(ellipse at center, transparent 40%, color-mix(in oklab, var(--navy-dark) 50%, transparent) 100%)",
+                          }}
+                        />
+                      </>
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col gap-3 p-6">
                     <div className="flex items-center justify-between">
