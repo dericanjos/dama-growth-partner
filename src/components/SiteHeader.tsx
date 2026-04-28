@@ -103,11 +103,14 @@ export function SiteHeader() {
 
       {/* Mobile overlay */}
       <div
-        className={`md:hidden ${
-          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        } fixed inset-0 top-20 bg-[var(--navy-dark)] transition-opacity duration-300`}
+        className={`md:hidden fixed inset-x-0 top-20 bottom-0 z-40 bg-[var(--navy-dark)] transition-all duration-300 overflow-y-auto ${
+          open
+            ? "pointer-events-auto opacity-100 translate-y-0"
+            : "pointer-events-none opacity-0 -translate-y-2"
+        }`}
+        aria-hidden={!open}
       >
-        <div className="container-dama flex flex-col gap-1 pt-8">
+        <div className="container-dama flex flex-col gap-1 pb-12 pt-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
