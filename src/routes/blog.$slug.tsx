@@ -93,6 +93,7 @@ function PostPage() {
             <span className="gold-text">{post.title}</span>
           </h1>
           <p className="mt-6 text-sm uppercase tracking-[0.18em] text-white/55">
+            {post.author ? <>Por {post.author} · </> : null}
             Publicado em {formatDateBR(post.date)}
           </p>
         </div>
@@ -139,7 +140,7 @@ function PostPage() {
               Conheça a parceria que coloca um time comercial inteiro a operar pelo seu consultório.
             </p>
             <a
-              href="https://parceria.grupodama.com.br"
+              href="https://comercial.grupodamahealth.com.br"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold mt-7"
