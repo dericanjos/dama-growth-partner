@@ -14,6 +14,10 @@ export interface BlogPost {
   author?: string;
   /** Optional reading time override (minutes). */
   readingTime?: number;
+  /** Optional cover image URL. */
+  coverImage?: string;
+  /** Optional cover image alt text for SEO/a11y. */
+  coverImageAlt?: string;
 }
 
 export const BLOG_CATEGORIES: BlogCategory[] = [
@@ -26,6 +30,8 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "7-sinais-consultorio-perdendo-dinheiro",
+    coverImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+    coverImageAlt: "Profissional analisando documentos em mesa de escritório representando gestão de consultório",
     title: "7 Sinais de que Seu Consultório Está Perdendo Dinheiro (e Você Não Sabe)",
     excerpt:
       "Seu consultório pode estar perdendo mais de R$10 mil por mês sem você perceber. Veja os 7 sinais mais comuns e o que fazer com cada um. Dados reais de 2026.",
@@ -136,6 +142,8 @@ Na DAMA, isso é o que o [Método D.A.M.A](https://grupodamahealth.com.br/metodo
   },
   {
     slug: "marketing-medico-cfm-2026",
+    coverImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
+    coverImageAlt: "Documentos legais e regulamentação representando normas do CFM para marketing médico",
     title: "Marketing Médico e CFM em 2026: O que Pode e o que Não Pode",
     excerpt:
       "A Resolução CFM 2.336/2023 mudou as regras do marketing médico. Entenda o que é permitido, o que continua proibido e como crescer dentro da lei em 2026.",
@@ -250,6 +258,8 @@ Se você quer entender como construir uma presença digital e uma operação com
   },
   {
     slug: "time-comercial-terceirizado-consultorio",
+    coverImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+    coverImageAlt: "Equipe comercial trabalhando em computadores representando time terceirizado para consultório",
     title: "Time Comercial Terceirizado para Consultório: Vale a Pena?",
     excerpt:
       "Treinar a secretária ou terceirizar a operação comercial? Descubra quando faz sentido ter um time dedicado e quanto você perde sem um. Dados reais de 2026.",
@@ -361,6 +371,8 @@ Se o seu consultório apresenta 3 ou mais dos sinais que listei, vale entender c
   },
   {
     slug: "quanto-medico-perde-sem-processo-comercial",
+    coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    coverImageAlt: "Calculadora e documentos financeiros representando perdas de faturamento em consultório médico",
     title: "Quanto um Médico Perde por Mês Sem Processo Comercial",
     excerpt:
       "A maioria dos médicos sabe quanto fatura. Poucos sabem quanto deixam de faturar. Fizemos as contas com dados reais de 2026. Os números vão te surpreender.",
@@ -476,6 +488,8 @@ E se quiser entender como uma operação comercial se encaixa na realidade do se
   },
   {
     slug: "por-que-marketing-sozinho-nao-lota-agenda",
+    coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    coverImageAlt: "Dashboard de marketing digital com gráficos de performance representando métricas de consultório",
     title: "Por que Marketing Sozinho Não Lota Agenda de Consultório",
     excerpt:
       "Seu consultório investe em marketing mas a agenda continua vazia? O problema não é o marketing. É o que acontece depois que o lead chega. Entenda por quê.",
@@ -583,6 +597,8 @@ Se o seu consultório investe em marketing mas a agenda continua com espaços va
   },
   {
     slug: "o-que-e-operacao-comercial-consultorio",
+    coverImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+    coverImageAlt: "Consultório médico moderno com ambiente profissional representando operação comercial estruturada",
     title: "O que É Operação Comercial para Consultórios Médicos (e Por que Importa)",
     excerpt:
       "Operação comercial é o que transforma leads em consultas e agenda vazia em faturamento previsível. Entenda o conceito e por que consultórios precisam dele.",
