@@ -57,10 +57,10 @@ export const Route = createFileRoute("/blog/$slug")({
               "@type": "Person",
               name: authorName,
               jobTitle: "Head de Growth",
+              url: "https://grupodamahealth.com.br/autor/deric-anjos",
               worksFor: {
                 "@type": "Organization",
                 name: "Grupo DAMA",
-                url: "https://grupodamahealth.com.br",
               },
             },
             publisher: {
@@ -145,8 +145,8 @@ function PostPage() {
             <span className="gold-text">{post.title}</span>
           </h1>
           <p className="mt-6 text-sm uppercase tracking-[0.18em] text-white/55">
-            {post.author ? <>Por {post.author} · </> : null}
-            Publicado em {formatDateBR(post.date)}
+            {post.author ? <>Por {post.author} · Head de Growth · </> : null}
+            {formatDateBR(post.date)}
           </p>
         </div>
       </section>
