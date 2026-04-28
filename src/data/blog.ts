@@ -14,6 +14,10 @@ export interface BlogPost {
   author?: string;
   /** Optional reading time override (minutes). */
   readingTime?: number;
+  /** Optional cover image URL. */
+  coverImage?: string;
+  /** Optional cover image alt text for SEO/a11y. */
+  coverImageAlt?: string;
 }
 
 export const BLOG_CATEGORIES: BlogCategory[] = [
