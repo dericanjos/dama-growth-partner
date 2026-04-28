@@ -35,7 +35,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Grupo DAMA | Operação Comercial Estratégica para Médicos" },
+      { title: "Grupo DAMA | Solução Completa para Médicos" },
       {
         name: "description",
         content:
@@ -48,8 +48,8 @@ export const Route = createRootRoute({
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Grupo DAMA | Operação Comercial Estratégica para Médicos" },
-      { name: "twitter:title", content: "Grupo DAMA | Operação Comercial Estratégica para Médicos" },
+      { property: "og:title", content: "Grupo DAMA | Solução Completa para Médicos" },
+      { name: "twitter:title", content: "Grupo DAMA | Solução Completa para Médicos" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/31b1d445-4e56-411d-ab3f-2948c07f7b3b/id-preview-0bff959b--2e798cd7-2d1d-4ad2-916f-065fb6ba88f2.lovable.app-1776559781456.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/31b1d445-4e56-411d-ab3f-2948c07f7b3b/id-preview-0bff959b--2e798cd7-2d1d-4ad2-916f-065fb6ba88f2.lovable.app-1776559781456.png" },
       { name: "description", content: "Grupo DAMA oferece operação comercial estratégica para médicos no Brasil." },
