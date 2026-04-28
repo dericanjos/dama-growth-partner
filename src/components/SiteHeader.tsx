@@ -39,9 +39,11 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 md:h-auto ${
+        open ? "h-dvh overflow-y-auto" : ""
+      } ${
         scrolled || open
-          ? "bg-[var(--navy)]/95 backdrop-blur-md border-b border-[color-mix(in_oklab,var(--gold)_18%,transparent)]"
+          ? "bg-[var(--navy)] border-b border-[color-mix(in_oklab,var(--gold)_18%,transparent)]"
           : "bg-transparent"
       }`}
     >
@@ -103,14 +105,14 @@ export function SiteHeader() {
 
       {/* Mobile overlay */}
       <div
-        className={`md:hidden fixed inset-x-0 top-20 bottom-0 z-40 bg-[var(--navy-dark)] transition-all duration-300 overflow-y-auto ${
+        className={`md:hidden bg-[var(--navy)] transition-all duration-300 ${
           open
-            ? "pointer-events-auto opacity-100 translate-y-0"
-            : "pointer-events-none opacity-0 -translate-y-2"
+            ? "pointer-events-auto block opacity-100"
+            : "pointer-events-none hidden opacity-0"
         }`}
         aria-hidden={!open}
       >
-        <div className="container-dama flex flex-col gap-1 pb-12 pt-8">
+        <nav className="container-dama flex min-h-[calc(100dvh-5rem)] flex-col gap-1 pb-12 pt-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
@@ -132,7 +134,7 @@ export function SiteHeader() {
           >
             Seja um Parceiro <span aria-hidden>→</span>
           </a>
-        </div>
+        </nav>
       </div>
     </header>
   );
