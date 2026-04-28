@@ -25,7 +25,7 @@ export function PatientTestimonials() {
             E os pacientes? Eles também falam.
           </h2>
           <p className="mt-4 text-[15px] leading-[1.7] text-[var(--text-secondary)] md:text-base">
-            Feedbacks reais de pacientes atendidos pelo time DAMA — antes mesmo
+            Feedbacks reais de pacientes atendidos pelo time DAMA, antes mesmo
             de chegarem ao consultório do médico parceiro.
           </p>
         </Reveal>

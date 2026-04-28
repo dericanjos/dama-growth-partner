@@ -112,10 +112,10 @@ function MethodPage() {
         <div className="container-dama mx-auto max-w-3xl">
           <Reveal className="space-y-6 text-[16px] leading-[1.85] text-[var(--text-secondary)]">
             <p>
-              O Método D.A.M.A é a filosofia que guia cada decisão dentro da operação. Não é um framework genérico copiado de livro de marketing — é a forma como aprendemos a operar consultórios médicos depois de mais de 90 parcerias e centenas de milhares de interações com pacientes reais.
+              O Método D.A.M.A é a filosofia que guia cada decisão dentro da operação. Não é um framework genérico copiado de livro de marketing. É a forma como aprendemos a operar consultórios médicos depois de mais de 90 parcerias e centenas de milhares de interações com pacientes reais.
             </p>
             <p>
-              São quatro pilares — Diagnosticar, Atrair, Marcar e Acompanhar — que se aplicam em ciclo, não em linha reta. A operação roda continuamente: diagnostica, atrai, marca, acompanha, e o aprendizado de cada ciclo alimenta o próximo.
+              São quatro pilares (Diagnosticar, Atrair, Marcar e Acompanhar) que se aplicam em ciclo, não em linha reta. A operação roda continuamente: diagnostica, atrai, marca, acompanha, e o aprendizado de cada ciclo alimenta o próximo.
             </p>
           </Reveal>
         </div>

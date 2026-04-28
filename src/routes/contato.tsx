@@ -34,7 +34,7 @@ function ContactPage() {
             Fale com o Grupo DAMA.
           </h1>
           <p className="mt-5 max-w-xl text-white/65">
-            Dúvidas, sugestões ou interesse em parceria — estamos aqui.
+            Dúvidas, sugestões ou interesse em parceria? Estamos aqui.
           </p>
         </div>
       </section>
