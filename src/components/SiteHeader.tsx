@@ -40,8 +40,8 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[var(--navy)]/92 backdrop-blur-md border-b border-[color-mix(in_oklab,var(--gold)_18%,transparent)]"
+        scrolled || open
+          ? "bg-[var(--navy)]/95 backdrop-blur-md border-b border-[color-mix(in_oklab,var(--gold)_18%,transparent)]"
           : "bg-transparent"
       }`}
     >
