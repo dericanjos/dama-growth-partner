@@ -132,7 +132,7 @@ export function SiteHeader() {
             onClick={() => setOpen(false)}
             className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-[var(--gold)] px-6 py-3.5 text-base font-medium text-[var(--navy)]"
           >
-            Seja um Parceiro <span aria-hidden>→</span>
+            Seja Parceiro <span aria-hidden>→</span>
           </a>
         </nav>
       </div>
