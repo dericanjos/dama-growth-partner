@@ -93,11 +93,11 @@ function SolutionPage() {
           </span>
           <h1 className="heading-display text-[34px] leading-[1.1] md:text-[56px]">
             <span className="gold-text">
-              O que fazemos pelos nossos médicos parceiros.
+              O que o Grupo DAMA faz pelos médicos parceiros.
             </span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[16px] leading-[1.75] text-white/75 md:text-[17px]">
-            Uma operação integrada em três frentes. Não é agência. Não é terceirização avulsa. É o time que opera o crescimento do seu consultório.
+            Uma operação inteligente integrada em três frentes.
           </p>
         </div>
       </section>
