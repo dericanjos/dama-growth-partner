@@ -39,7 +39,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "O Grupo DAMA integra time comercial, growth marketing e marketing 360 para médicos que querem crescer com previsibilidade. 16+ estados, 90+ médicos parceiros.",
+          "Operação comercial estratégica para médicos. Time dedicado que converte leads em consultas. 90+ médicos parceiros em 16 estados.",
       },
       { name: "author", content: "Grupo DAMA" },
       { name: "theme-color", content: "#0D1B2A" },
