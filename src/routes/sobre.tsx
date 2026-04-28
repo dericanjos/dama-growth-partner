@@ -71,25 +71,28 @@ function AboutPage() {
               <span className="badge-pill-dot" /> Nossa História
             </span>
             <h2 className="heading-display mt-6 text-[30px] md:text-[42px]">
-              Da convicção à operação.
+              Da percepção à estrutura inteligente.
             </h2>
           </Reveal>
 
           <Reveal delay={120} className="mt-10 space-y-6 text-[16px] leading-[1.85] text-[var(--text-secondary)]">
             <p>
-              A história do Grupo DAMA começa com uma observação simples: médicos brilhantes — especialistas, com formação sólida, atendimento atencioso — estavam perdendo dinheiro porque ninguém cuidava da operação comercial dos seus consultórios.
+              O Grupo DAMA nasceu da percepção de que muitos médicos altamente capacitados viviam doentes, sobrecarregados e presos a um resultado pequeno e instável por tentarem sustentar sozinhos todas as áreas do consultório ou delegar funções estratégicas para profissionais sem a expertise necessária.
             </p>
             <p>
-              Pacientes ligavam e ninguém respondia. Leads chegavam pelo Instagram e ficavam dias sem retorno. Agendas tinham buracos enquanto a sala de espera vazia gritava o óbvio: o médico fazia bem o que sabia fazer, mas não tinha estrutura para vender.
+              O problema nunca foi falta de competência médica. O problema era a ausência de uma operação comercial e estratégica capaz de transformar atendimento em receita, crescimento previsível e consistente. Enquanto o médico cuidava do paciente, ninguém cuidava da estrutura responsável pelo faturamento do consultório.
             </p>
             <p>
-              Foi nesse contexto que <span className="font-semibold text-[var(--navy)]">Jéssica Anjos</span> fundou a DAMA. Começou como um time pequeno de atendimento comercial — pessoas treinadas para responder, qualificar e agendar. Em pouco tempo, ficou claro que atendimento sem marketing era operação sem combustível, e marketing sem atendimento era investimento jogado fora.
+              Foi nesse contexto que <span className="font-semibold text-[var(--navy)]">Jéssica Anjos</span> fundou a DAMA. O que começou como um time especializado em atendimento comercial humanizado através do método D.A.M.A evoluiu para um ecossistema integrado de soluções que hoje reúne comercial, growth, marketing médico, gestão, tecnologia exclusiva e mais, para médicos em todo o nosso Brasil.
             </p>
             <p>
-              A DAMA evoluiu. Integrou growth marketing. Integrou marketing 360. Criou método próprio. Hoje opera como extensão do consultório de mais de 90 médicos parceiros em 16 estados — com método, dados e atendimento humanizado.
+              Hoje, o Grupo DAMA atua como extensão estratégica de consultórios médicos, estruturando operações inteligentes e sustentáveis através de método, dados e processos à prova de crises.
             </p>
             <p className="font-serif text-[20px] italic text-[var(--navy)] md:text-[22px]">
-              “O médico cuida do paciente. A DAMA cuida do crescimento.”
+              “Médicos deveriam investir sua energia salvando vidas, e não tentando sustentar sozinhos o crescimento do próprio consultório.”
+            </p>
+            <p className="text-[14px] uppercase tracking-[0.18em] text-[var(--gold-deep)]">
+              — Jéssica Anjos
             </p>
           </Reveal>
         </div>
