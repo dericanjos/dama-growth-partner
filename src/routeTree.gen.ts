@@ -20,6 +20,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AutorDericAnjosRouteImport } from './routes/autor.deric-anjos'
 
 const TermosRoute = TermosRouteImport.update({
   id: '/termos',
@@ -76,6 +77,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const AutorDericAnjosRoute = AutorDericAnjosRouteImport.update({
+  id: '/autor/deric-anjos',
+  path: '/autor/deric-anjos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -87,6 +93,7 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
+  '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
+  '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
+  '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/solucao'
     | '/termos'
+    | '/autor/deric-anjos'
     | '/blog/$slug'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
@@ -140,6 +150,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/solucao'
     | '/termos'
+    | '/autor/deric-anjos'
     | '/blog/$slug'
     | '/blog'
   id:
@@ -153,6 +164,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/solucao'
     | '/termos'
+    | '/autor/deric-anjos'
     | '/blog/$slug'
     | '/blog/'
   fileRoutesById: FileRoutesById
@@ -167,6 +179,7 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   SolucaoRoute: typeof SolucaoRoute
   TermosRoute: typeof TermosRoute
+  AutorDericAnjosRoute: typeof AutorDericAnjosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -248,6 +261,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/autor/deric-anjos': {
+      id: '/autor/deric-anjos'
+      path: '/autor/deric-anjos'
+      fullPath: '/autor/deric-anjos'
+      preLoaderRoute: typeof AutorDericAnjosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -273,6 +293,7 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   SolucaoRoute: SolucaoRoute,
   TermosRoute: TermosRoute,
+  AutorDericAnjosRoute: AutorDericAnjosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
