@@ -38,6 +38,7 @@ export function MarkdownContent({ content }: { content: string }) {
   const blocks = content.split(/\n{2,}/);
   const elements: JSX.Element[] = [];
   let listBuffer: string[] = [];
+  let inReferences = false;
 
   const flushList = (key: string) => {
     if (listBuffer.length === 0) return;
@@ -72,18 +73,30 @@ export function MarkdownContent({ content }: { content: string }) {
       elements.push(
         <h3
           key={idx}
-          className="mt-10 mb-4 font-serif text-[20px] font-semibold text-[var(--navy)]"
+          className={
+            inReferences
+              ? "mt-8 mb-3 font-serif text-[16px] font-semibold text-[var(--text-secondary)]"
+              : "mt-10 mb-4 font-serif text-[20px] font-semibold text-[var(--navy)]"
+          }
         >
           {block.slice(4)}
         </h3>,
       );
     } else if (block.startsWith("## ")) {
+      const heading = block.slice(3);
+      if (/^refer[êe]ncias\s*$/i.test(heading.trim())) {
+        inReferences = true;
+      }
       elements.push(
         <h2
           key={idx}
-          className="mt-12 mb-4 font-serif text-[26px] font-semibold leading-tight text-[var(--navy)]"
+          className={
+            inReferences
+              ? "mt-14 mb-4 border-t border-[var(--border)] pt-8 font-serif text-[18px] font-semibold uppercase tracking-[0.12em] text-[var(--text-muted)]"
+              : "mt-12 mb-4 font-serif text-[26px] font-semibold leading-tight text-[var(--navy)]"
+          }
         >
-          {block.slice(3)}
+          {heading}
         </h2>,
       );
     } else if (block.startsWith("> ")) {
@@ -98,7 +111,14 @@ export function MarkdownContent({ content }: { content: string }) {
     } else {
       const lines = block.split("\n");
       elements.push(
-        <p key={idx} className="my-5 text-[16px] leading-[1.9] text-[var(--text-secondary)]">
+        <p
+          key={idx}
+          className={
+            inReferences
+              ? "my-3 text-[13px] leading-[1.7] text-[var(--text-muted)]"
+              : "my-5 text-[16px] leading-[1.9] text-[var(--text-secondary)]"
+          }
+        >
           {lines.map((line, i) => (
             <Fragment key={i}>
               {renderInline(line, `p-${idx}-${i}`)}
