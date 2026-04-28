@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {
@@ -52,12 +51,14 @@ export function Hero() {
 
         {/* CTA */}
         <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row">
-          <Link
-            to="/contato"
+          <a
+            href="https://comercial.grupodamahealth.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md border border-white/15 px-6 py-3.5 text-sm font-medium text-white/85 transition-colors hover:border-white/30 hover:bg-white/5 hover:text-white"
           >
-            Falar com a equipe <ArrowRight className="h-4 w-4" />
-          </Link>
+            Quero ser parceiro <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
 
         {/* Scroll indicator */}
