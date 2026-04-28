@@ -179,6 +179,11 @@ function PostPage() {
               <img
                 src={post.coverImage}
                 alt={post.coverImageAlt ?? post.title}
+                width={800}
+                height={450}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -253,7 +258,10 @@ function PostPage() {
                     <img
                       src={p.coverImage}
                       alt={p.coverImageAlt ?? p.title}
+                      width={400}
+                      height={144}
                       loading="lazy"
+                      decoding="async"
                       className="h-36 w-full object-cover"
                     />
                   )}
