@@ -3,6 +3,8 @@ export type BlogCategory = "Crescimento" | "Marketing" | "Mercado" | "Gestão Co
 export interface BlogPost {
   slug: string;
   title: string;
+  /** Optional short title used only in the <title> tag (≤60 chars com sufixo). */
+  seoTitle?: string;
   excerpt: string;
   category: BlogCategory;
   date: string; // ISO yyyy-mm-dd
@@ -18,7 +20,12 @@ export interface BlogPost {
   coverImage?: string;
   /** Optional cover image alt text for SEO/a11y. */
   coverImageAlt?: string;
+  /** Optional curated related post slugs (overrides category-based logic). */
+  relatedSlugs?: string[];
+  /** Optional FAQ entries rendered as FAQPage JSON-LD only. */
+  faqSchema?: Array<{ question: string; answer: string }>;
 }
+
 
 export const BLOG_CATEGORIES: BlogCategory[] = [
   "Crescimento",
@@ -1527,6 +1534,14 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 }
 
 export function getRelatedPosts(slug: string, category: BlogCategory, limit = 3): BlogPost[] {
+  const post = getPostBySlug(slug);
+  if (post?.relatedSlugs && post.relatedSlugs.length > 0) {
+    const curated = post.relatedSlugs
+      .map((s) => BLOG_POSTS.find((p) => p.slug === s))
+      .filter((p): p is BlogPost => Boolean(p))
+      .slice(0, limit);
+    if (curated.length > 0) return curated;
+  }
   return BLOG_POSTS.filter((p) => p.slug !== slug && p.category === category).slice(0, limit);
 }
 
