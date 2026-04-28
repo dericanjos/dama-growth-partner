@@ -191,7 +191,7 @@ function SolutionPage() {
               Quer essa operação no seu consultório?
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.75] text-[var(--text-secondary)] md:text-base">
-              A parceria DAMA é exclusiva e seletiva. Conheça os critérios e as condições.
+              A parceria com a DAMA é exclusiva e seletiva. Conheça os critérios e as condições.
             </p>
             <div className="mt-10 flex items-center justify-center">
               <a
