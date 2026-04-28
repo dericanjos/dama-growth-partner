@@ -47,7 +47,7 @@ export function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-dama flex h-20 items-center justify-between gap-3 md:h-28">
+      <div className="container-dama flex h-20 items-center justify-between gap-3 md:h-24 lg:h-28">
         <Link
           to="/"
           className="group flex items-center gap-3 leading-none shrink-0"
@@ -59,7 +59,7 @@ export function SiteHeader() {
             alt="Logo Grupo DAMA"
             width={96}
             height={96}
-            className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 object-contain"
+            className="h-16 w-16 md:h-[4.5rem] md:w-[4.5rem] lg:h-24 lg:w-24 object-contain"
           />
           <span className="hidden xl:inline-block border-l border-[color-mix(in_oklab,var(--gold)_30%,transparent)] pl-3 text-[10px] uppercase tracking-[0.28em] text-white/70">
             Grupo<br />DAMA
@@ -67,13 +67,13 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-4 lg:gap-8 md:flex">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-[clamp(0.45rem,1.15vw,1.75rem)] md:flex xl:gap-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               activeOptions={{ exact: link.to === "/" }}
-              className="text-xs lg:text-sm text-white/80 transition-colors hover:text-white whitespace-nowrap"
+              className="whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] text-white/80 transition-colors hover:text-white"
               activeProps={{ className: "text-white font-medium" }}
             >
               {link.label}
@@ -86,9 +86,9 @@ export function SiteHeader() {
             href={PARCERIA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold !py-2 !px-3 lg:!px-4 !text-xs lg:!text-sm whitespace-nowrap"
+            className="btn-gold !px-2.5 !py-2 !text-xs whitespace-nowrap min-[900px]:!px-3 lg:!px-4 lg:!text-sm"
           >
-            Seja um Parceiro <span aria-hidden>→</span>
+            <span className="hidden min-[900px]:inline">Seja um </span>Parceiro <span aria-hidden>→</span>
           </a>
         </div>
 
