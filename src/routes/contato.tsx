@@ -110,12 +110,12 @@ function ContactPage() {
             <p className="mt-6 text-sm text-[var(--text-muted)]">
               Para parcerias comerciais, acesse{" "}
               <a
-                href="https://parceria.grupodama.com.br"
+                href="https://comercial.grupodamahealth.com.br"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--navy)] underline-offset-4 hover:underline"
               >
-                parceria.grupodama.com.br
+                comercial.grupodamahealth.com.br
               </a>
               .
             </p>
