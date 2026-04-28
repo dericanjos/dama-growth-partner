@@ -39,7 +39,7 @@ export function MethodOverview() {
             <span className="gold-text">Método D.A.M.A</span>
           </h2>
           <p className="mt-4 text-base text-white/60 md:text-lg">
-            A filosofia que guia cada decisão dentro da operação.
+            Mais do que um método de atendimento, um sistema operacional construído para transformar relacionamento em crescimento previsível através de processos à prova de crises.
           </p>
         </Reveal>
 
