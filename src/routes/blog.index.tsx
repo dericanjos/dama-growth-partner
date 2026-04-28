@@ -77,7 +77,7 @@ function BlogIndex() {
             </p>
           ) : (
             <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
-              {posts.map((post) => (
+              {posts.map((post, idx) => (
                 <Link
                   key={post.slug}
                   to="/blog/$slug"
@@ -90,7 +90,11 @@ function BlogIndex() {
                         <img
                           src={post.coverImage}
                           alt={post.coverImageAlt ?? post.title}
-                          loading="lazy"
+                          width={800}
+                          height={500}
+                          loading={idx === 0 ? "eager" : "lazy"}
+                          decoding="async"
+                          fetchPriority={idx === 0 ? "high" : "auto"}
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
