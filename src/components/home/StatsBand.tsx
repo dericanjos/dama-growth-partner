@@ -3,7 +3,7 @@ import { Reveal } from "@/components/Reveal";
 const STATS = [
   { value: "+25.000", label: "Consultas Agendadas" },
   { value: "+90", label: "Médicos Parceiros" },
-  { value: "16+", label: "Estados Atendidos" },
+  { value: "+16", label: "Estados Atendidos" },
   { value: "+2.000", label: "Avaliações 5 Estrelas" },
 ];
 
