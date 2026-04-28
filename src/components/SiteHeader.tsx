@@ -88,10 +88,9 @@ export function SiteHeader() {
             href={PARCERIA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold !px-2.5 !py-2 !text-xs whitespace-nowrap min-[900px]:!px-3 lg:!px-4 lg:!text-sm"
+            className="btn-gold !px-3 !py-2 !text-xs whitespace-nowrap lg:!px-4 lg:!text-sm"
           >
-            <span className="hidden min-[900px]:inline">Seja um </span>
-            Parceiro <span aria-hidden>→</span>
+            Seja Parceiro <span aria-hidden>→</span>
           </a>
         </div>
 
@@ -133,7 +132,7 @@ export function SiteHeader() {
             onClick={() => setOpen(false)}
             className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-[var(--gold)] px-6 py-3.5 text-base font-medium text-[var(--navy)]"
           >
-            Seja um Parceiro <span aria-hidden>→</span>
+            Seja Parceiro <span aria-hidden>→</span>
           </a>
         </nav>
       </div>
