@@ -25,13 +25,13 @@ const ORG_JSONLD = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Grupo DAMA | Operação Comercial Estratégica para Médicos" },
+      { title: "Grupo DAMA | Solução Completa para Médicos" },
       {
         name: "description",
         content:
           "O Grupo DAMA integra time comercial, growth marketing e marketing 360 para médicos que querem crescer com previsibilidade. Presente em 16+ estados com 90+ médicos parceiros.",
       },
-      { property: "og:title", content: "Grupo DAMA | Operação Comercial para Médicos" },
+      { property: "og:title", content: "Grupo DAMA | Solução Completa para Médicos" },
       {
         property: "og:description",
         content:
