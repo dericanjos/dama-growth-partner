@@ -15,6 +15,10 @@ const ORG_JSONLD = {
   name: "Grupo DAMA",
   description: "Operação comercial estratégica para médicos",
   url: "https://grupodamahealth.com.br",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://grupodamahealth.com.br/favicon.png",
+  },
   telephone: "+5521959214292",
   email: "contato@grupodamahealth.com.br",
   sameAs: ["https://www.instagram.com/damacomercialmedico"],
@@ -29,13 +33,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "O Grupo DAMA integra time comercial, growth marketing e marketing 360 para médicos que querem crescer com previsibilidade. Presente em 16+ estados com 90+ médicos parceiros.",
+          "Operação comercial estratégica para médicos. Time dedicado que converte leads em consultas. 90+ médicos parceiros em 16 estados.",
       },
       { property: "og:title", content: "Grupo DAMA | Solução Completa para Médicos" },
       {
         property: "og:description",
         content:
-          "Time comercial, growth marketing e marketing 360 em uma operação só. 90+ médicos parceiros em 16+ estados.",
+          "Time comercial, growth marketing e marketing 360 em uma operação só. 90+ médicos parceiros em 16 estados.",
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/" },
       { property: "og:type", content: "website" },

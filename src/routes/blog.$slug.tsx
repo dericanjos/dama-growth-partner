@@ -21,9 +21,10 @@ export const Route = createFileRoute("/blog/$slug")({
     const { post } = loaderData;
     const desc = post.excerpt.slice(0, 155);
     const url = `https://grupodamahealth.com.br/blog/${post.slug}`;
+    const authorName = post.author ?? "Deric Anjos";
     return {
       meta: [
-        { title: `${post.title} | Blog — Grupo DAMA` },
+        { title: `${post.title} | Grupo DAMA` },
         { name: "description", content: desc },
         { property: "og:title", content: post.title },
         { property: "og:description", content: desc },
@@ -37,6 +38,8 @@ export const Route = createFileRoute("/blog/$slug")({
             ]
           : []),
         { property: "article:published_time", content: post.date },
+        { property: "article:modified_time", content: post.date },
+        { property: "article:author", content: authorName },
         { property: "article:section", content: post.category },
       ],
       links: [{ rel: "canonical", href: url }],
@@ -49,14 +52,56 @@ export const Route = createFileRoute("/blog/$slug")({
             headline: post.title,
             description: desc,
             datePublished: post.date,
-            author: { "@type": "Organization", name: "Grupo DAMA" },
+            dateModified: post.date,
+            author: {
+              "@type": "Person",
+              name: authorName,
+              jobTitle: "Head de Growth",
+              worksFor: {
+                "@type": "Organization",
+                name: "Grupo DAMA",
+                url: "https://grupodamahealth.com.br",
+              },
+            },
             publisher: {
               "@type": "Organization",
               name: "Grupo DAMA",
               url: "https://grupodamahealth.com.br",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://grupodamahealth.com.br/favicon.png",
+              },
             },
+            image: post.coverImage ? [post.coverImage] : undefined,
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             articleSection: post.category,
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Início",
+                item: "https://grupodamahealth.com.br/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://grupodamahealth.com.br/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: post.title,
+                item: url,
+              },
+            ],
           }),
         },
       ],
