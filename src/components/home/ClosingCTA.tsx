@@ -45,7 +45,7 @@ export function ClosingCTA() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/5"
           >
-            Falar com o especialista <ArrowRight className="h-4 w-4" />
+            Falar com a equipe <ArrowRight className="h-4 w-4" />
           </a>
         </Reveal>
       </div>

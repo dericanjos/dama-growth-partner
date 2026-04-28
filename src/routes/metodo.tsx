@@ -202,7 +202,7 @@ function MethodPage() {
               rel="noopener noreferrer"
               className="btn-gold"
             >
-              Falar com um especialista <ArrowRight className="h-4 w-4" />
+              Falar com a equipe <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
