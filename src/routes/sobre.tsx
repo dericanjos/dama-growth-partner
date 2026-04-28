@@ -208,12 +208,12 @@ function AboutPage() {
           </p>
           <div className="mt-10 flex items-center justify-center">
             <a
-              href={`https://wa.me/5521959214292?text=${encodeURIComponent("Olá, Jessica! Vim do site do Grupo DAMA e gostaria de saber mais sobre os serviços e como funciona a parceria.")}`}
+              href="https://comercial.grupodamahealth.com.br"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold"
             >
-              Falar com a equipe <ArrowRight className="h-4 w-4" />
+              Quero ser parceiro <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
