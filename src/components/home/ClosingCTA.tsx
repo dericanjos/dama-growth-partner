@@ -1,12 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
-const WA_URL =
-  "https://wa.me/5521959214292?text=" +
-  encodeURIComponent(
-    "Olá, Jessica! Vim do site do Grupo DAMA e gostaria de saber mais sobre os serviços e como funciona a parceria."
-  );
-
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
 export function ClosingCTA() {
