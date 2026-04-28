@@ -39,7 +39,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 lg:h-auto ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 md:h-auto ${
         open ? "h-dvh overflow-y-auto" : ""
       } ${
         scrolled || open
@@ -47,7 +47,7 @@ export function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-dama flex h-20 items-center justify-between lg:h-28">
+      <div className="container-dama flex h-20 items-center justify-between gap-3 md:h-28">
         <Link
           to="/"
           className="group flex items-center gap-3 leading-none shrink-0"
@@ -59,7 +59,7 @@ export function SiteHeader() {
             alt="Logo Grupo DAMA"
             width={96}
             height={96}
-            className="h-16 w-16 lg:h-24 lg:w-24 object-contain"
+            className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 object-contain"
           />
           <span className="hidden xl:inline-block border-l border-[color-mix(in_oklab,var(--gold)_30%,transparent)] pl-3 text-[10px] uppercase tracking-[0.28em] text-white/70">
             Grupo<br />DAMA
@@ -67,13 +67,13 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 xl:gap-8 lg:flex">
+        <nav className="hidden items-center gap-4 lg:gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               activeOptions={{ exact: link.to === "/" }}
-              className="text-sm text-white/80 transition-colors hover:text-white"
+              className="text-xs lg:text-sm text-white/80 transition-colors hover:text-white whitespace-nowrap"
               activeProps={{ className: "text-white font-medium" }}
             >
               {link.label}
@@ -81,31 +81,31 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden md:block shrink-0">
           <a
             href={PARCERIA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold !py-2 !px-4 !text-sm whitespace-nowrap"
+            className="btn-gold !py-2 !px-3 lg:!px-4 !text-xs lg:!text-sm whitespace-nowrap"
           >
             Seja um Parceiro <span aria-hidden>→</span>
           </a>
         </div>
 
-        {/* Mobile/Tablet toggle */}
+        {/* Mobile toggle */}
         <button
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-white lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-white md:hidden"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile/Tablet overlay */}
+      {/* Mobile overlay */}
       <div
-        className={`lg:hidden bg-[var(--navy)] transition-all duration-300 ${
+        className={`md:hidden bg-[var(--navy)] transition-all duration-300 ${
           open
             ? "pointer-events-auto block opacity-100"
             : "pointer-events-none hidden opacity-0"
