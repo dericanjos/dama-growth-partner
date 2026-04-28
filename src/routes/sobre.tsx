@@ -118,13 +118,13 @@ function AboutPage() {
                 </h3>
                 <div className="mt-6 space-y-4 text-[15.5px] leading-[1.8] text-[var(--text-secondary)]">
                   <p>
-                    Empreendedora, líder e estrategista comercial. Construiu a DAMA da primeira ligação à operação que hoje atende dezenas de especialidades médicas pelo Brasil.
+                    Cristã, esposa, mãe, empreendedora e leitora voraz. Criadora do Grupo DAMA, transformou uma operação comercial enxuta em um ecossistema estratégico que hoje serve a médicos em diferentes regiões do nosso Brasil.
                   </p>
                   <p>
-                    Sua visão é clara: <span className="font-semibold text-[var(--navy)]">médico não deveria precisar escolher entre cuidar de paciente e cuidar do negócio.</span> Cabe a uma operação séria, ética e profissional fazer isso por ele.
+                    Sua visão é clara: <span className="font-semibold text-[var(--navy)]">médico deveria se dedicar a salvar vidas e não a sustentar sozinho o seu próprio crescimento.</span>
                   </p>
                   <p>
-                    Sob sua liderança, o Grupo DAMA construiu um time interno multidisciplinar — atendimento, marketing, growth, gestão — que opera com autonomia, método e propósito.
+                    Sob sua liderança, o Grupo DAMA construiu um time interno multidisciplinar que opera através de dados com autonomia, método e acima de tudo, propósito.
                   </p>
                 </div>
               </div>
