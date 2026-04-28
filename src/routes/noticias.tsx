@@ -122,7 +122,7 @@ function NewsPage() {
           )}
 
           <p className="mt-10 text-center text-xs text-[var(--text-muted)]">
-            Curadoria editorial. Os links levam às fontes originais — o Grupo DAMA não se
+            Curadoria editorial. Os links levam às fontes originais. O Grupo DAMA não se
             responsabiliza pelo conteúdo de terceiros.
           </p>
         </div>

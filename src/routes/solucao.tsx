@@ -177,7 +177,7 @@ function SolutionPage() {
               <span className="gold-text">100% em conformidade com o CFM.</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.75] text-white/70 md:text-base">
-              Toda a operação — atendimento, comunicação, conteúdo e marketing — é construída dentro das normas do Conselho Federal de Medicina. O médico parceiro dorme tranquilo.
+              Toda a operação (atendimento, comunicação, conteúdo e marketing) é construída dentro das normas do Conselho Federal de Medicina. O médico parceiro dorme tranquilo.
             </p>
           </Reveal>
         </div>

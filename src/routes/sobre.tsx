@@ -92,7 +92,7 @@ function AboutPage() {
               “Médicos deveriam investir sua energia salvando vidas, e não tentando sustentar sozinhos o crescimento do próprio consultório.”
             </p>
             <p className="text-[14px] uppercase tracking-[0.18em] text-[var(--gold-deep)]">
-              — Jéssica Anjos
+              Jéssica Anjos
             </p>
           </Reveal>
         </div>
