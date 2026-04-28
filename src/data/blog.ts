@@ -37,6 +37,8 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "como-sair-do-convenio-viver-de-paciente-particular",
+    relatedSlugs: ["time-comercial-terceirizado-consultorio", "o-que-e-operacao-comercial-consultorio"],
+    faqSchema: [{"question": "Como sair do convênio e viver de pacientes particulares?", "answer": "A transição exige 5 etapas: calcular a real dependência do convênio, construir fonte de pacientes particulares antes de cortar, reduzir gradualmente (não cortar de vez), implementar operação comercial, e comunicar a saída com profissionalismo."}, {"question": "Médico pode ter agenda separada para convênio e particular?", "answer": "Sim. O Parecer CFM nº 1/2026 reconhece o direito do médico de organizar seu tempo e condições de trabalho, incluindo separação de agendas, desde que não funcione como pressão econômica sobre o paciente."}, {"question": "Quando não vale sair do convênio?", "answer": "Não faz sentido se o consultório não tem fluxo de pacientes particulares ainda, se o médico está em início de carreira sem base de pacientes, ou se a especialidade tem ticket médio particular muito baixo."}],
     title: "Como Sair do Convênio e Viver de Pacientes Particulares",
     excerpt: "Sair do convênio exige planejamento. Veja o passo a passo pra fazer a transição sem quebrar, com dados reais e estratégia comercial. Guia completo 2026.",
     date: "2026-04-28",
@@ -164,6 +166,9 @@ Se você está considerando reduzir ou sair do convênio, o primeiro passo é en
   },
   {
     slug: "como-reduzir-faltas-no-consultorio",
+    seoTitle: "Como Reduzir Faltas no Consultório Médico",
+    relatedSlugs: ["7-sinais-consultorio-perdendo-dinheiro", "quanto-medico-perde-sem-processo-comercial"],
+    faqSchema: [{"question": "Como reduzir faltas de pacientes no consultório?", "answer": "As 5 estratégias mais eficazes são: confirmação em dois estágios (48h e 2h antes), lista de espera ativa, política clara de cancelamento, encurtamento do tempo entre agendamento e consulta, e acompanhamento comercial pós-agendamento."}, {"question": "Qual a taxa média de no-show em consultórios no Brasil?", "answer": "A taxa média de faltas em consultórios brasileiros varia entre 20% e 30%. Em Piracicaba, a Secretaria Municipal de Saúde registrou 23% de no-show no primeiro trimestre de 2026."}, {"question": "Lembretes automáticos reduzem faltas em consultório?", "answer": "Sim. Um projeto piloto do governo do Ceará com lembretes automáticos por WhatsApp reduziu faltas em quase 19%. A confirmação em dois estágios (48h e 2h antes) tem impacto ainda maior."}],
     title: "Como Reduzir Faltas no Consultório: 5 Estratégias que Funcionam",
     excerpt: "A taxa de faltas no seu consultório pode estar acima de 20%. Veja 5 estratégias comprovadas pra reduzir no-shows e recuperar até R$76 mil por ano em receita.",
     date: "2026-04-24",
@@ -283,6 +288,9 @@ E se você quer estruturar a operação comercial completa, da captação à con
   },
   {
     slug: "7-sinais-consultorio-perdendo-dinheiro",
+    seoTitle: "7 Sinais que Seu Consultório Perde Dinheiro",
+    relatedSlugs: ["quanto-medico-perde-sem-processo-comercial", "como-reduzir-faltas-no-consultorio"],
+    faqSchema: [{"question": "Quais são os sinais de que um consultório médico está perdendo dinheiro?", "answer": "Os 7 sinais mais comuns são: taxa de no-show acima de 20%, tempo de resposta a leads superior a 30 minutos, ausência de follow-up, secretária acumulando função comercial, falta de métricas de conversão, dependência exclusiva de indicação e pacientes inativos sem reativação."}, {"question": "Quanto um consultório perde com faltas de pacientes?", "answer": "Um consultório com 20 consultas por semana, ticket médio de R$400 e 20% de faltas perde cerca de R$6.400 por mês, totalizando mais de R$76.000 por ano em receita perdida."}, {"question": "Como saber se a taxa de conversão do consultório está baixa?", "answer": "Se o consultório não sabe quantos leads viram consulta, a taxa de conversão provavelmente está abaixo do potencial. Segundo dados do setor, apenas 1 em cada 4 clínicas opera com estratégia estruturada de conversão."}],
     coverImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
     coverImageAlt: "Profissional analisando documentos em mesa de escritório representando gestão de consultório",
     title: "7 Sinais de que Seu Consultório Está Perdendo Dinheiro (e Você Não Sabe)",
@@ -395,6 +403,8 @@ Na DAMA, isso é o que o [Método D.A.M.A](https://grupodamahealth.com.br/metodo
   },
   {
     slug: "marketing-medico-cfm-2026",
+    relatedSlugs: ["marketing-medico-2026-panorama-completo", "redes-sociais-captacao-pacientes-consultorio-2026"],
+    faqSchema: [{"question": "O que o CFM permite no marketing médico em 2026?", "answer": "A Resolução CFM 2.336/2023 permite: antes e depois com caráter educativo, selfies e fotos do ambiente, divulgação de preços em promoções, informar horários e agendamento, investir em tráfego pago e publicar conteúdo educativo nas redes sociais."}, {"question": "O que é proibido no marketing médico pelo CFM?", "answer": "Continuam proibidos: garantia de resultados, linguagem sensacionalista, títulos como melhor médico, ensino de técnicas a não médicos, propaganda de marcas comerciais e divulgação de métodos não reconhecidos pelo CFM."}, {"question": "Médico pode divulgar preço no Instagram?", "answer": "Sim. A Resolução CFM 2.336/2023 passou a permitir o anúncio de preços e descontos em campanhas promocionais, desde que não haja venda casada ou premiação."}],
     coverImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
     coverImageAlt: "Documentos legais e regulamentação representando normas do CFM para marketing médico",
     title: "Marketing Médico e CFM em 2026: O que Pode e o que Não Pode",
@@ -511,6 +521,7 @@ Se você quer entender como construir uma presença digital e uma operação com
   },
   {
     slug: "time-comercial-terceirizado-consultorio",
+    relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "como-sair-do-convenio-viver-de-paciente-particular"],
     coverImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
     coverImageAlt: "Equipe comercial trabalhando em computadores representando time terceirizado para consultório",
     title: "Time Comercial Terceirizado para Consultório: Vale a Pena?",
@@ -624,6 +635,7 @@ Se o seu consultório apresenta 3 ou mais dos sinais que listei, vale entender c
   },
   {
     slug: "quanto-medico-perde-sem-processo-comercial",
+    relatedSlugs: ["como-reduzir-faltas-no-consultorio", "7-sinais-consultorio-perdendo-dinheiro"],
     coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
     coverImageAlt: "Calculadora e documentos financeiros representando perdas de faturamento em consultório médico",
     title: "Quanto um Médico Perde por Mês Sem Processo Comercial",
@@ -741,6 +753,7 @@ E se quiser entender como uma operação comercial se encaixa na realidade do se
   },
   {
     slug: "por-que-marketing-sozinho-nao-lota-agenda",
+    relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "quanto-medico-perde-sem-processo-comercial"],
     coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     coverImageAlt: "Dashboard de marketing digital com gráficos de performance representando métricas de consultório",
     title: "Por que Marketing Sozinho Não Lota Agenda de Consultório",
@@ -850,6 +863,8 @@ Se o seu consultório investe em marketing mas a agenda continua com espaços va
   },
   {
     slug: "o-que-e-operacao-comercial-consultorio",
+    seoTitle: "O que É Operação Comercial para Consultórios",
+    relatedSlugs: ["por-que-marketing-sozinho-nao-lota-agenda", "time-comercial-terceirizado-consultorio"],
     coverImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
     coverImageAlt: "Consultório médico moderno com ambiente profissional representando operação comercial estruturada",
     title: "O que É Operação Comercial para Consultórios Médicos (e Por que Importa)",
@@ -955,6 +970,8 @@ Se você percebeu que o seu consultório não tem essas etapas estruturadas, o p
   },
   {
     slug: "seu-site-medico-esta-afastando-pacientes",
+    seoTitle: "Seu Site Médico Está Afastando Pacientes?",
+    relatedSlugs: ["por-que-consultorio-precisa-aparecer-no-google", "trafego-pago-consultorio-medico-vale-investimento"],
     title: "Seu Site Médico Está Afastando Pacientes? O que Eles Esperam Encontrar",
     excerpt: "Seu site é seu consultório digital. Se ele é lento, confuso ou amador, o paciente vai embora antes de ligar. Veja o que o paciente espera encontrar em 2026.",
     date: "2026-03-27",
@@ -1086,6 +1103,7 @@ E se quiser estruturar a presença digital inteira (site, Google, redes sociais 
   },
   {
     slug: "trafego-pago-consultorio-medico-vale-investimento",
+    relatedSlugs: ["por-que-consultorio-precisa-aparecer-no-google", "seu-site-medico-esta-afastando-pacientes", "por-que-marketing-sozinho-nao-lota-agenda"],
     title: "Tráfego Pago para Consultório Médico: Vale o Investimento?",
     excerpt: "Vale investir em Google Ads e Meta Ads pro consultório? Depende. Entenda quando funciona, quando é desperdício e quanto esperar de retorno. Guia prático 2026.",
     date: "2026-03-24",
@@ -1203,6 +1221,8 @@ Na DAMA, a gente estrutura o processo inteiro antes de ligar a torneira do tráf
   },
   {
     slug: "por-que-consultorio-precisa-aparecer-no-google",
+    seoTitle: "Por que Seu Consultório Precisa do Google",
+    relatedSlugs: ["trafego-pago-consultorio-medico-vale-investimento", "seu-site-medico-esta-afastando-pacientes"],
     title: "Por que Seu Consultório Precisa Aparecer no Google (e o que Isso Exige)",
     excerpt: "Quando o paciente pesquisa sua especialidade no Google, quem ele encontra? Se não é você, é seu concorrente. Entenda o que exige aparecer e por onde começar.",
     date: "2026-03-20",
@@ -1316,6 +1336,8 @@ E se quiser ir além do básico, construindo presença orgânica com SEO, blog o
   },
   {
     slug: "marketing-medico-2026-panorama-completo",
+    seoTitle: "Marketing Médico em 2026: Panorama Completo",
+    relatedSlugs: ["por-que-consultorio-precisa-aparecer-no-google", "trafego-pago-consultorio-medico-vale-investimento", "redes-sociais-captacao-pacientes-consultorio-2026"],
     title: "Marketing Médico em 2026: O Panorama Completo que Todo Médico Precisa Entender",
     excerpt: "O cenário do marketing médico mudou radicalmente. Entenda os canais que funcionam, as regras do CFM e por que presença digital virou obrigação em 2026.",
     date: "2026-03-17",
@@ -1411,6 +1433,7 @@ Se você leu até aqui, já entende mais sobre marketing médico do que 41% dos 
   },
   {
     slug: "redes-sociais-captacao-pacientes-consultorio-2026",
+    relatedSlugs: ["marketing-medico-2026-panorama-completo", "por-que-consultorio-precisa-aparecer-no-google"],
     title: "O Papel das Redes Sociais na Captação de Pacientes em 2026",
     excerpt: "Redes sociais atraem pacientes, mas não convertem sozinhas. Entenda o papel real do Instagram, YouTube e LinkedIn na captação e o que falta pra virar consulta.",
     date: "2026-03-13",
