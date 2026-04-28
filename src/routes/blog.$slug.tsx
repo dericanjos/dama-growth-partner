@@ -232,36 +232,37 @@ function PostPage() {
         </article>
       </section>
 
-      {/* Relacionados */}
+      {/* Leia também */}
       {related.length > 0 && (
         <section className="border-t border-[var(--border)] bg-[var(--cream)] pb-20">
-          <div className="container-dama">
-            <div className="mb-8 text-center">
-              <span className="badge-pill-light">
-                <span className="badge-pill-dot" /> Continue lendo
-              </span>
-              <h2 className="heading-display mt-4 text-[28px] md:text-[34px]">
-                Outros artigos sobre {post.category.toLowerCase()}
+          <div className="container-dama mx-auto max-w-5xl">
+            <div className="mb-8">
+              <h2 className="heading-display text-[24px] md:text-[28px] text-[var(--navy)]">
+                Leia também
               </h2>
             </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
               {related.map((p) => (
                 <Link
                   key={p.slug}
                   to="/blog/$slug"
                   params={{ slug: p.slug }}
-                  className="card-dama group p-6"
+                  className="card-dama group block overflow-hidden p-0"
                 >
-                  <CategoryBadge category={p.category} />
-                  <h3 className="mt-4 font-serif text-[18px] font-semibold leading-[1.35] text-[var(--navy)]">
-                    {p.title}
-                  </h3>
-                  <p className="mt-3 text-[14px] leading-[1.6] text-[var(--text-secondary)]">
-                    {p.excerpt.slice(0, 110)}…
-                  </p>
-                  <span className="mt-4 inline-block text-xs font-semibold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
-                    Ler →
-                  </span>
+                  {p.coverImage && (
+                    <img
+                      src={p.coverImage}
+                      alt={p.coverImageAlt ?? p.title}
+                      loading="lazy"
+                      className="h-36 w-full object-cover"
+                    />
+                  )}
+                  <div className="p-5">
+                    <CategoryBadge category={p.category} />
+                    <h3 className="mt-3 font-serif text-[16px] font-semibold leading-[1.4] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-deep)]">
+                      {p.title}
+                    </h3>
+                  </div>
                 </Link>
               ))}
             </div>
