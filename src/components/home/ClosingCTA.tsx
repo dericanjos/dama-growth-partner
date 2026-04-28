@@ -1,12 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
-const WA_URL =
-  "https://wa.me/5521959214292?text=" +
-  encodeURIComponent(
-    "Olá, Jessica! Vim do site do Grupo DAMA e gostaria de saber mais sobre os serviços e como funciona a parceria."
-  );
-
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
 export function ClosingCTA() {
@@ -29,7 +23,7 @@ export function ClosingCTA() {
 
         <Reveal
           delay={120}
-          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
+          className="mt-14 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
         >
           <a
             href={PARCERIA_URL}
@@ -38,14 +32,6 @@ export function ClosingCTA() {
             className="btn-gold"
           >
             Conhecer a operação <ArrowRight className="h-4 w-4" />
-          </a>
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/25 px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/5"
-          >
-            Falar com a equipe <ArrowRight className="h-4 w-4" />
           </a>
         </Reveal>
       </div>
