@@ -36,7 +36,11 @@ export function Hero() {
           </span>
           ,{" "}
           <span className="font-semibold text-[var(--gold-light)]">
-            growth marketing
+            growth
+          </span>
+          ,{" "}
+          <span className="font-semibold text-[var(--gold-light)]">
+            marketing médico
           </span>{" "}
           e{" "}
           <span className="font-semibold text-[var(--gold-light)]">
