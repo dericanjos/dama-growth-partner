@@ -25,6 +25,230 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "7-sinais-consultorio-perdendo-dinheiro",
+    title: "7 Sinais de que Seu Consultório Está Perdendo Dinheiro (e Você Não Sabe)",
+    excerpt:
+      "Seu consultório pode estar perdendo mais de R$10 mil por mês sem você perceber. Veja os 7 sinais mais comuns e o que fazer com cada um. Dados reais de 2026.",
+    date: "2026-04-21",
+    category: "Crescimento",
+    readingTime: 10,
+    author: "Deric Anjos",
+    quickAnswer:
+      "Os 7 sinais mais comuns de que um consultório médico está perdendo dinheiro são: taxa de no-show acima de 20%, tempo de resposta a leads superior a 30 minutos, ausência de follow-up com pacientes que disseram vou pensar, secretária acumulando função comercial, ausência de métricas de conversão, dependência exclusiva de indicação e pacientes inativos sem reativação. Segundo o Panorama das Clínicas 2025 da Doctoralia, 25% dos consultórios atendem menos de 100 pacientes por mês e 59% dos gestores têm aumento de faturamento como prioridade, mas apenas 24% operam com estratégias estruturadas de conversão.",
+    content: `## Sinal 1: Sua taxa de faltas está acima de 20%
+
+Esse é o sinal mais visível, mas mesmo assim a maioria dos consultórios não mede com precisão.
+
+A taxa média de no-show em consultórios brasileiros varia entre 20% e 30%, segundo dados consolidados do setor de saúde. Em Piracicaba, a Secretaria Municipal de Saúde registrou 57 mil consultas e exames perdidos por falta de pacientes apenas no primeiro trimestre de 2026, representando 23% dos atendimentos agendados. Na atenção básica, essa taxa chegou a 26,7%.
+
+Faça a conta pro seu consultório. Se você atende 20 pacientes por semana com ticket médio de R$400 e tem 20% de faltas, são 4 consultas perdidas por semana. R$1.600 por semana. R$6.400 por mês. Mais de R$76.000 por ano.
+
+E o custo não para aí. Dados da Associação Nacional de Hospitais Privados (ANAHP) mostram que investir em treinamento de equipe e processo de confirmação reduz faltas em até 25% e aumenta a satisfação dos pacientes em 18%. A solução existe. O que falta é processo: confirmação 48 horas antes, lembrete 2 horas antes e lista de espera ativa pra preencher os buracos.
+
+## Sinal 2: Você demora mais de 30 minutos para responder um lead
+
+O paciente que mandou mensagem pelo WhatsApp está pesquisando. Ele mandou pra você e pra mais dois ou três consultórios. Quem responde primeiro, agenda. Quem demora, perde.
+
+O WhatsApp é o principal canal de contato entre pacientes e consultórios em 2026. E a velocidade de resposta é o fator que mais influencia a taxa de conversão no primeiro contato. Consultórios que respondem em mais de 2 horas perdem a maioria dos leads. Não porque o paciente desistiu de se consultar, mas porque ele agendou com quem respondeu antes.
+
+Na DAMA, vemos esse padrão se repetir toda semana. Médicos que investem em tráfego pago, geram leads, mas perdem a maioria porque a secretária estava ocupada com atendimento presencial e só respondeu no final do dia. O investimento em marketing foi feito. O retorno não veio. E o médico conclui que "marketing não funciona" quando na verdade o que não funcionou foi a velocidade de resposta.
+
+## Sinal 3: Ninguém faz follow-up com quem disse "vou pensar"
+
+Esse é o sinal mais caro e mais silencioso de todos.
+
+O paciente mandou mensagem, recebeu informações, demonstrou interesse, mas não agendou na hora. Disse "vou pensar" ou "vou ver com meu marido" ou simplesmente parou de responder. E ninguém mais falou com ele.
+
+Em vendas consultivas, a maioria das conversões acontece entre o segundo e o sétimo contato. Isso é amplamente documentado em pesquisas do setor comercial. Se o consultório desiste no primeiro contato, está abrindo mão de mais da metade do potencial de conversão.
+
+Pense em quantos "vou pensar" o seu consultório recebe por semana. Agora pense em quantos desses receberam uma segunda mensagem. Se a resposta é "nenhum" ou "quase nenhum", aí está um dos maiores ralos de receita do seu consultório.
+
+## Sinal 4: A secretária acumula função comercial, administrativa e atendimento presencial
+
+Esse não é um problema da secretária. É um problema do modelo.
+
+A secretária de consultório médico, na maioria dos casos, é uma pessoa fazendo o trabalho de três. Ela atende presencialmente, organiza prontuários, controla pagamentos, recebe pacientes, confirma agenda e, no meio disso tudo, ainda precisa responder WhatsApp comercial, tratar objeções e fazer follow-up de leads.
+
+Nenhum ser humano faz tudo isso bem ao mesmo tempo. E quando ela prioriza o atendimento presencial (que é o mais urgente e visível), o atendimento digital sofre. O lead que mandou mensagem espera. E enquanto espera, vai embora.
+
+O Panorama das Clínicas 2025 da Doctoralia revela que apenas 24% das clínicas brasileiras operam com estratégias estruturadas de gestão e conversão. Os outros 76% dependem da secretária como único ponto de contato entre o paciente e o agendamento. Isso não é estratégia. É esperança.
+
+## Sinal 5: Você não sabe qual é a sua taxa de conversão
+
+Se eu te perguntar agora "de cada 100 leads que chegam no seu consultório, quantos viram consulta?", você sabe responder?
+
+Se não sabe, você está no mesmo barco que a maioria. E isso é um problema sério, porque sem essa métrica, qualquer investimento em marketing é um tiro no escuro.
+
+Segundo dados da Doctoralia e Feegow Clinic reportados pela CNBC, apenas 1 em cada 4 clínicas utiliza métodos de marketing estruturados para conversão. Ou seja, 75% das clínicas investem em atrair pacientes sem medir quantos desses pacientes realmente agendam.
+
+O exemplo é direto. Um consultório que investe R$3.000 em tráfego e gera 100 leads pode converter 8 (sem processo comercial) ou 25 (com processo comercial). A diferença entre 8 e 25 consultas, com ticket médio de R$400, é de R$6.800 por mês. Mais de R$80 mil por ano. Com o mesmo investimento em marketing.
+
+Sem medir a conversão, o médico nunca sabe se o problema está no marketing ou no que acontece depois que o lead chega.
+
+## Sinal 6: Seu crescimento depende exclusivamente de indicação
+
+Indicação é excelente. É o canal com maior taxa de conversão e menor custo de aquisição. O problema é quando ela é o único canal.
+
+A Demografia Médica 2025 do CFM mostra que o Brasil chegou a 635 mil médicos ativos, com 116,5 mil novos médicos adicionados ao mercado em apenas cinco anos. O número de escolas médicas quase quintuplicou desde 1990, saltando de 78 para 448 cursos. Mais médicos, mais consultórios, mais concorrência na mesma região.
+
+Num mercado assim, depender exclusivamente de indicação orgânica é apostar que o crescimento vai acontecer sozinho. Funciona até certo ponto. Mas chega um momento em que a indicação não cresce na mesma velocidade que a concorrência, e o consultório estagna.
+
+O médico que diversifica os canais de captação (conteúdo educativo, presença no Google, tráfego pago, parcerias) cria previsibilidade. Ele sabe de onde os pacientes vêm, quanto custa cada canal e onde investir mais. Quem depende só de indicação não controla nenhuma dessas variáveis.
+
+## Sinal 7: Pacientes que vieram uma vez nunca mais voltaram e ninguém ligou
+
+Pacientes inativos são uma das fontes mais invisíveis de perda de receita. São pacientes que fizeram uma consulta, gostaram, mas nunca mais foram contactados para retorno ou continuidade de tratamento.
+
+Para um consultório que atende 80 pacientes por mês e tem uma taxa de retorno de 30% (quando poderia ser 50% ou mais), são 16 pacientes por mês que poderiam voltar e não voltam. Com ticket de R$400, são R$6.400 por mês em receita de retorno perdida.
+
+E essa é a receita mais barata que existe. O paciente já veio. Já conhece o médico. Já confia. Não precisa de marketing, não precisa de tráfego pago. Precisa de uma ligação, uma mensagem, um lembrete de que é hora do retorno.
+
+A maioria dos consultórios não tem nenhum processo de reativação. Os dados ficam no sistema, e ninguém olha pra eles. É dinheiro parado esperando pra ser ativado.
+
+## A soma que ninguém faz
+
+Cada um desses sinais isoladamente parece administrável. "Ah, são só 4 faltas por semana." "Ah, a secretária dá conta." "Ah, a indicação sempre funcionou."
+
+Mas quando você soma os 7, o número é outro. Faltas, leads não convertidos, "vou pensar" sem follow-up, pacientes inativos sem reativação, tempo de resposta lento. Em consultórios que apresentam 4 ou mais desses sinais, a perda mensal facilmente ultrapassa R$15.000. São mais de R$180.000 por ano evaporando em silêncio.
+
+O Panorama das Clínicas 2025 da Doctoralia confirma: 59% dos gestores de saúde consideram o aumento de faturamento como a principal prioridade do ano. Mas a maioria tenta aumentar faturamento atraindo mais pacientes, quando o caminho mais rápido (e mais barato) é parar de perder os que já chegam.
+
+## Próximo passo
+
+Se você se identificou com 3 ou mais desses sinais, o próximo passo não é investir mais em marketing. É estruturar a operação comercial do consultório: o processo que vai da captação do paciente até a consulta confirmada, passando por resposta rápida, qualificação, agendamento, confirmação, follow-up e reativação.
+
+Na DAMA, isso é o que o [Método D.A.M.A](https://grupodamahealth.com.br/metodo) estrutura. Cada consultório tem uma realidade diferente, e o processo é adaptado ao momento de cada um.
+
+[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+
+## Referências
+
+1. CFM, FMUSP, Ministério da Saúde. *Demografia Médica no Brasil 2025*. Dados atualizados até dezembro de 2024. Disponível em: https://www.gov.br/saude/pt-br/assuntos/noticias/2025/abril/usuarios-de-plano-de-saude-tem-mais-acesso-a-cirurgias-do-que-pacientes-do-sus-aponta-demografia-medica-2025
+
+2. Doctoralia, Feegow Clinic. *Panorama das Clínicas e Hospitais 2025*. Pesquisa com mais de mil profissionais de saúde brasileiros. Disponível em: https://pro.doctoralia.com.br/blog/clinicas/dados-de-saude-no-brasil-panorama-das-clinicas-e-hospitais
+
+3. Secretaria Municipal de Saúde de Piracicaba. Dados de faltas em atendimentos agendados, 1º trimestre de 2026. Disponível em: https://noticias-do-brasil.news/ambiente/brasil-cidades/piracicaba-57-mil-consultas-perdidas-por-faltas-no-sus.html
+
+4. CNBC Times Brasil. *Marketing para saúde: estratégias que clínicas precisam adotar em 2026*. Março de 2026. Disponível em: https://timesbrasil.com.br/brasil/economia-brasileira/clinicas-erram-digital-o-que-deve-dominar-marketing-2026/
+
+5. ACidade ON / Grupo ICOM. *Gestão de clínicas: entenda por que a excelência técnica já não garante lucro no Brasil*. Janeiro de 2026. Dados do Panorama Doctoralia/Feegow e ANAHP. Disponível em: https://www.acidadeon.com/curiosidades/gestao-de-clinicas-entenda-por-que-a-excelencia-tecnica-ja-nao-garante-lucro-no-brasil/
+`,
+  },
+  {
+    slug: "marketing-medico-cfm-2026",
+    title: "Marketing Médico e CFM em 2026: O que Pode e o que Não Pode",
+    excerpt:
+      "A Resolução CFM 2.336/2023 mudou as regras do marketing médico. Entenda o que é permitido, o que continua proibido e como crescer dentro da lei em 2026.",
+    date: "2026-04-16",
+    category: "Marketing",
+    readingTime: 10,
+    author: "Deric Anjos",
+    quickAnswer:
+      "A Resolução CFM nº 2.336/2023, em vigor desde março de 2024, modernizou as regras de publicidade médica no Brasil. As principais mudanças incluem: permissão para divulgar antes e depois com caráter educativo, uso de selfies e fotos do ambiente de trabalho, anúncio de preços e descontos em campanhas promocionais, e divulgação de horários e formas de agendamento. Continuam proibidos a garantia de resultados, o sensacionalismo, o ensino de técnicas médicas a não médicos e o uso de títulos como melhor médico. Todo material deve conter nome, CRM e RQE do profissional.",
+    content: `## O que mudou com a Resolução 2.336/2023
+
+A resolução anterior (1.974/2011) era restritiva. Na prática, ela fazia muitos médicos acreditarem que qualquer tipo de divulgação era proibida. O conselheiro do CFM Emmanuel Fortes, relator da nova norma, explicou que "antes, praticamente só tínhamos vedações. Agora, professamos a liberdade de anúncio, mas com responsabilidade e sem sensacionalismo."
+
+As mudanças mais relevantes são:
+
+Antes e depois agora é permitido. Essa foi a mudança mais comentada. O médico pode publicar imagens de antes e depois de procedimentos, desde que tenham caráter educativo, sem identificação do paciente, sem manipulação de imagem, e acompanhadas de texto com indicações, evoluções satisfatórias e insatisfatórias, e possíveis complicações. Ou seja, não é pra parecer vitrine. É pra parecer educação.
+
+Selfies e fotos do ambiente são permitidas. A resolução anterior proibia selfies de forma expressa. A nova permite fotos e vídeos do ambiente de trabalho, da equipe clínica e do próprio médico, desde que sem sensacionalismo. Isso libera uma das ferramentas mais poderosas do Instagram: mostrar o bastidor do consultório.
+
+Preços e promoções agora podem ser divulgados. A resolução anterior vedava expressamente a divulgação de preços. A nova permite o anúncio de descontos em campanhas promocionais, desde que não haja venda casada ou premiação. Isso muda completamente o jogo pra quem trabalha com tráfego pago.
+
+Horários e formas de agendamento podem ser publicados. Antes, divulgar endereço e telefone do consultório em entrevistas era proibido. Agora, o médico pode informar como funciona o agendamento, os horários disponíveis e as características do local de atendimento. Informação prática que o paciente precisa.
+
+Serviços agregados podem ser anunciados. O médico pode divulgar profissionais de áreas correlatas que atuam sob sua prescrição no consultório. Se um endocrinologista trabalha com nutricionista, por exemplo, pode divulgar isso.
+
+Repostagens contam como conteúdo do médico. Compartilhar ou repostar publicações de terceiros ou de pacientes agora é tratado como se fosse publicação do próprio médico. Isso significa que o médico é responsável por tudo que compartilha, e precisa garantir que o conteúdo repostado também segue as regras.
+
+## O que continua proibido
+
+A resolução ampliou as permissões, mas manteve limites claros. E quem descumprir responde perante a Codame (Comissão de Divulgação de Assuntos Médicos) do CRM regional.
+
+Garantia de resultados continua proibida. Nenhuma comunicação pode prometer cura, resultado específico ou eficácia garantida de qualquer procedimento. Frases como "resultado garantido" ou "100% de satisfação" são vedadas.
+
+Sensacionalismo e autopromoção exagerada continuam proibidos. Mesmo com a permissão do antes e depois, o conteúdo não pode ter tom sensacionalista. Fotos chocantes, linguagem alarmista ou qualquer coisa que explore a insegurança do paciente é vedada.
+
+Ensinar técnicas médicas a não médicos continua proibido. Isso vale para cursos, workshops, lives e qualquer formato. A Resolução CFM nº 1.718/2004 segue em vigor nesse ponto.
+
+Títulos de "melhor médico" ou "destaque da especialidade" continuam proibidos. O médico não pode participar, permitir ou não impedir o uso de seu nome em listas de premiação com foco promocional ou propaganda patrocinada.
+
+Anunciar métodos não reconhecidos pelo CFM é proibido. Divulgar tratamentos sem comprovação científica ou que não tenham aprovação dos órgãos competentes é vedado.
+
+Divulgar marcas comerciais e fabricantes é proibido. O médico pode anunciar que usa determinado equipamento aprovado pela Anvisa, mas não pode fazer propaganda da marca em si.
+
+## O que todo material de marketing precisa conter
+
+Toda peça de publicidade médica, em qualquer plataforma, precisa conter obrigatoriamente: nome do médico, número de inscrição no CRM seguido da palavra "MÉDICO", e especialidade com número do RQE quando houver.
+
+Em redes sociais, essas informações devem estar na página principal do perfil (bio). Nos posts individuais, a recomendação é incluir pelo menos nome e CRM.
+
+Esse é um erro comum: médicos que postam conteúdo educativo sem identificação profissional. Além de ser uma exigência do CFM, a identificação é o que diferencia conteúdo médico de conteúdo genérico de saúde feito por qualquer pessoa.
+
+## O erro que mais custa dinheiro
+
+O erro mais comum não é fazer algo proibido. É deixar de fazer o que é permitido.
+
+A Demografia Médica 2025 do CFM mostra que o Brasil tem 635 mil médicos ativos e 448 escolas de medicina em funcionamento. O mercado está mais competitivo do que nunca. E segundo o Panorama das Clínicas 2025 da Doctoralia, 41% dos consultórios com até 4 profissionais não investem nada em marketing.
+
+Isso significa que 4 em cada 10 consultórios pequenos estão invisíveis. Não porque o CFM proíbe marketing. Mas porque o médico não sabe o que pode fazer, então não faz nada.
+
+E o custo disso é alto. O mesmo Panorama mostra que 25% dos consultórios atendem menos de 100 pacientes por mês, e que o aumento de faturamento é a prioridade de 59% dos gestores de saúde. Agenda vazia e desejo de crescer. O marketing é a ponte entre os dois, mas o medo do CFM funciona como uma barreira que impede o médico de atravessar.
+
+## O segundo erro mais comum
+
+O segundo erro é terceirizar o marketing pra quem não conhece as regras.
+
+A agência cria um anúncio com "resultado garantido." O social media posta um antes e depois sem texto educativo. O tráfego pago roda com promessa de cura. Três meses depois, chega uma notificação do CRM.
+
+O médico não pode alegar desconhecimento. A Resolução 2.336/2023 deixa claro: o médico responde pela divulgação como pessoa física. O diretor técnico responde pelos estabelecimentos. A responsabilidade é do profissional, não da agência.
+
+Por isso, antes de terceirizar o marketing, o médico precisa ter clareza sobre as regras. Ou trabalhar com quem tem. Na DAMA, toda operação de marketing e captação é feita dentro das normas do CFM. Não é opcional. É parte do [Método D.A.M.A](https://grupodamahealth.com.br/metodo): a conformidade regulatória é pré-requisito, não diferencial.
+
+## Como fazer marketing médico dentro das regras e com resultado
+
+O caminho que funciona combina três elementos.
+
+O primeiro é conteúdo educativo consistente. Conteúdo que ensina o paciente sobre condições de saúde, prevenção e tratamentos é permitido e encorajado pelo CFM. E é o tipo de conteúdo que mais gera autoridade no Instagram e que o Google mais distribui. Quando o médico educa, ele se posiciona como referência. Quando ele se posiciona como referência, o paciente que precisa dele vai achá-lo.
+
+O segundo é presença digital estruturada. Perfil do Google Meu Negócio preenchido. Site com informações claras. Instagram com conteúdo regular. Dados de contato acessíveis. Horários e formas de agendamento visíveis. Tudo isso é permitido e, na prática, é o mínimo que o paciente espera encontrar quando pesquisa por um médico.
+
+O terceiro é uma operação comercial que converte interesse em consulta. De nada adianta ter conteúdo excelente e presença digital impecável se, quando o paciente manda mensagem, ninguém responde a tempo. Ou se a secretária informa o valor e espera. Ou se ninguém faz follow-up. O marketing atrai. A [operação comercial](https://grupodamahealth.com.br/blog/o-que-e-operacao-comercial-consultorio) converte. Os dois precisam trabalhar juntos.
+
+## Um resumo prático das regras
+
+Para facilitar, organizei as regras em categorias claras.
+
+O médico PODE: publicar conteúdo educativo sobre condições, prevenção e tratamentos. Publicar fotos e vídeos do consultório, equipe e dele mesmo. Publicar antes e depois com caráter educativo (sem identificação, sem edição, com texto sobre indicações e complicações). Divulgar especialidade, formação, títulos e locais de atendimento. Divulgar preços e descontos em campanhas promocionais (sem venda casada). Informar horários, formas de agendamento e características do local. Anunciar equipamentos aprovados pela Anvisa. Anunciar profissionais de áreas correlatas sob sua prescrição. Usar depoimentos espontâneos de pacientes (com autorização).
+
+O médico NÃO PODE: garantir resultados de tratamentos. Usar linguagem sensacionalista ou alarmista. Publicar antes e depois sem caráter educativo ou com manipulação de imagem. Ensinar técnicas médicas a não médicos. Aceitar ou promover títulos de "melhor médico" patrocinados. Divulgar métodos não reconhecidos pelo CFM. Fazer propaganda de marcas comerciais. Omitir nome, CRM e RQE nas peças de publicidade.
+
+## Próximo passo
+
+A Resolução 2.336/2023 abriu espaço pra muito mais do que a maioria dos médicos faz hoje. O médico que entende as regras e aplica com estratégia tem uma vantagem competitiva enorme sobre os 41% que não fazem nada.
+
+Se você quer entender como construir uma presença digital e uma operação comercial que funcionem dentro das normas e gerem resultado real, conheça como a DAMA trabalha.
+
+[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+
+## Referências
+
+1. Conselho Federal de Medicina. *Resolução CFM nº 2.336/2023*. Publicada em 13 de julho de 2023, em vigor desde 11 de março de 2024. Disponível em: https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2023/2336_2023.pdf
+
+2. CFM. *Portal de Publicidade Médica: O que muda*. Comparativo entre a Resolução 2.336/2023 e a anterior (1.974/2011). Disponível em: https://publicidademedica.cfm.org.br/resolucao/o-que-muda
+
+3. CFM. *CFM moderniza resolução da publicidade médica*. Setembro de 2023. Disponível em: https://portal.cfm.org.br/noticias/cfm-atualiza-resolucao-da-publicidade-medica/
+
+4. CFM, FMUSP, Ministério da Saúde. *Demografia Médica no Brasil 2025*. Disponível em: https://www.gov.br/saude/pt-br/assuntos/noticias/2025/abril/usuarios-de-plano-de-saude-tem-mais-acesso-a-cirurgias-do-que-pacientes-do-sus-aponta-demografia-medica-2025
+
+5. Doctoralia, Feegow Clinic. *Panorama das Clínicas e Hospitais 2025*. Disponível em: https://pro.doctoralia.com.br/blog/clinicas/dados-de-saude-no-brasil-panorama-das-clinicas-e-hospitais
+
+6. CRM do Piauí. *Manual da Publicidade Médica* (decorrente da Resolução 2.336/2023). Apresentado no I Encontro Nacional dos Conselhos de Medicina 2024. Disponível em: https://crmpi.org.br/noticias/confira-aqui-o-manual-da-publicidade-medica-com-detalhes-da-resolucao-cfm-no-2336-23/
+`,
+  },
+  {
     slug: "time-comercial-terceirizado-consultorio",
     title: "Time Comercial Terceirizado para Consultório: Vale a Pena?",
     excerpt:
