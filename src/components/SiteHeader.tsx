@@ -16,7 +16,7 @@ const NAV_LINKS = [
 const PARCERIA_URL =
   "https://wa.me/5521959214292?text=" +
   encodeURIComponent(
-    "Olá, Jessica! Vim do site do Grupo DAMA e gostaria de saber mais sobre os serviços e como funciona a parceria."
+    "Olá, Jessica! Vim do site do Grupo DAMA e gostaria de saber mais sobre os serviços e como funciona a parceria.",
   );
 
 export function SiteHeader() {
@@ -62,7 +62,9 @@ export function SiteHeader() {
             className="h-16 w-16 md:h-[4.5rem] md:w-[4.5rem] lg:h-24 lg:w-24 object-contain"
           />
           <span className="hidden xl:inline-block border-l border-[color-mix(in_oklab,var(--gold)_30%,transparent)] pl-3 text-[10px] uppercase tracking-[0.28em] text-white/70">
-            Grupo<br />DAMA
+            Grupo
+            <br />
+            DAMA
           </span>
         </Link>
 
@@ -88,7 +90,8 @@ export function SiteHeader() {
             rel="noopener noreferrer"
             className="btn-gold !px-2.5 !py-2 !text-xs whitespace-nowrap min-[900px]:!px-3 lg:!px-4 lg:!text-sm"
           >
-            <span className="hidden min-[900px]:inline">Seja um </span>Parceiro <span aria-hidden>→</span>
+            <span className="hidden min-[900px]:inline">Seja um </span>
+            Parceiro <span aria-hidden>→</span>
           </a>
         </div>
 
@@ -106,9 +109,7 @@ export function SiteHeader() {
       {/* Mobile overlay */}
       <div
         className={`md:hidden bg-[var(--navy)] transition-all duration-300 ${
-          open
-            ? "pointer-events-auto block opacity-100"
-            : "pointer-events-none hidden opacity-0"
+          open ? "pointer-events-auto block opacity-100" : "pointer-events-none hidden opacity-0"
         }`}
         aria-hidden={!open}
       >
