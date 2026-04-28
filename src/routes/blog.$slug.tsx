@@ -22,9 +22,10 @@ export const Route = createFileRoute("/blog/$slug")({
     const desc = post.excerpt.slice(0, 155);
     const url = `https://grupodamahealth.com.br/blog/${post.slug}`;
     const authorName = post.author ?? "Deric Anjos";
+    const titleText = post.seoTitle ?? post.title;
     return {
       meta: [
-        { title: `${post.title} | Grupo DAMA` },
+        { title: `${titleText} | Grupo DAMA` },
         { name: "description", content: desc },
         { property: "og:title", content: post.title },
         { property: "og:description", content: desc },
