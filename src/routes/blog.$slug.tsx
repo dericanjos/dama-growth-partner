@@ -174,7 +174,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
+  const { post, questions } = Route.useLoaderData();
   const minutes = readingTimeMinutes(post.content);
   const related = getRelatedPosts(post.slug, post.category, 3);
   const url =
