@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Newspaper } from "lucide-react";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { formatDateBR } from "@/data/blog";
-import { listPublishedNews } from "@/server/news.functions";
+import { listPublishedNews, type NewsArticleListItem } from "@/server/news.functions";
 import { z } from "zod";
 
 const NEWS_CATEGORIES = [
