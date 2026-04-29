@@ -9,12 +9,17 @@ import {
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareButtons } from "@/components/ShareButtons";
+import { ForumSection } from "@/components/forum/ForumSection";
+import { getForumQuestionsForSlug } from "@/server/forum-read.functions";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const post = getPostBySlug(params.slug);
     if (!post) throw notFound();
-    return { post };
+    const { questions } = await getForumQuestionsForSlug({
+      data: { slug: params.slug },
+    });
+    return { post, questions };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Artigo | Blog — Grupo DAMA" }] };
