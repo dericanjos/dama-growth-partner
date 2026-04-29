@@ -8,7 +8,7 @@ import { formatDateBR } from "@/data/blog";
 export const Route = createFileRoute("/noticias")({
   head: () => ({
     meta: [
-      { title: "Notícias Médicas | Grupo DAMA — Atualizações do Mundo da Saúde" },
+      { title: "Notícias Médicas | Grupo DAMA" },
       {
         name: "description",
         content:
