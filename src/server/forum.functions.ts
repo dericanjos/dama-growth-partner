@@ -33,8 +33,11 @@ export const signupForumUser = createServerFn({ method: "POST" })
       .maybeSingle();
 
     if (existing) {
-      // Atualiza dados se vieram preenchidos
-      const updates: Record<string, string | null> = {};
+      const updates: {
+        name?: string;
+        specialty?: string | null;
+        crm_number?: string | null;
+      } = {};
       if (data.name && data.name !== existing.name) updates.name = data.name;
       if (data.specialty && data.specialty !== existing.specialty)
         updates.specialty = data.specialty;
