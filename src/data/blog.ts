@@ -523,6 +523,7 @@ Se você quer entender como construir uma presença digital e uma operação com
   },
   {
     slug: "time-comercial-terceirizado-consultorio",
+    seoTitle: "Time Comercial Terceirizado: Vale a Pena?",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "como-sair-do-convenio-viver-de-paciente-particular"],
     coverImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
     coverImageAlt: "Equipe comercial trabalhando em computadores representando time terceirizado para consultório",
