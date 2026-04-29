@@ -1581,6 +1581,7 @@ export function readingTimeMinutes(content: string): number {
 }
 
 export function formatDateBR(iso: string): string {
-  const [y, m, d] = iso.split("-");
+  const datePart = iso.split("T")[0];
+  const [y, m, d] = datePart.split("-");
   return `${d}/${m}/${y}`;
 }
