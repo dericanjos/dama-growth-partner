@@ -11,15 +11,17 @@ import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareButtons } from "@/components/ShareButtons";
 import { ForumSection } from "@/components/forum/ForumSection";
 import { getForumQuestionsForSlug } from "@/server/forum-read.functions";
+import { listLatestNews } from "@/server/news.functions";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
     const post = getPostBySlug(params.slug);
     if (!post) throw notFound();
-    const { questions } = await getForumQuestionsForSlug({
-      data: { slug: params.slug },
-    });
-    return { post, questions };
+    const [{ questions }, { items: latestNews }] = await Promise.all([
+      getForumQuestionsForSlug({ data: { slug: params.slug } }),
+      listLatestNews({ data: { limit: 2 } }),
+    ]);
+    return { post, questions, latestNews };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Artigo | Blog — Grupo DAMA" }] };
@@ -174,7 +176,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function PostPage() {
-  const { post, questions } = Route.useLoaderData();
+  const { post, questions, latestNews } = Route.useLoaderData();
   const minutes = readingTimeMinutes(post.content);
   const related = getRelatedPosts(post.slug, post.category, 3);
   const url =
@@ -267,6 +269,27 @@ function PostPage() {
               Conhecer a Parceria DAMA →
             </a>
           </div>
+
+          {latestNews.length > 0 && (
+            <aside className="mt-12 rounded-[12px] border border-[var(--border)] bg-white p-6">
+              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                📰 Notícias recentes
+              </div>
+              <ul className="space-y-2">
+                {latestNews.map((n) => (
+                  <li key={n.slug}>
+                    <Link
+                      to="/noticias/$slug"
+                      params={{ slug: n.slug }}
+                      className="text-[14.5px] font-medium text-[var(--navy)] underline-offset-2 hover:text-[var(--gold-deep)] hover:underline"
+                    >
+                      {n.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
         </article>
       </section>
 

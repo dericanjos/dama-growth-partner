@@ -23,6 +23,7 @@ import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AutorJessicaAnjosRouteImport } from './routes/autor.jessica-anjos'
 import { Route as AutorDericAnjosRouteImport } from './routes/autor.deric-anjos'
 
 const TermosRoute = TermosRouteImport.update({
@@ -95,6 +96,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const AutorJessicaAnjosRoute = AutorJessicaAnjosRouteImport.update({
+  id: '/autor/jessica-anjos',
+  path: '/autor/jessica-anjos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AutorDericAnjosRoute = AutorDericAnjosRouteImport.update({
   id: '/autor/deric-anjos',
   path: '/autor/deric-anjos',
@@ -113,6 +119,7 @@ export interface FileRoutesByFullPath {
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
+  '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
+  '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
+  '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
     | '/solucao'
     | '/termos'
     | '/autor/deric-anjos'
+    | '/autor/jessica-anjos'
     | '/blog/$slug'
     | '/noticias/$slug'
     | '/blog/'
@@ -182,6 +192,7 @@ export interface FileRouteTypes {
     | '/solucao'
     | '/termos'
     | '/autor/deric-anjos'
+    | '/autor/jessica-anjos'
     | '/blog/$slug'
     | '/noticias/$slug'
     | '/blog'
@@ -199,6 +210,7 @@ export interface FileRouteTypes {
     | '/solucao'
     | '/termos'
     | '/autor/deric-anjos'
+    | '/autor/jessica-anjos'
     | '/blog/$slug'
     | '/noticias/$slug'
     | '/blog/'
@@ -217,6 +229,7 @@ export interface RootRouteChildren {
   SolucaoRoute: typeof SolucaoRoute
   TermosRoute: typeof TermosRoute
   AutorDericAnjosRoute: typeof AutorDericAnjosRoute
+  AutorJessicaAnjosRoute: typeof AutorJessicaAnjosRoute
   NoticiasSlugRoute: typeof NoticiasSlugRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
 }
@@ -321,6 +334,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/autor/jessica-anjos': {
+      id: '/autor/jessica-anjos'
+      path: '/autor/jessica-anjos'
+      fullPath: '/autor/jessica-anjos'
+      preLoaderRoute: typeof AutorJessicaAnjosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/autor/deric-anjos': {
       id: '/autor/deric-anjos'
       path: '/autor/deric-anjos'
@@ -355,6 +375,7 @@ const rootRouteChildren: RootRouteChildren = {
   SolucaoRoute: SolucaoRoute,
   TermosRoute: TermosRoute,
   AutorDericAnjosRoute: AutorDericAnjosRoute,
+  AutorJessicaAnjosRoute: AutorJessicaAnjosRoute,
   NoticiasSlugRoute: NoticiasSlugRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
 }
