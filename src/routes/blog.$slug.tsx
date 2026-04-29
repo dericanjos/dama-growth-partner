@@ -11,15 +11,17 @@ import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareButtons } from "@/components/ShareButtons";
 import { ForumSection } from "@/components/forum/ForumSection";
 import { getForumQuestionsForSlug } from "@/server/forum-read.functions";
+import { listLatestNews } from "@/server/news.functions";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
     const post = getPostBySlug(params.slug);
     if (!post) throw notFound();
-    const { questions } = await getForumQuestionsForSlug({
-      data: { slug: params.slug },
-    });
-    return { post, questions };
+    const [{ questions }, { items: latestNews }] = await Promise.all([
+      getForumQuestionsForSlug({ data: { slug: params.slug } }),
+      listLatestNews({ data: { limit: 2 } }),
+    ]);
+    return { post, questions, latestNews };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Artigo | Blog — Grupo DAMA" }] };
@@ -174,7 +176,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function PostPage() {
-  const { post, questions } = Route.useLoaderData();
+  const { post, questions, latestNews } = Route.useLoaderData();
   const minutes = readingTimeMinutes(post.content);
   const related = getRelatedPosts(post.slug, post.category, 3);
   const url =
