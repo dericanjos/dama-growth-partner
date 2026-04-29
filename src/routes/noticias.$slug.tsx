@@ -244,6 +244,33 @@ function NewsArticlePage() {
             </p>
           </aside>
 
+          {(() => {
+            const latestBlog = [...BLOG_POSTS]
+              .sort((a, b) => (a.date < b.date ? 1 : -1))
+              .slice(0, 2);
+            if (latestBlog.length === 0) return null;
+            return (
+              <aside className="mt-10 rounded-[12px] border border-[var(--border)] bg-white p-6">
+                <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                  📖 No blog
+                </div>
+                <ul className="space-y-2">
+                  {latestBlog.map((p) => (
+                    <li key={p.slug}>
+                      <Link
+                        to="/blog/$slug"
+                        params={{ slug: p.slug }}
+                        className="text-[14.5px] font-medium text-[var(--navy)] underline-offset-2 hover:text-[var(--gold-deep)] hover:underline"
+                      >
+                        {p.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            );
+          })()}
+
           <div className="mt-10 border-t border-[var(--border)] pt-8">
             <ShareButtons title={article.title} url={url} />
           </div>
