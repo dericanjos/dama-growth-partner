@@ -37,6 +37,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "como-sair-do-convenio-viver-de-paciente-particular",
+    seoTitle: "Como Sair do Convênio e Viver de Particular",
     relatedSlugs: ["time-comercial-terceirizado-consultorio", "o-que-e-operacao-comercial-consultorio"],
     faqSchema: [{"question": "Como sair do convênio e viver de pacientes particulares?", "answer": "A transição exige 5 etapas: calcular a real dependência do convênio, construir fonte de pacientes particulares antes de cortar, reduzir gradualmente (não cortar de vez), implementar operação comercial, e comunicar a saída com profissionalismo."}, {"question": "Médico pode ter agenda separada para convênio e particular?", "answer": "Sim. O Parecer CFM nº 1/2026 reconhece o direito do médico de organizar seu tempo e condições de trabalho, incluindo separação de agendas, desde que não funcione como pressão econômica sobre o paciente."}, {"question": "Quando não vale sair do convênio?", "answer": "Não faz sentido se o consultório não tem fluxo de pacientes particulares ainda, se o médico está em início de carreira sem base de pacientes, ou se a especialidade tem ticket médio particular muito baixo."}],
     title: "Como Sair do Convênio e Viver de Pacientes Particulares",
@@ -403,6 +404,7 @@ Na DAMA, isso é o que o [Método D.A.M.A](https://grupodamahealth.com.br/metodo
   },
   {
     slug: "marketing-medico-cfm-2026",
+    seoTitle: "Marketing Médico e CFM 2026: Regras Atuais",
     relatedSlugs: ["marketing-medico-2026-panorama-completo", "redes-sociais-captacao-pacientes-consultorio-2026"],
     faqSchema: [{"question": "O que o CFM permite no marketing médico em 2026?", "answer": "A Resolução CFM 2.336/2023 permite: antes e depois com caráter educativo, selfies e fotos do ambiente, divulgação de preços em promoções, informar horários e agendamento, investir em tráfego pago e publicar conteúdo educativo nas redes sociais."}, {"question": "O que é proibido no marketing médico pelo CFM?", "answer": "Continuam proibidos: garantia de resultados, linguagem sensacionalista, títulos como melhor médico, ensino de técnicas a não médicos, propaganda de marcas comerciais e divulgação de métodos não reconhecidos pelo CFM."}, {"question": "Médico pode divulgar preço no Instagram?", "answer": "Sim. A Resolução CFM 2.336/2023 passou a permitir o anúncio de preços e descontos em campanhas promocionais, desde que não haja venda casada ou premiação."}],
     coverImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
@@ -521,6 +523,7 @@ Se você quer entender como construir uma presença digital e uma operação com
   },
   {
     slug: "time-comercial-terceirizado-consultorio",
+    seoTitle: "Time Comercial Terceirizado: Vale a Pena?",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "como-sair-do-convenio-viver-de-paciente-particular"],
     coverImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
     coverImageAlt: "Equipe comercial trabalhando em computadores representando time terceirizado para consultório",
@@ -635,6 +638,7 @@ Se o seu consultório apresenta 3 ou mais dos sinais que listei, vale entender c
   },
   {
     slug: "quanto-medico-perde-sem-processo-comercial",
+    seoTitle: "Quanto o Médico Perde Sem Processo Comercial",
     relatedSlugs: ["como-reduzir-faltas-no-consultorio", "7-sinais-consultorio-perdendo-dinheiro"],
     coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
     coverImageAlt: "Calculadora e documentos financeiros representando perdas de faturamento em consultório médico",
@@ -753,6 +757,7 @@ E se quiser entender como uma operação comercial se encaixa na realidade do se
   },
   {
     slug: "por-que-marketing-sozinho-nao-lota-agenda",
+    seoTitle: "Por que Marketing Sozinho Não Lota Agenda",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "quanto-medico-perde-sem-processo-comercial"],
     coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     coverImageAlt: "Dashboard de marketing digital com gráficos de performance representando métricas de consultório",
@@ -1103,6 +1108,7 @@ E se quiser estruturar a presença digital inteira (site, Google, redes sociais 
   },
   {
     slug: "trafego-pago-consultorio-medico-vale-investimento",
+    seoTitle: "Tráfego Pago pra Consultório: Vale Investir?",
     relatedSlugs: ["por-que-consultorio-precisa-aparecer-no-google", "seu-site-medico-esta-afastando-pacientes", "por-que-marketing-sozinho-nao-lota-agenda"],
     title: "Tráfego Pago para Consultório Médico: Vale o Investimento?",
     excerpt: "Vale investir em Google Ads e Meta Ads pro consultório? Depende. Entenda quando funciona, quando é desperdício e quanto esperar de retorno. Guia prático 2026.",

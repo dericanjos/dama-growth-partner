@@ -16,7 +16,7 @@ const SERVICE_JSONLD = {
 export const Route = createFileRoute("/solucao")({
   head: () => ({
     meta: [
-      { title: "Nossa Solução | Grupo DAMA — Time Comercial, Growth, Marketing 360" },
+      { title: "Nossa Solução para Médicos | Grupo DAMA" },
       {
         name: "description",
         content:

@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contato")({
       { title: "Contato | Grupo DAMA — Fale Conosco" },
       {
         name: "description",
-        content: "Entre em contato com o Grupo DAMA. WhatsApp, e-mail e Instagram.",
+        content: "Fale com a equipe do Grupo DAMA. Tire dúvidas sobre operação comercial, marketing médico e como podemos ajudar seu consultório a crescer.",
       },
       { property: "og:title", content: "Contato | Grupo DAMA" },
       { property: "og:description", content: "Fale com o Grupo DAMA." },
