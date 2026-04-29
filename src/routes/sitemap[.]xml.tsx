@@ -25,6 +25,7 @@ const STATIC_URLS: Array<{ loc: string; lastmod: string; changefreq: string; pri
   { loc: "/blog/como-sair-do-convenio-viver-de-paciente-particular", lastmod: "2026-04-28", changefreq: "monthly", priority: "0.7" },
   { loc: "/blog/redes-sociais-captacao-pacientes-consultorio-2026", lastmod: "2026-03-13", changefreq: "monthly", priority: "0.7" },
   { loc: "/autor/deric-anjos", lastmod: "2026-04-28", changefreq: "monthly", priority: "0.6" },
+  { loc: "/autor/jessica-anjos", lastmod: "2026-04-29", changefreq: "monthly", priority: "0.6" },
   { loc: "/glossario", lastmod: "2026-04-28", changefreq: "monthly", priority: "0.6" },
 ];
 

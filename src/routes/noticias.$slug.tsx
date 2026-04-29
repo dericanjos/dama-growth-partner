@@ -16,7 +16,7 @@ function getAuthorMeta(author: string): { jobTitle: string; url: string } {
   if (author === "Jéssica Anjos") {
     return {
       jobTitle: "Fundadora",
-      url: "https://grupodamahealth.com.br/sobre",
+      url: "https://grupodamahealth.com.br/autor/jessica-anjos",
     };
   }
   return {
@@ -67,6 +67,7 @@ export const Route = createFileRoute("/noticias/$slug")({
           : []),
         { property: "article:author", content: article.author },
         { property: "article:published_time", content: article.published_at },
+        { property: "article:modified_time", content: article.published_at },
         { property: "article:section", content: article.category },
       ],
       links: [{ rel: "canonical", href: url }],
