@@ -9,12 +9,17 @@ import {
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareButtons } from "@/components/ShareButtons";
+import { ForumSection } from "@/components/forum/ForumSection";
+import { getForumQuestionsForSlug } from "@/server/forum-read.functions";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
+  loader: async ({ params }) => {
     const post = getPostBySlug(params.slug);
     if (!post) throw notFound();
-    return { post };
+    const { questions } = await getForumQuestionsForSlug({
+      data: { slug: params.slug },
+    });
+    return { post, questions };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Artigo | Blog — Grupo DAMA" }] };
@@ -76,6 +81,31 @@ export const Route = createFileRoute("/blog/$slug")({
             image: post.coverImage ? [post.coverImage] : undefined,
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             articleSection: post.category,
+            ...(loaderData.questions && loaderData.questions.length > 0
+              ? {
+                  mentions: loaderData.questions
+                    .filter((q) => q.answers.length > 0)
+                    .slice(0, 10)
+                    .map((q) => ({
+                      "@type": "Question",
+                      name: q.question_text,
+                      text: q.question_text,
+                      dateCreated: q.created_at,
+                      author: q.user?.name
+                        ? { "@type": "Person", name: q.user.name }
+                        : undefined,
+                      answerCount: q.answers.length,
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: q.answers[0].answer_text,
+                        dateCreated: q.answers[0].created_at,
+                        author: q.answers[0].user?.name
+                          ? { "@type": "Person", name: q.answers[0].user.name }
+                          : undefined,
+                      },
+                    })),
+                }
+              : {}),
           }),
         },
         {
@@ -144,7 +174,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
+  const { post, questions } = Route.useLoaderData();
   const minutes = readingTimeMinutes(post.content);
   const related = getRelatedPosts(post.slug, post.category, 3);
   const url =
@@ -209,6 +239,9 @@ function PostPage() {
           <div className="mt-12 border-t border-[var(--border)] pt-8">
             <ShareButtons title={post.title} url={url} />
           </div>
+
+          {/* Q&A — fórum de perguntas (após Referências, antes do CTA) */}
+          <ForumSection blogSlug={post.slug} initialQuestions={questions} />
 
           {/* CTA */}
           <div
