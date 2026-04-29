@@ -20,6 +20,7 @@ import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AutorDericAnjosRouteImport } from './routes/autor.deric-anjos'
 
@@ -78,6 +79,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BlogRoute,
 } as any)
+const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => NoticiasRoute,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -95,13 +101,14 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/glossario': typeof GlossarioRoute
   '/metodo': typeof MetodoRoute
-  '/noticias': typeof NoticiasRoute
+  '/noticias': typeof NoticiasRouteWithChildren
   '/privacidade': typeof PrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
@@ -109,13 +116,14 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/glossario': typeof GlossarioRoute
   '/metodo': typeof MetodoRoute
-  '/noticias': typeof NoticiasRoute
+  '/noticias': typeof NoticiasRouteWithChildren
   '/privacidade': typeof PrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
@@ -125,13 +133,14 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/glossario': typeof GlossarioRoute
   '/metodo': typeof MetodoRoute
-  '/noticias': typeof NoticiasRoute
+  '/noticias': typeof NoticiasRouteWithChildren
   '/privacidade': typeof PrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
@@ -149,6 +158,7 @@ export interface FileRouteTypes {
     | '/termos'
     | '/autor/deric-anjos'
     | '/blog/$slug'
+    | '/noticias/$slug'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -163,6 +173,7 @@ export interface FileRouteTypes {
     | '/termos'
     | '/autor/deric-anjos'
     | '/blog/$slug'
+    | '/noticias/$slug'
     | '/blog'
   id:
     | '__root__'
@@ -178,6 +189,7 @@ export interface FileRouteTypes {
     | '/termos'
     | '/autor/deric-anjos'
     | '/blog/$slug'
+    | '/noticias/$slug'
     | '/blog/'
   fileRoutesById: FileRoutesById
 }
@@ -187,7 +199,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   GlossarioRoute: typeof GlossarioRoute
   MetodoRoute: typeof MetodoRoute
-  NoticiasRoute: typeof NoticiasRoute
+  NoticiasRoute: typeof NoticiasRouteWithChildren
   PrivacidadeRoute: typeof PrivacidadeRoute
   SobreRoute: typeof SobreRoute
   SolucaoRoute: typeof SolucaoRoute
@@ -274,6 +286,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/noticias/$slug': {
+      id: '/noticias/$slug'
+      path: '/$slug'
+      fullPath: '/noticias/$slug'
+      preLoaderRoute: typeof NoticiasSlugRouteImport
+      parentRoute: typeof NoticiasRoute
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
@@ -303,13 +322,25 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
+interface NoticiasRouteChildren {
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
+}
+
+const NoticiasRouteChildren: NoticiasRouteChildren = {
+  NoticiasSlugRoute: NoticiasSlugRoute,
+}
+
+const NoticiasRouteWithChildren = NoticiasRoute._addFileChildren(
+  NoticiasRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
   GlossarioRoute: GlossarioRoute,
   MetodoRoute: MetodoRoute,
-  NoticiasRoute: NoticiasRoute,
+  NoticiasRoute: NoticiasRouteWithChildren,
   PrivacidadeRoute: PrivacidadeRoute,
   SobreRoute: SobreRoute,
   SolucaoRoute: SolucaoRoute,

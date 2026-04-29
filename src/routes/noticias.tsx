@@ -1,24 +1,51 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
-import { ExternalLink, Newspaper } from "lucide-react";
-import { NEWS_CATEGORIES, NEWS_ITEMS } from "@/data/news";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Newspaper } from "lucide-react";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { formatDateBR } from "@/data/blog";
+import { listPublishedNews, type NewsArticleListItem } from "@/server/news.functions";
+import { z } from "zod";
+
+const NEWS_CATEGORIES = [
+  "Regulação",
+  "Políticas Públicas",
+  "Vigilância Sanitária",
+  "Planos de Saúde",
+  "Classe Médica",
+  "Mercado",
+  "Tecnologia",
+  "Geral",
+] as const;
+
+const searchSchema = z.object({
+  page: z.coerce.number().int().min(1).max(500).optional().default(1),
+  cat: z.string().min(1).max(80).optional(),
+});
 
 export const Route = createFileRoute("/noticias")({
+  validateSearch: (search) => searchSchema.parse(search),
+  loaderDeps: ({ search }) => ({ page: search.page, cat: search.cat }),
+  loader: ({ deps }): Promise<{
+    items: NewsArticleListItem[];
+    total: number;
+    page: number;
+    pageSize: number;
+  }> =>
+    listPublishedNews({
+      data: { page: deps.page ?? 1, category: deps.cat ?? null },
+    }),
   head: () => ({
     meta: [
       { title: "Notícias Médicas | Grupo DAMA" },
       {
         name: "description",
         content:
-          "Acompanhe as principais notícias do mundo médico: regulamentações do CFM, congressos, pesquisas e tendências do mercado de saúde no Brasil.",
+          "Análise e contexto das notícias mais relevantes do mundo médico. Fontes oficiais: CFM, Ministério da Saúde, ANVISA, ANS, AMB.",
       },
       { property: "og:title", content: "Notícias Médicas | Grupo DAMA" },
       {
         property: "og:description",
         content:
-          "As principais atualizações do mundo da saúde, curadas pela equipe DAMA.",
+          "Análise e contexto das notícias mais relevantes do mundo médico, pelo Grupo DAMA.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://grupodamahealth.com.br/noticias" },
@@ -28,13 +55,34 @@ export const Route = createFileRoute("/noticias")({
   component: NewsPage,
 });
 
-function NewsPage() {
-  const [active, setActive] = useState<"Todas" | (typeof NEWS_CATEGORIES)[number]>("Todas");
+function excerpt(text: string, max = 200) {
+  const plain = text
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/[#*_`>~\-]/g, "")
+    .replace(/\[(.*?)\]\(.*?\)/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+  return plain.length > max ? `${plain.slice(0, max).trim()}…` : plain;
+}
 
-  const items = useMemo(() => {
-    const list = active === "Todas" ? NEWS_ITEMS : NEWS_ITEMS.filter((n) => n.category === active);
-    return [...list].sort((a, b) => b.date.localeCompare(a.date));
-  }, [active]);
+interface LoaderData {
+  items: NewsArticleListItem[];
+  total: number;
+  page: number;
+  pageSize: number;
+}
+
+interface SearchParams {
+  page: number;
+  cat?: string;
+}
+
+function NewsPage() {
+  const { items, total, page, pageSize } = Route.useLoaderData() as LoaderData;
+  const search = Route.useSearch() as SearchParams;
+  const navigate = Route.useNavigate();
+  const totalPages = Math.max(1, Math.ceil(total / pageSize));
+  const activeCat = search.cat ?? "Todas";
 
   return (
     <>
@@ -46,20 +94,34 @@ function NewsPage() {
           <h1 className="heading-display text-[40px] md:text-[60px]">
             <span className="gold-text">Notícias Médicas</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.7] text-white/70">
-            As principais atualizações do mundo da saúde, curadas pela equipe DAMA.
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-white/70">
+            Análise e contexto das notícias mais relevantes do mundo médico.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-[13px] uppercase tracking-[0.16em] text-white/55">
+            Fontes oficiais: CFM · Ministério da Saúde · ANVISA · ANS · AMB
           </p>
         </div>
       </section>
 
       <section className="border-b border-[var(--border)] bg-[var(--cream)] py-8">
         <div className="container-dama flex flex-wrap items-center justify-center gap-2.5">
-          {(["Todas", ...NEWS_CATEGORIES] as const).map((cat) => (
+          <button
+            type="button"
+            onClick={() =>
+              navigate({ search: { page: 1 } })
+            }
+            className={`filter-pill ${activeCat === "Todas" ? "filter-pill-active" : ""}`}
+          >
+            Todas
+          </button>
+          {NEWS_CATEGORIES.map((cat) => (
             <button
               key={cat}
               type="button"
-              onClick={() => setActive(cat)}
-              className={`filter-pill ${active === cat ? "filter-pill-active" : ""}`}
+              onClick={() =>
+                navigate({ search: { page: 1, cat } })
+              }
+              className={`filter-pill ${activeCat === cat ? "filter-pill-active" : ""}`}
             >
               {cat}
             </button>
@@ -70,60 +132,104 @@ function NewsPage() {
       <section className="bg-[var(--cream)] py-16 md:py-20">
         <div className="container-dama mx-auto max-w-3xl">
           {items.length === 0 ? (
-            <p className="py-16 text-center text-[var(--text-muted)]">
-              Nenhuma notícia nesta categoria.
-            </p>
+            <div className="rounded-[12px] border border-dashed border-[var(--border)] bg-white/50 p-10 text-center">
+              <Newspaper className="mx-auto mb-3 h-8 w-8 text-[var(--text-muted)]" />
+              <p className="text-[15px] text-[var(--text-muted)]">
+                Nenhuma notícia publicada ainda nesta categoria.
+              </p>
+            </div>
           ) : (
-            <ul className="flex flex-col gap-5">
-              {items.map((n, i) => (
-                <li key={i}>
-                  <a
-                    href={n.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card-dama group flex flex-col gap-4 p-5 hover:[&]:[transform:translateY(-2px)] hover:[&]:[border-color:color-mix(in_oklab,var(--gold)_55%,var(--border))] hover:[&]:[box-shadow:var(--shadow-gold)] md:flex-row md:items-center md:gap-6 md:p-6"
+            <ul className="flex flex-col gap-6">
+              {items.map((n) => (
+                <li key={n.id}>
+                  <Link
+                    to="/noticias/$slug"
+                    params={{ slug: n.slug }}
+                    className="card-dama group block overflow-hidden p-0 hover:[&]:[transform:translateY(-2px)] hover:[&]:[border-color:color-mix(in_oklab,var(--gold)_55%,var(--border))] hover:[&]:[box-shadow:var(--shadow-gold)]"
                   >
-                    <div className="flex h-20 w-full shrink-0 items-center justify-center rounded-[10px] bg-[var(--navy-light)] md:h-20 md:w-32">
-                      <Newspaper
-                        className="h-7 w-7 text-[color-mix(in_oklab,var(--gold)_70%,transparent)]"
-                        strokeWidth={1.4}
+                    {n.cover_image && (
+                      <img
+                        src={n.cover_image}
+                        alt={n.cover_image_alt ?? n.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-48 w-full object-cover md:h-56"
                       />
-                    </div>
-                    <div className="flex-1">
-                      <div className="mb-2 flex flex-wrap items-center gap-3">
+                    )}
+                    <div className="p-6">
+                      <div className="mb-3 flex flex-wrap items-center gap-3">
                         <CategoryBadge category={n.category} />
-                        <span className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[var(--gold-deep)]">
-                          {n.source}
-                        </span>
                         <span className="text-[12px] text-[var(--text-muted)]">
-                          {formatDateBR(n.date)}
+                          {formatDateBR(n.published_at)}
                         </span>
                       </div>
-                      <h2 className="flex items-start gap-2 font-serif text-[18px] font-semibold leading-[1.35] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-deep)]">
-                        <span>{n.title}</span>
-                        <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0 text-[var(--text-muted)]" />
+                      <h2 className="font-serif text-[20px] font-semibold leading-[1.35] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-deep)] md:text-[22px]">
+                        {n.title}
                       </h2>
-                      <p
-                        className="mt-2 text-[14px] leading-[1.6] text-[var(--text-secondary)]"
-                        style={{
-                          display: "-webkit-box",
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: "vertical",
-                          overflow: "hidden",
-                        }}
-                      >
-                        {n.summary}
+                      {n.subtitle && (
+                        <p className="mt-1 text-[14px] italic text-[var(--text-secondary)]">
+                          {n.subtitle}
+                        </p>
+                      )}
+                      <p className="mt-3 text-[14.5px] leading-[1.6] text-[var(--text-secondary)]">
+                        {excerpt(n.content, 200)}
                       </p>
+                      <div className="mt-4 flex items-center justify-between">
+                        <span className="text-[12px] uppercase tracking-[0.14em] text-[var(--gold-deep)]">
+                          Fonte: {n.source_name}
+                        </span>
+                        <span className="text-[13px] font-medium text-[var(--gold-deep)] group-hover:underline">
+                          Ler notícia completa →
+                        </span>
+                      </div>
                     </div>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           )}
 
+          {totalPages > 1 && (
+            <nav
+              aria-label="Paginação"
+              className="mt-12 flex items-center justify-center gap-2"
+            >
+              <button
+                type="button"
+                disabled={page <= 1}
+                onClick={() =>
+                  navigate({
+                    search: (prev: SearchParams) => ({ ...prev, page: Math.max(1, page - 1) }),
+                  })
+                }
+                className="filter-pill disabled:opacity-40"
+              >
+                ← Anterior
+              </button>
+              <span className="px-3 text-sm text-[var(--text-muted)]">
+                Página {page} de {totalPages}
+              </span>
+              <button
+                type="button"
+                disabled={page >= totalPages}
+                onClick={() =>
+                  navigate({
+                    search: (prev: SearchParams) => ({
+                      ...prev,
+                      page: Math.min(totalPages, page + 1),
+                    }),
+                  })
+                }
+                className="filter-pill disabled:opacity-40"
+              >
+                Próxima →
+              </button>
+            </nav>
+          )}
+
           <p className="mt-10 text-center text-xs text-[var(--text-muted)]">
-            Curadoria editorial. Os links levam às fontes originais. O Grupo DAMA não se
-            responsabiliza pelo conteúdo de terceiros.
+            Análise editorial do Grupo DAMA com base em fontes oficiais. Os links
+            apontam para o material original publicado pelas instituições.
           </p>
         </div>
       </section>

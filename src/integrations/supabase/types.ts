@@ -118,6 +118,57 @@ export type Database = {
         }
         Relationships: []
       }
+      news_articles: {
+        Row: {
+          author: string
+          category: string
+          content: string
+          cover_image: string | null
+          cover_image_alt: string | null
+          created_at: string
+          id: string
+          is_published: boolean
+          published_at: string
+          slug: string
+          source_name: string
+          source_url: string | null
+          subtitle: string | null
+          title: string
+        }
+        Insert: {
+          author?: string
+          category?: string
+          content: string
+          cover_image?: string | null
+          cover_image_alt?: string | null
+          created_at?: string
+          id?: string
+          is_published?: boolean
+          published_at?: string
+          slug: string
+          source_name: string
+          source_url?: string | null
+          subtitle?: string | null
+          title: string
+        }
+        Update: {
+          author?: string
+          category?: string
+          content?: string
+          cover_image?: string | null
+          cover_image_alt?: string | null
+          created_at?: string
+          id?: string
+          is_published?: boolean
+          published_at?: string
+          slug?: string
+          source_name?: string
+          source_url?: string | null
+          subtitle?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
