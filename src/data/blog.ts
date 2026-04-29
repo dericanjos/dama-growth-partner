@@ -757,6 +757,7 @@ E se quiser entender como uma operação comercial se encaixa na realidade do se
   },
   {
     slug: "por-que-marketing-sozinho-nao-lota-agenda",
+    seoTitle: "Por que Marketing Sozinho Não Lota Agenda",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "quanto-medico-perde-sem-processo-comercial"],
     coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     coverImageAlt: "Dashboard de marketing digital com gráficos de performance representando métricas de consultório",
