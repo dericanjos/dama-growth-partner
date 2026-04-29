@@ -21,7 +21,7 @@ const searchSchema = z.object({
   cat: z.string().min(1).max(80).optional(),
 });
 
-export const Route = createFileRoute("/noticias")({
+export const Route = createFileRoute("/noticias/")({
   validateSearch: (search) => searchSchema.parse(search),
   loaderDeps: ({ search }) => ({ page: search.page, cat: search.cat }),
   loader: ({ deps }): Promise<{
