@@ -65,9 +65,21 @@ function excerpt(text: string, max = 200) {
   return plain.length > max ? `${plain.slice(0, max).trim()}…` : plain;
 }
 
+interface LoaderData {
+  items: NewsArticleListItem[];
+  total: number;
+  page: number;
+  pageSize: number;
+}
+
+interface SearchParams {
+  page: number;
+  cat?: string;
+}
+
 function NewsPage() {
-  const { items, total, page, pageSize } = Route.useLoaderData();
-  const search = Route.useSearch();
+  const { items, total, page, pageSize } = Route.useLoaderData() as LoaderData;
+  const search = Route.useSearch() as SearchParams;
   const navigate = Route.useNavigate();
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   const activeCat = search.cat ?? "Todas";
