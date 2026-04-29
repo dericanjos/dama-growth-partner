@@ -129,6 +129,7 @@ export type Database = {
           id: string
           is_published: boolean
           published_at: string
+          seo_title: string | null
           slug: string
           source_name: string
           source_url: string | null
@@ -145,6 +146,7 @@ export type Database = {
           id?: string
           is_published?: boolean
           published_at?: string
+          seo_title?: string | null
           slug: string
           source_name: string
           source_url?: string | null
@@ -161,6 +163,7 @@ export type Database = {
           id?: string
           is_published?: boolean
           published_at?: string
+          seo_title?: string | null
           slug?: string
           source_name?: string
           source_url?: string | null

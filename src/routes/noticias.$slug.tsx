@@ -49,9 +49,10 @@ export const Route = createFileRoute("/noticias/$slug")({
     const { article } = loaderData;
     const desc = plainExcerpt(article.content, 155);
     const url = `https://grupodamahealth.com.br/noticias/${article.slug}`;
+    const seoTitle = article.seo_title || article.title;
     return {
       meta: [
-        { title: `${article.title} | Notícias — Grupo DAMA` },
+        { title: `${seoTitle} | Grupo DAMA` },
         { name: "description", content: desc },
         { property: "og:title", content: article.title },
         { property: "og:description", content: desc },
