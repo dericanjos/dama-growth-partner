@@ -44,7 +44,7 @@ export const Route = createRootRoute({
       { name: "author", content: "Grupo DAMA" },
       { name: "theme-color", content: "#0D1B2A" },
       { name: "robots", content: "index, follow" },
-      { name: "google-site-verification", content: "PLACEHOLDER_GSC_CODE" },
+      { name: "google-site-verification", content: "OjBfW2K16OcbaWPnaAQbNsMv19rm3rrclc24WackZmo" },
       { property: "og:site_name", content: "Grupo DAMA" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
