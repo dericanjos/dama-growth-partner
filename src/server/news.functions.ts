@@ -91,3 +91,21 @@ export const getNewsArticleBySlug = createServerFn({ method: "GET" })
     }
     return { article: (row as NewsArticleFull | null) ?? null };
   });
+
+export const listLatestNews = createServerFn({ method: "GET" })
+  .inputValidator((data: unknown) =>
+    z.object({ limit: z.number().int().min(1).max(10).optional().default(2) }).parse(data ?? {}),
+  )
+  .handler(async ({ data }): Promise<{ items: Array<{ slug: string; title: string }> }> => {
+    const { data: rows, error } = await supabaseAdmin
+      .from("news_articles")
+      .select("slug, title")
+      .eq("is_published", true)
+      .order("published_at", { ascending: false })
+      .limit(data.limit);
+    if (error) {
+      console.error("Erro ao listar últimas notícias:", error);
+      return { items: [] };
+    }
+    return { items: (rows ?? []) as Array<{ slug: string; title: string }> };
+  });
