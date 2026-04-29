@@ -199,7 +199,7 @@ function NewsPage() {
                 disabled={page <= 1}
                 onClick={() =>
                   navigate({
-                    search: (prev) => ({ ...prev, page: Math.max(1, page - 1) }),
+                    search: (prev: SearchParams) => ({ ...prev, page: Math.max(1, page - 1) }),
                   })
                 }
                 className="filter-pill disabled:opacity-40"
@@ -214,7 +214,7 @@ function NewsPage() {
                 disabled={page >= totalPages}
                 onClick={() =>
                   navigate({
-                    search: (prev) => ({
+                    search: (prev: SearchParams) => ({
                       ...prev,
                       page: Math.min(totalPages, page + 1),
                     }),
