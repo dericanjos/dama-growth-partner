@@ -37,6 +37,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "como-sair-do-convenio-viver-de-paciente-particular",
+    seoTitle: "Como Sair do Convênio e Viver de Particular",
     relatedSlugs: ["time-comercial-terceirizado-consultorio", "o-que-e-operacao-comercial-consultorio"],
     faqSchema: [{"question": "Como sair do convênio e viver de pacientes particulares?", "answer": "A transição exige 5 etapas: calcular a real dependência do convênio, construir fonte de pacientes particulares antes de cortar, reduzir gradualmente (não cortar de vez), implementar operação comercial, e comunicar a saída com profissionalismo."}, {"question": "Médico pode ter agenda separada para convênio e particular?", "answer": "Sim. O Parecer CFM nº 1/2026 reconhece o direito do médico de organizar seu tempo e condições de trabalho, incluindo separação de agendas, desde que não funcione como pressão econômica sobre o paciente."}, {"question": "Quando não vale sair do convênio?", "answer": "Não faz sentido se o consultório não tem fluxo de pacientes particulares ainda, se o médico está em início de carreira sem base de pacientes, ou se a especialidade tem ticket médio particular muito baixo."}],
     title: "Como Sair do Convênio e Viver de Pacientes Particulares",
