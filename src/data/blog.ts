@@ -404,6 +404,7 @@ Na DAMA, isso é o que o [Método D.A.M.A](https://grupodamahealth.com.br/metodo
   },
   {
     slug: "marketing-medico-cfm-2026",
+    seoTitle: "Marketing Médico e CFM 2026: Regras Atuais",
     relatedSlugs: ["marketing-medico-2026-panorama-completo", "redes-sociais-captacao-pacientes-consultorio-2026"],
     faqSchema: [{"question": "O que o CFM permite no marketing médico em 2026?", "answer": "A Resolução CFM 2.336/2023 permite: antes e depois com caráter educativo, selfies e fotos do ambiente, divulgação de preços em promoções, informar horários e agendamento, investir em tráfego pago e publicar conteúdo educativo nas redes sociais."}, {"question": "O que é proibido no marketing médico pelo CFM?", "answer": "Continuam proibidos: garantia de resultados, linguagem sensacionalista, títulos como melhor médico, ensino de técnicas a não médicos, propaganda de marcas comerciais e divulgação de métodos não reconhecidos pelo CFM."}, {"question": "Médico pode divulgar preço no Instagram?", "answer": "Sim. A Resolução CFM 2.336/2023 passou a permitir o anúncio de preços e descontos em campanhas promocionais, desde que não haja venda casada ou premiação."}],
     coverImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
