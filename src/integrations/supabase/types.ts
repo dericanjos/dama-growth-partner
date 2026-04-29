@@ -14,7 +14,110 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      forum_answers: {
+        Row: {
+          answer_text: string
+          created_at: string
+          id: string
+          is_approved: boolean
+          question_id: string
+          user_id: string
+        }
+        Insert: {
+          answer_text: string
+          created_at?: string
+          id?: string
+          is_approved?: boolean
+          question_id: string
+          user_id: string
+        }
+        Update: {
+          answer_text?: string
+          created_at?: string
+          id?: string
+          is_approved?: boolean
+          question_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forum_answers_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "forum_questions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "forum_answers_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "forum_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forum_questions: {
+        Row: {
+          blog_slug: string
+          created_at: string
+          id: string
+          is_approved: boolean
+          question_text: string
+          user_id: string
+        }
+        Insert: {
+          blog_slug: string
+          created_at?: string
+          id?: string
+          is_approved?: boolean
+          question_text: string
+          user_id: string
+        }
+        Update: {
+          blog_slug?: string
+          created_at?: string
+          id?: string
+          is_approved?: boolean
+          question_text?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forum_questions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "forum_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forum_users: {
+        Row: {
+          created_at: string
+          crm_number: string | null
+          email: string
+          id: string
+          name: string
+          specialty: string | null
+        }
+        Insert: {
+          created_at?: string
+          crm_number?: string | null
+          email: string
+          id?: string
+          name: string
+          specialty?: string | null
+        }
+        Update: {
+          created_at?: string
+          crm_number?: string | null
+          email?: string
+          id?: string
+          name?: string
+          specialty?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
