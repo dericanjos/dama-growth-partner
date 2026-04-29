@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermosRouteImport } from './routes/termos'
 import { Route as SolucaoRouteImport } from './routes/solucao'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as MetodoRouteImport } from './routes/metodo'
 import { Route as GlossarioRouteImport } from './routes/glossario'
@@ -37,6 +38,11 @@ const SolucaoRoute = SolucaoRouteImport.update({
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacidadeRoute = PrivacidadeRouteImport.update({
@@ -80,9 +86,9 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   getParentRoute: () => BlogRoute,
 } as any)
 const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => NoticiasRoute,
+  id: '/noticias/$slug',
+  path: '/noticias/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
@@ -102,6 +108,7 @@ export interface FileRoutesByFullPath {
   '/glossario': typeof GlossarioRoute
   '/metodo': typeof MetodoRoute
   '/privacidade': typeof PrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
@@ -117,6 +124,7 @@ export interface FileRoutesByTo {
   '/glossario': typeof GlossarioRoute
   '/metodo': typeof MetodoRoute
   '/privacidade': typeof PrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
@@ -134,6 +142,7 @@ export interface FileRoutesById {
   '/glossario': typeof GlossarioRoute
   '/metodo': typeof MetodoRoute
   '/privacidade': typeof PrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
@@ -152,6 +161,7 @@ export interface FileRouteTypes {
     | '/glossario'
     | '/metodo'
     | '/privacidade'
+    | '/sitemap.xml'
     | '/sobre'
     | '/solucao'
     | '/termos'
@@ -167,6 +177,7 @@ export interface FileRouteTypes {
     | '/glossario'
     | '/metodo'
     | '/privacidade'
+    | '/sitemap.xml'
     | '/sobre'
     | '/solucao'
     | '/termos'
@@ -183,6 +194,7 @@ export interface FileRouteTypes {
     | '/glossario'
     | '/metodo'
     | '/privacidade'
+    | '/sitemap.xml'
     | '/sobre'
     | '/solucao'
     | '/termos'
@@ -200,10 +212,12 @@ export interface RootRouteChildren {
   GlossarioRoute: typeof GlossarioRoute
   MetodoRoute: typeof MetodoRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   SolucaoRoute: typeof SolucaoRoute
   TermosRoute: typeof TermosRoute
   AutorDericAnjosRoute: typeof AutorDericAnjosRoute
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
 }
 
@@ -228,6 +242,13 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacidade': {
@@ -288,10 +309,10 @@ declare module '@tanstack/react-router' {
     }
     '/noticias/$slug': {
       id: '/noticias/$slug'
-      path: '/$slug'
+      path: '/noticias/$slug'
       fullPath: '/noticias/$slug'
       preLoaderRoute: typeof NoticiasSlugRouteImport
-      parentRoute: typeof NoticiasRoute
+      parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
       id: '/blog/$slug'
@@ -329,10 +350,12 @@ const rootRouteChildren: RootRouteChildren = {
   GlossarioRoute: GlossarioRoute,
   MetodoRoute: MetodoRoute,
   PrivacidadeRoute: PrivacidadeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   SolucaoRoute: SolucaoRoute,
   TermosRoute: TermosRoute,
   AutorDericAnjosRoute: AutorDericAnjosRoute,
+  NoticiasSlugRoute: NoticiasSlugRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
 }
 export const routeTree = rootRouteImport
