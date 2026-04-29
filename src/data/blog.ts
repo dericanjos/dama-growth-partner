@@ -37,7 +37,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "como-sair-do-convenio-viver-de-paciente-particular",
-    seoTitle: "Como Sair do Convênio e Viver de Particular",
+    seoTitle: "Como Sair do Convênio Médico: Guia Prático",
     relatedSlugs: ["time-comercial-terceirizado-consultorio", "o-que-e-operacao-comercial-consultorio"],
     faqSchema: [{"question": "Como sair do convênio e viver de pacientes particulares?", "answer": "A transição exige 5 etapas: calcular a real dependência do convênio, construir fonte de pacientes particulares antes de cortar, reduzir gradualmente (não cortar de vez), implementar operação comercial, e comunicar a saída com profissionalismo."}, {"question": "Médico pode ter agenda separada para convênio e particular?", "answer": "Sim. O Parecer CFM nº 1/2026 reconhece o direito do médico de organizar seu tempo e condições de trabalho, incluindo separação de agendas, desde que não funcione como pressão econômica sobre o paciente."}, {"question": "Quando não vale sair do convênio?", "answer": "Não faz sentido se o consultório não tem fluxo de pacientes particulares ainda, se o médico está em início de carreira sem base de pacientes, ou se a especialidade tem ticket médio particular muito baixo."}],
     title: "Como Sair do Convênio e Viver de Pacientes Particulares",
@@ -523,7 +523,7 @@ Se você quer entender como construir uma presença digital e uma operação com
   },
   {
     slug: "time-comercial-terceirizado-consultorio",
-    seoTitle: "Time Comercial Terceirizado: Vale a Pena?",
+    seoTitle: "Time Comercial Terceirizado pra Consultório",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "como-sair-do-convenio-viver-de-paciente-particular"],
     coverImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
     coverImageAlt: "Equipe comercial trabalhando em computadores representando time terceirizado para consultório",
@@ -757,7 +757,7 @@ E se quiser entender como uma operação comercial se encaixa na realidade do se
   },
   {
     slug: "por-que-marketing-sozinho-nao-lota-agenda",
-    seoTitle: "Por que Marketing Sozinho Não Lota Agenda",
+    seoTitle: "Marketing Sozinho Não Lota Agenda Médica",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "quanto-medico-perde-sem-processo-comercial"],
     coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     coverImageAlt: "Dashboard de marketing digital com gráficos de performance representando métricas de consultório",
@@ -1108,7 +1108,7 @@ E se quiser estruturar a presença digital inteira (site, Google, redes sociais 
   },
   {
     slug: "trafego-pago-consultorio-medico-vale-investimento",
-    seoTitle: "Tráfego Pago pra Consultório: Vale Investir?",
+    seoTitle: "Tráfego Pago pra Consultório Médico: Vale?",
     relatedSlugs: ["por-que-consultorio-precisa-aparecer-no-google", "seu-site-medico-esta-afastando-pacientes", "por-que-marketing-sozinho-nao-lota-agenda"],
     title: "Tráfego Pago para Consultório Médico: Vale o Investimento?",
     excerpt: "Vale investir em Google Ads e Meta Ads pro consultório? Depende. Entenda quando funciona, quando é desperdício e quanto esperar de retorno. Guia prático 2026.",
