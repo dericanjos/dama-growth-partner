@@ -24,7 +24,12 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/noticias")({
   validateSearch: (search) => searchSchema.parse(search),
   loaderDeps: ({ search }) => ({ page: search.page, cat: search.cat }),
-  loader: ({ deps }) =>
+  loader: ({ deps }): Promise<{
+    items: NewsArticleListItem[];
+    total: number;
+    page: number;
+    pageSize: number;
+  }> =>
     listPublishedNews({
       data: { page: deps.page ?? 1, category: deps.cat ?? null },
     }),
