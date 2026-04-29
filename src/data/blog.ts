@@ -1108,6 +1108,7 @@ E se quiser estruturar a presença digital inteira (site, Google, redes sociais 
   },
   {
     slug: "trafego-pago-consultorio-medico-vale-investimento",
+    seoTitle: "Tráfego Pago pra Consultório: Vale Investir?",
     relatedSlugs: ["por-que-consultorio-precisa-aparecer-no-google", "seu-site-medico-esta-afastando-pacientes", "por-que-marketing-sozinho-nao-lota-agenda"],
     title: "Tráfego Pago para Consultório Médico: Vale o Investimento?",
     excerpt: "Vale investir em Google Ads e Meta Ads pro consultório? Depende. Entenda quando funciona, quando é desperdício e quanto esperar de retorno. Guia prático 2026.",
