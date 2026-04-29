@@ -6,6 +6,25 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { formatDateBR } from "@/data/blog";
 import { getNewsArticleBySlug } from "@/server/news.functions";
 
+function getAuthorMeta(author: string): { jobTitle: string; url: string } {
+  if (author === "Deric Anjos") {
+    return {
+      jobTitle: "Head de Growth",
+      url: "https://grupodamahealth.com.br/autor/deric-anjos",
+    };
+  }
+  if (author === "Jéssica Anjos") {
+    return {
+      jobTitle: "Fundadora",
+      url: "https://grupodamahealth.com.br/sobre",
+    };
+  }
+  return {
+    jobTitle: "Equipe DAMA",
+    url: "https://grupodamahealth.com.br/sobre",
+  };
+}
+
 function plainExcerpt(text: string, max = 155) {
   const plain = text
     .replace(/```[\s\S]*?```/g, "")
@@ -65,8 +84,8 @@ export const Route = createFileRoute("/noticias/$slug")({
             author: {
               "@type": "Person",
               name: article.author,
-              jobTitle: "Head de Growth",
-              url: "https://grupodamahealth.com.br/autor/deric-anjos",
+              jobTitle: getAuthorMeta(article.author).jobTitle,
+              url: getAuthorMeta(article.author).url,
             },
             publisher: {
               "@type": "Organization",
