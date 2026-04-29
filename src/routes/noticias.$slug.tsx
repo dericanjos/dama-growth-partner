@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareButtons } from "@/components/ShareButtons";
-import { formatDateBR } from "@/data/blog";
+import { formatDateBR, BLOG_POSTS } from "@/data/blog";
 import { getNewsArticleBySlug } from "@/server/news.functions";
 
 function getAuthorMeta(author: string): { jobTitle: string; url: string } {
