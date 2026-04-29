@@ -73,7 +73,7 @@ interface LoaderData {
 }
 
 interface SearchParams {
-  page: number;
+  page?: number;
   cat?: string;
 }
 
