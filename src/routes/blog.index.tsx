@@ -7,7 +7,7 @@ import { CategoryBadge } from "@/components/CategoryBadge";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Blog | Grupo DAMA — Insights para Médicos que Pensam como Empresários" },
+      { title: "Blog | Grupo DAMA" },
       {
         name: "description",
         content:
