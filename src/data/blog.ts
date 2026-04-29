@@ -638,6 +638,7 @@ Se o seu consultório apresenta 3 ou mais dos sinais que listei, vale entender c
   },
   {
     slug: "quanto-medico-perde-sem-processo-comercial",
+    seoTitle: "Quanto o Médico Perde Sem Processo Comercial",
     relatedSlugs: ["como-reduzir-faltas-no-consultorio", "7-sinais-consultorio-perdendo-dinheiro"],
     coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
     coverImageAlt: "Calculadora e documentos financeiros representando perdas de faturamento em consultório médico",
