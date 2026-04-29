@@ -17,7 +17,7 @@ const NEWS_CATEGORIES = [
 ] as const;
 
 const searchSchema = z.object({
-  page: z.coerce.number().int().min(1).max(500).optional().default(1),
+  page: z.coerce.number().int().min(1).max(500).optional(),
   cat: z.string().min(1).max(80).optional(),
 });
 
