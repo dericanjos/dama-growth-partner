@@ -80,9 +80,9 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   getParentRoute: () => BlogRoute,
 } as any)
 const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => NoticiasRoute,
+  id: '/noticias/$slug',
+  path: '/noticias/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
@@ -204,6 +204,7 @@ export interface RootRouteChildren {
   SolucaoRoute: typeof SolucaoRoute
   TermosRoute: typeof TermosRoute
   AutorDericAnjosRoute: typeof AutorDericAnjosRoute
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
 }
 
@@ -288,10 +289,10 @@ declare module '@tanstack/react-router' {
     }
     '/noticias/$slug': {
       id: '/noticias/$slug'
-      path: '/$slug'
+      path: '/noticias/$slug'
       fullPath: '/noticias/$slug'
       preLoaderRoute: typeof NoticiasSlugRouteImport
-      parentRoute: typeof NoticiasRoute
+      parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
       id: '/blog/$slug'
@@ -333,6 +334,7 @@ const rootRouteChildren: RootRouteChildren = {
   SolucaoRoute: SolucaoRoute,
   TermosRoute: TermosRoute,
   AutorDericAnjosRoute: AutorDericAnjosRoute,
+  NoticiasSlugRoute: NoticiasSlugRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
 }
 export const routeTree = rootRouteImport
