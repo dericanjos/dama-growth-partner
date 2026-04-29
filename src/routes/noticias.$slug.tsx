@@ -187,7 +187,7 @@ function NewsArticlePage() {
             </p>
           )}
           <p className="mt-6 text-sm uppercase tracking-[0.18em] text-white/55">
-            Por {article.author} · Head de Growth
+            Por {article.author} · {getAuthorMeta(article.author).jobTitle}
           </p>
         </div>
       </section>
