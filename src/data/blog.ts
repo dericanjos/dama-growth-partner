@@ -1441,6 +1441,7 @@ Se você leu até aqui, já entende mais sobre marketing médico do que 41% dos 
     slug: "redes-sociais-captacao-pacientes-consultorio-2026",
     relatedSlugs: ["marketing-medico-2026-panorama-completo", "por-que-consultorio-precisa-aparecer-no-google"],
     title: "O Papel das Redes Sociais na Captação de Pacientes em 2026",
+    seoTitle: "Redes Sociais na Captação de Pacientes 2026",
     excerpt: "Redes sociais atraem pacientes, mas não convertem sozinhas. Entenda o papel real do Instagram, YouTube e LinkedIn na captação e o que falta pra virar consulta.",
     date: "2026-03-13",
     category: "Marketing",
