@@ -240,6 +240,9 @@ function PostPage() {
             <ShareButtons title={post.title} url={url} />
           </div>
 
+          {/* Q&A — fórum de perguntas (após Referências, antes do CTA) */}
+          <ForumSection blogSlug={post.slug} initialQuestions={questions} />
+
           {/* CTA */}
           <div
             className="mt-12 rounded-[14px] border p-8 text-center md:p-10"
