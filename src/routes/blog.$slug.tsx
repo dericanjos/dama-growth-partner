@@ -269,6 +269,27 @@ function PostPage() {
               Conhecer a Parceria DAMA →
             </a>
           </div>
+
+          {latestNews.length > 0 && (
+            <aside className="mt-12 rounded-[12px] border border-[var(--border)] bg-white p-6">
+              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                📰 Notícias recentes
+              </div>
+              <ul className="space-y-2">
+                {latestNews.map((n) => (
+                  <li key={n.slug}>
+                    <Link
+                      to="/noticias/$slug"
+                      params={{ slug: n.slug }}
+                      className="text-[14.5px] font-medium text-[var(--navy)] underline-offset-2 hover:text-[var(--gold-deep)] hover:underline"
+                    >
+                      {n.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
         </article>
       </section>
 
