@@ -5,7 +5,27 @@ import { Fragment, type JSX, type ReactNode } from "react";
  * Supports: ## H2, ### H3, > blockquote, - lists, paragraphs, [text](url) links.
  */
 
-// Inline parser: handles [text](url) — internal vs external auto-detected.
+// Process **bold** within a plain text segment (no links inside).
+function renderBold(text: string, keyPrefix: string): ReactNode[] {
+  const out: ReactNode[] = [];
+  const re = /\*\*([^*]+)\*\*/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let i = 0;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) out.push(text.slice(last, m.index));
+    out.push(
+      <strong key={`${keyPrefix}-b-${i++}`} className="font-semibold text-[var(--navy)]">
+        {m[1]}
+      </strong>,
+    );
+    last = re.lastIndex;
+  }
+  if (last < text.length) out.push(text.slice(last));
+  return out;
+}
+
+// Inline parser: handles [text](url) and **bold**.
 function renderInline(text: string, keyPrefix: string): ReactNode[] {
   const nodes: ReactNode[] = [];
   const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
@@ -14,7 +34,7 @@ function renderInline(text: string, keyPrefix: string): ReactNode[] {
   let i = 0;
   while ((match = regex.exec(text)) !== null) {
     if (match.index > lastIndex) {
-      nodes.push(text.slice(lastIndex, match.index));
+      nodes.push(...renderBold(text.slice(lastIndex, match.index), `${keyPrefix}-t${i}`));
     }
     const [, label, href] = match;
     const isExternal = /^https?:\/\//.test(href);
@@ -30,7 +50,7 @@ function renderInline(text: string, keyPrefix: string): ReactNode[] {
     );
     lastIndex = regex.lastIndex;
   }
-  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  if (lastIndex < text.length) nodes.push(...renderBold(text.slice(lastIndex), `${keyPrefix}-t${i}`));
   return nodes;
 }
 
