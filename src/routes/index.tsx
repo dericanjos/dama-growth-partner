@@ -8,6 +8,7 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { PatientTestimonials } from "@/components/home/PatientTestimonials";
 import { BlogHighlights } from "@/components/home/BlogHighlights";
 import { ClosingCTA } from "@/components/home/ClosingCTA";
+import { CrownDivider } from "@/components/brand/CrownDivider";
 
 const ORG_JSONLD = {
   "@context": "https://schema.org",
@@ -85,6 +86,9 @@ function HomePage() {
       <StatsBand />
       <WhoWeAreShort />
       <SolutionOverview />
+      <div className="bg-[var(--cream)]">
+        <CrownDivider />
+      </div>
       <MethodOverview />
       <Testimonials />
       <PatientTestimonials />

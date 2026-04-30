@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { QueenIcon } from "@/components/brand/QueenIcon";
 
 export function Hero() {
   return (
@@ -13,7 +14,16 @@ export function Hero() {
         }}
       />
 
+      {/* Marca d'água: rainha gigante atrás do conteúdo */}
+      <QueenIcon
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 -z-0 h-[520px] w-auto -translate-x-1/2 -translate-y-[55%] opacity-[0.06] md:h-[680px]"
+      />
+
       <div className="container-dama relative flex flex-col items-center justify-center pb-20 pt-28 text-center md:pb-24 md:pt-36">
+        {/* Coroa pequena acima do badge */}
+        <QueenIcon className="mb-6 h-10 w-auto opacity-90 md:h-12" />
+
         {/* Badge */}
         <div className="badge-pill">
           <span className="badge-pill-dot" />
