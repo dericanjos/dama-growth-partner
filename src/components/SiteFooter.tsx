@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone } from "lucide-react";
+import damaQueen from "@/assets/dama-queen.png";
 
 export function SiteFooter() {
   return (
@@ -7,9 +8,20 @@ export function SiteFooter() {
       <div className="container-dama">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <div className="font-serif text-2xl font-semibold text-white">DAMA</div>
-            <div className="mt-1 text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">
-              Grupo DAMA
+            <div className="flex items-center gap-3">
+              <img
+                src={damaQueen}
+                alt=""
+                aria-hidden
+                className="h-10 w-auto select-none"
+                style={{ filter: "drop-shadow(0 4px 12px rgba(232,184,74,0.4))" }}
+              />
+              <div>
+                <div className="font-serif text-2xl font-semibold leading-none text-white">DAMA</div>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.22em] text-[var(--gold)]">
+                  Grupo DAMA
+                </div>
+              </div>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
               Operação Comercial Estratégica para Médicos.

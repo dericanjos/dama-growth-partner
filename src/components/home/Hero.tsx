@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import damaQueen from "@/assets/dama-queen.png";
 
 export function Hero() {
   return (
@@ -11,6 +12,22 @@ export function Hero() {
           background:
             "radial-gradient(ellipse 50% 40% at 50% 30%, color-mix(in oklab, var(--gold) 8%, transparent) 0%, transparent 70%)",
         }}
+      />
+
+      {/* Peça de xadrez — marca d'água sutil */}
+      <img
+        src={damaQueen}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute -right-16 top-1/2 -z-0 hidden -translate-y-1/2 select-none opacity-[0.06] md:block"
+        style={{ width: "min(640px, 55vw)", filter: "drop-shadow(0 0 40px rgba(232,184,74,0.25))" }}
+      />
+      <img
+        src={damaQueen}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-24 -z-0 -translate-x-1/2 select-none opacity-[0.05] md:hidden"
+        style={{ width: "70vw" }}
       />
 
       <div className="container-dama relative flex flex-col items-center justify-center pb-20 pt-28 text-center md:pb-24 md:pt-36">
