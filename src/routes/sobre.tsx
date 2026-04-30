@@ -104,13 +104,12 @@ function AboutPage() {
         <div className="container-dama">
           <div className="card-dama overflow-hidden">
             <div className="grid md:grid-cols-[260px_1fr]">
-              <div
-                className="hidden items-center justify-center bg-[var(--navy)] md:flex"
-                aria-hidden
-              >
-                <div className="flex h-40 w-40 items-center justify-center rounded-full border-2 border-[var(--gold)]/40 bg-[var(--navy-light)] font-serif text-5xl text-[var(--gold)]">
-                  JA
-                </div>
+              <div className="hidden bg-[var(--navy)] md:block">
+                <img
+                  src={jessicaPhoto}
+                  alt="Jéssica Anjos, Fundadora do Grupo DAMA"
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="p-8 md:p-12">
                 <span className="eyebrow">Fundadora</span>
