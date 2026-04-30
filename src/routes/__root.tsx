@@ -59,8 +59,7 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "alternate icon", type: "image/png", href: "/favicon.png" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "preconnect", href: "https://images.unsplash.com" },
       { rel: "dns-prefetch", href: "https://images.unsplash.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
