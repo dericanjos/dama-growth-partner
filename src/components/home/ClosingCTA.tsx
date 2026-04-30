@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import damaQueen from "@/assets/dama-queen.png";
 
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
@@ -9,6 +10,13 @@ export function ClosingCTA() {
       <div className="absolute inset-0 hero-glow opacity-70" aria-hidden />
       <div className="container-dama relative max-w-3xl text-center">
         <Reveal>
+          <img
+            src={damaQueen}
+            alt=""
+            aria-hidden
+            className="mx-auto mb-8 h-16 w-auto select-none md:h-20"
+            style={{ filter: "drop-shadow(0 8px 24px rgba(232,184,74,0.35))" }}
+          />
           <h2 className="heading-display text-3xl text-white md:text-5xl">
             Crescimento previsível exige mais do que marketing.
           </h2>
