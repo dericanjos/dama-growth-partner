@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
+import jessicaPhoto from "@/assets/jessica-anjos.png";
 
 const AUTHOR_NAME = "Jéssica Anjos";
 const AUTHOR_URL = "https://grupodamahealth.com.br/autor/jessica-anjos";
@@ -63,7 +64,7 @@ function AuthorPage() {
             style={{ borderColor: "var(--gold)" }}
           >
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80"
+              src={jessicaPhoto}
               alt="Jéssica Anjos, Fundadora do Grupo DAMA"
               className="h-full w-full object-cover"
             />
