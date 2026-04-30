@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import jessicaPhoto from "@/assets/jessica-anjos.png";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
