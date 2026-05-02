@@ -4,6 +4,24 @@ import { FileText } from "lucide-react";
 import { BLOG_CATEGORIES, BLOG_POSTS, formatDateBR } from "@/data/blog";
 import { CategoryBadge } from "@/components/CategoryBadge";
 
+const BLOG_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Blog Grupo DAMA",
+  description:
+    "Conteúdo estratégico para médicos que tratam o consultório como negócio: marketing, gestão, tecnologia, jornada do paciente e saúde suplementar.",
+  url: "https://grupodamahealth.com.br/blog",
+  inLanguage: "pt-BR",
+  publisher: {
+    "@type": "Organization",
+    name: "Grupo DAMA Health",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://grupodamahealth.com.br/dama-queen.png",
+    },
+  },
+};
+
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
@@ -23,6 +41,12 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:url", content: "https://grupodamahealth.com.br/blog" },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/blog" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(BLOG_JSONLD),
+      },
+    ],
   }),
   component: BlogIndex,
 });
