@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Mail, Phone } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { HelpCircle, Instagram, Mail, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -40,6 +40,25 @@ function ContactPage() {
       </section>
 
       <section className="bg-[var(--cream)] py-20 md:py-24">
+        <div className="container-dama">
+          <Link
+            to="/faq"
+            className="mb-10 flex items-start gap-4 rounded-xl border border-[color-mix(in_oklab,var(--gold)_35%,transparent)] bg-white p-5 transition-colors hover:border-[var(--gold)] md:items-center"
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--gold-soft)] text-[var(--navy)]">
+              <HelpCircle className="h-5 w-5" />
+            </span>
+            <span className="text-sm md:text-base">
+              <strong className="block font-serif text-[var(--navy)]">
+                Antes de entrar em contato, talvez sua dúvida já esteja respondida.
+              </strong>
+              <span className="mt-1 block text-[var(--text-secondary)]">
+                Veja nossa página de Perguntas Frequentes{" "}
+                <span className="text-[var(--navy)] underline-offset-4 group-hover:underline">→</span>
+              </span>
+            </span>
+          </Link>
+        </div>
         <div className="container-dama grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
             <h2 className="font-serif text-2xl text-[var(--navy)]">

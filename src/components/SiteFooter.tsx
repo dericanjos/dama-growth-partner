@@ -36,6 +36,7 @@ export function SiteFooter() {
             <FooterLink to="/blog">Blog</FooterLink>
             <FooterLink to="/glossario">Glossário</FooterLink>
             <FooterLink to="/noticias">Notícias Médicas</FooterLink>
+            <FooterLink to="/faq">FAQ</FooterLink>
             <FooterLink to="/contato">Contato</FooterLink>
           </FooterCol>
 

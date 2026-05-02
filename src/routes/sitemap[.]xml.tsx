@@ -11,6 +11,7 @@ const STATIC_URLS: Array<{ loc: string; lastmod: string; changefreq: string; pri
   { loc: "/blog", lastmod: "2026-04-21", changefreq: "weekly", priority: "0.8" },
   { loc: "/noticias", lastmod: "2026-05-02", changefreq: "weekly", priority: "0.7" },
   { loc: "/contato", lastmod: "2026-04-18", changefreq: "yearly", priority: "0.6" },
+  { loc: "/faq", lastmod: "2026-05-02", changefreq: "monthly", priority: "0.7" },
   { loc: "/blog/o-que-e-operacao-comercial-consultorio", lastmod: "2026-04-03", changefreq: "monthly", priority: "0.7" },
   { loc: "/blog/por-que-marketing-sozinho-nao-lota-agenda", lastmod: "2026-04-07", changefreq: "monthly", priority: "0.7" },
   { loc: "/blog/quanto-medico-perde-sem-processo-comercial", lastmod: "2026-04-10", changefreq: "monthly", priority: "0.7" },
