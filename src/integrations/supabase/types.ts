@@ -134,6 +134,7 @@ export type Database = {
           source_name: string
           source_url: string | null
           subtitle: string | null
+          tags: string[]
           title: string
         }
         Insert: {
@@ -151,6 +152,7 @@ export type Database = {
           source_name: string
           source_url?: string | null
           subtitle?: string | null
+          tags?: string[]
           title: string
         }
         Update: {
@@ -168,6 +170,7 @@ export type Database = {
           source_name?: string
           source_url?: string | null
           subtitle?: string | null
+          tags?: string[]
           title?: string
         }
         Relationships: []
