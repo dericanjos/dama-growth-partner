@@ -16,6 +16,7 @@ export interface NewsArticleListItem {
   cover_image_alt: string | null;
   published_at: string;
   seo_title: string | null;
+  tags: string[];
 }
 
 export interface NewsArticleFull extends NewsArticleListItem {}
