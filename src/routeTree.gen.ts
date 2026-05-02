@@ -16,6 +16,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as MetodoRouteImport } from './routes/metodo'
 import { Route as GlossarioRouteImport } from './routes/glossario'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
@@ -59,6 +60,11 @@ const MetodoRoute = MetodoRouteImport.update({
 const GlossarioRoute = GlossarioRouteImport.update({
   id: '/glossario',
   path: '/glossario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -111,6 +117,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
+  '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
   '/metodo': typeof MetodoRoute
   '/privacidade': typeof PrivacidadeRoute
@@ -128,6 +135,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
+  '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
   '/metodo': typeof MetodoRoute
   '/privacidade': typeof PrivacidadeRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
+  '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
   '/metodo': typeof MetodoRoute
   '/privacidade': typeof PrivacidadeRoute
@@ -167,6 +176,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/contato'
+    | '/faq'
     | '/glossario'
     | '/metodo'
     | '/privacidade'
@@ -184,6 +194,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contato'
+    | '/faq'
     | '/glossario'
     | '/metodo'
     | '/privacidade'
@@ -202,6 +213,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/contato'
+    | '/faq'
     | '/glossario'
     | '/metodo'
     | '/privacidade'
@@ -221,6 +233,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
+  FaqRoute: typeof FaqRoute
   GlossarioRoute: typeof GlossarioRoute
   MetodoRoute: typeof MetodoRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
@@ -283,6 +296,13 @@ declare module '@tanstack/react-router' {
       path: '/glossario'
       fullPath: '/glossario'
       preLoaderRoute: typeof GlossarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -367,6 +387,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
+  FaqRoute: FaqRoute,
   GlossarioRoute: GlossarioRoute,
   MetodoRoute: MetodoRoute,
   PrivacidadeRoute: PrivacidadeRoute,
