@@ -84,10 +84,7 @@ export const Route = createFileRoute("/noticias/$slug")({
         { property: "article:modified_time", content: article.published_at },
         { property: "article:section", content: article.category },
         ...(tags.length > 0
-          ? [
-              { name: "keywords", content: tags.join(", ") },
-              ...tags.map((tag) => ({ property: "article:tag", content: tag })),
-            ]
+          ? [{ name: "keywords", content: tags.join(", ") }]
           : []),
       ],
       links: [{ rel: "canonical", href: url }],
@@ -193,6 +190,10 @@ function NewsArticlePage() {
 
   return (
     <>
+      {/* React 19 hoists these into <head> — bypasses meta dedup so all article:tag entries render */}
+      {(article.tags ?? []).map((tag, idx) => (
+        <meta key={`article-tag-${idx}`} property="article:tag" content={tag} />
+      ))}
       <section className="surface-dark hero-glow relative pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="container-dama mx-auto max-w-3xl text-center">
           <div className="mb-6 flex items-center justify-center gap-3">
