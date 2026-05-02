@@ -1,4 +1,5 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
+import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -7,6 +8,13 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 
 function NotFoundComponent() {
+  useEffect(() => {
+    console.log("[NotFoundPage] Mounted. Current title:", document.title);
+    setTimeout(() => {
+      console.log("[NotFoundPage] After 1s, title:", document.title);
+    }, 1000);
+  }, []);
+
   return (
     <div className="flex min-h-[80vh] items-center justify-center px-4">
       <div className="max-w-md text-center">
