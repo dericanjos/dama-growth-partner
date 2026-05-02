@@ -16,6 +16,7 @@ export interface NewsArticleListItem {
   cover_image_alt: string | null;
   published_at: string;
   seo_title: string | null;
+  tags: string[];
 }
 
 export interface NewsArticleFull extends NewsArticleListItem {}
@@ -47,7 +48,7 @@ export const listPublishedNews = createServerFn({ method: "GET" })
       let query = supabaseAdmin
         .from("news_articles")
         .select(
-          "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title",
+          "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, tags",
           { count: "exact" },
         )
         .eq("is_published", true)
@@ -80,7 +81,7 @@ export const getNewsArticleBySlug = createServerFn({ method: "GET" })
     const { data: row, error } = await supabaseAdmin
       .from("news_articles")
       .select(
-        "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title",
+        "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, tags",
       )
       .eq("slug", data.slug)
       .eq("is_published", true)
