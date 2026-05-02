@@ -84,10 +84,7 @@ export const Route = createFileRoute("/noticias/$slug")({
         { property: "article:modified_time", content: article.published_at },
         { property: "article:section", content: article.category },
         ...(tags.length > 0
-          ? [
-              { name: "keywords", content: tags.join(", ") },
-              ...tags.map((tag) => ({ property: "article:tag", content: tag })),
-            ]
+          ? [{ name: "keywords", content: tags.join(", ") }]
           : []),
       ],
       links: [{ rel: "canonical", href: url }],
