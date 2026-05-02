@@ -38,7 +38,36 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
+  head: ({ matches }) => {
+    const isNotFound = matches.some((match) => match.status === "notFound" || match.globalNotFound);
+
+    if (isNotFound) {
+      return {
+        meta: [
+          { charSet: "utf-8" },
+          { name: "viewport", content: "width=device-width, initial-scale=1" },
+          { title: "Página não encontrada (404) | Grupo DAMA" },
+          {
+            name: "description",
+            content: "A página que você procura não existe ou foi movida. Volte para a home do Grupo DAMA.",
+          },
+          { name: "robots", content: "noindex, follow" },
+          { name: "prerender-status-code", content: "404" },
+        ],
+        links: [
+          { rel: "stylesheet", href: appCss },
+          { rel: "icon", type: "image/png", href: "/favicon.png" },
+          { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+          { rel: "manifest", href: "/manifest.json" },
+          { rel: "preconnect", href: "https://images.unsplash.com" },
+          { rel: "dns-prefetch", href: "https://images.unsplash.com" },
+          { rel: "preconnect", href: "https://fonts.googleapis.com" },
+          { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        ],
+      };
+    }
+
+    return {
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -74,7 +103,8 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
     ],
-  }),
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
