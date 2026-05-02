@@ -3,6 +3,40 @@ import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sp
 import { Reveal } from "@/components/Reveal";
 import jessicaPhoto from "@/assets/jessica-anjos.png";
 
+const ABOUT_ORG_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Grupo DAMA Health",
+  alternateName: "DAMA",
+  url: "https://grupodamahealth.com.br",
+  logo: "https://grupodamahealth.com.br/dama-queen.png",
+  description:
+    "Holding vertical para médicos que combina time comercial estratégico, tecnologia e operação. Atende mais de 90 médicos em 16+ estados brasileiros.",
+  founder: [
+    {
+      "@type": "Person",
+      name: "Jéssica Anjos",
+      jobTitle: "Fundadora",
+      url: "https://grupodamahealth.com.br/autor/jessica-anjos",
+    },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Recife",
+    addressRegion: "PE",
+    addressCountry: "BR",
+  },
+  areaServed: "BR",
+  knowsAbout: [
+    "Marketing médico",
+    "Gestão de consultório",
+    "Captação de pacientes",
+    "Time comercial para médicos",
+    "Saúde suplementar",
+  ],
+  sameAs: ["https://www.instagram.com/damacomercialmedico"],
+};
+
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
@@ -21,6 +55,12 @@ export const Route = createFileRoute("/sobre")({
       { property: "og:url", content: "https://grupodamahealth.com.br/sobre" },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/sobre" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ABOUT_ORG_JSONLD),
+      },
+    ],
   }),
   component: AboutPage,
 });
