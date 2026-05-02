@@ -35,6 +35,15 @@ function plainExcerpt(text: string, max = 155) {
   return plain.length > max ? `${plain.slice(0, max).trim()}…` : plain;
 }
 
+const SITE_URL = "https://grupodamahealth.com.br";
+
+function toAbsoluteUrl(path: string | null | undefined): string | null {
+  if (!path) return null;
+  if (/^https?:\/\//i.test(path)) return path;
+  if (path.startsWith("/")) return `${SITE_URL}${path}`;
+  return `${SITE_URL}/${path}`;
+}
+
 export const Route = createFileRoute("/noticias/$slug")({
   loader: async ({ params }) => {
     const { article } = await getNewsArticleBySlug({
@@ -48,8 +57,11 @@ export const Route = createFileRoute("/noticias/$slug")({
       return { meta: [{ title: "Notícia | Grupo DAMA" }] };
     const { article } = loaderData;
     const desc = plainExcerpt(article.content, 155);
-    const url = `https://grupodamahealth.com.br/noticias/${article.slug}`;
+    const url = `${SITE_URL}/noticias/${article.slug}`;
     const seoTitle = article.seo_title || article.title;
+    const absoluteImage = toAbsoluteUrl(article.cover_image);
+    const authorMeta = getAuthorMeta(article.author);
+    const tags = article.tags ?? [];
     return {
       meta: [
         { title: `${seoTitle} | Grupo DAMA` },
@@ -58,17 +70,25 @@ export const Route = createFileRoute("/noticias/$slug")({
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
-        ...(article.cover_image
+        { name: "twitter:title", content: article.title },
+        { name: "twitter:description", content: desc },
+        ...(absoluteImage
           ? [
-              { property: "og:image", content: article.cover_image },
-              { name: "twitter:image", content: article.cover_image },
+              { property: "og:image", content: absoluteImage },
+              { name: "twitter:image", content: absoluteImage },
               { name: "twitter:card", content: "summary_large_image" },
             ]
           : []),
-        { property: "article:author", content: article.author },
+        { property: "article:author", content: authorMeta.url },
         { property: "article:published_time", content: article.published_at },
         { property: "article:modified_time", content: article.published_at },
         { property: "article:section", content: article.category },
+        ...(tags.length > 0
+          ? [
+              { name: "keywords", content: tags.join(", ") },
+              ...tags.map((tag) => ({ property: "article:tag", content: tag })),
+            ]
+          : []),
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
@@ -82,20 +102,21 @@ export const Route = createFileRoute("/noticias/$slug")({
             datePublished: article.published_at,
             dateModified: article.published_at,
             articleSection: article.category,
-            image: article.cover_image ? [article.cover_image] : undefined,
+            keywords: tags.length > 0 ? tags.join(", ") : undefined,
+            image: absoluteImage ? [absoluteImage] : undefined,
             author: {
               "@type": "Person",
               name: article.author,
-              jobTitle: getAuthorMeta(article.author).jobTitle,
-              url: getAuthorMeta(article.author).url,
+              jobTitle: authorMeta.jobTitle,
+              url: authorMeta.url,
             },
             publisher: {
               "@type": "Organization",
               name: "Grupo DAMA",
-              url: "https://grupodamahealth.com.br",
+              url: SITE_URL,
               logo: {
                 "@type": "ImageObject",
-                url: "https://grupodamahealth.com.br/favicon.png",
+                url: `${SITE_URL}/favicon.png`,
               },
             },
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
