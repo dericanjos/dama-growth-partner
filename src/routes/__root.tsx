@@ -67,6 +67,8 @@ export const Route = createRootRoute({
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/manifest.json" },
       { rel: "preconnect", href: "https://images.unsplash.com" },
       { rel: "dns-prefetch", href: "https://images.unsplash.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

@@ -110,3 +110,24 @@ export const listLatestNews = createServerFn({ method: "GET" })
     }
     return { items: (rows ?? []) as Array<{ slug: string; title: string }> };
   });
+
+export const listNewsByAuthor = createServerFn({ method: "GET" })
+  .inputValidator((data: unknown) =>
+    z.object({ author: z.string().min(1).max(120) }).parse(data),
+  )
+  .handler(async ({ data }): Promise<{ items: NewsArticleListItem[] }> => {
+    const { data: rows, error } = await supabaseAdmin
+      .from("news_articles")
+      .select(
+        "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, tags",
+      )
+      .eq("is_published", true)
+      .eq("author", data.author)
+      .order("published_at", { ascending: false });
+    if (error) {
+      console.error("Erro ao listar notícias por autor:", error);
+      return { items: [] };
+    }
+    return { items: (rows ?? []) as NewsArticleListItem[] };
+  });
+
