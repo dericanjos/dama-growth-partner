@@ -9,6 +9,13 @@ import { SiteFooter } from "@/components/SiteFooter";
 function NotFoundComponent() {
   return (
     <div className="flex min-h-[80vh] items-center justify-center px-4">
+      {/* React 19 hoists these into <head>, overriding root meta */}
+      <title>Página não encontrada (404) | Grupo DAMA</title>
+      <meta
+        name="description"
+        content="A página que você procura não existe ou foi movida. Volte para a home do Grupo DAMA."
+      />
+      <meta name="robots" content="noindex, follow" />
       <div className="max-w-md text-center">
         <h1 className="font-serif text-7xl text-[var(--navy)]">404</h1>
         <h2 className="mt-4 font-serif text-xl text-[var(--text-primary)]">
