@@ -1,0 +1,1 @@
+UPDATE public.news_articles SET title = 'Planos de saúde miram reajuste de 7,5% em 2026. Por que o médico continua sendo o último a ver o aumento?' WHERE slug = 'reajuste-planos-saude-2026-2027-7-5-medico-honorarios';
