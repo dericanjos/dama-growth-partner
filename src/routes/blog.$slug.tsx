@@ -236,7 +236,15 @@ function PostPage() {
             <span className="gold-text">{post.title}</span>
           </h1>
           <p className="mt-6 text-center text-sm uppercase tracking-[0.18em] text-white/55">
-            {post.author ? <>Por {post.author} · Head de Growth · </> : null}
+            {post.author ? (
+              <>
+                Por {post.author} ·{" "}
+                {post.author.toLowerCase().includes("jessica") || post.author.toLowerCase().includes("jéssica")
+                  ? "Fundadora"
+                  : "Head de Growth"}{" "}
+                ·{" "}
+              </>
+            ) : null}
             {formatDateBR(post.date)}
           </p>
 
