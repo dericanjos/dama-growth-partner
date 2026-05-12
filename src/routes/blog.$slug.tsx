@@ -35,6 +35,11 @@ export const Route = createFileRoute("/blog/$slug")({
     const desc = (post.metaDescription && post.metaDescription.trim()) || post.excerpt.slice(0, 155);
     const url = `https://grupodamahealth.com.br/blog/${post.slug}`;
     const authorName = post.author ?? "Deric Anjos";
+    const isJessica = authorName.toLowerCase().includes("jéssica") || authorName.toLowerCase().includes("jessica");
+    const authorRole = isJessica ? "Fundadora" : "Head de Growth";
+    const authorUrl = isJessica
+      ? "https://grupodamahealth.com.br/autor/jessica-anjos"
+      : "https://grupodamahealth.com.br/autor/deric-anjos";
     const titleText = post.seoTitle ?? post.title;
     const tags = post.tags ?? [];
     return {
@@ -72,8 +77,8 @@ export const Route = createFileRoute("/blog/$slug")({
             author: {
               "@type": "Person",
               name: authorName,
-              jobTitle: "Head de Growth",
-              url: "https://grupodamahealth.com.br/autor/deric-anjos",
+              jobTitle: authorRole,
+              url: authorUrl,
               worksFor: {
                 "@type": "Organization",
                 name: "Grupo DAMA",
@@ -231,7 +236,15 @@ function PostPage() {
             <span className="gold-text">{post.title}</span>
           </h1>
           <p className="mt-6 text-center text-sm uppercase tracking-[0.18em] text-white/55">
-            {post.author ? <>Por {post.author} · Head de Growth · </> : null}
+            {post.author ? (
+              <>
+                Por {post.author} ·{" "}
+                {post.author.toLowerCase().includes("jessica") || post.author.toLowerCase().includes("jéssica")
+                  ? "Fundadora"
+                  : "Head de Growth"}{" "}
+                ·{" "}
+              </>
+            ) : null}
             {formatDateBR(post.date)}
           </p>
 
