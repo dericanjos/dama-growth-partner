@@ -75,7 +75,7 @@ export const listPublishedNews = createServerFn({ method: "GET" })
         return { items: [], total: 0, page, pageSize: PAGE_SIZE };
       }
       return {
-        items: (rows ?? []) as NewsArticleListItem[],
+        items: (rows ?? []) as unknown as NewsArticleListItem[],
         total: count ?? 0,
         page,
         pageSize: PAGE_SIZE,
@@ -100,7 +100,7 @@ export const getNewsArticleBySlug = createServerFn({ method: "GET" })
       console.error("Erro ao buscar notícia:", error);
       return { article: null };
     }
-    return { article: (row as NewsArticleFull | null) ?? null };
+    return { article: (row as unknown as NewsArticleFull | null) ?? null };
   });
 
 export const listLatestNews = createServerFn({ method: "GET" })
@@ -138,7 +138,7 @@ export const listNewsByAuthor = createServerFn({ method: "GET" })
       console.error("Erro ao listar notícias por autor:", error);
       return { items: [] };
     }
-    return { items: (rows ?? []) as NewsArticleListItem[] };
+    return { items: (rows ?? []) as unknown as NewsArticleListItem[] };
   });
 
 
@@ -166,7 +166,7 @@ export const listRelatedNews = createServerFn({ method: "GET" })
       .order("published_at", { ascending: false })
       .limit(limit);
 
-    let items = (catRows ?? []) as NewsArticleListItem[];
+    let items = (catRows ?? []) as unknown as NewsArticleListItem[];
 
     // Fallback: any tag overlap
     if (items.length < limit && data.tags.length > 0) {
@@ -179,7 +179,7 @@ export const listRelatedNews = createServerFn({ method: "GET" })
         .order("published_at", { ascending: false })
         .limit(limit);
       const seen = new Set(items.map((i) => i.id));
-      for (const row of (tagRows ?? []) as NewsArticleListItem[]) {
+      for (const row of (tagRows ?? []) as unknown as NewsArticleListItem[]) {
         if (!seen.has(row.id)) {
           items.push(row);
           seen.add(row.id);
@@ -198,7 +198,7 @@ export const listRelatedNews = createServerFn({ method: "GET" })
         .order("published_at", { ascending: false })
         .limit(limit);
       const seen = new Set(items.map((i) => i.id));
-      for (const row of (latestRows ?? []) as NewsArticleListItem[]) {
+      for (const row of (latestRows ?? []) as unknown as NewsArticleListItem[]) {
         if (!seen.has(row.id)) {
           items.push(row);
           seen.add(row.id);
