@@ -126,8 +126,10 @@ export type Database = {
           cover_image: string | null
           cover_image_alt: string | null
           created_at: string
+          faq: Json
           id: string
           is_published: boolean
+          meta_description: string | null
           published_at: string
           seo_title: string | null
           slug: string
@@ -144,8 +146,10 @@ export type Database = {
           cover_image?: string | null
           cover_image_alt?: string | null
           created_at?: string
+          faq?: Json
           id?: string
           is_published?: boolean
+          meta_description?: string | null
           published_at?: string
           seo_title?: string | null
           slug: string
@@ -162,8 +166,10 @@ export type Database = {
           cover_image?: string | null
           cover_image_alt?: string | null
           created_at?: string
+          faq?: Json
           id?: string
           is_published?: boolean
+          meta_description?: string | null
           published_at?: string
           seo_title?: string | null
           slug?: string
