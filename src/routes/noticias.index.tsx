@@ -9,6 +9,7 @@ const NEWS_CATEGORIES = [
   "Regulação",
   "Políticas Públicas",
   "Política de Saúde",
+  "Saúde Suplementar",
   "Vigilância Sanitária",
   "Planos de Saúde",
   "Classe Médica",
