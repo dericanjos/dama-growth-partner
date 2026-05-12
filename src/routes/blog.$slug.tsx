@@ -237,7 +237,7 @@ function PostPage() {
 
           {tags.length > 0 && (
             <ul className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2">
-              {tags.map((tag) => (
+              {tags.map((tag: string) => (
                 <li key={tag}>
                   <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-white/75">
                     #{tag}
@@ -299,7 +299,7 @@ function PostPage() {
                 Perguntas frequentes
               </h2>
               <Accordion type="single" collapsible className="w-full">
-                {faq.map((entry, idx) => (
+                {faq.map((entry: { question: string; answer: string }, idx: number) => (
                   <AccordionItem
                     key={`faq-${idx}`}
                     value={`faq-${idx}`}
@@ -323,7 +323,7 @@ function PostPage() {
                 Tópicos
               </div>
               <ul className="flex flex-wrap gap-2">
-                {tags.map((tag) => (
+                {tags.map((tag: string) => (
                   <li key={`bottom-${tag}`}>
                     <span className="inline-flex items-center rounded-full border border-[var(--border)] bg-white px-3 py-1 text-[12px] font-medium text-[var(--navy)]">
                       #{tag}
