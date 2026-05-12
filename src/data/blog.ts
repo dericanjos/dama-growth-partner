@@ -22,8 +22,12 @@ export interface BlogPost {
   coverImageAlt?: string;
   /** Optional curated related post slugs (overrides category-based logic). */
   relatedSlugs?: string[];
-  /** Optional FAQ entries rendered as FAQPage JSON-LD only. */
+  /** Optional FAQ entries rendered as visible Accordion AND FAQPage JSON-LD. */
   faqSchema?: Array<{ question: string; answer: string }>;
+  /** Optional tags rendered as visible badges + keywords meta. */
+  tags?: string[];
+  /** Optional explicit meta description (overrides excerpt for <meta>). */
+  metaDescription?: string;
 }
 
 
