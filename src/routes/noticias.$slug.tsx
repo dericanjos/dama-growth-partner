@@ -213,6 +213,7 @@ function NewsArticlePage() {
       ? window.location.href
       : `${SITE_URL}/noticias/${article.slug}`;
   const tags = article.tags ?? [];
+  const faq = (article.faq ?? []) as FaqEntry[];
 
   return (
     <>
