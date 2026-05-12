@@ -91,6 +91,7 @@ export const Route = createFileRoute("/blog/$slug")({
             image: post.coverImage ? [post.coverImage] : undefined,
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             articleSection: post.category,
+            ...(tags.length > 0 ? { keywords: tags.join(", ") } : {}),
             ...(loaderData.questions && loaderData.questions.length > 0
               ? {
                   mentions: loaderData.questions
