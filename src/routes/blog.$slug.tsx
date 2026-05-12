@@ -191,24 +191,61 @@ function PostPage() {
   const url =
     typeof window !== "undefined" ? window.location.href : `https://grupodamahealth.com.br/blog/${post.slug}`;
 
+  const tags = post.tags ?? [];
+  const faq = post.faqSchema ?? [];
+
   return (
     <>
       {/* Header navy */}
       <section className="surface-dark hero-glow relative pt-32 pb-16 md:pt-40 md:pb-20">
-        <div className="container-dama mx-auto max-w-3xl text-center">
-          <div className="mb-6 flex items-center justify-center gap-3">
+        <div className="container-dama mx-auto max-w-3xl">
+          {/* Breadcrumb visível */}
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-8 flex items-center justify-center gap-1.5 text-[12px] uppercase tracking-[0.14em] text-white/55"
+          >
+            <Link to="/" className="hover:text-[var(--gold-light)]">
+              Início
+            </Link>
+            <ChevronRight className="h-3 w-3 opacity-60" aria-hidden="true" />
+            <Link to="/blog" className="hover:text-[var(--gold-light)]">
+              Blog
+            </Link>
+            <ChevronRight className="h-3 w-3 opacity-60" aria-hidden="true" />
+            <span
+              className="max-w-[260px] truncate normal-case tracking-normal text-white/75 md:max-w-[420px]"
+              aria-current="page"
+              title={post.title}
+            >
+              {post.title}
+            </span>
+          </nav>
+
+          <div className="mb-6 flex items-center justify-center gap-3 text-center">
             <CategoryBadge category={post.category} />
             <span className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.14em] text-white/60">
               <Clock className="h-3.5 w-3.5" /> {minutes} min de leitura
             </span>
           </div>
-          <h1 className="heading-display text-[32px] md:text-[44px]">
+          <h1 className="heading-display text-center text-[32px] md:text-[44px]">
             <span className="gold-text">{post.title}</span>
           </h1>
-          <p className="mt-6 text-sm uppercase tracking-[0.18em] text-white/55">
+          <p className="mt-6 text-center text-sm uppercase tracking-[0.18em] text-white/55">
             {post.author ? <>Por {post.author} · Head de Growth · </> : null}
             {formatDateBR(post.date)}
           </p>
+
+          {tags.length > 0 && (
+            <ul className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2">
+              {tags.map((tag) => (
+                <li key={tag}>
+                  <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-white/75">
+                    #{tag}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 
@@ -246,6 +283,56 @@ function PostPage() {
           </aside>
 
           <MarkdownContent content={post.content} />
+
+          {faq.length > 0 && (
+            <section
+              aria-labelledby="faq-heading"
+              className="mt-12 rounded-[12px] border border-[var(--border)] bg-white p-6 md:p-8"
+            >
+              <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                ❓ FAQ
+              </div>
+              <h2
+                id="faq-heading"
+                className="mb-4 font-serif text-[22px] font-semibold text-[var(--navy)] md:text-[26px]"
+              >
+                Perguntas frequentes
+              </h2>
+              <Accordion type="single" collapsible className="w-full">
+                {faq.map((entry, idx) => (
+                  <AccordionItem
+                    key={`faq-${idx}`}
+                    value={`faq-${idx}`}
+                    className="border-b border-[var(--border)] last:border-b-0"
+                  >
+                    <AccordionTrigger className="text-left text-[15.5px] font-semibold text-[var(--navy)] hover:no-underline md:text-[16px]">
+                      {entry.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-[14.5px] leading-[1.7] text-[var(--navy)]/85">
+                      {entry.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </section>
+          )}
+
+          {tags.length > 0 && (
+            <div className="mt-10">
+              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                Tópicos
+              </div>
+              <ul className="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <li key={`bottom-${tag}`}>
+                    <span className="inline-flex items-center rounded-full border border-[var(--border)] bg-white px-3 py-1 text-[12px] font-medium text-[var(--navy)]">
+                      #{tag}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div className="mt-12 border-t border-[var(--border)] pt-8">
             <ShareButtons title={post.title} url={url} />
