@@ -2,6 +2,11 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
+export interface FaqEntry {
+  q: string;
+  a: string;
+}
+
 export interface NewsArticleListItem {
   id: string;
   slug: string;
@@ -16,10 +21,15 @@ export interface NewsArticleListItem {
   cover_image_alt: string | null;
   published_at: string;
   seo_title: string | null;
+  meta_description: string | null;
   tags: string[];
+  faq: FaqEntry[];
 }
 
 export interface NewsArticleFull extends NewsArticleListItem {}
+
+const SELECT_COLUMNS =
+  "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, meta_description, tags, faq";
 
 const PAGE_SIZE = 10;
 
