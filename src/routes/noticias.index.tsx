@@ -8,6 +8,7 @@ import { z } from "zod";
 const NEWS_CATEGORIES = [
   "Regulação",
   "Políticas Públicas",
+  "Política de Saúde",
   "Vigilância Sanitária",
   "Planos de Saúde",
   "Classe Médica",

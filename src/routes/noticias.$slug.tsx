@@ -191,7 +191,7 @@ function NewsArticlePage() {
   return (
     <>
       {/* React 19 hoists these into <head> — bypasses meta dedup so all article:tag entries render */}
-      {(article.tags ?? []).map((tag, idx) => (
+      {(article.tags ?? []).map((tag: string, idx: number) => (
         <meta key={`article-tag-${idx}`} property="article:tag" content={tag} />
       ))}
       <section className="surface-dark hero-glow relative pt-32 pb-16 md:pt-40 md:pb-20">
