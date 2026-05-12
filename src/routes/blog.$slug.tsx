@@ -77,8 +77,8 @@ export const Route = createFileRoute("/blog/$slug")({
             author: {
               "@type": "Person",
               name: authorName,
-              jobTitle: "Head de Growth",
-              url: "https://grupodamahealth.com.br/autor/deric-anjos",
+              jobTitle: authorRole,
+              url: authorUrl,
               worksFor: {
                 "@type": "Organization",
                 name: "Grupo DAMA",
