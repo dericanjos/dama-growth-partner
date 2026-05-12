@@ -1,5 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ChevronRight, ExternalLink } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareButtons } from "@/components/ShareButtons";
