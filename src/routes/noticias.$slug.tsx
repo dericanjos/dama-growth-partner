@@ -1,10 +1,15 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ExternalLink } from "lucide-react";
+import { ChevronRight, ExternalLink } from "lucide-react";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareButtons } from "@/components/ShareButtons";
 import { formatDateBR, BLOG_POSTS } from "@/data/blog";
-import { getNewsArticleBySlug } from "@/server/news.functions";
+import {
+  getNewsArticleBySlug,
+  listRelatedNews,
+  type FaqEntry,
+  type NewsArticleListItem,
+} from "@/server/news.functions";
 
 function getAuthorMeta(author: string): { jobTitle: string; url: string } {
   if (author === "Deric Anjos") {
@@ -36,6 +41,7 @@ function plainExcerpt(text: string, max = 155) {
 }
 
 const SITE_URL = "https://grupodamahealth.com.br";
+const PUBLISHER_LOGO = `${SITE_URL}/assets/dama-logo.png`;
 
 function toAbsoluteUrl(path: string | null | undefined): string | null {
   if (!path) return null;
@@ -50,21 +56,93 @@ export const Route = createFileRoute("/noticias/$slug")({
       data: { slug: params.slug },
     });
     if (!article) throw notFound();
-    return { article };
+    const { items: related } = await listRelatedNews({
+      data: {
+        slug: article.slug,
+        category: article.category,
+        tags: article.tags ?? [],
+        limit: 3,
+      },
+    });
+    return { article, related };
   },
   head: ({ loaderData }) => {
     if (!loaderData)
       return { meta: [{ title: "Notícia | Grupo DAMA" }] };
     const { article } = loaderData;
-    const desc = plainExcerpt(article.content, 155);
+    const desc =
+      (article.meta_description && article.meta_description.trim()) ||
+      plainExcerpt(article.content, 155);
     const url = `${SITE_URL}/noticias/${article.slug}`;
     const seoTitle = article.seo_title || article.title;
     const absoluteImage = toAbsoluteUrl(article.cover_image);
     const authorMeta = getAuthorMeta(article.author);
     const tags = article.tags ?? [];
+    const faq = (article.faq ?? []) as FaqEntry[];
+
+    const scripts: Array<{ type: string; children: string }> = [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          headline: article.title,
+          description: desc,
+          image: absoluteImage ? [absoluteImage] : undefined,
+          datePublished: article.published_at,
+          dateModified: article.published_at,
+          articleSection: article.category,
+          keywords: tags.length > 0 ? tags.join(", ") : undefined,
+          author: {
+            "@type": "Person",
+            name: article.author,
+            jobTitle: authorMeta.jobTitle,
+            url: authorMeta.url,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Grupo Dama Health",
+            logo: {
+              "@type": "ImageObject",
+              url: PUBLISHER_LOGO,
+            },
+          },
+          mainEntityOfPage: { "@type": "WebPage", "@id": url },
+          isBasedOn: article.source_url ?? undefined,
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Início", item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Notícias", item: `${SITE_URL}/noticias` },
+            { "@type": "ListItem", position: 3, name: article.title, item: url },
+          ],
+        }),
+      },
+    ];
+
+    if (faq.length > 0) {
+      scripts.push({
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((entry) => ({
+            "@type": "Question",
+            name: entry.q,
+            acceptedAnswer: { "@type": "Answer", text: entry.a },
+          })),
+        }),
+      });
+    }
+
     return {
       meta: [
-        { title: `${seoTitle} | Grupo DAMA` },
+        { title: seoTitle },
         { name: "description", content: desc },
         { property: "og:title", content: article.title },
         { property: "og:description", content: desc },
@@ -88,66 +166,7 @@ export const Route = createFileRoute("/noticias/$slug")({
           : []),
       ],
       links: [{ rel: "canonical", href: url }],
-      scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "NewsArticle",
-            headline: article.title,
-            description: desc,
-            datePublished: article.published_at,
-            dateModified: article.published_at,
-            articleSection: article.category,
-            keywords: tags.length > 0 ? tags.join(", ") : undefined,
-            image: absoluteImage ? [absoluteImage] : undefined,
-            author: {
-              "@type": "Person",
-              name: article.author,
-              jobTitle: authorMeta.jobTitle,
-              url: authorMeta.url,
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "Grupo DAMA",
-              url: SITE_URL,
-              logo: {
-                "@type": "ImageObject",
-                url: `${SITE_URL}/favicon.png`,
-              },
-            },
-            mainEntityOfPage: { "@type": "WebPage", "@id": url },
-            isBasedOn: article.source_url ?? undefined,
-          }),
-        },
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Início",
-                item: "https://grupodamahealth.com.br/",
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Notícias",
-                item: "https://grupodamahealth.com.br/noticias",
-              },
-              {
-                "@type": "ListItem",
-                position: 3,
-                name: article.title,
-                item: url,
-              },
-            ],
-          }),
-        },
-      ],
+      scripts,
     };
   },
   notFoundComponent: () => (
@@ -182,37 +201,75 @@ export const Route = createFileRoute("/noticias/$slug")({
 });
 
 function NewsArticlePage() {
-  const { article } = Route.useLoaderData();
+  const { article, related } = Route.useLoaderData();
   const url =
     typeof window !== "undefined"
       ? window.location.href
-      : `https://grupodamahealth.com.br/noticias/${article.slug}`;
+      : `${SITE_URL}/noticias/${article.slug}`;
+  const tags = article.tags ?? [];
 
   return (
     <>
       {/* React 19 hoists these into <head> — bypasses meta dedup so all article:tag entries render */}
-      {(article.tags ?? []).map((tag: string, idx: number) => (
+      {tags.map((tag: string, idx: number) => (
         <meta key={`article-tag-${idx}`} property="article:tag" content={tag} />
       ))}
+
       <section className="surface-dark hero-glow relative pt-32 pb-16 md:pt-40 md:pb-20">
-        <div className="container-dama mx-auto max-w-3xl text-center">
-          <div className="mb-6 flex items-center justify-center gap-3">
+        <div className="container-dama mx-auto max-w-3xl">
+          {/* Breadcrumb visível */}
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-8 flex items-center justify-center gap-1.5 text-[12px] uppercase tracking-[0.14em] text-white/55"
+          >
+            <Link to="/" className="hover:text-[var(--gold-light)]">
+              Início
+            </Link>
+            <ChevronRight className="h-3 w-3 opacity-60" aria-hidden="true" />
+            <Link to="/noticias" className="hover:text-[var(--gold-light)]">
+              Notícias
+            </Link>
+            <ChevronRight className="h-3 w-3 opacity-60" aria-hidden="true" />
+            <span
+              className="max-w-[260px] truncate normal-case tracking-normal text-white/75 md:max-w-[420px]"
+              aria-current="page"
+              title={article.title}
+            >
+              {article.title}
+            </span>
+          </nav>
+
+          <div className="mb-6 flex items-center justify-center gap-3 text-center">
             <CategoryBadge category={article.category} />
             <span className="text-xs uppercase tracking-[0.14em] text-white/60">
               {formatDateBR(article.published_at)}
             </span>
           </div>
-          <h1 className="heading-display text-[32px] md:text-[44px]">
+          <h1 className="heading-display text-center text-[32px] md:text-[44px]">
             <span className="gold-text">{article.title}</span>
           </h1>
           {article.subtitle && (
-            <p className="mx-auto mt-4 max-w-2xl text-[16px] italic text-white/75">
+            <p className="mx-auto mt-4 max-w-2xl text-center text-[16px] italic text-white/75">
               {article.subtitle}
             </p>
           )}
-          <p className="mt-6 text-sm uppercase tracking-[0.18em] text-white/55">
+          <p className="mt-6 text-center text-sm uppercase tracking-[0.18em] text-white/55">
             Por {article.author} · {getAuthorMeta(article.author).jobTitle}
           </p>
+
+          {tags.length > 0 && (
+            <ul className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2">
+              {tags.map((tag: string) => (
+                <li key={tag}>
+                  <span
+                    className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-white/75"
+                  >
+                    #{tag}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 
@@ -266,6 +323,23 @@ function NewsArticlePage() {
             </p>
           </aside>
 
+          {tags.length > 0 && (
+            <div className="mt-10">
+              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                Tópicos
+              </div>
+              <ul className="flex flex-wrap gap-2">
+                {tags.map((tag: string) => (
+                  <li key={`bottom-${tag}`}>
+                    <span className="inline-flex items-center rounded-full border border-[var(--border)] bg-white px-3 py-1 text-[12px] font-medium text-[var(--navy)]">
+                      #{tag}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {(() => {
             const latestBlog = [...BLOG_POSTS]
               .sort((a, b) => (a.date < b.date ? 1 : -1))
@@ -307,6 +381,50 @@ function NewsArticlePage() {
           </div>
         </article>
       </section>
+
+      {related.length > 0 && (
+        <section className="border-t border-[var(--border)] bg-white py-16 md:py-20">
+          <div className="container-dama mx-auto max-w-5xl">
+            <h2 className="mb-8 font-serif text-[24px] font-semibold text-[var(--navy)] md:text-[28px]">
+              Notícias relacionadas
+            </h2>
+            <ul className="grid grid-cols-1 gap-5">
+              {related.map((n: NewsArticleListItem) => (
+                <li key={n.id}>
+                  <Link
+                    to="/noticias/$slug"
+                    params={{ slug: n.slug }}
+                    className="group flex flex-col gap-4 overflow-hidden rounded-[12px] border border-[var(--border)] bg-white transition-all hover:-translate-y-[2px] hover:border-[color-mix(in_oklab,var(--gold)_55%,var(--border))] hover:shadow-[var(--shadow-gold)] sm:flex-row"
+                  >
+                    {n.cover_image && (
+                      <div className="h-40 w-full shrink-0 overflow-hidden sm:h-auto sm:w-56">
+                        <img
+                          src={n.cover_image}
+                          alt={n.cover_image_alt ?? n.title}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="flex flex-1 flex-col justify-center p-5">
+                      <div className="mb-2 flex flex-wrap items-center gap-3">
+                        <CategoryBadge category={n.category} />
+                        <span className="text-[12px] text-[var(--text-muted)]">
+                          {formatDateBR(n.published_at)}
+                        </span>
+                      </div>
+                      <h3 className="font-serif text-[17px] font-semibold leading-[1.35] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-deep)] md:text-[18px]">
+                        {n.title}
+                      </h3>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
     </>
   );
 }
