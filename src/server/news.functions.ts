@@ -58,7 +58,7 @@ export const listPublishedNews = createServerFn({ method: "GET" })
       let query = supabaseAdmin
         .from("news_articles")
         .select(
-          "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, tags",
+          SELECT_COLUMNS,
           { count: "exact" },
         )
         .eq("is_published", true)
@@ -91,7 +91,7 @@ export const getNewsArticleBySlug = createServerFn({ method: "GET" })
     const { data: row, error } = await supabaseAdmin
       .from("news_articles")
       .select(
-        "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, tags",
+        SELECT_COLUMNS,
       )
       .eq("slug", data.slug)
       .eq("is_published", true)
@@ -129,7 +129,7 @@ export const listNewsByAuthor = createServerFn({ method: "GET" })
     const { data: rows, error } = await supabaseAdmin
       .from("news_articles")
       .select(
-        "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, tags",
+        SELECT_COLUMNS,
       )
       .eq("is_published", true)
       .eq("author", data.author)
