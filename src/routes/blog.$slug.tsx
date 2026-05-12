@@ -35,6 +35,11 @@ export const Route = createFileRoute("/blog/$slug")({
     const desc = (post.metaDescription && post.metaDescription.trim()) || post.excerpt.slice(0, 155);
     const url = `https://grupodamahealth.com.br/blog/${post.slug}`;
     const authorName = post.author ?? "Deric Anjos";
+    const isJessica = authorName.toLowerCase().includes("jéssica") || authorName.toLowerCase().includes("jessica");
+    const authorRole = isJessica ? "Fundadora" : "Head de Growth";
+    const authorUrl = isJessica
+      ? "https://grupodamahealth.com.br/autor/jessica-anjos"
+      : "https://grupodamahealth.com.br/autor/deric-anjos";
     const titleText = post.seoTitle ?? post.title;
     const tags = post.tags ?? [];
     return {
