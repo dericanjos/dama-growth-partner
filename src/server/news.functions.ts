@@ -141,3 +141,71 @@ export const listNewsByAuthor = createServerFn({ method: "GET" })
     return { items: (rows ?? []) as NewsArticleListItem[] };
   });
 
+
+export const listRelatedNews = createServerFn({ method: "GET" })
+  .inputValidator((data: unknown) =>
+    z
+      .object({
+        slug: z.string().min(1).max(255),
+        category: z.string().min(1).max(120),
+        tags: z.array(z.string()).optional().default([]),
+        limit: z.number().int().min(1).max(6).optional().default(3),
+      })
+      .parse(data),
+  )
+  .handler(async ({ data }): Promise<{ items: NewsArticleListItem[] }> => {
+    const limit = data.limit ?? 3;
+
+    // Try same-category first
+    const { data: catRows } = await supabaseAdmin
+      .from("news_articles")
+      .select(SELECT_COLUMNS)
+      .eq("is_published", true)
+      .eq("category", data.category)
+      .neq("slug", data.slug)
+      .order("published_at", { ascending: false })
+      .limit(limit);
+
+    let items = (catRows ?? []) as NewsArticleListItem[];
+
+    // Fallback: any tag overlap
+    if (items.length < limit && data.tags.length > 0) {
+      const { data: tagRows } = await supabaseAdmin
+        .from("news_articles")
+        .select(SELECT_COLUMNS)
+        .eq("is_published", true)
+        .neq("slug", data.slug)
+        .overlaps("tags", data.tags)
+        .order("published_at", { ascending: false })
+        .limit(limit);
+      const seen = new Set(items.map((i) => i.id));
+      for (const row of (tagRows ?? []) as NewsArticleListItem[]) {
+        if (!seen.has(row.id)) {
+          items.push(row);
+          seen.add(row.id);
+        }
+        if (items.length >= limit) break;
+      }
+    }
+
+    // Final fallback: latest other news
+    if (items.length < limit) {
+      const { data: latestRows } = await supabaseAdmin
+        .from("news_articles")
+        .select(SELECT_COLUMNS)
+        .eq("is_published", true)
+        .neq("slug", data.slug)
+        .order("published_at", { ascending: false })
+        .limit(limit);
+      const seen = new Set(items.map((i) => i.id));
+      for (const row of (latestRows ?? []) as NewsArticleListItem[]) {
+        if (!seen.has(row.id)) {
+          items.push(row);
+          seen.add(row.id);
+        }
+        if (items.length >= limit) break;
+      }
+    }
+
+    return { items: items.slice(0, limit) };
+  });
