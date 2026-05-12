@@ -299,6 +299,39 @@ function NewsArticlePage() {
 
           <MarkdownContent content={article.content} />
 
+          {faq.length > 0 && (
+            <section
+              aria-labelledby="faq-heading"
+              className="mt-12 rounded-[12px] border border-[var(--border)] bg-white p-6 md:p-8"
+            >
+              <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                ❓ FAQ
+              </div>
+              <h2
+                id="faq-heading"
+                className="mb-4 font-serif text-[22px] font-semibold text-[var(--navy)] md:text-[26px]"
+              >
+                Perguntas frequentes
+              </h2>
+              <Accordion type="single" collapsible className="w-full">
+                {faq.map((entry, idx) => (
+                  <AccordionItem
+                    key={`faq-${idx}`}
+                    value={`faq-${idx}`}
+                    className="border-b border-[var(--border)] last:border-b-0"
+                  >
+                    <AccordionTrigger className="text-left text-[15.5px] font-semibold text-[var(--navy)] hover:no-underline md:text-[16px]">
+                      {entry.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-[14.5px] leading-[1.7] text-[var(--navy)]/85">
+                      {entry.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </section>
+          )}
+
           {/* Fonte oficial */}
           <aside
             className="mt-12 rounded-[12px] border-l-[3px] p-6"
