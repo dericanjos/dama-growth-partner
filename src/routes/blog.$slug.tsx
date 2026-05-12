@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { Clock } from "lucide-react";
+import { ChevronRight, Clock } from "lucide-react";
 import {
   formatDateBR,
   getPostBySlug,
@@ -9,6 +9,12 @@ import {
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareButtons } from "@/components/ShareButtons";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { ForumSection } from "@/components/forum/ForumSection";
 import { getForumQuestionsForSlug } from "@/server/forum-read.functions";
 import { listLatestNews } from "@/server/news.functions";
