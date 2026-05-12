@@ -45,7 +45,7 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription: "IA promete automatizar tudo no consultório, mas paciente em decisão de saúde precisa de humano. Entenda os limites da IA e o modelo certo de uso.",
     relatedSlugs: [
       "o-que-e-operacao-comercial-consultorio",
-      "marketing-sozinho-nao-lota-agenda",
+      "por-que-marketing-sozinho-nao-lota-agenda",
       "treinamento-secretaria-vs-terceirizacao-operacao-comercial",
     ],
     tags: [
