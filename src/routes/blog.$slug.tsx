@@ -276,7 +276,7 @@ function PostPage() {
                 📰 Notícias recentes
               </div>
               <ul className="space-y-2">
-                {latestNews.map((n) => (
+                {latestNews.map((n: { slug: string; title: string }) => (
                   <li key={n.slug}>
                     <Link
                       to="/noticias/$slug"
