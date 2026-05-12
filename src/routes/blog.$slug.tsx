@@ -32,18 +32,20 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Artigo | Blog — Grupo DAMA" }] };
     const { post } = loaderData;
-    const desc = post.excerpt.slice(0, 155);
+    const desc = (post.metaDescription && post.metaDescription.trim()) || post.excerpt.slice(0, 155);
     const url = `https://grupodamahealth.com.br/blog/${post.slug}`;
     const authorName = post.author ?? "Deric Anjos";
     const titleText = post.seoTitle ?? post.title;
+    const tags = post.tags ?? [];
     return {
       meta: [
-        { title: `${titleText} | Grupo DAMA` },
+        { title: titleText },
         { name: "description", content: desc },
         { property: "og:title", content: post.title },
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
+        ...(tags.length > 0 ? [{ name: "keywords", content: tags.join(", ") }] : []),
         ...(post.coverImage
           ? [
               { property: "og:image", content: post.coverImage },
