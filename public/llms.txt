@@ -1,0 +1,40 @@
+# Grupo DAMA Health
+
+> Operação comercial estratégica para médicos no Brasil. Time dedicado, growth marketing e marketing 360 que converte leads em pacientes particulares. 90+ médicos parceiros em 16 estados.
+
+O Grupo DAMA é uma empresa brasileira fundada por Jéssica Anjos em 2022. Atua como parceira comercial de médicos e clínicas, estruturando processos de captação, qualificação e conversão de pacientes particulares — substituindo o modelo tradicional de marketing isolado por uma operação comercial completa.
+
+## Pages
+
+- [Home](/): Visão geral da operação comercial DAMA para médicos.
+- [Sobre](/sobre): História, fundadora e time do Grupo DAMA.
+- [Solução](/solucao): O que está incluído na operação comercial DAMA.
+- [Método](/metodo): Como funciona o processo comercial estruturado.
+- [FAQ](/faq): Perguntas frequentes de médicos parceiros.
+- [Contato](/contato): Como falar com o time comercial.
+- [Glossário](/glossario): Termos do mercado de saúde suplementar e operação comercial.
+
+## Blog
+
+- [Blog](/blog): Artigos sobre operação comercial, marketing médico e gestão de consultório.
+- [O que é operação comercial em consultório](/blog/o-que-e-operacao-comercial-consultorio)
+- [Por que marketing sozinho não lota agenda](/blog/por-que-marketing-sozinho-nao-lota-agenda)
+- [Quanto o médico perde sem processo comercial](/blog/quanto-medico-perde-sem-processo-comercial)
+- [Time comercial terceirizado para consultório](/blog/time-comercial-terceirizado-consultorio)
+- [Marketing médico e CFM em 2026](/blog/marketing-medico-cfm-2026)
+- [Como sair do convênio e viver de paciente particular](/blog/como-sair-do-convenio-viver-de-paciente-particular)
+- [Migração de pacientes dos planos para o consultório particular](/blog/migracao-pacientes-planos-saude-consultorio-particular-2026)
+
+## News
+
+- [Notícias](/noticias): Cobertura editorial sobre saúde suplementar, ANS e mercado médico.
+
+## Authors
+
+- [Jéssica Anjos — Fundadora](/autor/jessica-anjos)
+- [Deric Anjos — Head de Growth](/autor/deric-anjos)
+
+## Optional
+
+- [Política de privacidade](/privacidade)
+- [Termos de uso](/termos)
