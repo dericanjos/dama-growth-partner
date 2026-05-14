@@ -28,6 +28,8 @@ const STATIC_URLS: Array<{ loc: string; lastmod: string; changefreq: string; pri
   { loc: "/autor/deric-anjos", lastmod: "2026-04-28", changefreq: "monthly", priority: "0.6" },
   { loc: "/autor/jessica-anjos", lastmod: "2026-04-29", changefreq: "monthly", priority: "0.6" },
   { loc: "/glossario", lastmod: "2026-04-28", changefreq: "monthly", priority: "0.6" },
+  { loc: "/privacidade", lastmod: "2026-04-18", changefreq: "yearly", priority: "0.3" },
+  { loc: "/termos", lastmod: "2026-04-18", changefreq: "yearly", priority: "0.3" },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
