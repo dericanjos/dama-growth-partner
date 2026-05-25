@@ -119,6 +119,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const canonical = `https://grupodamahealth.com.br${pathname}`;
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    // Ensure forward navigations always start at the top of the new page.
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+  }, [pathname]);
+
   return (
     <div className="flex min-h-screen flex-col">
       <link rel="alternate" hrefLang="pt-BR" href={canonical} />
