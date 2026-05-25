@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Public can read forum users" ON public.forum_users;
