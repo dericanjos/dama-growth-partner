@@ -28,7 +28,7 @@ export const ORGANIZACAO = {
   email: "contato@grupodamahealth.com.br",
   site: "https://grupodamahealth.com.br",
   logo: "https://grupodamahealth.com.br/logo.png",
-  fundacao: "",
+  fundacao: "2022",
   metricasAtualizadasEm: "agosto de 2026",
   perfisSociais: [
     "https://www.instagram.com/damacomercialmedico",
