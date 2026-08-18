@@ -10,7 +10,8 @@ const ABOUT_ORG_JSONLD = {
   alternateName: "DAMA",
   url: "https://grupodamahealth.com.br",
   logo: "https://grupodamahealth.com.br/logo.png",
-  foundingDate: "2022",
+  legalName: "41.374.506 Jéssica Anjos dos Reis Botelho",
+  taxID: "41.374.506/0001-48",
   "@id": "https://grupodamahealth.com.br/#organization",
   description:
     "Operação comercial estratégica para médicos, integrando comercial, tecnologia e operação. Atende mais de 90 médicos em 16+ estados brasileiros.",
