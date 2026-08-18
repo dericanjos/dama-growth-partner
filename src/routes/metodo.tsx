@@ -19,7 +19,7 @@ const FAQ_JSONLD = {
       name: "Como funciona a operação comercial da DAMA?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O Grupo DAMA integra time comercial, growth marketing e marketing 360 numa operação que funciona como extensão do consultório do médico.",
+        text: "O Grupo DAMA integra operação comercial, growth marketing e marketing 360 numa operação que funciona como extensão do consultório do médico.",
       },
     },
   ],
@@ -74,7 +74,7 @@ const STEPS = [
     icon: CalendarCheck,
     title: "Marcar",
     paragraphs: [
-      "Lead sem conversão não traz faturamento. Seguidores em Instagram é métrica de vaidade. Por isso, o time comercial da DAMA atua diretamente na linha de frente do atendimento, conduzindo cada paciente com comunicação estratégica através de um atendimento humanizado e técnicas consultivas de conversão.",
+      "Lead sem conversão não traz faturamento. Seguidores em Instagram é métrica de vaidade. Por isso, a operação comercial da DAMA atua diretamente na linha de frente do atendimento, conduzindo cada paciente com comunicação estratégica através de um atendimento humanizado e técnicas consultivas de conversão.",
       "Nosso foco é transformar interesse em agendamento através de processos claros, acompanhamento estruturado e redução das perdas comerciais que normalmente acontecem dentro da operação do consultório.",
     ],
   },

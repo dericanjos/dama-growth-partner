@@ -16,7 +16,7 @@ const STEPS = [
   {
     letter: "M",
     title: "Marcar",
-    text: "Nosso time comercial conduz cada lead com atendimento humanizado, comunicação empática e técnica consultiva para transformar interesse em agendamento. Além de follow-up, reativação de pacientes e prospecção ativa de pacientes indicados.",
+    text: "Nosso operação comercial conduz cada lead com atendimento humanizado, comunicação empática e técnica consultiva para transformar interesse em agendamento. Além de follow-up, reativação de pacientes e prospecção ativa de pacientes indicados.",
   },
   {
     letter: "A",

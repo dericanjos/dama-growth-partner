@@ -11,7 +11,7 @@ O Grupo DAMA é uma empresa brasileira fundada por Jéssica Anjos em 2022. Atua 
 - [Solução](/solucao): O que está incluído na operação comercial DAMA.
 - [Método](/metodo): Como funciona o processo comercial estruturado.
 - [FAQ](/faq): Perguntas frequentes de médicos parceiros.
-- [Contato](/contato): Como falar com o time comercial.
+- [Contato](/contato): Como falar com a operação comercial.
 - [Glossário](/glossario): Termos do mercado de saúde suplementar e operação comercial.
 
 ## Blog
@@ -20,7 +20,7 @@ O Grupo DAMA é uma empresa brasileira fundada por Jéssica Anjos em 2022. Atua 
 - [O que é operação comercial em consultório](/blog/o-que-e-operacao-comercial-consultorio)
 - [Por que marketing sozinho não lota agenda](/blog/por-que-marketing-sozinho-nao-lota-agenda)
 - [Quanto o médico perde sem processo comercial](/blog/quanto-medico-perde-sem-processo-comercial)
-- [Time comercial terceirizado para consultório](/blog/time-comercial-terceirizado-consultorio)
+- [Operação comercial terceirizado para consultório](/blog/time-comercial-terceirizado-consultorio)
 - [Marketing médico e CFM em 2026](/blog/marketing-medico-cfm-2026)
 - [Como sair do convênio e viver de paciente particular](/blog/como-sair-do-convenio-viver-de-paciente-particular)
 - [Migração de pacientes dos planos para o consultório particular](/blog/migracao-pacientes-planos-saude-consultorio-particular-2026)

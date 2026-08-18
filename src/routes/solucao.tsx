@@ -8,7 +8,7 @@ const SERVICE_JSONLD = {
   name: "Operação Comercial Estratégica para Médicos",
   provider: { "@type": "Organization", name: "Grupo DAMA" },
   description:
-    "Time comercial, growth marketing e marketing 360 integrados para consultórios médicos",
+    "Operação comercial, growth marketing e marketing 360 integrados para consultórios médicos",
   areaServed: { "@type": "Country", name: "BR" },
   serviceType: "Operação Comercial para Consultórios Médicos",
 };
@@ -20,13 +20,13 @@ export const Route = createFileRoute("/solucao")({
       {
         name: "description",
         content:
-          "Conheça a operação integrada do Grupo DAMA: time comercial estratégico, growth marketing orientado por dados e marketing 360 para consultórios médicos.",
+          "Conheça a operação integrada do Grupo DAMA: operação comercial estratégico, growth marketing orientado por dados e marketing 360 para consultórios médicos.",
       },
       { property: "og:title", content: "Nossa Solução | Grupo DAMA" },
       {
         property: "og:description",
         content:
-          "Time comercial + growth marketing + marketing 360 em uma operação integrada para médicos.",
+          "Operação comercial + growth marketing + marketing 360 em uma operação integrada para médicos.",
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/solucao" },
     ],
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/solucao")({
 const PILLARS = [
   {
     icon: Headset,
-    title: "Time Comercial",
+    title: "Operação Comercial",
     pitch:
       "Profissionais treinados que atendem, qualificam e agendam seus pacientes. De nada adianta atrair se ninguém converte. Nosso time atua na linha de frente com empatia, técnica de vendas consultivas e acompanhamento de cada lead através do nosso método D.A.M.A.",
     deliveries: [

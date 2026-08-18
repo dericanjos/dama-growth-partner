@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 const PILLARS = [
   {
     icon: Headset,
-    title: "Time Comercial",
+    title: "Operação Comercial",
     text: "Profissionais treinados que atendem, qualificam e agendam seus pacientes. De nada adianta atrair se ninguém converte. Nosso time atua na linha de frente com empatia, técnica de vendas consultivas e acompanhamento de cada lead.",
   },
   {
@@ -61,8 +61,8 @@ export function SolutionOverview() {
 
         <Reveal delay={200} className="mx-auto mt-14 max-w-2xl text-center">
           <p className="font-serif text-lg italic text-[var(--text-secondary)] md:text-xl">
-            “Time comercial sem marketing é operação sem combustível. Marketing
-            sem time comercial é investimento jogado fora. A DAMA integra os dois.”
+            “Operação comercial sem marketing é operação sem combustível. Marketing
+            sem operação comercial é investimento jogado fora. A DAMA integra os dois.”
           </p>
         </Reveal>
 

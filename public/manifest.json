@@ -1,7 +1,7 @@
 {
   "name": "Grupo DAMA Health",
   "short_name": "DAMA",
-  "description": "Solução completa para médicos: time comercial, tecnologia e operação",
+  "description": "Solução completa para médicos: operação comercial, tecnologia e operação",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FAF8F4",
