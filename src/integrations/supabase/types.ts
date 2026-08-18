@@ -193,6 +193,36 @@ export type Database = {
         }
         Relationships: []
       }
+      newsletter_subscribers: {
+        Row: {
+          consentimento_em: string
+          created_at: string
+          email: string
+          especialidade: string | null
+          id: string
+          nome: string
+          origem: string | null
+        }
+        Insert: {
+          consentimento_em?: string
+          created_at?: string
+          email: string
+          especialidade?: string | null
+          id?: string
+          nome: string
+          origem?: string | null
+        }
+        Update: {
+          consentimento_em?: string
+          created_at?: string
+          email?: string
+          especialidade?: string | null
+          id?: string
+          nome?: string
+          origem?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
