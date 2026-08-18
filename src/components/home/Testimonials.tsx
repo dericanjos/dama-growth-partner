@@ -112,6 +112,7 @@ export function Testimonials() {
                     src={t.photo}
                     alt={`${t.name} — ${t.specialty}`}
                     loading="lazy"
+                    decoding="async"
                     width={48}
                     height={48}
                     className="h-12 w-12 rounded-full object-cover ring-1 ring-[color-mix(in_oklab,var(--gold)_40%,var(--border))]"

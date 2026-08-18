@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone } from "lucide-react";
+import { ORGANIZACAO } from "@/config/organizacao";
 import damaQueen from "@/assets/dama-queen.webp";
 
 export function SiteFooter() {
@@ -13,6 +14,10 @@ export function SiteFooter() {
                 src={damaQueen}
                 alt=""
                 aria-hidden
+                width={40}
+                height={68}
+                loading="lazy"
+                decoding="async"
                 className="h-10 w-auto select-none"
                 style={{ filter: "drop-shadow(0 4px 12px rgba(232,184,74,0.4))" }}
               />
@@ -48,14 +53,14 @@ export function SiteFooter() {
               className="inline-flex items-center gap-2 text-sm text-white/65 hover:text-white"
             >
               <Phone className="h-3.5 w-3.5 text-[var(--gold)]" />
-              (21) 95921-4292
+              {ORGANIZACAO.telefoneExibicao}
             </a>
             <a
-              href="mailto:contato@grupodamahealth.com.br"
+              href={`mailto:${ORGANIZACAO.email}`}
               className="inline-flex items-center gap-2 text-sm text-white/65 hover:text-white"
             >
               <Mail className="h-3.5 w-3.5 text-[var(--gold)]" />
-              contato@grupodamahealth.com.br
+              {ORGANIZACAO.email}
             </a>
             <a
               href="https://instagram.com/damacomercialmedico"

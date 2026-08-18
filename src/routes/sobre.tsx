@@ -150,6 +150,10 @@ function AboutPage() {
                 <img
                   src={jessicaPhoto}
                   alt="Jéssica Anjos, Fundadora do Grupo DAMA"
+                  width={484}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
               </div>
