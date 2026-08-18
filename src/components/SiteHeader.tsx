@@ -247,21 +247,30 @@ export function SiteHeader() {
                 aria-hidden
               />
             </button>
-            {mobileContentOpen && (
-              <div id="mobile-content-submenu" className="pb-3 pl-4">
-                {CONTENT_LINKS.map((link) => (
+            <ul
+              id="mobile-content-submenu"
+              aria-hidden={!mobileContentOpen}
+              className={`list-none overflow-hidden pl-4 transition-all duration-200 ${
+                mobileContentOpen
+                  ? "visible max-h-96 pb-3 opacity-100"
+                  : "invisible max-h-0 pb-0 opacity-0 pointer-events-none"
+              }`}
+            >
+              {CONTENT_LINKS.map((link) => (
+                <li key={link.to}>
                   <Link
-                    key={link.to}
                     to={link.to}
+                    tabIndex={mobileContentOpen ? 0 : -1}
                     onClick={() => setOpen(false)}
                     className="block py-2.5 text-base text-white/75"
                     activeProps={{ className: "text-[var(--gold)]" }}
                   >
                     {link.label}
                   </Link>
-                ))}
-              </div>
-            )}
+                </li>
+              ))}
+            </ul>
+
           </div>
 
           <Link
