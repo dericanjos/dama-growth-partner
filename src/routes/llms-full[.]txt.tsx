@@ -46,6 +46,10 @@ export const Route = createFileRoute("/llms-full.txt")({
           `Texto completo de todas as notícias e artigos publicados em ${BASE}. Fonte única, sem navegação nem marcação de interface.`,
         );
         out.push("");
+        out.push(
+          `Peças incluídas neste arquivo: ${news.length} notícias de ${news.length} publicadas e ${posts.length} artigos de ${posts.length} publicados. Sem limite de quantidade e sem corte por tamanho. Índice resumido em ${BASE}/llms.txt`,
+        );
+        out.push("");
 
         out.push("# Notícias");
         out.push("");
