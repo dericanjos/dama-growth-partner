@@ -65,7 +65,13 @@ export function organizationSchema(extra: Record<string, unknown> = {}) {
     "@type": "Organization",
     "@id": `${ORGANIZACAO.site}/#organization`,
     name: ORGANIZACAO.nomeFantasia,
-    alternateName: "DAMA",
+    alternateName: ["Grupo DAMA", "DAMA"],
+    subOrganization: {
+      "@type": "Organization",
+      "@id": "https://comercial.grupodamahealth.com.br/#organization",
+      name: "DAMA Secretariado Médico",
+      url: "https://comercial.grupodamahealth.com.br",
+    },
     url: ORGANIZACAO.site,
     logo: {
       "@type": "ImageObject",

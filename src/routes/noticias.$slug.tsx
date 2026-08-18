@@ -11,9 +11,11 @@ import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { NewsUpdateNotice } from "@/components/NewsUpdateNotice";
 import { ShareButtons } from "@/components/ShareButtons";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { formatDateBR, BLOG_POSTS } from "@/data/blog";
 import {
   getNewsArticleBySlug,
+
   listRelatedNews,
   type FaqEntry,
   type NewsArticleListItem,
@@ -383,6 +385,8 @@ function NewsArticlePage() {
               </ul>
             </div>
           )}
+
+          <NewsletterSignup origem={`noticias/${article.slug}`} className="mt-12" />
 
           {(() => {
             const latestBlog = [...BLOG_POSTS]

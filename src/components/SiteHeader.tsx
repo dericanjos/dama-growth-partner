@@ -11,9 +11,12 @@ const NAV_LINKS = [
 ] as const;
 
 const CONTENT_LINKS = [
+  { to: "/noticias", label: "Notícias Médicas" },
   { to: "/blog", label: "Blog" },
-  { to: "/noticias", label: "Notícias" },
+  { to: "/glossario", label: "Glossário" },
+  { to: "/faq", label: "Perguntas Frequentes" },
 ] as const;
+
 
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
@@ -26,7 +29,7 @@ export function SiteHeader() {
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const contentActive = pathname.startsWith("/blog") || pathname.startsWith("/noticias");
+  const contentActive = CONTENT_LINKS.some((link) => pathname.startsWith(link.to));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -146,7 +149,7 @@ export function SiteHeader() {
             {contentOpen && (
               <div
                 role="menu"
-                className="absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 min-w-[10rem] rounded-md border border-[color-mix(in_oklab,var(--gold)_25%,transparent)] bg-[var(--navy)] py-2 shadow-xl"
+                className="absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 min-w-[13rem] rounded-md border border-[color-mix(in_oklab,var(--gold)_25%,transparent)] bg-[var(--navy)] py-2 shadow-xl"
               >
                 {CONTENT_LINKS.map((link) => (
                   <Link

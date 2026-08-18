@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
+@source "../src";
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -10,7 +11,7 @@
  * Tom: luxo discreto, B2B premium, institucional médico.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
+/* Fontes carregadas via <link> em src/routes/__root.tsx (Lightning CSS não aceita @import remoto). */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

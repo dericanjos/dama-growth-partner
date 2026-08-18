@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { FileText } from "lucide-react";
 import { BLOG_CATEGORIES, BLOG_POSTS, formatDateBR } from "@/data/blog";
 import { CategoryBadge } from "@/components/CategoryBadge";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 const BLOG_JSONLD = {
   "@context": "https://schema.org",
@@ -172,6 +173,8 @@ function BlogIndex() {
               ))}
             </div>
           )}
+
+          <NewsletterSignup origem="blog" className="mt-14" />
         </div>
       </section>
     </>

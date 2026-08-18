@@ -12,7 +12,7 @@ const AUTHOR_DESC =
   "Jéssica Anjos é a fundadora do Grupo DAMA, empresa que opera a gestão comercial de mais de 90 consultórios médicos em 16 estados do Brasil.";
 
 const BIO_PARAGRAPHS = [
-  "Sou Jéssica Anjos, fundadora do Grupo DAMA, a maior operação comercial terceirizada pra consultórios médicos do Brasil. Cristã, leitora voraz e empresária movida por propósito.",
+  "Sou Jéssica Anjos, fundadora do Grupo DAMA, uma operação comercial estratégica para consultórios médicos particulares. Cristã, leitora voraz e empresária movida por propósito.",
   "Criei a DAMA com uma missão clara: que todo brasileiro tenha acesso a saúde de qualidade. Pra isso, o caminho que enxerguei foi simples mas pouco explorado — médicos excelentes precisavam de uma operação comercial profissional pra que sua excelência clínica chegasse até quem precisa.",
   "Hoje lidero uma operação que atende mais de 90 médicos parceiros em 16+ estados, com mais de 25.000 consultas facilitadas. Cada agenda lotada de um médico parceiro é uma vida impactada — do médico que volta a fazer o que ama com previsibilidade, ao paciente que encontra atendimento de qualidade.",
   "Acredito que empresas se constroem com gente, processo e fé. E que o mercado da saúde no Brasil ainda está no começo de uma transformação profunda — onde gestão profissional e estratégia comercial deixam de ser opcionais e passam a ser parte indissociável da prática médica de excelência.",

@@ -19,6 +19,7 @@ import {
 import { ForumSection } from "@/components/forum/ForumSection";
 import { getForumQuestionsForSlug } from "@/lib/forum-read.functions";
 import { listLatestNews } from "@/lib/news.functions";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
@@ -339,6 +340,8 @@ function PostPage() {
               </ul>
             </div>
           )}
+
+          <NewsletterSignup origem={`blog/${post.slug}`} className="mt-12" />
 
           <div className="mt-12 border-t border-[var(--border)] pt-8">
             <ShareButtons title={post.title} url={url} />
