@@ -108,7 +108,23 @@ export const Route = createRootRoute({
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "@id": "https://grupodamahealth.com.br/#website",
+          url: "https://grupodamahealth.com.br",
+          name: "Grupo DAMA Health",
+          alternateName: ["Grupo DAMA", "DAMA"],
+          inLanguage: "pt-BR",
+          publisher: { "@id": "https://grupodamahealth.com.br/#organization" },
+        }),
+      },
+    ],
     };
+
   },
   shellComponent: RootShell,
   component: RootComponent,
