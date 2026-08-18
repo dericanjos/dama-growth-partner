@@ -6,8 +6,7 @@ import { CategoryBadge } from "@/components/CategoryBadge";
 import { listNewsByAuthor, type NewsArticleListItem } from "@/lib/news.functions";
 
 const AUTHOR_NAME = "Deric Anjos";
-// Foto real ainda não fornecida. Preencher com a URL da foto para substituir o monograma.
-const AUTHOR_FOTO = "";
+const AUTHOR_FOTO = "/autores/deric-anjos.webp";
 const AUTHOR_URL = "https://grupodamahealth.com.br/autor/deric-anjos";
 const AUTHOR_DESC =
   "Deric Anjos é Head de Growth do Grupo DAMA. Formado pela Escola Naval, empresário e estrategista de crescimento para consultórios médicos.";
@@ -47,14 +46,17 @@ export const Route = createFileRoute("/autor/deric-anjos")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://grupodamahealth.com.br/autor/deric-anjos#person",
           name: AUTHOR_NAME,
           jobTitle: "Head de Growth",
           url: AUTHOR_URL,
+          image: "https://grupodamahealth.com.br/autores/deric-anjos.webp",
           worksFor: {
             "@type": "Organization",
             name: "Grupo DAMA Health",
             url: "https://grupodamahealth.com.br",
           },
+          affiliation: { "@id": "https://grupodamahealth.com.br/#organization" },
           knowsAbout: [
             "Growth para consultórios médicos",
             "Marketing médico",
