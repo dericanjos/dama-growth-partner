@@ -36,12 +36,17 @@ const notEmpty = (value: string) => value.trim().length > 0;
 
 /** PostalAddress apenas com os campos preenchidos. Retorna undefined se não houver dado. */
 export function buildPostalAddress() {
-  const street = [ORGANIZACAO.logradouro, ORGANIZACAO.numero, ORGANIZACAO.complemento]
+  const street = [
+    ORGANIZACAO.logradouro,
+    ORGANIZACAO.numero,
+    ORGANIZACAO.complemento,
+    ORGANIZACAO.bairro,
+  ]
     .filter(notEmpty)
     .join(", ");
   const address: Record<string, string> = { "@type": "PostalAddress", addressCountry: "BR" };
   if (notEmpty(street)) address.streetAddress = street;
-  if (notEmpty(ORGANIZACAO.bairro)) address.addressRegion2 = ORGANIZACAO.bairro;
+
   if (notEmpty(ORGANIZACAO.cidade)) address.addressLocality = ORGANIZACAO.cidade;
   if (notEmpty(ORGANIZACAO.uf)) address.addressRegion = ORGANIZACAO.uf;
   if (notEmpty(ORGANIZACAO.cep)) address.postalCode = ORGANIZACAO.cep;
