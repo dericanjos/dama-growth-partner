@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
+import { NewsUpdateNotice } from "@/components/NewsUpdateNotice";
 import { ShareButtons } from "@/components/ShareButtons";
 import { formatDateBR, BLOG_POSTS } from "@/data/blog";
 import {
