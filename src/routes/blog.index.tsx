@@ -14,8 +14,38 @@ const BLOG_JSONLD = {
     "Conteúdo estratégico para médicos que tratam o consultório como negócio: marketing, gestão, tecnologia, jornada do paciente e saúde suplementar.",
   url: "https://grupodamahealth.com.br/blog",
   inLanguage: "pt-BR",
+  isPartOf: { "@id": "https://grupodamahealth.com.br/#website" },
   publisher: PUBLISHER_SCHEMA,
 };
+
+const BLOG_COLLECTION_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Blog | Grupo DAMA",
+  description:
+    "Artigos sobre crescimento de consultório, marketing médico ético, gestão comercial e tendências do mercado de saúde.",
+  url: "https://grupodamahealth.com.br/blog",
+  inLanguage: "pt-BR",
+  isPartOf: { "@id": "https://grupodamahealth.com.br/#website" },
+  about: {
+    "@type": "Thing",
+    name: "Operação comercial, marketing médico e gestão de consultório",
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListOrder: "https://schema.org/ItemListOrderDescending",
+    numberOfItems: BLOG_POSTS.length,
+    itemListElement: [...BLOG_POSTS]
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .map((post, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `https://grupodamahealth.com.br/blog/${post.slug}`,
+        name: post.title,
+      })),
+  },
+};
+
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
