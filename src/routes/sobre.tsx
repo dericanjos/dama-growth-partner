@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import jessicaPhoto from "@/assets/jessica-anjos.png";
+import jessicaPhoto from "@/assets/jessica-anjos.webp";
 
 const ABOUT_ORG_JSONLD = {
   "@context": "https://schema.org",

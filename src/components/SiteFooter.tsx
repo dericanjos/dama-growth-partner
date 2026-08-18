@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Phone } from "lucide-react";
-import damaQueen from "@/assets/dama-queen.png";
+import damaQueen from "@/assets/dama-queen.webp";
 
 export function SiteFooter() {
   return (

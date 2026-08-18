@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import jessicaPhoto from "@/assets/jessica-anjos.png";
+import jessicaPhoto from "@/assets/jessica-anjos.webp";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { formatDateBR, BLOG_POSTS } from "@/data/blog";
 import { listNewsByAuthor, type NewsArticleListItem } from "@/lib/news.functions";

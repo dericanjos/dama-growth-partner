@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import damaLogo from "@/assets/dama-logo.png";
+import damaLogo from "@/assets/dama-logo.webp";
 
 const NAV_LINKS = [
   { to: "/", label: "Início" },

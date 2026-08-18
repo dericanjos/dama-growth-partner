@@ -1,15 +1,15 @@
 import { Quote } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import gil from "@/assets/testimonials/gil.png";
-import evelin from "@/assets/testimonials/evelin.jpg";
-import ulyscelio from "@/assets/testimonials/ulyscelio.png";
-import simone from "@/assets/testimonials/simone.png";
-import brunaB from "@/assets/testimonials/bruna-bressanelli.png";
-import mariana from "@/assets/testimonials/mariana.png";
-import luan from "@/assets/testimonials/luan.png";
-import brunaP from "@/assets/testimonials/bruna-porto.png";
-import joao from "@/assets/testimonials/joao.png";
-import larissa from "@/assets/testimonials/larissa.png";
+import gil from "@/assets/testimonials/gil.webp";
+import evelin from "@/assets/testimonials/evelin.webp";
+import ulyscelio from "@/assets/testimonials/ulyscelio.webp";
+import simone from "@/assets/testimonials/simone.webp";
+import brunaB from "@/assets/testimonials/bruna-bressanelli.webp";
+import mariana from "@/assets/testimonials/mariana.webp";
+import luan from "@/assets/testimonials/luan.webp";
+import brunaP from "@/assets/testimonials/bruna-porto.webp";
+import joao from "@/assets/testimonials/joao.webp";
+import larissa from "@/assets/testimonials/larissa.webp";
 
 interface T {
   name: string;
