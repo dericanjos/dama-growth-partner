@@ -1343,8 +1343,8 @@ Se o seu consultório investe em marketing mas a agenda continua com espaços va
     },
     seoTitle: "O que É Operação Comercial para Consultórios",
     relatedSlugs: ["por-que-marketing-sozinho-nao-lota-agenda", "operacao-comercial-terceirizada-consultorio"],
-    coverImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
-    coverImageAlt: "Consultório médico moderno com ambiente profissional representando operação comercial estruturada",
+    coverImage: "/blog/o-que-e-operacao-comercial-consultorio.webp",
+    coverImageAlt: "Capa do artigo: O que É Operação Comercial para Consultórios Médicos (e Por que Importa). Grupo DAMA Health.",
     title: "O que É Operação Comercial para Consultórios Médicos (e Por que Importa)",
     excerpt:
       "Operação comercial é o que transforma leads em consultas e agenda vazia em faturamento previsível. Entenda o conceito e por que consultórios precisam dele.",
@@ -1462,8 +1462,8 @@ Dados verificados em agosto de 2026. Demografia Médica 2025 (base dezembro de 2
     category: "Marketing",
     readingTime: 10,
     author: "Deric Anjos",
-    coverImage: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
-    coverImageAlt: "Tela de computador com site profissional representando presença digital de consultório médico",
+    coverImage: "/blog/seu-site-medico-esta-afastando-pacientes.webp",
+    coverImageAlt: "Capa do artigo: Seu Site Médico Está Afastando Pacientes? O que Eles Esperam Encontrar. Grupo DAMA Health.",
     quickAnswer: "Um site médico que converte pacientes precisa ter: carregamento abaixo de 3 segundos, design responsivo, proposta de valor clara na primeira tela, página individual pra cada especialidade, informações de contato visíveis, botão de agendamento acessível e identificação do médico com CRM e RQE. Segundo o Google, perfis e sites com fotos profissionais recebem 42% mais solicitações de rota e 35% mais cliques.",
     content: `
 ## Por que o site ainda importa (mesmo com Instagram)
@@ -1595,8 +1595,8 @@ E se quiser estruturar a presença digital inteira (site, Google, redes sociais 
     category: "Marketing",
     readingTime: 10,
     author: "Deric Anjos",
-    coverImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
-    coverImageAlt: "Gráficos de investimento e retorno representando tráfego pago para consultório médico",
+    coverImage: "/blog/trafego-pago-consultorio-medico-vale-investimento.webp",
+    coverImageAlt: "Capa do artigo: Tráfego Pago para Consultório Médico: Vale o Investimento?. Grupo DAMA Health.",
     quickAnswer: "Tráfego pago (Google Ads e Meta Ads) vale o investimento para consultórios médicos quando existe processo comercial para converter os leads gerados em consultas. Sem processo, o investimento vira custo. Google Ads funciona melhor para captar pacientes com intenção de busca, enquanto Meta Ads funciona para construir autoridade. O investimento mínimo recomendado é a partir de R$1.000 por mês em mídia. O Brasil investiu R$37,9 bilhões em publicidade digital em 2024 segundo o IAB Brasil.",
     content: `
 ## O que é tráfego pago e por que ele importa
@@ -1714,8 +1714,8 @@ Na DAMA, a gente estrutura o processo inteiro antes de ligar a torneira do tráf
     category: "Marketing",
     readingTime: 10,
     author: "Deric Anjos",
-    coverImage: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80",
-    coverImageAlt: "Pessoa pesquisando no Google em computador representando paciente buscando médico online",
+    coverImage: "/blog/por-que-consultorio-precisa-aparecer-no-google.webp",
+    coverImageAlt: "Capa do artigo: Por que Seu Consultório Precisa Aparecer no Google (e o que Isso Exige). Grupo DAMA Health.",
     quickAnswer: "Aparecer no Google é essencial para consultórios médicos porque a maioria dos pacientes pesquisa online antes de agendar uma consulta. O Google opera com três fatores para posicionar consultórios em buscas locais: relevância (o perfil corresponde ao que o paciente pesquisou), distância (proximidade geográfica) e destaque (reputação online, avaliações, atividade). O primeiro passo é o Google Meu Negócio, uma ferramenta gratuita que coloca o consultório no Google Maps e nas buscas locais. Para resultados de longo prazo, o SEO (otimização do site para buscas) complementa a presença. O Google avalia sites de saúde com rigor especial pelo critério E-E-A-T (experiência, expertise, autoridade, confiabilidade).",
     content: `
 ## O Google é onde a decisão começa
@@ -1829,8 +1829,8 @@ E se quiser ir além do básico, construindo presença orgânica com SEO, blog o
     category: "Marketing",
     readingTime: 10,
     author: "Deric Anjos",
-    coverImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
-    coverImageAlt: "Tela de computador com gráficos e métricas de marketing digital representando estratégia para consultório",
+    coverImage: "/blog/marketing-medico-2026-panorama-completo.webp",
+    coverImageAlt: "Capa do artigo: Marketing Médico em 2026: O Panorama Completo que Todo Médico Precisa Entender. Grupo DAMA Health.",
     quickAnswer: "Marketing médico em 2026 vai muito além de postar no Instagram. Envolve presença no Google (SEO e tráfego pago), conteúdo educativo em redes sociais, site profissional otimizado, processo comercial de conversão e retenção de pacientes. A Resolução CFM 2.336/2023 modernizou as regras e permite antes e depois educativo, divulgação de preços e fotos do ambiente. Segundo o Panorama das Clínicas 2025 da Doctoralia, 41% dos consultórios com até 4 profissionais não investem em marketing, e apenas 1 em cada 4 clínicas opera com estratégias estruturadas de conversão. O médico que não se posiciona digitalmente compete por preço e depende de convênio.",
     content: `
 ## O paciente de 2026 não é o mesmo de 2016
@@ -1926,8 +1926,8 @@ Se você leu até aqui, já entende mais sobre marketing médico do que 41% dos 
     category: "Marketing",
     readingTime: 10,
     author: "Deric Anjos",
-    coverImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
-    coverImageAlt: "Tela de celular com aplicativos de redes sociais representando estratégia digital para consultório médico",
+    coverImage: "/blog/redes-sociais-captacao-pacientes-consultorio-2026.webp",
+    coverImageAlt: "Capa do artigo: O Papel das Redes Sociais na Captação de Pacientes em 2026. Grupo DAMA Health.",
     quickAnswer: "Redes sociais desempenham um papel essencial na captação de pacientes em 2026, mas funcionam como ferramenta de atração e autoridade, não como canal de conversão isolado. O Instagram é a plataforma principal para médicos, com carrosséis educativos gerando até 3 vezes mais engajamento e Reels sendo compartilhados 65% mais que outros formatos. Stories são acessados por 42% dos usuários toda vez que abrem o app. Porém, segundo o Panorama das Clínicas 2025 da Doctoralia, apenas 1 em cada 4 clínicas opera com estratégia estruturada de conversão. Redes sociais geram leads. Quem converte leads em consulta é o processo comercial.",
     content: `
 ## Redes sociais atraem. Quem converte é o processo.
