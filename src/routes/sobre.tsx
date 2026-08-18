@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import jessicaPhoto from "@/assets/jessica-anjos.png";
+import jessicaPhoto from "@/assets/jessica-anjos.webp";
 
 const ABOUT_ORG_JSONLD = {
   "@context": "https://schema.org",
@@ -9,7 +9,9 @@ const ABOUT_ORG_JSONLD = {
   name: "Grupo DAMA Health",
   alternateName: "DAMA",
   url: "https://grupodamahealth.com.br",
-  logo: "https://grupodamahealth.com.br/dama-queen.png",
+  logo: "https://grupodamahealth.com.br/logo.png",
+  foundingDate: "2022",
+  "@id": "https://grupodamahealth.com.br/#organization",
   description:
     "Operação comercial estratégica para médicos, integrando comercial, tecnologia e operação. Atende mais de 90 médicos em 16+ estados brasileiros.",
   founder: [
@@ -148,6 +150,10 @@ function AboutPage() {
                 <img
                   src={jessicaPhoto}
                   alt="Jéssica Anjos, Fundadora do Grupo DAMA"
+                  width={484}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
               </div>

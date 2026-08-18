@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import damaQueen from "@/assets/dama-queen.png";
+import damaQueen from "@/assets/dama-queen.webp";
 
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
@@ -14,6 +14,10 @@ export function ClosingCTA() {
             src={damaQueen}
             alt=""
             aria-hidden
+            width={64}
+            height={109}
+            loading="lazy"
+            decoding="async"
             className="mx-auto mb-8 h-16 w-auto select-none md:h-20"
             style={{ filter: "drop-shadow(0 8px 24px rgba(232,184,74,0.35))" }}
           />

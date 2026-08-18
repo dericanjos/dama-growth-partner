@@ -75,6 +75,19 @@ export const Route = createFileRoute("/sitemap.xml")({
           },
         ];
 
+        // Páginas paginadas de /noticias (10 itens por página, igual à listagem)
+        const NEWS_PAGE_SIZE = 10;
+        const newsPageCount = Math.max(1, Math.ceil(news.length / NEWS_PAGE_SIZE));
+        const paginatedEntries: Entry[] = Array.from(
+          { length: Math.max(0, newsPageCount - 1) },
+          (_, i) => ({
+            loc: `/noticias?page=${i + 2}`,
+            lastmod: day(news[(i + 1) * NEWS_PAGE_SIZE]?.published_at),
+            changefreq: "weekly" as const,
+            priority: "0.5",
+          }),
+        );
+
         const authorEntries: Entry[] = [
           { loc: "/autor/deric-anjos", changefreq: "monthly", priority: "0.6" },
           { loc: "/autor/jessica-anjos", changefreq: "monthly", priority: "0.6" },
@@ -90,6 +103,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const all: Entry[] = [
           ...STATIC_PAGES,
           ...indexEntries,
+          ...paginatedEntries,
           ...authorEntries,
           ...newsEntries,
           ...blogEntries,
@@ -101,7 +115,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...all.map((u) =>
             [
               `  <url>`,
-              `    <loc>${BASE}${u.loc}</loc>`,
+              `    <loc>${BASE}${u.loc.replace(/&/g, "&amp;")}</loc>`,
               u.lastmod ? `    <lastmod>${u.lastmod}</lastmod>` : null,
               `    <changefreq>${u.changefreq}</changefreq>`,
               `    <priority>${u.priority}</priority>`,

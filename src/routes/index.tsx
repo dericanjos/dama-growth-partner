@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { organizationSchema } from "@/config/organizacao";
 import { Hero } from "@/components/home/Hero";
 import { StatsBand } from "@/components/home/StatsBand";
 import { WhoWeAreShort } from "@/components/home/WhoWeAreShort";
@@ -11,39 +12,22 @@ import { ClosingCTA } from "@/components/home/ClosingCTA";
 
 const ORG_JSONLD = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Grupo DAMA",
-  description:
-    "Operação comercial estratégica para médicos. Time dedicado que converte leads em pacientes particulares com processo estruturado.",
-  url: "https://grupodamahealth.com.br",
-  logo: {
-    "@type": "ImageObject",
-    url: "https://grupodamahealth.com.br/favicon.png",
-  },
-  telephone: "+5521959214292",
-  email: "contato@grupodamahealth.com.br",
-  sameAs: [
-    "https://www.instagram.com/damacomercialmedico",
-    "https://www.instagram.com/grupodamahealth",
-  ],
-  founder: { "@type": "Person", name: "Jéssica Anjos" },
-  foundingDate: "2022",
-  areaServed: { "@type": "Country", name: "BR" },
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer service",
-    url: "https://grupodamahealth.com.br/contato",
-    availableLanguage: "Portuguese",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "BR",
-  },
-  numberOfEmployees: {
-    "@type": "QuantitativeValue",
-    minValue: 10,
-    maxValue: 50,
-  },
+  ...organizationSchema({
+    description:
+      "Operação comercial estratégica para médicos. Time dedicado que converte leads em pacientes particulares com processo estruturado.",
+    founder: { "@type": "Person", name: "Jéssica Anjos" },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      url: "https://grupodamahealth.com.br/contato",
+      availableLanguage: "Portuguese",
+    },
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      minValue: 10,
+      maxValue: 50,
+    },
+  }),
 };
 
 export const Route = createFileRoute("/")({

@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { ORGANIZACAO } from "@/config/organizacao";
 
 const STATS = [
   { value: "+25.000", label: "Consultas Agendadas" },
@@ -27,6 +28,9 @@ export function StatsBand() {
             </Reveal>
           ))}
         </div>
+        <p className="mt-10 text-center text-[11px] leading-relaxed text-white/40">
+          Dados consolidados da operação DAMA, atualizados em {ORGANIZACAO.metricasAtualizadasEm}.
+        </p>
       </div>
     </section>
   );

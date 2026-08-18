@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import damaLogo from "@/assets/dama-logo.png";
+import damaLogo from "@/assets/dama-logo.webp";
 
 const NAV_LINKS = [
   { to: "/", label: "Início" },
@@ -92,6 +92,9 @@ export function SiteHeader() {
             alt="Logo Grupo DAMA"
             width={96}
             height={96}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="h-16 w-16 md:h-[4.5rem] md:w-[4.5rem] lg:h-24 lg:w-24 object-contain"
           />
           <span className="hidden xl:inline-block border-l border-[color-mix(in_oklab,var(--gold)_30%,transparent)] pl-3 text-[10px] uppercase tracking-[0.28em] text-white/70">

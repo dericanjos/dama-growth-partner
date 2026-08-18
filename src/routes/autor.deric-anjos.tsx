@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 import { BLOG_POSTS, formatDateBR } from "@/data/blog";
+import { AuthorAvatar } from "@/components/AuthorAvatar";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { listNewsByAuthor, type NewsArticleListItem } from "@/lib/news.functions";
 
 const AUTHOR_NAME = "Deric Anjos";
+// Foto real ainda não fornecida. Preencher com a URL da foto para substituir o monograma.
+const AUTHOR_FOTO = "";
 const AUTHOR_URL = "https://grupodamahealth.com.br/autor/deric-anjos";
 const AUTHOR_DESC =
   "Deric Anjos é Head de Growth do Grupo DAMA. Formado pela Escola Naval, empresário e estrategista de crescimento para consultórios médicos.";
@@ -12,7 +15,7 @@ const AUTHOR_DESC =
 const BIO_PARAGRAPHS = [
   "Eu me formei na Escola Naval. Passei anos num ambiente onde disciplina, estratégia e execução sob pressão não eram conceitos de livro, eram a rotina. Aprendi a planejar com precisão, liderar equipes e operar em cenários onde margem de erro não existe.",
   "Foi nesse caminho que me descobri empresário.",
-  "Em 2024, a Jéssica fundou o Grupo DAMA com uma visão clara: médicos excelentes estavam invisíveis. Tinham formação de ponta, experiência clínica e atendimento de qualidade, mas agenda vazia. O problema nunca foi a competência médica. Era a ausência de uma operação estratégica que transformasse interesse em consulta. Eu entrei pra construir essa operação por dentro.",
+  "Em 2022, a Jéssica fundou o Grupo DAMA com uma visão clara: médicos excelentes estavam invisíveis. Tinham formação de ponta, experiência clínica e atendimento de qualidade, mas agenda vazia. O problema nunca foi a competência médica. Era a ausência de uma operação estratégica que transformasse interesse em consulta. Eu entrei pra construir essa operação por dentro.",
   "Comecei pelo tráfego pago. Aprendi a mecânica do Meta Ads e do Google Ads investindo, testando e ajustando na prática. Logo percebi que gerar leads não era suficiente. O gargalo estava no que acontecia depois que o paciente demonstrava interesse. A partir daí, mergulhei no universo de growth: estratégia de aquisição, retenção, posicionamento digital e escalabilidade. Cada consultório que a DAMA atende me ensinou algo novo sobre o que realmente move a agulha na saúde.",
   "Hoje, como Head of Growth, minha função é conectar todas as peças: atração, conversão, retenção e crescimento. A DAMA opera em 16 estados com mais de 90 médicos parceiros, e cada estratégia que publicamos neste blog nasce da experiência real com consultórios reais.",
   "Sou movido por aprendizado. Leio vorazmente sobre marketing, vendas, psicologia comportamental e estratégia de negócios. Estudo Inteligência Artificial e Machine Learning porque acredito que o próximo salto do mercado médico vai passar por tecnologia. Mas a base continua sendo humana: entender o paciente, falar a linguagem dele e estar pronto quando ele decide agendar.",
@@ -78,14 +81,7 @@ function AuthorPage() {
     <>
       <section className="surface-dark hero-glow relative pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="container-dama mx-auto max-w-3xl text-center">
-          <div className="mx-auto mb-8 h-32 w-32 overflow-hidden rounded-full border-2 md:h-36 md:w-36"
-               style={{ borderColor: "var(--gold)" }}>
-            <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
-              alt="Deric Anjos, Head de Growth do Grupo DAMA"
-              className="h-full w-full object-cover"
-            />
-          </div>
+          <AuthorAvatar name={AUTHOR_NAME} foto={AUTHOR_FOTO} alt="Deric Anjos, Head de Growth do Grupo DAMA" />
           <h1 className="heading-display text-[36px] md:text-[52px]">
             <span className="gold-text">Deric Anjos</span>
           </h1>
