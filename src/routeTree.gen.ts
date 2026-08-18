@@ -15,6 +15,8 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as MetodoRouteImport } from './routes/metodo'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
 import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -24,6 +26,7 @@ import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as NoticiasRssDotxmlRouteImport } from './routes/noticias.rss[.]xml'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
+import { Route as BlogTimeComercialTerceirizadoConsultorioRouteImport } from './routes/blog.time-comercial-terceirizado-consultorio'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AutorJessicaAnjosRouteImport } from './routes/autor.jessica-anjos'
 import { Route as AutorDericAnjosRouteImport } from './routes/autor.deric-anjos'
@@ -57,6 +60,16 @@ const PrivacidadeRoute = PrivacidadeRouteImport.update({
 const MetodoRoute = MetodoRouteImport.update({
   id: '/metodo',
   path: '/metodo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
+  id: '/llms-full.txt',
+  path: '/llms-full.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GlossarioRoute = GlossarioRouteImport.update({
@@ -104,6 +117,12 @@ const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
   path: '/noticias/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogTimeComercialTerceirizadoConsultorioRoute =
+  BlogTimeComercialTerceirizadoConsultorioRouteImport.update({
+    id: '/time-comercial-terceirizado-consultorio',
+    path: '/time-comercial-terceirizado-consultorio',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -131,6 +150,8 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/metodo': typeof MetodoRoute
   '/privacidade': typeof PrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -141,6 +162,7 @@ export interface FileRoutesByFullPath {
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/time-comercial-terceirizado-consultorio': typeof BlogTimeComercialTerceirizadoConsultorioRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog/': typeof BlogIndexRoute
@@ -151,6 +173,8 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/metodo': typeof MetodoRoute
   '/privacidade': typeof PrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -161,6 +185,7 @@ export interface FileRoutesByTo {
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/time-comercial-terceirizado-consultorio': typeof BlogTimeComercialTerceirizadoConsultorioRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog': typeof BlogIndexRoute
@@ -173,6 +198,8 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/metodo': typeof MetodoRoute
   '/privacidade': typeof PrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -183,6 +210,7 @@ export interface FileRoutesById {
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/time-comercial-terceirizado-consultorio': typeof BlogTimeComercialTerceirizadoConsultorioRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog/': typeof BlogIndexRoute
@@ -196,6 +224,8 @@ export interface FileRouteTypes {
     | '/contato'
     | '/faq'
     | '/glossario'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/metodo'
     | '/privacidade'
     | '/sitemap.xml'
@@ -206,6 +236,7 @@ export interface FileRouteTypes {
     | '/autor/deric-anjos'
     | '/autor/jessica-anjos'
     | '/blog/$slug'
+    | '/blog/time-comercial-terceirizado-consultorio'
     | '/noticias/$slug'
     | '/noticias/rss.xml'
     | '/blog/'
@@ -216,6 +247,8 @@ export interface FileRouteTypes {
     | '/contato'
     | '/faq'
     | '/glossario'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/metodo'
     | '/privacidade'
     | '/sitemap.xml'
@@ -226,6 +259,7 @@ export interface FileRouteTypes {
     | '/autor/deric-anjos'
     | '/autor/jessica-anjos'
     | '/blog/$slug'
+    | '/blog/time-comercial-terceirizado-consultorio'
     | '/noticias/$slug'
     | '/noticias/rss.xml'
     | '/blog'
@@ -237,6 +271,8 @@ export interface FileRouteTypes {
     | '/contato'
     | '/faq'
     | '/glossario'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/metodo'
     | '/privacidade'
     | '/sitemap.xml'
@@ -247,6 +283,7 @@ export interface FileRouteTypes {
     | '/autor/deric-anjos'
     | '/autor/jessica-anjos'
     | '/blog/$slug'
+    | '/blog/time-comercial-terceirizado-consultorio'
     | '/noticias/$slug'
     | '/noticias/rss.xml'
     | '/blog/'
@@ -259,6 +296,8 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   FaqRoute: typeof FaqRoute
   GlossarioRoute: typeof GlossarioRoute
+  LlmsFullDottxtRoute: typeof LlmsFullDottxtRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   MetodoRoute: typeof MetodoRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -315,6 +354,20 @@ declare module '@tanstack/react-router' {
       path: '/metodo'
       fullPath: '/metodo'
       preLoaderRoute: typeof MetodoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms-full.txt': {
+      id: '/llms-full.txt'
+      path: '/llms-full.txt'
+      fullPath: '/llms-full.txt'
+      preLoaderRoute: typeof LlmsFullDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/glossario': {
@@ -380,6 +433,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NoticiasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/time-comercial-terceirizado-consultorio': {
+      id: '/blog/time-comercial-terceirizado-consultorio'
+      path: '/time-comercial-terceirizado-consultorio'
+      fullPath: '/blog/time-comercial-terceirizado-consultorio'
+      preLoaderRoute: typeof BlogTimeComercialTerceirizadoConsultorioRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
@@ -413,11 +473,14 @@ declare module '@tanstack/react-router' {
 
 interface BlogRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogTimeComercialTerceirizadoConsultorioRoute: typeof BlogTimeComercialTerceirizadoConsultorioRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
+  BlogTimeComercialTerceirizadoConsultorioRoute:
+    BlogTimeComercialTerceirizadoConsultorioRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 
@@ -429,6 +492,8 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   FaqRoute: FaqRoute,
   GlossarioRoute: GlossarioRoute,
+  LlmsFullDottxtRoute: LlmsFullDottxtRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   MetodoRoute: MetodoRoute,
   PrivacidadeRoute: PrivacidadeRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

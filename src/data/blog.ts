@@ -342,7 +342,7 @@ Quem implementar esse modelo nos próximos 12 meses ganha vantagem competitiva r
     seoTitle: "Treinar Secretária ou Terceirizar Operação Comercial",
     metaDescription: "Treinar a secretária ou terceirizar a operação comercial? Comparativo completo de custo, escala e capacidade médica liberada pra você decidir.",
     relatedSlugs: [
-      "time-comercial-terceirizado-consultorio",
+      "operacao-comercial-terceirizada-consultorio",
       "quanto-medico-perde-sem-processo-comercial",
       "o-que-e-operacao-comercial-consultorio",
     ],
@@ -483,7 +483,7 @@ Se você quer entender qual desses caminhos faz mais sentido pro seu consultóri
   {
     slug: "como-sair-do-convenio-viver-de-paciente-particular",
     seoTitle: "Como Sair do Convênio Médico: Guia Prático",
-    relatedSlugs: ["time-comercial-terceirizado-consultorio", "o-que-e-operacao-comercial-consultorio"],
+    relatedSlugs: ["operacao-comercial-terceirizada-consultorio", "o-que-e-operacao-comercial-consultorio"],
     faqSchema: [{"question": "Como sair do convênio e viver de pacientes particulares?", "answer": "A transição exige 5 etapas: calcular a real dependência do convênio, construir fonte de pacientes particulares antes de cortar, reduzir gradualmente (não cortar de vez), implementar operação comercial, e comunicar a saída com profissionalismo."}, {"question": "Médico pode ter agenda separada para convênio e particular?", "answer": "Sim. O Parecer CFM nº 1/2026 reconhece o direito do médico de organizar seu tempo e condições de trabalho, incluindo separação de agendas, desde que não funcione como pressão econômica sobre o paciente."}, {"question": "Quando não vale sair do convênio?", "answer": "Não faz sentido se o consultório não tem fluxo de pacientes particulares ainda, se o médico está em início de carreira sem base de pacientes, ou se a especialidade tem ticket médio particular muito baixo."}],
     title: "Como Sair do Convênio e Viver de Pacientes Particulares",
     excerpt: "Sair do convênio exige planejamento. Veja o passo a passo pra fazer a transição sem quebrar, com dados reais e estratégia comercial. Guia completo 2026.",
@@ -967,7 +967,7 @@ Se você quer entender como construir uma presença digital e uma operação com
 `,
   },
   {
-    slug: "time-comercial-terceirizado-consultorio",
+    slug: "operacao-comercial-terceirizada-consultorio",
     seoTitle: "Operação Comercial Terceirizado pra Consultório",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "como-sair-do-convenio-viver-de-paciente-particular"],
     coverImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
@@ -1314,7 +1314,7 @@ Se o seu consultório investe em marketing mas a agenda continua com espaços va
   {
     slug: "o-que-e-operacao-comercial-consultorio",
     seoTitle: "O que É Operação Comercial para Consultórios",
-    relatedSlugs: ["por-que-marketing-sozinho-nao-lota-agenda", "time-comercial-terceirizado-consultorio"],
+    relatedSlugs: ["por-que-marketing-sozinho-nao-lota-agenda", "operacao-comercial-terceirizada-consultorio"],
     coverImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
     coverImageAlt: "Consultório médico moderno com ambiente profissional representando operação comercial estruturada",
     title: "O que É Operação Comercial para Consultórios Médicos (e Por que Importa)",

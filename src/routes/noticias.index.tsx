@@ -73,6 +73,31 @@ export const Route = createFileRoute("/noticias/")({
     ];
     if (page > 1) links.push({ rel: "prev", href: pageUrl(page - 1) });
     if (page < totalPages) links.push({ rel: "next", href: pageUrl(page + 1) });
+    const items = loaderData?.items ?? [];
+    const collectionSchema = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: title,
+      description,
+      url: canonical,
+      inLanguage: "pt-BR",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: {
+        "@type": "Thing",
+        name: "Notícias do mercado médico brasileiro, regulação e saúde suplementar",
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListOrder: "https://schema.org/ItemListOrderDescending",
+        numberOfItems: items.length,
+        itemListElement: items.map((item, i) => ({
+          "@type": "ListItem",
+          position: (page - 1) * pageSize + i + 1,
+          url: `${SITE_URL}/noticias/${item.slug}`,
+          name: item.title,
+        })),
+      },
+    };
     return {
       meta: [
         { title },
@@ -83,8 +108,12 @@ export const Route = createFileRoute("/noticias/")({
         { property: "og:url", content: canonical },
       ],
       links,
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
+      ],
     };
   },
+
   component: NewsPage,
 });
 
