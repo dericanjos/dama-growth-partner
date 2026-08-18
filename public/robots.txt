@@ -53,3 +53,7 @@ User-agent: Diffbot
 Allow: /
 
 Sitemap: https://grupodamahealth.com.br/sitemap.xml
+
+# Guias para motores de IA
+# https://grupodamahealth.com.br/llms.txt
+# https://grupodamahealth.com.br/llms-full.txt

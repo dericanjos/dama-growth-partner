@@ -26,6 +26,7 @@ import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as NoticiasRssDotxmlRouteImport } from './routes/noticias.rss[.]xml'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
+import { Route as BlogTimeComercialTerceirizadoConsultorioRouteImport } from './routes/blog.time-comercial-terceirizado-consultorio'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AutorJessicaAnjosRouteImport } from './routes/autor.jessica-anjos'
 import { Route as AutorDericAnjosRouteImport } from './routes/autor.deric-anjos'
@@ -116,6 +117,12 @@ const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
   path: '/noticias/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogTimeComercialTerceirizadoConsultorioRoute =
+  BlogTimeComercialTerceirizadoConsultorioRouteImport.update({
+    id: '/time-comercial-terceirizado-consultorio',
+    path: '/time-comercial-terceirizado-consultorio',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -155,6 +162,7 @@ export interface FileRoutesByFullPath {
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/time-comercial-terceirizado-consultorio': typeof BlogTimeComercialTerceirizadoConsultorioRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog/': typeof BlogIndexRoute
@@ -177,6 +185,7 @@ export interface FileRoutesByTo {
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/time-comercial-terceirizado-consultorio': typeof BlogTimeComercialTerceirizadoConsultorioRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog': typeof BlogIndexRoute
@@ -201,6 +210,7 @@ export interface FileRoutesById {
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/time-comercial-terceirizado-consultorio': typeof BlogTimeComercialTerceirizadoConsultorioRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog/': typeof BlogIndexRoute
@@ -226,6 +236,7 @@ export interface FileRouteTypes {
     | '/autor/deric-anjos'
     | '/autor/jessica-anjos'
     | '/blog/$slug'
+    | '/blog/time-comercial-terceirizado-consultorio'
     | '/noticias/$slug'
     | '/noticias/rss.xml'
     | '/blog/'
@@ -248,6 +259,7 @@ export interface FileRouteTypes {
     | '/autor/deric-anjos'
     | '/autor/jessica-anjos'
     | '/blog/$slug'
+    | '/blog/time-comercial-terceirizado-consultorio'
     | '/noticias/$slug'
     | '/noticias/rss.xml'
     | '/blog'
@@ -271,6 +283,7 @@ export interface FileRouteTypes {
     | '/autor/deric-anjos'
     | '/autor/jessica-anjos'
     | '/blog/$slug'
+    | '/blog/time-comercial-terceirizado-consultorio'
     | '/noticias/$slug'
     | '/noticias/rss.xml'
     | '/blog/'
@@ -420,6 +433,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NoticiasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/time-comercial-terceirizado-consultorio': {
+      id: '/blog/time-comercial-terceirizado-consultorio'
+      path: '/time-comercial-terceirizado-consultorio'
+      fullPath: '/blog/time-comercial-terceirizado-consultorio'
+      preLoaderRoute: typeof BlogTimeComercialTerceirizadoConsultorioRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
@@ -453,11 +473,14 @@ declare module '@tanstack/react-router' {
 
 interface BlogRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogTimeComercialTerceirizadoConsultorioRoute: typeof BlogTimeComercialTerceirizadoConsultorioRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
+  BlogTimeComercialTerceirizadoConsultorioRoute:
+    BlogTimeComercialTerceirizadoConsultorioRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 
