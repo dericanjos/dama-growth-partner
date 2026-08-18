@@ -289,6 +289,13 @@ function PostPage() {
             </p>
           </aside>
 
+          {post.updateNotice && (
+            <NewsUpdateNotice
+              date={post.updateNotice.date}
+              text={post.updateNotice.text}
+            />
+          )}
+
           <MarkdownContent content={post.content} />
 
           {faq.length > 0 && (
