@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 import { BLOG_POSTS, formatDateBR } from "@/data/blog";
+import { AuthorAvatar } from "@/components/AuthorAvatar";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { listNewsByAuthor, type NewsArticleListItem } from "@/lib/news.functions";
 
 const AUTHOR_NAME = "Deric Anjos";
+// Foto real ainda não fornecida. Preencher com a URL da foto para substituir o monograma.
+const AUTHOR_FOTO = "";
 const AUTHOR_URL = "https://grupodamahealth.com.br/autor/deric-anjos";
 const AUTHOR_DESC =
   "Deric Anjos é Head de Growth do Grupo DAMA. Formado pela Escola Naval, empresário e estrategista de crescimento para consultórios médicos.";
@@ -78,14 +81,7 @@ function AuthorPage() {
     <>
       <section className="surface-dark hero-glow relative pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="container-dama mx-auto max-w-3xl text-center">
-          <div className="mx-auto mb-8 h-32 w-32 overflow-hidden rounded-full border-2 md:h-36 md:w-36"
-               style={{ borderColor: "var(--gold)" }}>
-            <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
-              alt="Deric Anjos, Head de Growth do Grupo DAMA"
-              className="h-full w-full object-cover"
-            />
-          </div>
+          <AuthorAvatar name={AUTHOR_NAME} foto={AUTHOR_FOTO} alt="Deric Anjos, Head de Growth do Grupo DAMA" />
           <h1 className="heading-display text-[36px] md:text-[52px]">
             <span className="gold-text">Deric Anjos</span>
           </h1>
