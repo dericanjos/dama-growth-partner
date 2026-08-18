@@ -18,6 +18,24 @@ const NEWS_CATEGORIES = [
   "Geral",
 ] as const;
 
+const SITE_URL = "https://grupodamahealth.com.br";
+
+function pageUrl(page: number, cat?: string) {
+  const params = new URLSearchParams();
+  if (page > 1) params.set("page", String(page));
+  if (cat) params.set("cat", cat);
+  const qs = params.toString();
+  return `${SITE_URL}/noticias${qs ? `?${qs}` : ""}`;
+}
+
+function pagePath(page: number, cat?: string) {
+  const params = new URLSearchParams();
+  if (page > 1) params.set("page", String(page));
+  if (cat) params.set("cat", cat);
+  const qs = params.toString();
+  return `/noticias${qs ? `?${qs}` : ""}`;
+}
+
 const searchSchema = z.object({
   page: z.coerce.number().int().min(1).max(500).optional(),
   cat: z.string().min(1).max(80).optional(),
@@ -35,25 +53,37 @@ export const Route = createFileRoute("/noticias/")({
     listPublishedNews({
       data: { page: deps.page ?? 1, category: deps.cat ?? null },
     }),
-  head: () => ({
-    meta: [
-      { title: "Notícias Médicas | Grupo DAMA" },
-      {
-        name: "description",
-        content:
-          "Análise e contexto das notícias mais relevantes do mundo médico. Fontes oficiais: CFM, Ministério da Saúde, ANVISA, ANS, AMB.",
-      },
-      { property: "og:title", content: "Notícias Médicas | Grupo DAMA" },
-      {
-        property: "og:description",
-        content:
-          "Análise e contexto das notícias mais relevantes do mundo médico, pelo Grupo DAMA.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://grupodamahealth.com.br/noticias" },
-    ],
-    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/noticias" }],
-  }),
+  head: ({ loaderData }) => {
+    const page = loaderData?.page ?? 1;
+    const pageSize = loaderData?.pageSize ?? 10;
+    const total = loaderData?.total ?? 0;
+    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+    const title =
+      page > 1
+        ? `Notícias Médicas · Página ${page} · Grupo DAMA Health`
+        : "Notícias Médicas | Grupo DAMA";
+    const description =
+      page > 1
+        ? `Página ${page} do acervo de notícias médicas do Grupo DAMA, com análise de regulação, saúde suplementar e mercado médico.`
+        : "Análise e contexto das notícias mais relevantes do mundo médico. Fontes oficiais: CFM, Ministério da Saúde, ANVISA, ANS, AMB.";
+    const canonical = pageUrl(page);
+    const links: Array<{ rel: string; href: string }> = [
+      { rel: "canonical", href: canonical },
+    ];
+    if (page > 1) links.push({ rel: "prev", href: pageUrl(page - 1) });
+    if (page < totalPages) links.push({ rel: "next", href: pageUrl(page + 1) });
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: canonical },
+      ],
+      links,
+    };
+  },
   component: NewsPage,
 });
 
@@ -82,7 +112,6 @@ interface SearchParams {
 function NewsPage() {
   const { items, total, page, pageSize } = Route.useLoaderData() as LoaderData;
   const search = Route.useSearch() as SearchParams;
-  const navigate = Route.useNavigate();
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   const activeCat = search.cat ?? "Todas";
 
@@ -107,26 +136,20 @@ function NewsPage() {
 
       <section className="border-b border-[var(--border)] bg-[var(--cream)] py-8">
         <div className="container-dama flex flex-wrap items-center justify-center gap-2.5">
-          <button
-            type="button"
-            onClick={() =>
-              navigate({ search: { page: 1 } })
-            }
+          <a
+            href={pagePath(1)}
             className={`filter-pill ${activeCat === "Todas" ? "filter-pill-active" : ""}`}
           >
             Todas
-          </button>
+          </a>
           {NEWS_CATEGORIES.map((cat) => (
-            <button
+            <a
               key={cat}
-              type="button"
-              onClick={() =>
-                navigate({ search: { page: 1, cat } })
-              }
+              href={pagePath(1, cat)}
               className={`filter-pill ${activeCat === cat ? "filter-pill-active" : ""}`}
             >
               {cat}
-            </button>
+            </a>
           ))}
         </div>
       </section>
@@ -194,38 +217,33 @@ function NewsPage() {
           {totalPages > 1 && (
             <nav
               aria-label="Paginação"
-              className="mt-12 flex items-center justify-center gap-2"
+              className="mt-12 flex flex-wrap items-center justify-center gap-2"
             >
-              <button
-                type="button"
-                disabled={page <= 1}
-                onClick={() =>
-                  navigate({
-                    search: (prev: SearchParams) => ({ ...prev, page: Math.max(1, page - 1) }),
-                  })
-                }
-                className="filter-pill disabled:opacity-40"
-              >
-                ← Anterior
-              </button>
-              <span className="px-3 text-sm text-[var(--text-muted)]">
-                Página {page} de {totalPages}
-              </span>
-              <button
-                type="button"
-                disabled={page >= totalPages}
-                onClick={() =>
-                  navigate({
-                    search: (prev: SearchParams) => ({
-                      ...prev,
-                      page: Math.min(totalPages, page + 1),
-                    }),
-                  })
-                }
-                className="filter-pill disabled:opacity-40"
-              >
-                Próxima →
-              </button>
+              {page > 1 ? (
+                <a href={pagePath(page - 1, search.cat)} rel="prev" className="filter-pill">
+                  ← Anterior
+                </a>
+              ) : (
+                <span className="filter-pill opacity-40">← Anterior</span>
+              )}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) =>
+                p === page ? (
+                  <span key={p} className="filter-pill filter-pill-active" aria-current="page">
+                    {p}
+                  </span>
+                ) : (
+                  <a key={p} href={pagePath(p, search.cat)} className="filter-pill">
+                    {p}
+                  </a>
+                ),
+              )}
+              {page < totalPages ? (
+                <a href={pagePath(page + 1, search.cat)} rel="next" className="filter-pill">
+                  Próxima →
+                </a>
+              ) : (
+                <span className="filter-pill opacity-40">Próxima →</span>
+              )}
             </nav>
           )}
 
