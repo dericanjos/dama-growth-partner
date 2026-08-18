@@ -72,12 +72,12 @@ export function organizationSchema(extra: Record<string, unknown> = {}) {
     },
     email: ORGANIZACAO.email,
     telephone: ORGANIZACAO.telefone,
-    foundingDate: ORGANIZACAO.fundacao,
     areaServed: { "@type": "Country", name: "BR" },
     sameAs: [...ORGANIZACAO.perfisSociais],
     address: buildPostalAddress(),
     ...extra,
   };
+  if (notEmpty(ORGANIZACAO.fundacao)) org.foundingDate = ORGANIZACAO.fundacao;
   if (notEmpty(ORGANIZACAO.razaoSocial)) org.legalName = ORGANIZACAO.razaoSocial;
   if (notEmpty(ORGANIZACAO.cnpj)) org.taxID = ORGANIZACAO.cnpj;
   return org;
