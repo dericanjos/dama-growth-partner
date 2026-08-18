@@ -20,6 +20,7 @@ import { ForumSection } from "@/components/forum/ForumSection";
 import { getForumQuestionsForSlug } from "@/lib/forum-read.functions";
 import { listLatestNews } from "@/lib/news.functions";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { NewsUpdateNotice } from "@/components/NewsUpdateNotice";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
@@ -288,6 +289,13 @@ function PostPage() {
               {post.quickAnswer}
             </p>
           </aside>
+
+          {post.updateNotice && (
+            <NewsUpdateNotice
+              date={post.updateNotice.date}
+              text={post.updateNotice.text}
+            />
+          )}
 
           <MarkdownContent content={post.content} />
 
