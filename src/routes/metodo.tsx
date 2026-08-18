@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Search, Megaphone, CalendarCheck, Activity } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
@@ -25,6 +25,44 @@ const FAQ_JSONLD = {
   ],
 };
 
+const HOWTO_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Método D.A.M.A: Diagnosticar, Atrair, Marcar, Acompanhar",
+  description:
+    "Os quatro passos aplicados em cada contato que chega ao consultório, em ciclo contínuo.",
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Diagnosticar",
+      text: "Reconhecer com quem se está falando antes de decidir o que dizer: quem é essa pessoa, o que ela sente e o que precisa ouvir para dar o próximo passo com segurança.",
+      url: "https://grupodamahealth.com.br/metodo#diagnosticar",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Atrair",
+      text: "Gerar confiança dentro da conversa que já começou, com comunicação humanizada e autoridade evidenciada, sem pressão nem urgência artificial.",
+      url: "https://grupodamahealth.com.br/metodo#atrair",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Marcar",
+      text: "Conduzir a conversa até a agenda sem pressão e sem deixar o paciente no vácuo, com próximo passo claro e follow-up registrado.",
+      url: "https://grupodamahealth.com.br/metodo#marcar",
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Acompanhar",
+      text: "Seguir até a consulta e até o retorno: confirmar, reduzir a falta, remarcar quem faltou e chamar de volta quem tinha retorno previsto.",
+      url: "https://grupodamahealth.com.br/metodo#acompanhar",
+    },
+  ],
+};
+
 export const Route = createFileRoute("/metodo")({
   head: () => ({
     meta: [
@@ -45,6 +83,7 @@ export const Route = createFileRoute("/metodo")({
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/metodo" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(FAQ_JSONLD) },
+      { type: "application/ld+json", children: JSON.stringify(HOWTO_JSONLD) },
     ],
   }),
   component: MethodPage,
@@ -53,38 +92,48 @@ export const Route = createFileRoute("/metodo")({
 const STEPS = [
   {
     letter: "D",
+    id: "diagnosticar",
     icon: Search,
     title: "Diagnosticar",
+    lead: "Antes da técnica, existe o porquê.",
     paragraphs: [
-      "Antes de qualquer estratégia, analisamos profundamente a operação do seu consultório. Agenda, atendimento, taxa de conversão, posicionamento, processos comerciais, retenção de pacientes e indicadores financeiros são avaliados para identificar exatamente onde estão os gargalos que limitam o seu crescimento.",
-      "Acreditamos que crescimento sem diagnóstico gera desperdício. Por isso, o Método D.A.M.A começa entendendo o cenário real da operação para construir decisões estratégicas baseadas em dados, previsibilidade e oportunidades concretas de melhoria.",
+      "Diagnosticar é reconhecer com quem se está falando antes de decidir o que dizer. Quem é essa pessoa, o que ela está sentindo, o que ela precisa ouvir para dar o próximo passo com segurança.",
+      "Na prática, isso significa que a mesma pergunta sobre preço recebe conduções diferentes dependendo de quem pergunta: quem está com dor e quer resolver hoje, quem está pesquisando três consultórios, quem já foi mal atendido antes e chega desconfiado, quem está decidindo por um familiar.",
+      "Um atendimento que não diagnostica trata todos igual. E tratar todos igual é a forma mais eficiente de perder quem era diferente.",
     ],
   },
   {
     letter: "A",
+    id: "atrair",
     icon: Megaphone,
     title: "Atrair",
+    lead: "Atrair, aqui, não é gerar tráfego. É gerar confiança dentro da conversa que já começou.",
     paragraphs: [
-      "Após identificar os gargalos da operação, estruturamos a captação estratégica de pacientes através de marketing médico, posicionamento digital, tráfego pago, SEO local, branding e produção de conteúdo alinhado à percepção de valor do médico.",
-      "O objetivo não é apenas gerar volume, mas atrair pacientes mais qualificados e alinhados ao perfil do seu consultório. A atração precisa acontecer de forma inteligente para alimentar a operação comercial com oportunidades reais de conversão.",
+      "É a etapa em que a comunicação humanizada faz o paciente entender que do outro lado existe alguém que sabe do que está falando e que se importa com o que ele está passando. Autoridade evidenciada, não anunciada.",
+      "Na prática: responder rápido, chamar pelo nome, demonstrar que se leu o que a pessoa escreveu, explicar o que acontece na consulta, e nunca conduzir por medo, urgência artificial ou pena.",
+      "A DAMA conduz a decisão. Não convence, não pressiona, não insiste.",
     ],
   },
   {
     letter: "M",
+    id: "marcar",
     icon: CalendarCheck,
     title: "Marcar",
+    lead: "Marcar é conduzir a conversa até a agenda sem pressão e sem deixar o paciente no vácuo.",
     paragraphs: [
-      "Lead sem conversão não traz faturamento. Seguidores em Instagram é métrica de vaidade. Por isso, a operação comercial da DAMA atua diretamente na linha de frente do atendimento, conduzindo cada paciente com comunicação estratégica através de um atendimento humanizado e técnicas consultivas de conversão.",
-      "Nosso foco é transformar interesse em agendamento através de processos claros, acompanhamento estruturado e redução das perdas comerciais que normalmente acontecem dentro da operação do consultório.",
+      "A maior parte da receita que escapa de um consultório escapa exatamente aqui: a conversa foi boa, o paciente ficou interessado, e ninguém propôs o próximo passo de forma clara. Ele disse que ia pensar. Ninguém voltou.",
+      "Na prática: oferecer dois horários em vez de perguntar \u201Cquando você pode\u201D, registrar o combinado, e assumir que o silêncio não é uma resposta, é um follow-up pendente.",
     ],
   },
   {
     letter: "A",
+    id: "acompanhar",
     icon: Activity,
     title: "Acompanhar",
+    lead: "Acompanhar é seguir até a consulta e até o retorno.",
     paragraphs: [
-      "Crescimento sustentável exige acompanhamento contínuo. Monitoramos métricas, analisamos indicadores estratégicos e realizamos ajustes constantes na operação para aumentar previsibilidade, retenção de pacientes e performance comercial.",
-      "Mais do que executar processos, acompanhamos a evolução do consultório de forma ativa, garantindo que marketing, comercial e growth continuem operando de maneira integrada, inteligente e sustentável no longo prazo.",
+      "É a etapa que quase ninguém opera, porque ela acontece depois da parte que parecia importante. Confirmar, reduzir a falta, remarcar quem faltou, chamar de volta quem tinha retorno previsto e não voltou.",
+      "É também a etapa que alimenta a anterior: cada acompanhamento devolve informação sobre por que o paciente veio, por que faltou e por que voltou. Esse aprendizado entra no diagnóstico do próximo contato, e o ciclo recomeça mais preciso.",
     ],
   },
 ];
@@ -102,7 +151,10 @@ function MethodPage() {
             <span className="gold-text">Método D.A.M.A</span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[17px] leading-[1.7] text-white/80 md:text-[19px]">
-            Mais do que um método de atendimento, um sistema operacional construído para transformar relacionamento em crescimento previsível através de processos à prova de crises.
+            D.A.M.A são quatro passos aplicados na ordem, em cada contato que chega
+            ao consultório. Não é um funil linear que começa e termina: é um ciclo.
+            O que se aprende no acompanhamento de um paciente muda o diagnóstico do
+            próximo.
           </p>
         </div>
       </section>
@@ -155,8 +207,9 @@ function MethodPage() {
       <section className="bg-[var(--cream)] pb-24 md:pb-32">
         <div className="container-dama mx-auto max-w-3xl space-y-10 md:space-y-14">
           {STEPS.map((s, i) => (
-            <Reveal key={s.title} delay={i * 80}>
+            <Reveal key={s.title + s.id} delay={i * 80}>
               <article
+                id={s.id}
                 className="card-dama p-8 md:p-12"
                 style={{ borderLeft: "4px solid var(--gold)" }}
               >
@@ -174,7 +227,10 @@ function MethodPage() {
                     </h2>
                   </div>
                 </div>
-                <div className="mt-6 space-y-4 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
+                <p className="mt-6 font-serif text-[18px] leading-[1.6] text-[var(--navy)] md:text-[20px]">
+                  {s.lead}
+                </p>
+                <div className="mt-5 space-y-4 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
                   {s.paragraphs.map((p, idx) => (
                     <p key={idx}>{p}</p>
                   ))}
@@ -182,6 +238,67 @@ function MethodPage() {
               </article>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* SEÇÕES FINAIS */}
+      <section className="bg-[var(--cream)] pb-24 md:pb-32">
+        <div className="container-dama mx-auto max-w-3xl space-y-14">
+          <Reveal>
+            <h2 className="heading-display text-[26px] leading-[1.2] text-[var(--navy)] md:text-[36px]">
+              O método também é como a DAMA vende
+            </h2>
+            <div className="mt-6 space-y-5 text-[16px] leading-[1.85] text-[var(--text-secondary)]">
+              <p>
+                A primeira reunião com um médico parceiro roda o mesmo método.
+                Diagnosticar, com perguntas e números. Atrair, gerando confiança com
+                clareza e não com pressão. Marcar, com um próximo passo definido.
+                Acompanhar, com follow-up pontual.
+              </p>
+              <p>
+                A reunião comercial é uma demonstração do método. Se ele não
+                funcionasse ali, não teria por que funcionar no seu consultório.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <h2 className="heading-display text-[26px] leading-[1.2] text-[var(--navy)] md:text-[36px]">
+              O que o método não faz
+            </h2>
+            <div className="mt-6 space-y-5 text-[16px] leading-[1.85] text-[var(--text-secondary)]">
+              <p>
+                O método não substitui o médico. Ele cuida do que está fora da sala
+                de consulta.
+              </p>
+              <p>
+                Não promete resultado clínico, não interfere em conduta, não expõe
+                paciente, não divulga valores publicamente e não usa antes e depois
+                sensacionalista. Conformidade com as normas do CFM não é detalhe: é
+                princípio, e está dentro do roteiro, não anexada a ele.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <h2 className="heading-display text-[26px] leading-[1.2] text-[var(--navy)] md:text-[36px]">
+              Como o método é implantado
+            </h2>
+            <div className="mt-6 space-y-5 text-[16px] leading-[1.85] text-[var(--text-secondary)]">
+              <p>
+                A implantação segue um processo documentado, com etapas nomeadas e
+                critério de pronto em cada uma. Começa por um diagnóstico de
+                partida, passa por um documento de comunicação, pela estratégia de
+                crescimento e de funis, e só então pela operação rodando com
+                indicadores semanais.
+              </p>
+              <p>
+                Não existe fase em que o médico não sabe o que está acontecendo.
+                Transparência sobre o número, inclusive quando o número piora, faz
+                parte do que a DAMA garante.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

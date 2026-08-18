@@ -14,6 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
+      contatos_diagnostico: {
+        Row: {
+          cidade: string
+          consentimento_em: string
+          created_at: string
+          crm: string | null
+          email: string
+          especialidade: string
+          id: string
+          mensagem: string | null
+          nome: string
+          origem: string | null
+          uf: string
+          volume_contatos: string | null
+          whatsapp: string
+        }
+        Insert: {
+          cidade: string
+          consentimento_em?: string
+          created_at?: string
+          crm?: string | null
+          email: string
+          especialidade: string
+          id?: string
+          mensagem?: string | null
+          nome: string
+          origem?: string | null
+          uf: string
+          volume_contatos?: string | null
+          whatsapp: string
+        }
+        Update: {
+          cidade?: string
+          consentimento_em?: string
+          created_at?: string
+          crm?: string | null
+          email?: string
+          especialidade?: string
+          id?: string
+          mensagem?: string | null
+          nome?: string
+          origem?: string | null
+          uf?: string
+          volume_contatos?: string | null
+          whatsapp?: string
+        }
+        Relationships: []
+      }
       forum_answers: {
         Row: {
           answer_text: string
