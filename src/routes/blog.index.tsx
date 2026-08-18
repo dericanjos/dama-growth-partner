@@ -71,6 +71,11 @@ export const Route = createFileRoute("/blog/")({
         type: "application/ld+json",
         children: JSON.stringify(BLOG_JSONLD),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(BLOG_COLLECTION_JSONLD),
+
+      },
     ],
   }),
   component: BlogIndex,
