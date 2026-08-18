@@ -22,10 +22,12 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as NoticiasRssDotxmlRouteImport } from './routes/noticias.rss[.]xml'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AutorJessicaAnjosRouteImport } from './routes/autor.jessica-anjos'
 import { Route as AutorDericAnjosRouteImport } from './routes/autor.deric-anjos'
+import { Route as ApiNoticiasDotjsonRouteImport } from './routes/api.noticias[.]json'
 
 const TermosRoute = TermosRouteImport.update({
   id: '/termos',
@@ -92,6 +94,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BlogRoute,
 } as any)
+const NoticiasRssDotxmlRoute = NoticiasRssDotxmlRouteImport.update({
+  id: '/noticias/rss.xml',
+  path: '/noticias/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
   id: '/noticias/$slug',
   path: '/noticias/$slug',
@@ -112,6 +119,11 @@ const AutorDericAnjosRoute = AutorDericAnjosRouteImport.update({
   path: '/autor/deric-anjos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiNoticiasDotjsonRoute = ApiNoticiasDotjsonRouteImport.update({
+  id: '/api/noticias.json',
+  path: '/api/noticias.json',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -125,10 +137,12 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
+  '/api/noticias.json': typeof ApiNoticiasDotjsonRoute
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
+  '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog/': typeof BlogIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
 }
@@ -143,10 +157,12 @@ export interface FileRoutesByTo {
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
+  '/api/noticias.json': typeof ApiNoticiasDotjsonRoute
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
+  '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog': typeof BlogIndexRoute
   '/noticias': typeof NoticiasIndexRoute
 }
@@ -163,10 +179,12 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/solucao': typeof SolucaoRoute
   '/termos': typeof TermosRoute
+  '/api/noticias.json': typeof ApiNoticiasDotjsonRoute
   '/autor/deric-anjos': typeof AutorDericAnjosRoute
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
+  '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog/': typeof BlogIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
 }
@@ -184,10 +202,12 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/solucao'
     | '/termos'
+    | '/api/noticias.json'
     | '/autor/deric-anjos'
     | '/autor/jessica-anjos'
     | '/blog/$slug'
     | '/noticias/$slug'
+    | '/noticias/rss.xml'
     | '/blog/'
     | '/noticias/'
   fileRoutesByTo: FileRoutesByTo
@@ -202,10 +222,12 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/solucao'
     | '/termos'
+    | '/api/noticias.json'
     | '/autor/deric-anjos'
     | '/autor/jessica-anjos'
     | '/blog/$slug'
     | '/noticias/$slug'
+    | '/noticias/rss.xml'
     | '/blog'
     | '/noticias'
   id:
@@ -221,10 +243,12 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/solucao'
     | '/termos'
+    | '/api/noticias.json'
     | '/autor/deric-anjos'
     | '/autor/jessica-anjos'
     | '/blog/$slug'
     | '/noticias/$slug'
+    | '/noticias/rss.xml'
     | '/blog/'
     | '/noticias/'
   fileRoutesById: FileRoutesById
@@ -241,9 +265,11 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   SolucaoRoute: typeof SolucaoRoute
   TermosRoute: typeof TermosRoute
+  ApiNoticiasDotjsonRoute: typeof ApiNoticiasDotjsonRoute
   AutorDericAnjosRoute: typeof AutorDericAnjosRoute
   AutorJessicaAnjosRoute: typeof AutorJessicaAnjosRoute
   NoticiasSlugRoute: typeof NoticiasSlugRoute
+  NoticiasRssDotxmlRoute: typeof NoticiasRssDotxmlRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
 }
 
@@ -340,6 +366,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/noticias/rss.xml': {
+      id: '/noticias/rss.xml'
+      path: '/noticias/rss.xml'
+      fullPath: '/noticias/rss.xml'
+      preLoaderRoute: typeof NoticiasRssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/noticias/$slug': {
       id: '/noticias/$slug'
       path: '/noticias/$slug'
@@ -366,6 +399,13 @@ declare module '@tanstack/react-router' {
       path: '/autor/deric-anjos'
       fullPath: '/autor/deric-anjos'
       preLoaderRoute: typeof AutorDericAnjosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/noticias.json': {
+      id: '/api/noticias.json'
+      path: '/api/noticias.json'
+      fullPath: '/api/noticias.json'
+      preLoaderRoute: typeof ApiNoticiasDotjsonRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -395,9 +435,11 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   SolucaoRoute: SolucaoRoute,
   TermosRoute: TermosRoute,
+  ApiNoticiasDotjsonRoute: ApiNoticiasDotjsonRoute,
   AutorDericAnjosRoute: AutorDericAnjosRoute,
   AutorJessicaAnjosRoute: AutorJessicaAnjosRoute,
   NoticiasSlugRoute: NoticiasSlugRoute,
+  NoticiasRssDotxmlRoute: NoticiasRssDotxmlRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
 }
 export const routeTree = rootRouteImport
