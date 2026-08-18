@@ -297,6 +297,15 @@ function NewsArticlePage() {
             </div>
           )}
 
+          {article.update_date && article.update_text && (
+            <NewsUpdateNotice
+              date={article.update_date}
+              text={article.update_text}
+              linkSlug={article.update_link_slug}
+              linkLabel={article.update_link_label}
+            />
+          )}
+
           <MarkdownContent content={article.content} />
 
           {faq.length > 0 && (
