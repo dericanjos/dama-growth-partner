@@ -15,7 +15,7 @@ import {
   listRelatedNews,
   type FaqEntry,
   type NewsArticleListItem,
-} from "@/server/news.functions";
+} from "@/lib/news.functions";
 
 function getAuthorMeta(author: string): { jobTitle: string; url: string } {
   if (author === "Deric Anjos") {
