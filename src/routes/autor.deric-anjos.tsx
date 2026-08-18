@@ -46,14 +46,17 @@ export const Route = createFileRoute("/autor/deric-anjos")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://grupodamahealth.com.br/autor/deric-anjos#person",
           name: AUTHOR_NAME,
           jobTitle: "Head de Growth",
           url: AUTHOR_URL,
+          image: "https://grupodamahealth.com.br/autores/deric-anjos.webp",
           worksFor: {
             "@type": "Organization",
             name: "Grupo DAMA Health",
             url: "https://grupodamahealth.com.br",
           },
+          affiliation: { "@id": "https://grupodamahealth.com.br/#organization" },
           knowsAbout: [
             "Growth para consultórios médicos",
             "Marketing médico",
