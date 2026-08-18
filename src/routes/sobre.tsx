@@ -25,8 +25,8 @@ const ABOUT_ORG_JSONLD = {
   ],
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Recife",
-    addressRegion: "PE",
+    addressLocality: "Rio de Janeiro",
+    addressRegion: "RJ",
     addressCountry: "BR",
   },
   areaServed: "BR",
