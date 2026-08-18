@@ -90,16 +90,18 @@ export function MarkdownContent({ content }: { content: string }) {
     flushList(String(idx));
 
     if (block.startsWith("### ")) {
+      const heading = block.slice(4);
       elements.push(
         <h3
           key={idx}
+          id={slugifyHeading(heading)}
           className={
             inReferences
               ? "mt-8 mb-3 font-serif text-[16px] font-semibold text-[var(--text-secondary)]"
               : "mt-10 mb-4 font-serif text-[20px] font-semibold text-[var(--navy)]"
           }
         >
-          {block.slice(4)}
+          {heading}
         </h3>,
       );
     } else if (block.startsWith("## ")) {
@@ -110,6 +112,7 @@ export function MarkdownContent({ content }: { content: string }) {
       elements.push(
         <h2
           key={idx}
+          id={slugifyHeading(heading)}
           className={
             inReferences
               ? "mt-14 mb-4 border-t border-[var(--border)] pt-8 font-serif text-[18px] font-semibold uppercase tracking-[0.12em] text-[var(--text-muted)]"
@@ -120,14 +123,31 @@ export function MarkdownContent({ content }: { content: string }) {
         </h2>,
       );
     } else if (block.startsWith("> ")) {
+      const inner = block.slice(2);
+      // Blocos fixos como "> **Em resumo**" ganham cabeçalho real (h2 com id),
+      // renderizado inline para manter o visual idêntico ao <strong> anterior.
+      const labelMatch = inner.match(/^\*\*([^*\n]+)\*\*(\n[\s\S]*)?$/);
       elements.push(
         <blockquote
           key={idx}
           className="my-7 border-l-[3px] border-[var(--gold)] bg-[color-mix(in_oklab,var(--gold)_8%,white)] px-5 py-4 font-serif text-[17px] italic leading-[1.7] text-[var(--navy)]"
         >
-          {renderInline(block.slice(2), `bq-${idx}`)}
+          {labelMatch ? (
+            <>
+              <h2
+                id={slugifyHeading(labelMatch[1])}
+                className="inline font-semibold text-[var(--navy)]"
+              >
+                {labelMatch[1]}
+              </h2>
+              {labelMatch[2] ? renderInline(labelMatch[2], `bq-${idx}`) : null}
+            </>
+          ) : (
+            renderInline(inner, `bq-${idx}`)
+          )}
         </blockquote>,
       );
+
     } else {
       const lines = block.split("\n");
       elements.push(
