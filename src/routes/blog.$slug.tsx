@@ -96,7 +96,14 @@ export const Route = createFileRoute("/blog/$slug")({
               },
             },
             publisher: PUBLISHER_SCHEMA,
-            image: post.coverImage ? [post.coverImage] : undefined,
+            image: post.coverImage
+              ? [
+                  post.coverImage.startsWith("http")
+                    ? post.coverImage
+                    : `https://grupodamahealth.com.br${post.coverImage}`,
+                ]
+              : undefined,
+
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             articleSection: post.category,
             ...(tags.length > 0 ? { keywords: tags.join(", ") } : {}),
