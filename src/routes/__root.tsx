@@ -88,6 +88,12 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      {
+        rel: "alternate",
+        type: "application/rss+xml",
+        title: "Notícias Médicas · Grupo DAMA Health",
+        href: "https://grupodamahealth.com.br/noticias/rss.xml",
+      },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/manifest.json" },
