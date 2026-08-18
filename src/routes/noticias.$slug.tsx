@@ -1,3 +1,4 @@
+import { PUBLISHER_SCHEMA } from "@/config/organizacao";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ChevronRight, ExternalLink } from "lucide-react";
 import {
@@ -48,7 +49,7 @@ function plainExcerpt(text: string, max = 155) {
 }
 
 const SITE_URL = "https://grupodamahealth.com.br";
-const PUBLISHER_LOGO = `${SITE_URL}/assets/dama-logo.png`;
+
 
 function toAbsoluteUrl(path: string | null | undefined): string | null {
   if (!path) return null;
@@ -106,14 +107,7 @@ export const Route = createFileRoute("/noticias/$slug")({
             jobTitle: authorMeta.jobTitle,
             url: authorMeta.url,
           },
-          publisher: {
-            "@type": "Organization",
-            name: "Grupo Dama Health",
-            logo: {
-              "@type": "ImageObject",
-              url: PUBLISHER_LOGO,
-            },
-          },
+          publisher: PUBLISHER_SCHEMA,
           mainEntityOfPage: { "@type": "WebPage", "@id": url },
           isBasedOn: article.source_url ?? undefined,
         }),

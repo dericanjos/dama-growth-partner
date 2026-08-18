@@ -1,3 +1,4 @@
+import { PUBLISHER_SCHEMA } from "@/config/organizacao";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { FileText } from "lucide-react";
@@ -12,14 +13,7 @@ const BLOG_JSONLD = {
     "Conteúdo estratégico para médicos que tratam o consultório como negócio: marketing, gestão, tecnologia, jornada do paciente e saúde suplementar.",
   url: "https://grupodamahealth.com.br/blog",
   inLanguage: "pt-BR",
-  publisher: {
-    "@type": "Organization",
-    name: "Grupo DAMA Health",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://grupodamahealth.com.br/dama-queen.png",
-    },
-  },
+  publisher: PUBLISHER_SCHEMA,
 };
 
 export const Route = createFileRoute("/blog/")({

@@ -1,3 +1,4 @@
+import { PUBLISHER_SCHEMA } from "@/config/organizacao";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ChevronRight, Clock } from "lucide-react";
 import {
@@ -84,15 +85,7 @@ export const Route = createFileRoute("/blog/$slug")({
                 name: "Grupo DAMA",
               },
             },
-            publisher: {
-              "@type": "Organization",
-              name: "Grupo DAMA",
-              url: "https://grupodamahealth.com.br",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://grupodamahealth.com.br/favicon.png",
-              },
-            },
+            publisher: PUBLISHER_SCHEMA,
             image: post.coverImage ? [post.coverImage] : undefined,
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             articleSection: post.category,
