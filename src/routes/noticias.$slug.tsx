@@ -13,6 +13,7 @@ import { NewsUpdateNotice } from "@/components/NewsUpdateNotice";
 import { ShareButtons } from "@/components/ShareButtons";
 import { formatDateBR, BLOG_POSTS } from "@/data/blog";
 import {
+import { NewsletterSignup } from "@/components/NewsletterSignup";
   getNewsArticleBySlug,
   listRelatedNews,
   type FaqEntry,
@@ -383,6 +384,8 @@ function NewsArticlePage() {
               </ul>
             </div>
           )}
+
+          <NewsletterSignup origem={`noticias/${article.slug}`} className="mt-12" />
 
           {(() => {
             const latestBlog = [...BLOG_POSTS]
