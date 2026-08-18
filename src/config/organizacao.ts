@@ -2,28 +2,30 @@
  * Fonte única de verdade dos dados institucionais do Grupo DAMA.
  *
  * CAMPOS AINDA NÃO FORNECIDOS (preencher quando o dado oficial chegar):
- *   - cnpj
- *   - logradouro, numero, complemento, bairro, cidade, uf, cep
+ *   - logradouro, numero, complemento, bairro, cep
+ *     (endereço de registro é residencial; aguardando assinatura da sede física)
+ *   - fundacao: data de fundação pendente de definição.
+ *     Candidatas: "2021-03-27" (início de atividade no CNPJ) e "2022" (narrativa institucional atual).
  *
  * Regra: campo vazio nunca é renderizado na interface nem emitido no JSON-LD.
  */
 export const ORGANIZACAO = {
-  razaoSocial: "",
+  razaoSocial: "41.374.506 Jéssica Anjos dos Reis Botelho",
   nomeFantasia: "Grupo DAMA Health",
-  cnpj: "",
+  cnpj: "41.374.506/0001-48",
   logradouro: "",
   numero: "",
   complemento: "",
   bairro: "",
-  cidade: "",
-  uf: "",
+  cidade: "Rio de Janeiro",
+  uf: "RJ",
   cep: "",
   telefone: "+5521959214292",
   telefoneExibicao: "(21) 95921-4292",
   email: "contato@grupodamahealth.com.br",
   site: "https://grupodamahealth.com.br",
   logo: "https://grupodamahealth.com.br/logo.png",
-  fundacao: "2022",
+  fundacao: "",
   metricasAtualizadasEm: "agosto de 2026",
   perfisSociais: [
     "https://www.instagram.com/damacomercialmedico",
@@ -31,6 +33,7 @@ export const ORGANIZACAO = {
     "https://www.instagram.com/dericanjos/",
   ],
 } as const;
+
 
 const notEmpty = (value: string) => value.trim().length > 0;
 
