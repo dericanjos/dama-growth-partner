@@ -4,6 +4,7 @@ import { CategoryBadge } from "@/components/CategoryBadge";
 import { formatDateBR } from "@/data/blog";
 import { listPublishedNews, type NewsArticleListItem } from "@/lib/news.functions";
 import { z } from "zod";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 const NEWS_CATEGORIES = [
   "Regulação",
@@ -248,6 +249,8 @@ function NewsPage() {
               )}
             </nav>
           )}
+
+          <NewsletterSignup origem="noticias" className="mt-14" />
 
           <p className="mt-10 text-center text-xs text-[var(--text-muted)]">
             Análise editorial do Grupo DAMA com base em fontes oficiais. Os links
