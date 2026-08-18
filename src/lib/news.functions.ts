@@ -24,12 +24,16 @@ export interface NewsArticleListItem {
   meta_description: string | null;
   tags: string[];
   faq: FaqEntry[];
+  update_date: string | null;
+  update_text: string | null;
+  update_link_slug: string | null;
+  update_link_label: string | null;
 }
 
 export interface NewsArticleFull extends NewsArticleListItem {}
 
 const SELECT_COLUMNS =
-  "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, meta_description, tags, faq";
+  "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, meta_description, tags, faq, update_date, update_text, update_link_slug, update_link_label";
 
 const PAGE_SIZE = 10;
 

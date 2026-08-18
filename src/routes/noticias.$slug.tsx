@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
+import { NewsUpdateNotice } from "@/components/NewsUpdateNotice";
 import { ShareButtons } from "@/components/ShareButtons";
 import { formatDateBR, BLOG_POSTS } from "@/data/blog";
 import {
@@ -295,6 +296,15 @@ function NewsArticlePage() {
                 className="h-full w-full object-cover"
               />
             </div>
+          )}
+
+          {article.update_date && article.update_text && (
+            <NewsUpdateNotice
+              date={article.update_date}
+              text={article.update_text}
+              linkSlug={article.update_link_slug}
+              linkLabel={article.update_link_label}
+            />
           )}
 
           <MarkdownContent content={article.content} />

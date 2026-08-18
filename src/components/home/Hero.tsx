@@ -31,7 +31,7 @@ export function Hero() {
         <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90 md:text-lg">
           O Grupo DAMA integra{" "}
           <span className="font-semibold text-[var(--gold-light)]">
-            time comercial
+            operação comercial
           </span>
           ,{" "}
           <span className="font-semibold text-[var(--gold-light)]">

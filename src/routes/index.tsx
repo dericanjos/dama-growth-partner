@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Time comercial, growth marketing e marketing 360 em uma operação só. 90+ médicos parceiros em 16 estados.",
+          "Operação comercial, growth marketing e marketing 360 em uma operação só. 90+ médicos parceiros em 16 estados.",
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/" },
       { property: "og:type", content: "website" },

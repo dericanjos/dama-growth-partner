@@ -1,64 +1,117 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import { BLOG_POSTS } from "@/data/blog";
 
 const BASE = "https://grupodamahealth.com.br";
 
-const STATIC_URLS: Array<{ loc: string; lastmod: string; changefreq: string; priority: string }> = [
-  { loc: "/", lastmod: "2026-04-21", changefreq: "weekly", priority: "1.0" },
-  { loc: "/sobre", lastmod: "2026-04-18", changefreq: "monthly", priority: "0.8" },
-  { loc: "/solucao", lastmod: "2026-04-18", changefreq: "monthly", priority: "0.9" },
-  { loc: "/metodo", lastmod: "2026-04-18", changefreq: "monthly", priority: "0.8" },
-  { loc: "/blog", lastmod: "2026-04-21", changefreq: "weekly", priority: "0.8" },
-  { loc: "/noticias", lastmod: "2026-08-18", changefreq: "weekly", priority: "0.7" },
-  { loc: "/contato", lastmod: "2026-04-18", changefreq: "yearly", priority: "0.6" },
-  { loc: "/faq", lastmod: "2026-05-02", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/o-que-e-operacao-comercial-consultorio", lastmod: "2026-04-03", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/por-que-marketing-sozinho-nao-lota-agenda", lastmod: "2026-04-07", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/quanto-medico-perde-sem-processo-comercial", lastmod: "2026-04-10", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/time-comercial-terceirizado-consultorio", lastmod: "2026-04-13", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/marketing-medico-cfm-2026", lastmod: "2026-04-16", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/7-sinais-consultorio-perdendo-dinheiro", lastmod: "2026-04-21", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/por-que-consultorio-precisa-aparecer-no-google", lastmod: "2026-03-20", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/marketing-medico-2026-panorama-completo", lastmod: "2026-03-17", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/trafego-pago-consultorio-medico-vale-investimento", lastmod: "2026-03-24", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/seu-site-medico-esta-afastando-pacientes", lastmod: "2026-03-27", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/como-reduzir-faltas-no-consultorio", lastmod: "2026-04-24", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/como-sair-do-convenio-viver-de-paciente-particular", lastmod: "2026-04-28", changefreq: "monthly", priority: "0.7" },
-  { loc: "/blog/redes-sociais-captacao-pacientes-consultorio-2026", lastmod: "2026-03-13", changefreq: "monthly", priority: "0.7" },
-  { loc: "/autor/deric-anjos", lastmod: "2026-04-28", changefreq: "monthly", priority: "0.6" },
-  { loc: "/autor/jessica-anjos", lastmod: "2026-04-29", changefreq: "monthly", priority: "0.6" },
-  { loc: "/glossario", lastmod: "2026-04-28", changefreq: "monthly", priority: "0.6" },
-  { loc: "/privacidade", lastmod: "2026-04-18", changefreq: "yearly", priority: "0.3" },
-  { loc: "/termos", lastmod: "2026-04-18", changefreq: "yearly", priority: "0.3" },
+interface Entry {
+  loc: string;
+  lastmod?: string;
+  changefreq: "weekly" | "monthly" | "yearly";
+  priority: string;
+}
+
+const day = (value: string | null | undefined) =>
+  (value ?? "").split("T")[0] || undefined;
+
+const STATIC_PAGES: Entry[] = [
+  { loc: "/", changefreq: "weekly", priority: "1.0" },
+  { loc: "/sobre", changefreq: "monthly", priority: "0.8" },
+  { loc: "/solucao", changefreq: "monthly", priority: "0.9" },
+  { loc: "/metodo", changefreq: "monthly", priority: "0.8" },
+  { loc: "/contato", changefreq: "yearly", priority: "0.6" },
+  { loc: "/faq", changefreq: "monthly", priority: "0.7" },
+  { loc: "/glossario", changefreq: "monthly", priority: "0.6" },
+  { loc: "/privacidade", changefreq: "yearly", priority: "0.3" },
+  { loc: "/termos", changefreq: "yearly", priority: "0.3" },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        let newsEntries = "";
+        // Notícias publicadas (mesma fonte da listagem /noticias)
+        let news: Array<{ slug: string; published_at: string; author: string | null }> = [];
         try {
           const { data } = await supabaseAdmin
             .from("news_articles")
-            .select("slug, published_at")
+            .select("slug, published_at, author")
             .eq("is_published", true)
             .order("published_at", { ascending: false });
-          newsEntries = (data ?? [])
-            .map((n) => {
-              const lastmod = (n.published_at ?? "").split("T")[0];
-              return `<url><loc>${BASE}/noticias/${n.slug}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`;
-            })
-            .join("");
+          news = (data ?? []) as typeof news;
         } catch (e) {
           console.error("sitemap: failed to load news", e);
         }
 
-        const staticEntries = STATIC_URLS.map(
-          (u) =>
-            `<url><loc>${BASE}${u.loc}</loc><lastmod>${u.lastmod}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`,
-        ).join("");
+        // Posts do blog publicados (mesma fonte da listagem /blog)
+        const posts = [...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date));
 
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${staticEntries}${newsEntries}</urlset>`;
+        const newsEntries: Entry[] = news.map((n) => ({
+          loc: `/noticias/${n.slug}`,
+          lastmod: day(n.published_at),
+          changefreq: "monthly",
+          priority: "0.7",
+        }));
+
+        const blogEntries: Entry[] = posts.map((p) => ({
+          loc: `/blog/${p.slug}`,
+          lastmod: day(p.date),
+          changefreq: "monthly",
+          priority: "0.7",
+        }));
+
+        const indexEntries: Entry[] = [
+          {
+            loc: "/noticias",
+            lastmod: day(news[0]?.published_at),
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
+            loc: "/blog",
+            lastmod: day(posts[0]?.date),
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+        ];
+
+        const authorEntries: Entry[] = [
+          { loc: "/autor/deric-anjos", changefreq: "monthly", priority: "0.6" },
+          { loc: "/autor/jessica-anjos", changefreq: "monthly", priority: "0.6" },
+        ].map((a) => {
+          const name = a.loc.includes("deric") ? "Deric Anjos" : "Jéssica Anjos";
+          const latestNews = news.find((n) => n.author === name)?.published_at;
+          const latestPost = posts.find((p) => p.author === name)?.date;
+          const candidates = [day(latestNews), day(latestPost)].filter(Boolean) as string[];
+          candidates.sort((x, y) => y.localeCompare(x));
+          return { ...a, lastmod: candidates[0] } as Entry;
+        });
+
+        const all: Entry[] = [
+          ...STATIC_PAGES,
+          ...indexEntries,
+          ...authorEntries,
+          ...newsEntries,
+          ...blogEntries,
+        ];
+
+        const xml = [
+          `<?xml version="1.0" encoding="UTF-8"?>`,
+          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+          ...all.map((u) =>
+            [
+              `  <url>`,
+              `    <loc>${BASE}${u.loc}</loc>`,
+              u.lastmod ? `    <lastmod>${u.lastmod}</lastmod>` : null,
+              `    <changefreq>${u.changefreq}</changefreq>`,
+              `    <priority>${u.priority}</priority>`,
+              `  </url>`,
+            ]
+              .filter(Boolean)
+              .join("\n"),
+          ),
+          `</urlset>`,
+        ].join("\n");
 
         return new Response(xml, {
           headers: {

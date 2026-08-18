@@ -12,12 +12,12 @@ const FAQS: FaqItem[] = [
   {
     id: "ia-pessoas",
     q: "O atendimento aos meus pacientes é feito por IA ou por pessoas?",
-    a: "Pessoas, sempre. O time comercial da DAMA é formado por profissionais treinados pra atender cada paciente com escuta real, linguagem natural e técnica de venda consultiva. Aqui não tem chatbot, não tem resposta automática genérica e o atendimento humano não é delegado pra IA em nenhum momento. O paciente do nosso parceiro precisa sentir, já na primeira mensagem no WhatsApp, o mesmo cuidado que teria dentro do consultório.",
+    a: "Pessoas, sempre. A operação comercial da DAMA é formado por profissionais treinados pra atender cada paciente com escuta real, linguagem natural e técnica de venda consultiva. Aqui não tem chatbot, não tem resposta automática genérica e o atendimento humano não é delegado pra IA em nenhum momento. O paciente do nosso parceiro precisa sentir, já na primeira mensagem no WhatsApp, o mesmo cuidado que teria dentro do consultório.",
   },
   {
     id: "preco",
     q: "Quanto custa a parceria?",
-    a: "Cada parceria é montada de forma personalizada, então o investimento varia bastante. Depende do estágio em que o consultório está hoje, da especialidade, do volume de pacientes que a estrutura precisa atender e dos pilares que entram na operação (Time Comercial, Growth, Marketing Médico ou os três juntos). Por isso a gente não trabalha com tabela fixa: o valor é apresentado dentro da reunião de diagnóstico, depois que conhecemos o cenário real do seu consultório. A reunião é gratuita e dá pra agendar pelo botão Seja Parceiro.",
+    a: "Cada parceria é montada de forma personalizada, então o investimento varia bastante. Depende do estágio em que o consultório está hoje, da especialidade, do volume de pacientes que a estrutura precisa atender e dos pilares que entram na operação (Operação Comercial, Growth, Marketing Médico ou os três juntos). Por isso a gente não trabalha com tabela fixa: o valor é apresentado dentro da reunião de diagnóstico, depois que conhecemos o cenário real do seu consultório. A reunião é gratuita e dá pra agendar pelo botão Seja Parceiro.",
   },
   {
     id: "tempo-resultado",
@@ -42,7 +42,7 @@ const FAQS: FaqItem[] = [
   {
     id: "diferenca-agencia",
     q: "Qual a diferença entre o Grupo DAMA e uma agência de marketing comum?",
-    a: "A diferença está numa palavra: completude. Agência de marketing trabalha uma fatia da operação, geralmente tráfego pago ou presença digital, e devolve cliques pra você se virar com eles. A DAMA é uma solução completa, que opera de forma integrada todas as frentes que decidem o crescimento real de um consultório: Time Comercial humanizado, Growth orientado por dados, Marketing Médico estratégico e Tecnologia exclusiva, tudo amarrado pelo método D.A.M.A. Marketing sem comercial é dinheiro jogado fora. Comercial sem marketing é operação sem combustível. E os dois sem método viram tiro no escuro. Tentar resolver tudo isso contratando agência, closer freelancer e consultor de growth separadamente também não funciona, porque cada um otimiza pelo resultado dele e ninguém otimiza pelo seu. A DAMA é a operação inteira do crescimento do seu consultório dentro de uma única estrutura. Não somos agência. Somos o ecossistema completo.",
+    a: "A diferença está numa palavra: completude. Agência de marketing trabalha uma fatia da operação, geralmente tráfego pago ou presença digital, e devolve cliques pra você se virar com eles. A DAMA é uma solução completa, que opera de forma integrada todas as frentes que decidem o crescimento real de um consultório: Operação Comercial humanizado, Growth orientado por dados, Marketing Médico estratégico e Tecnologia exclusiva, tudo amarrado pelo método D.A.M.A. Marketing sem comercial é dinheiro jogado fora. Comercial sem marketing é operação sem combustível. E os dois sem método viram tiro no escuro. Tentar resolver tudo isso contratando agência, closer freelancer e consultor de growth separadamente também não funciona, porque cada um otimiza pelo resultado dele e ninguém otimiza pelo seu. A DAMA é a operação inteira do crescimento do seu consultório dentro de uma única estrutura. Não somos agência. Somos o ecossistema completo.",
   },
   {
     id: "qualidade-atendimento",
