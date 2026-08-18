@@ -11,10 +11,11 @@ import { CategoryBadge } from "@/components/CategoryBadge";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { NewsUpdateNotice } from "@/components/NewsUpdateNotice";
 import { ShareButtons } from "@/components/ShareButtons";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { formatDateBR, BLOG_POSTS } from "@/data/blog";
 import {
-import { NewsletterSignup } from "@/components/NewsletterSignup";
   getNewsArticleBySlug,
+
   listRelatedNews,
   type FaqEntry,
   type NewsArticleListItem,
