@@ -4,8 +4,11 @@
  * CAMPOS AINDA NÃO FORNECIDOS (preencher quando o dado oficial chegar):
  *   - logradouro, numero, complemento, bairro, cep
  *     (endereço de registro é residencial; aguardando assinatura da sede física)
- *   - fundacao: data de fundação pendente de definição.
- *     Candidatas: "2021-03-27" (início de atividade no CNPJ) e "2022" (narrativa institucional atual).
+ *
+ * fundacao: 2022 é a fundação institucional do Grupo DAMA (decisão registrada em 18/08/2026).
+ *   O CNPJ 41.374.506/0001-48 tem início de atividade em 27/03/2021, data do registro
+ *   da pessoa jurídica, anterior à constituição da marca. As duas datas são fatos distintos
+ *   e a divergência é esperada. Não alterar sem decisão dos fundadores.
  *
  * Regra: campo vazio nunca é renderizado na interface nem emitido no JSON-LD.
  */
@@ -25,7 +28,7 @@ export const ORGANIZACAO = {
   email: "contato@grupodamahealth.com.br",
   site: "https://grupodamahealth.com.br",
   logo: "https://grupodamahealth.com.br/logo.png",
-  fundacao: "",
+  fundacao: "2022",
   metricasAtualizadasEm: "agosto de 2026",
   perfisSociais: [
     "https://www.instagram.com/damacomercialmedico",
