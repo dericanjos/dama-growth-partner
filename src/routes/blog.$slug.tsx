@@ -16,8 +16,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ForumSection } from "@/components/forum/ForumSection";
-import { getForumQuestionsForSlug } from "@/server/forum-read.functions";
-import { listLatestNews } from "@/server/news.functions";
+import { getForumQuestionsForSlug } from "@/lib/forum-read.functions";
+import { listLatestNews } from "@/lib/news.functions";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {

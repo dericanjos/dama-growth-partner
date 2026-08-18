@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
-import { signupForumUser } from "@/server/forum.functions";
+import { signupForumUser } from "@/lib/forum.functions";
 import {
   Dialog,
   DialogContent,

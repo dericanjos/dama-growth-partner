@@ -3,7 +3,7 @@ import { Instagram } from "lucide-react";
 import jessicaPhoto from "@/assets/jessica-anjos.png";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { formatDateBR, BLOG_POSTS } from "@/data/blog";
-import { listNewsByAuthor, type NewsArticleListItem } from "@/server/news.functions";
+import { listNewsByAuthor, type NewsArticleListItem } from "@/lib/news.functions";
 
 const AUTHOR_NAME = "Jéssica Anjos";
 const AUTHOR_URL = "https://grupodamahealth.com.br/autor/jessica-anjos";

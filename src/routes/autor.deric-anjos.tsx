@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 import { BLOG_POSTS, formatDateBR } from "@/data/blog";
 import { CategoryBadge } from "@/components/CategoryBadge";
-import { listNewsByAuthor, type NewsArticleListItem } from "@/server/news.functions";
+import { listNewsByAuthor, type NewsArticleListItem } from "@/lib/news.functions";
 
 const AUTHOR_NAME = "Deric Anjos";
 const AUTHOR_URL = "https://grupodamahealth.com.br/autor/deric-anjos";

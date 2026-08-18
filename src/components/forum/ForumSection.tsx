@@ -11,7 +11,7 @@ import {
 import {
   createForumQuestion,
   createForumAnswer,
-} from "@/server/forum.functions";
+} from "@/lib/forum.functions";
 
 export interface ForumQuestionWithAnswers {
   id: string;
