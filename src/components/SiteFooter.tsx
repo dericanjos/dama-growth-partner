@@ -81,8 +81,12 @@ export function SiteFooter() {
 
         <div className="mt-6 flex flex-col items-start justify-between gap-3 text-xs text-white/45 md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} Grupo DAMA. Todos os direitos reservados.</p>
-          <p>CNPJ · Operação 100% conforme as normas do CFM.</p>
+          <p>
+            {ORGANIZACAO.cnpj.trim().length > 0 ? `CNPJ ${ORGANIZACAO.cnpj} · ` : ""}
+            Operação 100% conforme as normas do CFM.
+          </p>
         </div>
+
       </div>
     </footer>
   );
