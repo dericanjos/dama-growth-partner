@@ -356,7 +356,7 @@ Quem implementar esse modelo nos próximos 12 meses ganha vantagem competitiva r
     ],
     faqSchema: [
       { question: "Quanto tempo até secretária treinada começar a dar resultado?", answer: "Em média, 60 a 90 dias pra dominar o playbook completo. Os primeiros 30 dias geralmente são de adaptação aos novos processos, com aumento gradual de conversão. Resultado consistente costuma aparecer no segundo mês." },
-      { question: "Operação comercial terceirizado controla mesmo as ligações ou só responde DM?", answer: "Uma operação comercial bem estruturado para consultórios médicos opera todos os canais: WhatsApp, Instagram DM, Facebook, formulários do site, ligações ativas de retorno e até gestão de no-show. Antes de contratar, vale exigir o detalhamento dos canais que serão operados." },
+      { question: "Operação comercial terceirizada controla mesmo as ligações ou só responde DM?", answer: "Uma operação comercial bem estruturada para consultórios médicos opera todos os canais: WhatsApp, Instagram DM, Facebook, formulários do site, ligações ativas de retorno e até gestão de no-show. Antes de contratar, vale exigir o detalhamento dos canais que serão operados." },
       { question: "Posso terceirizar primeiro e depois trazer pra dentro?", answer: "Sim, e em muitos casos é o caminho mais sensato. A terceirização entrega operação funcionando rápido, e ao longo de 6 a 12 meses o consultório pode estruturar processos e documentação internos pra eventualmente migrar pra modelo próprio. Não é via de mão única." },
       { question: "Vale a pena ter operação comercial se eu atendo só 1 dia por semana?", answer: "Depende do volume de leads e da meta de crescimento. Se você atende 1 dia por semana mas recebe 50 a 80 contatos por mês e quer aumentar pra 2 dias, faz sentido. Se você está estável e satisfeito com o volume atual, treinar secretária resolve." },
     ],
@@ -368,18 +368,18 @@ Quem implementar esse modelo nos próximos 12 meses ganha vantagem competitiva r
     author: "Deric Anjos",
     coverImage: "/blog/treinamento-secretaria-vs-terceirizacao.jpg",
     coverImageAlt: "Médica conversando com profissional de atendimento sobre processo comercial em consultório",
-    quickAnswer: "Treinar secretária custa menos no curto prazo, mas atinge um teto operacional em 3 a 6 meses. Terceirizar com operação comercial especializado custa 3 a 5x mais por mês, mas escala sem aumentar a carga do médico. Para consultórios faturando até R$ 30 mil/mês, secretária treinada é o caminho de menor risco. Acima de R$ 50 mil/mês, a terceirização paga ela mesma em 2 a 3 meses pela liberação de capacidade clínica.",
+    quickAnswer: "Treinar secretária custa menos no curto prazo, mas atinge um teto operacional em 3 a 6 meses. Terceirizar com operação comercial especializada custa 3 a 5x mais por mês, mas escala sem aumentar a carga do médico. Para consultórios faturando até R$ 30 mil/mês, secretária treinada é o caminho de menor risco. Acima de R$ 50 mil/mês, a terceirização paga ela mesma em 2 a 3 meses pela liberação de capacidade clínica.",
     content: `
 > **Em resumo**
 > - Treinar secretária custa menos no curto prazo, mas atinge um teto operacional em 3 a 6 meses
-> - Terceirizar com operação comercial especializado custa 3 a 5x mais por mês, mas escala sem aumentar carga do médico
+> - Terceirizar com operação comercial especializada custa 3 a 5x mais por mês, mas escala sem aumentar carga do médico
 > - Para consultórios faturando até R$ 30 mil/mês, secretária treinada é o caminho de menor risco
 > - Acima de R$ 50 mil/mês, terceirização paga ela mesma em 2 a 3 meses pela liberação de capacidade clínica
 
 ### Em números
 
 - **Curso de secretária comercial (pagamento único):** R$ 1.500 a R$ 3.000
-- **Operação comercial terceirizado (mensal):** R$ 3.500 a R$ 8.000
+- **Operação comercial terceirizada (mensal):** R$ 3.500 a R$ 8.000
 - **Tempo médio até secretária dominar playbook:** 60 a 90 dias
 - **Tempo médio até time terceirizado entregar resultado:** 30 a 45 dias
 - **Taxa de turnover de secretária em 12 meses (média):** 30 a 50%
@@ -387,7 +387,7 @@ Quem implementar esse modelo nos próximos 12 meses ganha vantagem competitiva r
 
 ## As duas decisões que parecem iguais e não são
 
-Quando o consultório começa a sentir que está perdendo paciente no caminho, duas opções aparecem na mesa: pagar um curso pra treinar a secretária no atendimento comercial, ou contratar uma operação comercial terceirizado que faça toda essa operação por fora.
+Quando o consultório começa a sentir que está perdendo paciente no caminho, duas opções aparecem na mesa: pagar um curso pra treinar a secretária no atendimento comercial, ou contratar uma operação comercial terceirizada que faça toda essa operação por fora.
 
 Na superfície, parece a mesma coisa. Os dois caminhos prometem mais conversão, mais agenda cheia e menos paciente perdido. Mas quem já passou pelos dois sabe: as duas decisões resolvem problemas diferentes e levam o consultório a tetos completamente diferentes.
 
@@ -453,7 +453,7 @@ Em compensação, existe um momento em que terceirizar deixa de ser opção e vi
 
 Existe um caminho que está crescendo rápido entre consultórios que querem o melhor dos dois mundos: o modelo híbrido.
 
-A secretária da clínica mantém o atendimento físico, organiza o consultório, é o rosto que o paciente vê quando chega. Uma operação comercial externo cuida do funil digital: responde mensagem nas redes, qualifica lead novo, faz pré-venda, agenda, repassa pra secretária as confirmações do dia.
+A secretária da clínica mantém o atendimento físico, organiza o consultório, é o rosto que o paciente vê quando chega. Uma operação comercial externa cuida do funil digital: responde mensagem nas redes, qualifica lead novo, faz pré-venda, agenda, repassa pra secretária as confirmações do dia.
 
 O modelo híbrido funciona porque cada lado faz o que faz de melhor. A secretária constrói a relação humana presencial que retém paciente. A operação comercial executa o processo metódico de captação digital que traz volume novo. Os dois conversam, mas não competem por tempo.
 
@@ -980,7 +980,7 @@ Se você quer entender como construir uma presença digital e uma operação com
     readingTime: 8,
     author: "Deric Anjos",
     quickAnswer:
-      "Uma operação comercial terceirizado para consultório médico é uma equipe externa especializada em transformar leads em consultas. Diferente da secretária, que atende e informa, a operação comercial prospecta, qualifica, agenda e faz follow-up com técnica de venda consultiva. Segundo o Panorama das Clínicas 2025 da Doctoralia, 25% dos consultórios atendem menos de 100 pacientes por mês, e 41% das clínicas com até 4 profissionais não investem em marketing ou vendas. Terceirizar a operação comercial faz sentido quando o médico tem demanda potencial mas não consegue transformar essa demanda em agenda cheia.",
+      "Uma operação comercial terceirizada para consultório médico é uma equipe externa especializada em transformar leads em consultas. Diferente da secretária, que atende e informa, a operação comercial prospecta, qualifica, agenda e faz follow-up com técnica de venda consultiva. Segundo o Panorama das Clínicas 2025 da Doctoralia, 25% dos consultórios atendem menos de 100 pacientes por mês, e 41% das clínicas com até 4 profissionais não investem em marketing ou vendas. Terceirizar a operação comercial faz sentido quando o médico tem demanda potencial mas não consegue transformar essa demanda em agenda cheia.",
     content: `## O que é uma operação comercial para consultório médico
 
 Antes de discutir se vale a pena, preciso definir o que estamos falando. Existe muita confusão entre os termos.
@@ -1059,7 +1059,7 @@ E não faz sentido quando o médico não tem maturidade para enxergar o consult�
 
 Esse é o ponto que a maioria dos médicos não calcula.
 
-O custo de uma operação comercial terceirizado é visível. Aparece no boleto todo mês. O custo de não ter é invisível. São os pacientes que mandaram mensagem e nunca foram respondidos a tempo. Os que agendaram e faltaram porque ninguém confirmou. Os que vieram uma vez e nunca mais foram contatados. Os que poderiam ter chegado por uma captação ativa que nunca existiu.
+O custo de uma operação comercial terceirizada é visível. Aparece no boleto todo mês. O custo de não ter é invisível. São os pacientes que mandaram mensagem e nunca foram respondidos a tempo. Os que agendaram e faltaram porque ninguém confirmou. Os que vieram uma vez e nunca mais foram contatados. Os que poderiam ter chegado por uma captação ativa que nunca existiu.
 
 O Panorama das Clínicas 2025 deixa claro: os principais desafios das clínicas brasileiras incluem aumento de faturamento (59% dos gestores), visibilidade da marca (19%), gestão de agenda (10%) e redução de no-show (16%). Todos esses desafios são resolvidos por uma operação comercial completa, da captação à conversão. Nenhum deles é resolvido por uma secretária sozinha respondendo WhatsApp entre um paciente e outro.
 
@@ -1233,7 +1233,7 @@ Segundo dados da Doctoralia e Feegow Clinic publicados pela CNBC Times Brasil, a
 
 Vou colocar em números concretos. Imagine que você investe R$3.000 em tráfego pago. Gera 100 leads. Sua secretária converte 8. Isso é uma taxa de conversão de 8%. E o problema não está no tráfego. Não está no criativo do anúncio. Não está na segmentação. Está no que acontece quando o lead chega.
 
-Agora imagine que, com o mesmo investimento de R$3.000 e os mesmos 100 leads, uma operação comercial treinado converte 25. A diferença entre 8 e 25 consultas por mês, com um ticket médio de R$400, é uma diferença de R$6.800 por mês. Mais de R$80 mil por ano. Com o mesmo investimento em marketing.
+Agora imagine que, com o mesmo investimento de R$3.000 e os mesmos 100 leads, uma operação comercial treinada converte 25. A diferença entre 8 e 25 consultas por mês, com um ticket médio de R$400, é uma diferença de R$6.800 por mês. Mais de R$80 mil por ano. Com o mesmo investimento em marketing.
 
 O marketing não falhou nos dois cenários. A conversão falhou no primeiro.
 

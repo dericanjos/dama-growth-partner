@@ -367,7 +367,7 @@ function PostPage() {
               Quer aplicar essas estratégias no seu consultório?
             </h3>
             <p className="mx-auto mt-3 max-w-md text-[15px] text-white/70">
-              Conheça a parceria que coloca uma operação comercial inteiro a operar pelo seu consultório.
+              Conheça a parceria que coloca uma operação comercial inteira a operar pelo seu consultório.
             </p>
             <a
               href="https://comercial.grupodamahealth.com.br"

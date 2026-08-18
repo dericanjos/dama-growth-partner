@@ -20,7 +20,7 @@ export const Route = createFileRoute("/solucao")({
       {
         name: "description",
         content:
-          "Conheça a operação integrada do Grupo DAMA: operação comercial estratégico, growth marketing orientado por dados e marketing 360 para consultórios médicos.",
+          "Conheça a operação integrada do Grupo DAMA: operação comercial estratégica, growth marketing orientado por dados e marketing 360 para consultórios médicos.",
       },
       { property: "og:title", content: "Nossa Solução | Grupo DAMA" },
       {

@@ -11,7 +11,7 @@ const ABOUT_ORG_JSONLD = {
   url: "https://grupodamahealth.com.br",
   logo: "https://grupodamahealth.com.br/dama-queen.png",
   description:
-    "A DAMA para médicos que combina operação comercial estratégico, tecnologia e operação. Atende mais de 90 médicos em 16+ estados brasileiros.",
+    "Operação comercial estratégica para médicos, integrando comercial, tecnologia e operação. Atende mais de 90 médicos em 16+ estados brasileiros.",
   founder: [
     {
       "@type": "Person",
