@@ -55,12 +55,20 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:url", content: url },
         ...(tags.length > 0 ? [{ name: "keywords", content: tags.join(", ") }] : []),
         ...(post.coverImage
-          ? [
-              { property: "og:image", content: post.coverImage },
-              { name: "twitter:image", content: post.coverImage },
-              { name: "twitter:card", content: "summary_large_image" },
-            ]
+          ? (() => {
+              const absCover = post.coverImage.startsWith("http")
+                ? post.coverImage
+                : `https://grupodamahealth.com.br${post.coverImage}`;
+              return [
+                { property: "og:image", content: absCover },
+                { property: "og:image:width", content: "1200" },
+                { property: "og:image:height", content: "630" },
+                { name: "twitter:image", content: absCover },
+                { name: "twitter:card", content: "summary_large_image" },
+              ];
+            })()
           : []),
+
         { property: "article:published_time", content: post.date },
         { property: "article:modified_time", content: post.date },
         { property: "article:author", content: authorName },
@@ -88,7 +96,14 @@ export const Route = createFileRoute("/blog/$slug")({
               },
             },
             publisher: PUBLISHER_SCHEMA,
-            image: post.coverImage ? [post.coverImage] : undefined,
+            image: post.coverImage
+              ? [
+                  post.coverImage.startsWith("http")
+                    ? post.coverImage
+                    : `https://grupodamahealth.com.br${post.coverImage}`,
+                ]
+              : undefined,
+
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             articleSection: post.category,
             ...(tags.length > 0 ? { keywords: tags.join(", ") } : {}),
