@@ -132,6 +132,7 @@ export function SiteHeader() {
               type="button"
               aria-haspopup="menu"
               aria-expanded={contentOpen}
+              aria-controls="desktop-content-menu"
               onClick={() => setContentOpen((v) => !v)}
               className={`inline-flex items-center gap-1 whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] transition-colors hover:text-white ${
                 contentActive ? "text-white font-medium" : "text-white/80"
@@ -146,26 +147,34 @@ export function SiteHeader() {
               />
             </button>
 
-            {contentOpen && (
-              <div
-                role="menu"
-                className="absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 min-w-[13rem] rounded-md border border-[color-mix(in_oklab,var(--gold)_25%,transparent)] bg-[var(--navy)] py-2 shadow-xl"
-              >
-                {CONTENT_LINKS.map((link) => (
+            {/* Sempre presente no DOM (SSR + crawler). Visibilidade só por CSS. */}
+            <ul
+              id="desktop-content-menu"
+              role="menu"
+              aria-hidden={!contentOpen}
+              className={`absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 min-w-[13rem] list-none rounded-md border border-[color-mix(in_oklab,var(--gold)_25%,transparent)] bg-[var(--navy)] py-2 shadow-xl transition-opacity duration-150 ${
+                contentOpen
+                  ? "visible opacity-100 pointer-events-auto"
+                  : "invisible opacity-0 pointer-events-none"
+              }`}
+            >
+              {CONTENT_LINKS.map((link) => (
+                <li key={link.to} role="none">
                   <Link
-                    key={link.to}
                     to={link.to}
                     role="menuitem"
+                    tabIndex={contentOpen ? 0 : -1}
                     onClick={() => setContentOpen(false)}
                     className="block px-4 py-2 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
                     activeProps={{ className: "text-[var(--gold)] font-medium" }}
                   >
                     {link.label}
                   </Link>
-                ))}
-              </div>
-            )}
+                </li>
+              ))}
+            </ul>
           </div>
+
 
           <Link
             to="/contato"
