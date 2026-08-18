@@ -1,5 +1,15 @@
 import { Fragment, type JSX, type ReactNode } from "react";
 
+/** Gera id estável de cabeçalho (ex.: "Em resumo" -> "em-resumo"). */
+function slugifyHeading(text: string): string {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 /**
  * Minimal markdown renderer for blog posts (no deps).
  * Supports: ## H2, ### H3, > blockquote, - lists, paragraphs, [text](url) links.
