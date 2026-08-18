@@ -445,6 +445,8 @@ function NewsArticlePage() {
                         <img
                           src={n.cover_image}
                           alt={n.cover_image_alt ?? n.title}
+                          width={448}
+                          height={320}
                           loading="lazy"
                           decoding="async"
                           className="h-full w-full object-cover"
