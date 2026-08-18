@@ -176,6 +176,8 @@ function NewsPage() {
                       <img
                         src={n.cover_image}
                         alt={n.cover_image_alt ?? n.title}
+                        width={1200}
+                        height={630}
                         loading="lazy"
                         decoding="async"
                         className="h-48 w-full object-cover md:h-56"

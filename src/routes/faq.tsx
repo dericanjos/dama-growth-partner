@@ -3,8 +3,7 @@ import { useState } from "react";
 import { Plus, X } from "lucide-react";
 
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
-const OG_IMAGE =
-  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/31b1d445-4e56-411d-ab3f-2948c07f7b3b/id-preview-0bff959b--2e798cd7-2d1d-4ad2-916f-065fb6ba88f2.lovable.app-1776559781456.png";
+const OG_IMAGE = "https://grupodamahealth.com.br/og-image.png";
 
 type FaqItem = { id: string; q: string; a: string };
 

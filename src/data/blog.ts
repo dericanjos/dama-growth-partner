@@ -69,7 +69,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Mercado",
     readingTime: 10,
     author: "Jéssica Anjos",
-    coverImage: "/blog/migracao-pacientes-planos-saude-2026.jpg",
+    coverImage: "/blog/migracao-pacientes-planos-saude-2026.webp",
     coverImageAlt: "Paciente sendo bem recebido em consultório particular moderno após sair de plano de saúde",
     quickAnswer: "A ANS confirmou reajuste médio de 9,9% nos planos coletivos em 2026, quarto ano consecutivo acima de 9% e 2,6 vezes a inflação. Cada ciclo empurra pacientes pra fora dos planos, e parte significativa busca atendimento particular nos 6 meses seguintes. Consultórios estruturados pra agenda particular capturam essa demanda. Os improvisados perdem pra concorrente.",
     content: `
@@ -225,7 +225,7 @@ A migração silenciosa de pacientes pra fora dos planos é o cenário. Estar pr
     category: "Mercado",
     readingTime: 9,
     author: "Deric Anjos",
-    coverImage: "/blog/ia-consultorio-medico.jpg",
+    coverImage: "/blog/ia-consultorio-medico.webp",
     coverImageAlt: "Profissional de saúde conversando empaticamente com paciente enquanto computador exibe interface de IA ao fundo",
     quickAnswer: "IA executa tarefas estruturadas (confirmar consulta, responder dúvida administrativa, lembrar retorno) com excelência, mas não substitui o atendimento comercial humano em saúde. Paciente em decisão de consulta está em estado emocional, e converte de 5 a 10 vezes mais com humano qualificado do que com bot puro. O modelo certo é IA como apoio operacional e humano na ponta do relacionamento.",
     content: `
@@ -366,7 +366,7 @@ Quem implementar esse modelo nos próximos 12 meses ganha vantagem competitiva r
     category: "Gestão Comercial",
     readingTime: 10,
     author: "Deric Anjos",
-    coverImage: "/blog/treinamento-secretaria-vs-terceirizacao.jpg",
+    coverImage: "/blog/treinamento-secretaria-vs-terceirizacao.webp",
     coverImageAlt: "Médica conversando com profissional de atendimento sobre processo comercial em consultório",
     quickAnswer: "Treinar secretária custa menos no curto prazo, mas atinge um teto operacional em 3 a 6 meses. Terceirizar com operação comercial especializada custa 3 a 5x mais por mês, mas escala sem aumentar a carga do médico. Para consultórios faturando até R$ 30 mil/mês, secretária treinada é o caminho de menor risco. Acima de R$ 50 mil/mês, a terceirização paga ela mesma em 2 a 3 meses pela liberação de capacidade clínica.",
     content: `
