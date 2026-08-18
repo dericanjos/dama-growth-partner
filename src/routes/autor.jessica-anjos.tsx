@@ -40,21 +40,27 @@ export const Route = createFileRoute("/autor/jessica-anjos")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://grupodamahealth.com.br/autor/jessica-anjos#person",
           name: AUTHOR_NAME,
           jobTitle: "Fundadora",
           url: AUTHOR_URL,
+          image: "https://grupodamahealth.com.br/autores/jessica-anjos.webp",
           worksFor: {
             "@type": "Organization",
             name: "Grupo DAMA Health",
             url: "https://grupodamahealth.com.br",
           },
+          affiliation: { "@id": "https://grupodamahealth.com.br/#organization" },
           knowsAbout: [
             "Saúde suplementar",
             "Gestão médica",
             "Marketing de consultório",
             "Saúde pública",
           ],
-          sameAs: ["https://www.instagram.com/grupodamahealth"],
+          sameAs: [
+            "https://www.instagram.com/grupodamahealth",
+            "https://www.instagram.com/damacomercialmedico",
+          ],
           description: AUTHOR_DESC,
         }),
       },

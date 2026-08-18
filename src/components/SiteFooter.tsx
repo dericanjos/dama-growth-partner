@@ -88,6 +88,9 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} Grupo DAMA. Todos os direitos reservados.</p>
           <p>
             {ORGANIZACAO.cnpj.trim().length > 0 ? `CNPJ ${ORGANIZACAO.cnpj} · ` : ""}
+            {ORGANIZACAO.cidade.trim().length > 0 && ORGANIZACAO.uf.trim().length > 0
+              ? `${ORGANIZACAO.cidade} · ${ORGANIZACAO.uf} · `
+              : ""}
             Operação 100% conforme as normas do CFM.
           </p>
         </div>
