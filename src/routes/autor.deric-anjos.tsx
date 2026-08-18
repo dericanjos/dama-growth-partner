@@ -6,8 +6,7 @@ import { CategoryBadge } from "@/components/CategoryBadge";
 import { listNewsByAuthor, type NewsArticleListItem } from "@/lib/news.functions";
 
 const AUTHOR_NAME = "Deric Anjos";
-// Foto real ainda não fornecida. Preencher com a URL da foto para substituir o monograma.
-const AUTHOR_FOTO = "";
+const AUTHOR_FOTO = "/autores/deric-anjos.webp";
 const AUTHOR_URL = "https://grupodamahealth.com.br/autor/deric-anjos";
 const AUTHOR_DESC =
   "Deric Anjos é Head de Growth do Grupo DAMA. Formado pela Escola Naval, empresário e estrategista de crescimento para consultórios médicos.";
