@@ -10,6 +10,7 @@ const INSTITUTIONAL: Array<{ path: string; label: string; line: string }> = [
   { path: "/sobre", label: "Quem Somos", line: "História, fundadora, time e dados institucionais do Grupo DAMA Health." },
   { path: "/solucao", label: "Nossa Solução", line: "O que está incluído na operação comercial, growth e marketing médico." },
   { path: "/metodo", label: "Método", line: "Como funciona o processo comercial estruturado, etapa por etapa." },
+  { path: "/escola", label: "Escola DAMA", line: "Vertical educacional do Grupo DAMA Health, dedicada à formação de profissionais de atendimento do mercado médico." },
   { path: "/contato", label: "Contato", line: "Canais oficiais de contato com o setor comercial." },
   { path: "/faq", label: "Perguntas Frequentes", line: "Respostas às dúvidas mais comuns de médicos parceiros." },
   { path: "/glossario", label: "Glossário", line: "Definição de 20 termos do mercado médico e da saúde suplementar." },
@@ -103,6 +104,12 @@ export const Route = createFileRoute("/llms.txt")({
         lines.push("");
         lines.push(
           "- [DAMA Secretariado Médico](https://comercial.grupodamahealth.com.br): operação de secretariado e atendimento comercial para consultórios.",
+        );
+        lines.push(
+          "- [Escola DAMA](https://escola.grupodamahealth.com.br): vertical educacional do Grupo DAMA Health, formação de profissionais de atendimento do mercado médico.",
+        );
+        lines.push(
+          `- [Escola DAMA no site institucional](${BASE}/escola): página institucional da vertical educacional.`,
         );
         lines.push(`- [Feed RSS das notícias](${BASE}/noticias/rss.xml): atualização contínua da cobertura editorial.`);
         lines.push(`- [Conteúdo integral em texto](${BASE}/llms-full.txt): corpo completo de notícias e artigos.`);

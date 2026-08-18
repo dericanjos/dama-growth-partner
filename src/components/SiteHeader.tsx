@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { to: "/sobre", label: "Quem Somos" },
   { to: "/solucao", label: "Nossa Solução" },
   { to: "/metodo", label: "Método" },
+  { to: "/escola", label: "Escola" },
 ] as const;
 
 const CONTENT_LINKS = [

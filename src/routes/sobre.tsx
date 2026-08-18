@@ -8,12 +8,21 @@ const ABOUT_ORG_JSONLD = {
   "@type": "Organization",
   name: "Grupo DAMA Health",
   alternateName: ["Grupo DAMA", "DAMA"],
-  subOrganization: {
-    "@type": "Organization",
-    "@id": "https://comercial.grupodamahealth.com.br/#organization",
-    name: "DAMA Secretariado Médico",
-    url: "https://comercial.grupodamahealth.com.br",
-  },
+  subOrganization: [
+    {
+      "@type": "Organization",
+      "@id": "https://comercial.grupodamahealth.com.br/#organization",
+      name: "DAMA Secretariado Médico",
+      url: "https://comercial.grupodamahealth.com.br",
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://grupodamahealth.com.br/escola#organization",
+      name: "Escola DAMA",
+      url: "https://grupodamahealth.com.br/escola",
+      sameAs: ["https://escola.grupodamahealth.com.br"],
+    },
+  ],
   url: "https://grupodamahealth.com.br",
   logo: "https://grupodamahealth.com.br/logo.png",
   legalName: "41.374.506 Jéssica Anjos dos Reis Botelho",

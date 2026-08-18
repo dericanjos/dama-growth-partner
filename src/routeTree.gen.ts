@@ -19,6 +19,7 @@ import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
 import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as EscolaRouteImport } from './routes/escola'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
@@ -80,6 +81,11 @@ const GlossarioRoute = GlossarioRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EscolaRoute = EscolaRouteImport.update({
+  id: '/escola',
+  path: '/escola',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -148,6 +154,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
+  '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
   '/llms-full.txt': typeof LlmsFullDottxtRoute
@@ -171,6 +178,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
+  '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
   '/llms-full.txt': typeof LlmsFullDottxtRoute
@@ -196,6 +204,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
+  '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
   '/llms-full.txt': typeof LlmsFullDottxtRoute
@@ -222,6 +231,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/contato'
+    | '/escola'
     | '/faq'
     | '/glossario'
     | '/llms-full.txt'
@@ -245,6 +255,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contato'
+    | '/escola'
     | '/faq'
     | '/glossario'
     | '/llms-full.txt'
@@ -269,6 +280,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/contato'
+    | '/escola'
     | '/faq'
     | '/glossario'
     | '/llms-full.txt'
@@ -294,6 +306,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
+  EscolaRoute: typeof EscolaRoute
   FaqRoute: typeof FaqRoute
   GlossarioRoute: typeof GlossarioRoute
   LlmsFullDottxtRoute: typeof LlmsFullDottxtRoute
@@ -382,6 +395,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/escola': {
+      id: '/escola'
+      path: '/escola'
+      fullPath: '/escola'
+      preLoaderRoute: typeof EscolaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -490,6 +510,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
+  EscolaRoute: EscolaRoute,
   FaqRoute: FaqRoute,
   GlossarioRoute: GlossarioRoute,
   LlmsFullDottxtRoute: LlmsFullDottxtRoute,
