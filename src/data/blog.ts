@@ -493,8 +493,8 @@ Se você quer entender qual desses caminhos faz mais sentido pro seu consultóri
     category: "Crescimento",
     readingTime: 10,
     author: "Deric Anjos",
-    coverImage: "https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80",
-    coverImageAlt: "Médico em consultório particular atendendo paciente representando transição do convênio para particular",
+    coverImage: "/blog/como-sair-do-convenio-viver-de-paciente-particular.webp",
+    coverImageAlt: "Capa do artigo: Como Sair do Convênio e Viver de Pacientes Particulares Grupo DAMA Health.",
     quickAnswer: "A transição de convênio para atendimento particular exige planejamento gradual, não ruptura abrupta. O primeiro passo é calcular quanto o convênio realmente representa no faturamento e quanto custa em tempo e burocracia. O Parecer CFM nº 1/2026 reconhece expressamente o direito do médico de organizar seu tempo e condições de trabalho, incluindo a separação de agendas. Segundo a Demografia Médica 2025, o Brasil tem 635 mil médicos ativos e 448 escolas de medicina.",
     content: `
 ## Por que a conta do convênio para de fechar
@@ -623,8 +623,8 @@ Se você está considerando reduzir ou sair do convênio, o primeiro passo é en
     category: "Gestão Comercial",
     readingTime: 10,
     author: "Deric Anjos",
-    coverImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
-    coverImageAlt: "Médico em consultório com agenda representando gestão de faltas e no-show",
+    coverImage: "/blog/como-reduzir-faltas-no-consultorio.webp",
+    coverImageAlt: "Capa do artigo: Como Reduzir Faltas no Consultório: 5 Estratégias que Funcionam Grupo DAMA Health.",
     quickAnswer: "As 5 estratégias mais eficazes para reduzir faltas em consultório médico são: confirmação em dois estágios (48h e 2h antes da consulta), lista de espera ativa para preencher cancelamentos, política clara de cancelamento comunicada no agendamento, encurtamento do tempo entre agendamento e consulta, e acompanhamento comercial pós-agendamento. A taxa média de no-show em consultórios brasileiros varia entre 20% e 30%. Um projeto piloto do governo do Ceará com lembretes automáticos reduziu faltas em quase 19%.",
     content: `
 ## O custo real de cada falta
@@ -743,8 +743,8 @@ E se você quer estruturar a operação comercial completa, da captação à con
     seoTitle: "7 Sinais que Seu Consultório Perde Dinheiro",
     relatedSlugs: ["quanto-medico-perde-sem-processo-comercial", "como-reduzir-faltas-no-consultorio"],
     faqSchema: [{"question": "Quais são os sinais de que um consultório médico está perdendo dinheiro?", "answer": "Os 7 sinais mais comuns são: taxa de no-show acima de 20%, tempo de resposta a leads superior a 30 minutos, ausência de follow-up, secretária acumulando função comercial, falta de métricas de conversão, dependência exclusiva de indicação e pacientes inativos sem reativação."}, {"question": "Quanto um consultório perde com faltas de pacientes?", "answer": "Um consultório com 20 consultas por semana, ticket médio de R$400 e 20% de faltas perde cerca de R$6.400 por mês, totalizando mais de R$76.000 por ano em receita perdida."}, {"question": "Como saber se a taxa de conversão do consultório está baixa?", "answer": "Se o consultório não sabe quantos leads viram consulta, a taxa de conversão provavelmente está abaixo do potencial. Segundo o Panorama das Clínicas e Hospitais 2026, com 639 gestores ouvidos, 75% das clínicas já investem em mídia paga, mas 67% nunca mapearam a jornada do paciente."}],
-    coverImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
-    coverImageAlt: "Profissional analisando documentos em mesa de escritório representando gestão de consultório",
+    coverImage: "/blog/7-sinais-consultorio-perdendo-dinheiro.webp",
+    coverImageAlt: "Capa do artigo: 7 Sinais de que Seu Consultório Está Perdendo Dinheiro (e Você Não Sabe) Grupo DAMA Health.",
     title: "7 Sinais de que Seu Consultório Está Perdendo Dinheiro (e Você Não Sabe)",
     excerpt:
       "Seu consultório pode estar perdendo mais de R$10 mil por mês sem você perceber. Veja os 7 sinais mais comuns e o que fazer com cada um. Dados reais de 2026.",
@@ -866,8 +866,8 @@ Dados verificados em agosto de 2026. Demografia Médica 2025 (base dezembro de 2
     seoTitle: "Marketing Médico e CFM 2026: Regras Atuais",
     relatedSlugs: ["marketing-medico-2026-panorama-completo", "redes-sociais-captacao-pacientes-consultorio-2026"],
     faqSchema: [{"question": "O que o CFM permite no marketing médico em 2026?", "answer": "A Resolução CFM 2.336/2023 permite: antes e depois com caráter educativo, selfies e fotos do ambiente, divulgação de preços em promoções, informar horários e agendamento, investir em tráfego pago e publicar conteúdo educativo nas redes sociais."}, {"question": "O que é proibido no marketing médico pelo CFM?", "answer": "Continuam proibidos: garantia de resultados, linguagem sensacionalista, títulos como melhor médico, ensino de técnicas a não médicos, propaganda de marcas comerciais e divulgação de métodos não reconhecidos pelo CFM."}, {"question": "Médico pode divulgar preço no Instagram?", "answer": "Sim. A Resolução CFM 2.336/2023 passou a permitir o anúncio de preços e descontos em campanhas promocionais, desde que não haja venda casada ou premiação."}],
-    coverImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
-    coverImageAlt: "Documentos legais e regulamentação representando normas do CFM para marketing médico",
+    coverImage: "/blog/marketing-medico-cfm-2026.webp",
+    coverImageAlt: "Capa do artigo: Marketing Médico e CFM em 2026: O que Pode e o que Não Pode Grupo DAMA Health.",
     title: "Marketing Médico e CFM em 2026: O que Pode e o que Não Pode",
     excerpt:
       "A Resolução CFM 2.336/2023 mudou as regras do marketing médico. Entenda o que é permitido, o que continua proibido e como crescer dentro da lei em 2026.",
@@ -988,8 +988,8 @@ Se você quer entender como construir uma presença digital e uma operação com
     },
     seoTitle: "Operação Comercial Terceirizado pra Consultório",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "como-sair-do-convenio-viver-de-paciente-particular"],
-    coverImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
-    coverImageAlt: "Equipe comercial trabalhando em computadores representando time terceirizado para consultório",
+    coverImage: "/blog/operacao-comercial-terceirizada-consultorio.webp",
+    coverImageAlt: "Capa do artigo: Operação Comercial Terceirizado para Consultório: Vale a Pena? Grupo DAMA Health.",
     title: "Operação Comercial Terceirizado para Consultório: Vale a Pena?",
     excerpt:
       "Treinar a secretária ou terceirizar a operação comercial? Descubra quando faz sentido ter um time dedicado e quanto você perde sem um. Dados reais de 2026.",
@@ -1109,8 +1109,8 @@ Dados verificados em agosto de 2026. Demografia Médica 2025 (base dezembro de 2
     slug: "quanto-medico-perde-sem-processo-comercial",
     seoTitle: "Quanto o Médico Perde Sem Processo Comercial",
     relatedSlugs: ["como-reduzir-faltas-no-consultorio", "7-sinais-consultorio-perdendo-dinheiro"],
-    coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
-    coverImageAlt: "Calculadora e documentos financeiros representando perdas de faturamento em consultório médico",
+    coverImage: "/blog/quanto-medico-perde-sem-processo-comercial.webp",
+    coverImageAlt: "Capa do artigo: Quanto um Médico Perde por Mês Sem Processo Comercial Grupo DAMA Health.",
     title: "Quanto um Médico Perde por Mês Sem Processo Comercial",
     excerpt:
       "A maioria dos médicos sabe quanto fatura. Poucos sabem quanto deixam de faturar. Fizemos as contas com dados reais de 2026. Os números vão te surpreender.",
@@ -1228,8 +1228,8 @@ E se quiser entender como uma operação comercial se encaixa na realidade do se
     slug: "por-que-marketing-sozinho-nao-lota-agenda",
     seoTitle: "Marketing Sozinho Não Lota Agenda Médica",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "quanto-medico-perde-sem-processo-comercial"],
-    coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    coverImageAlt: "Dashboard de marketing digital com gráficos de performance representando métricas de consultório",
+    coverImage: "/blog/por-que-marketing-sozinho-nao-lota-agenda.webp",
+    coverImageAlt: "Capa do artigo: Por que Marketing Sozinho Não Lota Agenda de Consultório Grupo DAMA Health.",
     title: "Por que Marketing Sozinho Não Lota Agenda de Consultório",
     excerpt:
       "Seu consultório investe em marketing mas a agenda continua vazia? O problema não é o marketing. É o que acontece depois que o lead chega. Entenda por quê.",
