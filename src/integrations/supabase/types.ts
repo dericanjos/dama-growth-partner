@@ -138,6 +138,10 @@ export type Database = {
           subtitle: string | null
           tags: string[]
           title: string
+          update_date: string | null
+          update_link_label: string | null
+          update_link_slug: string | null
+          update_text: string | null
         }
         Insert: {
           author?: string
@@ -158,6 +162,10 @@ export type Database = {
           subtitle?: string | null
           tags?: string[]
           title: string
+          update_date?: string | null
+          update_link_label?: string | null
+          update_link_slug?: string | null
+          update_text?: string | null
         }
         Update: {
           author?: string
@@ -178,6 +186,10 @@ export type Database = {
           subtitle?: string | null
           tags?: string[]
           title?: string
+          update_date?: string | null
+          update_link_label?: string | null
+          update_link_slug?: string | null
+          update_text?: string | null
         }
         Relationships: []
       }
