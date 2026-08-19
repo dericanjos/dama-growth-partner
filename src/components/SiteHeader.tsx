@@ -15,8 +15,6 @@ const VERTICAL_LINKS = [
   { to: "/solucao", label: "Visão geral" },
 ] as const;
 
-const METODO_LINK = { to: "/metodo", label: "Método" } as const;
-
 const CONTENT_LINKS = [
   { to: "/noticias", label: "Notícias Médicas" },
   { to: "/blog", label: "Blog" },
@@ -24,21 +22,170 @@ const CONTENT_LINKS = [
   { to: "/faq", label: "Perguntas Frequentes" },
 ] as const;
 
-
-
+type NavItem = { to: string; label: string };
 
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
+
+const TRIGGER_CLASS =
+  "inline-flex items-center gap-1 whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] transition-colors hover:text-white";
+
+/**
+ * Dropdown de navegação desktop.
+ * Os links ficam SEMPRE no DOM (SSR e crawler). A visibilidade é só por CSS.
+ */
+function DesktopDropdown({
+  id,
+  label,
+  links,
+  active,
+}: {
+  id: string;
+  label: string;
+  links: readonly NavItem[];
+  active: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  const openNow = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(true);
+  };
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  };
+
+  return (
+    <div ref={ref} className="relative" onMouseEnter={openNow} onMouseLeave={scheduleClose}>
+      <button
+        type="button"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-controls={id}
+        onClick={() => setOpen((v) => !v)}
+        className={`${TRIGGER_CLASS} ${active ? "text-white font-medium" : "text-white/80"}`}
+      >
+        {label}
+        <ChevronDown
+          className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          aria-hidden
+        />
+      </button>
+
+      <ul
+        id={id}
+        role="menu"
+        aria-hidden={!open}
+        className={`absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 min-w-[13rem] list-none rounded-md border border-[color-mix(in_oklab,var(--gold)_25%,transparent)] bg-[var(--navy)] py-2 shadow-xl transition-opacity duration-150 ${
+          open
+            ? "visible opacity-100 pointer-events-auto"
+            : "invisible opacity-0 pointer-events-none"
+        }`}
+      >
+        {links.map((link) => (
+          <li key={link.to} role="none">
+            <Link
+              to={link.to}
+              role="menuitem"
+              tabIndex={open ? 0 : -1}
+              onClick={() => setOpen(false)}
+              className="block px-4 py-2 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+              activeProps={{ className: "text-[var(--gold)] font-medium" }}
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** Accordion mobile. Links sempre no DOM, visibilidade só por CSS. */
+function MobileAccordion({
+  id,
+  label,
+  links,
+  active,
+  onNavigate,
+}: {
+  id: string;
+  label: string;
+  links: readonly NavItem[];
+  active: boolean;
+  onNavigate: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border-b border-white/5">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={id}
+        onClick={() => setOpen((v) => !v)}
+        className={`flex w-full items-center justify-between py-4 text-lg ${
+          active ? "text-[var(--gold)]" : "text-white/85"
+        }`}
+      >
+        <span>{label}</span>
+        <ChevronDown
+          className={`h-5 w-5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          aria-hidden
+        />
+      </button>
+      <ul
+        id={id}
+        aria-hidden={!open}
+        className={`list-none overflow-hidden pl-4 transition-all duration-200 ${
+          open
+            ? "visible max-h-96 pb-3 opacity-100"
+            : "invisible max-h-0 pb-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        {links.map((link) => (
+          <li key={link.to}>
+            <Link
+              to={link.to}
+              tabIndex={open ? 0 : -1}
+              onClick={onNavigate}
+              className="block py-2.5 text-base text-white/75"
+              activeProps={{ className: "text-[var(--gold)]" }}
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [contentOpen, setContentOpen] = useState(false);
-  const [mobileContentOpen, setMobileContentOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const contentActive = CONTENT_LINKS.some((link) => pathname.startsWith(link.to));
+  const verticalActive = VERTICAL_LINKS.some((link) => pathname.startsWith(link.to));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -53,34 +200,6 @@ export function SiteHeader() {
       document.body.style.overflow = "";
     };
   }, [open]);
-
-  // Close dropdown on outside click / escape
-  useEffect(() => {
-    if (!contentOpen) return;
-    const onClick = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setContentOpen(false);
-      }
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setContentOpen(false);
-    };
-    document.addEventListener("mousedown", onClick);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("mousedown", onClick);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [contentOpen]);
-
-  const openDropdown = () => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    setContentOpen(true);
-  };
-  const scheduleClose = () => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setContentOpen(false), 120);
-  };
 
   return (
     <header
@@ -130,60 +249,27 @@ export function SiteHeader() {
             </Link>
           ))}
 
-          {/* Conteúdo dropdown */}
-          <div
-            ref={dropdownRef}
-            className="relative"
-            onMouseEnter={openDropdown}
-            onMouseLeave={scheduleClose}
+          <DesktopDropdown
+            id="desktop-verticals-menu"
+            label="O que fazemos"
+            links={VERTICAL_LINKS}
+            active={verticalActive}
+          />
+
+          <Link
+            to="/metodo"
+            className="whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] text-white/80 transition-colors hover:text-white"
+            activeProps={{ className: "text-white font-medium" }}
           >
-            <button
-              type="button"
-              aria-haspopup="menu"
-              aria-expanded={contentOpen}
-              aria-controls="desktop-content-menu"
-              onClick={() => setContentOpen((v) => !v)}
-              className={`inline-flex items-center gap-1 whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] transition-colors hover:text-white ${
-                contentActive ? "text-white font-medium" : "text-white/80"
-              }`}
-            >
-              Conteúdo
-              <ChevronDown
-                className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                  contentOpen ? "rotate-180" : ""
-                }`}
-                aria-hidden
-              />
-            </button>
+            Método
+          </Link>
 
-            {/* Sempre presente no DOM (SSR + crawler). Visibilidade só por CSS. */}
-            <ul
-              id="desktop-content-menu"
-              role="menu"
-              aria-hidden={!contentOpen}
-              className={`absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 min-w-[13rem] list-none rounded-md border border-[color-mix(in_oklab,var(--gold)_25%,transparent)] bg-[var(--navy)] py-2 shadow-xl transition-opacity duration-150 ${
-                contentOpen
-                  ? "visible opacity-100 pointer-events-auto"
-                  : "invisible opacity-0 pointer-events-none"
-              }`}
-            >
-              {CONTENT_LINKS.map((link) => (
-                <li key={link.to} role="none">
-                  <Link
-                    to={link.to}
-                    role="menuitem"
-                    tabIndex={contentOpen ? 0 : -1}
-                    onClick={() => setContentOpen(false)}
-                    className="block px-4 py-2 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
-                    activeProps={{ className: "text-[var(--gold)] font-medium" }}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+          <DesktopDropdown
+            id="desktop-content-menu"
+            label="Conteúdo"
+            links={CONTENT_LINKS}
+            active={contentActive}
+          />
 
           <Link
             to="/contato"
@@ -237,50 +323,30 @@ export function SiteHeader() {
             </Link>
           ))}
 
-          {/* Conteúdo accordion (mobile) */}
-          <div className="border-b border-white/5">
-            <button
-              type="button"
-              aria-expanded={mobileContentOpen}
-              aria-controls="mobile-content-submenu"
-              onClick={() => setMobileContentOpen((v) => !v)}
-              className={`flex w-full items-center justify-between py-4 text-lg ${
-                contentActive ? "text-[var(--gold)]" : "text-white/85"
-              }`}
-            >
-              <span>Conteúdo</span>
-              <ChevronDown
-                className={`h-5 w-5 transition-transform duration-200 ${
-                  mobileContentOpen ? "rotate-180" : ""
-                }`}
-                aria-hidden
-              />
-            </button>
-            <ul
-              id="mobile-content-submenu"
-              aria-hidden={!mobileContentOpen}
-              className={`list-none overflow-hidden pl-4 transition-all duration-200 ${
-                mobileContentOpen
-                  ? "visible max-h-96 pb-3 opacity-100"
-                  : "invisible max-h-0 pb-0 opacity-0 pointer-events-none"
-              }`}
-            >
-              {CONTENT_LINKS.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    tabIndex={mobileContentOpen ? 0 : -1}
-                    onClick={() => setOpen(false)}
-                    className="block py-2.5 text-base text-white/75"
-                    activeProps={{ className: "text-[var(--gold)]" }}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <MobileAccordion
+            id="mobile-verticals-submenu"
+            label="O que fazemos"
+            links={VERTICAL_LINKS}
+            active={verticalActive}
+            onNavigate={() => setOpen(false)}
+          />
 
-          </div>
+          <Link
+            to="/metodo"
+            onClick={() => setOpen(false)}
+            className="border-b border-white/5 py-4 text-lg text-white/85"
+            activeProps={{ className: "text-[var(--gold)]" }}
+          >
+            Método
+          </Link>
+
+          <MobileAccordion
+            id="mobile-content-submenu"
+            label="Conteúdo"
+            links={CONTENT_LINKS}
+            active={contentActive}
+            onNavigate={() => setOpen(false)}
+          />
 
           <Link
             to="/contato"
