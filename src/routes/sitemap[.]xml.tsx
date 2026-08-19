@@ -20,6 +20,7 @@ const STATIC_PAGES: Entry[] = [
   { loc: "/solucao", changefreq: "monthly", priority: "0.9" },
   { loc: "/metodo", changefreq: "monthly", priority: "0.8" },
   { loc: "/escola", changefreq: "monthly", priority: "0.8" },
+  { loc: "/ecossistema", changefreq: "monthly", priority: "0.7" },
   { loc: "/contato", changefreq: "yearly", priority: "0.6" },
   { loc: "/faq", changefreq: "monthly", priority: "0.7" },
   { loc: "/glossario", changefreq: "monthly", priority: "0.6" },

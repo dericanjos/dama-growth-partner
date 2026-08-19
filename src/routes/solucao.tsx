@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Headset, LineChart, Target, ShieldCheck, Check } from "lucide-react";
+import { Headset, LineChart, Target, ShieldCheck, Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
 const SERVICE_JSONLD = {
@@ -293,41 +293,6 @@ function SolutionPage() {
         </div>
       </section>
 
-      {/* PARA QUEM */}
-      <section className="bg-[var(--cream)] pb-24 md:pb-28">
-        <div className="container-dama mx-auto max-w-4xl">
-          <Reveal>
-            <h2 className="heading-display text-[26px] leading-[1.2] text-[var(--navy)] md:text-[38px]">
-              Para quem esta operação foi construída
-            </h2>
-          </Reveal>
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            <Reveal className="card-dama p-8">
-              <h3 className="font-serif text-[20px] text-[var(--navy)]">
-                Para quem foi
-              </h3>
-              <p className="mt-4 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
-                Para o médico dono de consultório ou clínica particular que já tem
-                demanda e não tem estrutura para sustentá-la. Que já investiu em
-                marketing e viu o investimento não virar agenda. Que percebeu que o
-                crescimento passou a depender exclusivamente dele.
-              </p>
-            </Reveal>
-            <Reveal delay={90} className="card-dama p-8">
-              <h3 className="font-serif text-[20px] text-[var(--navy)]">
-                E para quem não foi
-              </h3>
-              <p className="mt-4 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
-                Para quem espera terceirizar a responsabilidade e não participar.
-                Para quem quer resultado sem método. Para quem opera 100% por
-                convênio e ainda não tem receita particular a proteger. Nem todo
-                momento é o momento certo, e dizer isso na primeira conversa é mais
-                barato para os dois lados do que descobrir depois.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* CFM */}
       <section className="surface-dark relative overflow-hidden py-20 md:py-24">
@@ -347,23 +312,36 @@ function SolutionPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* FECHO INSTITUCIONAL */}
       <section className="bg-[var(--cream)] py-24 md:py-28">
         <div className="container-dama mx-auto max-w-2xl text-center">
           <Reveal>
-            <p className="font-serif text-[20px] italic leading-[1.6] text-[var(--navy)] md:text-[26px]">
-              A operação é exclusiva e seletiva. O primeiro passo não é uma
-              proposta, é um diagnóstico: olhar os seus números junto com você e
-              mostrar onde a receita está escapando.
+            <p className="text-[16px] leading-[1.85] text-[var(--text-secondary)]">
+              As três frentes descritas aqui compõem a operação comercial da DAMA, oferecida a
+              médicos parceiros em processo seletivo próprio.
             </p>
-            <div className="mt-10 flex items-center justify-center">
-              <Link to="/contato" className="btn-gold">
-                Solicitar diagnóstico da operação <ArrowRight className="h-4 w-4" />
+            <p className="mt-6 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
+              <a
+                href="https://comercial.grupodamahealth.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
+              >
+                Conhecer a operação comercial
+              </a>
+            </p>
+            <p className="mt-3 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
+              <Link
+                to="/contato"
+                className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
+              >
+                Falar com a DAMA
               </Link>
-            </div>
+            </p>
           </Reveal>
         </div>
       </section>
+
     </>
   );
 }
