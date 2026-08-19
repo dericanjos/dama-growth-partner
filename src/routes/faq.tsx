@@ -209,6 +209,14 @@ function FaqPage() {
               </Link>
               .
             </p>
+            <p className="mt-4 text-sm text-[var(--text-muted)]">
+              <Link
+                to="/glossario"
+                className="text-[var(--navy)] underline-offset-4 hover:underline"
+              >
+                Vinte termos do mercado médico, explicados → Glossário
+              </Link>
+            </p>
           </div>
         </div>
       </section>
