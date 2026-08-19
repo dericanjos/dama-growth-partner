@@ -125,13 +125,10 @@ function excerpt(text: string, max = 200) {
   const body = text
     .replace(/```[\s\S]*?```/g, "")
     .split("\n")
-    .map((line) =>
-      line
-        .replace(/^\s{0,3}#{1,6}\s*/, "")
-        .replace(/\*\*(.*?)\*\*/g, "$1")
-        .trim(),
-    )
+    .filter((line) => !/^\s{0,3}#{1,6}\s/.test(line))
+    .map((line) => line.replace(/\*\*(.*?)\*\*/g, "$1").trim())
     .filter((line) => line.length > 0 && !BLOCK_HEADINGS.test(line.replace(/[*_#]/g, "").trim()));
+
 
   const isLong = (line: string) => line.replace(/[^\wÀ-ÿ]/g, "").length > 40;
   const isList = (line: string) => /^([-*+]|\d+\.)\s/.test(line);
