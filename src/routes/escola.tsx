@@ -52,7 +52,10 @@ export const Route = createFileRoute("/escola")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/escola" }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(ESCOLA_JSONLD) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(ESCOLA_JSONLD) },
+      { type: "application/ld+json", children: JSON.stringify(ESCOLA_SERVICE_JSONLD) },
+    ],
   }),
   component: EscolaPage,
 });
