@@ -9,7 +9,7 @@ import mariana from "@/assets/testimonials/mariana.webp";
 import luan from "@/assets/testimonials/luan.webp";
 import brunaP from "@/assets/testimonials/bruna-porto.webp";
 import joao from "@/assets/testimonials/joao.webp";
-import larissa from "@/assets/testimonials/larissa.webp";
+
 
 interface T {
   name: string;
