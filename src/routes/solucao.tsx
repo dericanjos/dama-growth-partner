@@ -293,41 +293,6 @@ function SolutionPage() {
         </div>
       </section>
 
-      {/* PARA QUEM */}
-      <section className="bg-[var(--cream)] pb-24 md:pb-28">
-        <div className="container-dama mx-auto max-w-4xl">
-          <Reveal>
-            <h2 className="heading-display text-[26px] leading-[1.2] text-[var(--navy)] md:text-[38px]">
-              Para quem esta operação foi construída
-            </h2>
-          </Reveal>
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            <Reveal className="card-dama p-8">
-              <h3 className="font-serif text-[20px] text-[var(--navy)]">
-                Para quem foi
-              </h3>
-              <p className="mt-4 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
-                Para o médico dono de consultório ou clínica particular que já tem
-                demanda e não tem estrutura para sustentá-la. Que já investiu em
-                marketing e viu o investimento não virar agenda. Que percebeu que o
-                crescimento passou a depender exclusivamente dele.
-              </p>
-            </Reveal>
-            <Reveal delay={90} className="card-dama p-8">
-              <h3 className="font-serif text-[20px] text-[var(--navy)]">
-                E para quem não foi
-              </h3>
-              <p className="mt-4 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
-                Para quem espera terceirizar a responsabilidade e não participar.
-                Para quem quer resultado sem método. Para quem opera 100% por
-                convênio e ainda não tem receita particular a proteger. Nem todo
-                momento é o momento certo, e dizer isso na primeira conversa é mais
-                barato para os dois lados do que descobrir depois.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* CFM */}
       <section className="surface-dark relative overflow-hidden py-20 md:py-24">
