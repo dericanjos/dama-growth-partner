@@ -167,6 +167,17 @@ function FaqPage() {
                       <p className="px-5 pb-6 text-[15px] leading-relaxed text-[var(--text-secondary)] md:px-6">
                         {f.a}
                       </p>
+                      {f.id === "preco" ? (
+                        <p className="px-5 pb-6 text-[15px] md:px-6">
+                          <Link
+                            to="/dama-estrategica"
+                            tabIndex={isOpen ? 0 : -1}
+                            className="text-[var(--navy)] underline underline-offset-4"
+                          >
+                            Ver a página da DAMA Estratégica
+                          </Link>
+                        </p>
+                      ) : null}
                     </div>
                   </div>
                 </li>
