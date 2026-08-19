@@ -6,11 +6,16 @@ import damaLogo from "@/assets/dama-logo.webp";
 const NAV_LINKS = [
   { to: "/", label: "Início" },
   { to: "/sobre", label: "Quem Somos" },
-  { to: "/solucao", label: "Nossa Solução" },
-  { to: "/metodo", label: "Método" },
-  { to: "/escola", label: "Escola" },
-  { to: "/ecossistema", label: "Ecossistema" },
 ] as const;
+
+const VERTICAL_LINKS = [
+  { to: "/dama-estrategica", label: "DAMA Estratégica" },
+  { to: "/escola", label: "DAMA Escola" },
+  { to: "/dama-tech", label: "DAMA Tech" },
+  { to: "/solucao", label: "Visão geral" },
+] as const;
+
+const METODO_LINK = { to: "/metodo", label: "Método" } as const;
 
 const CONTENT_LINKS = [
   { to: "/noticias", label: "Notícias Médicas" },
@@ -18,6 +23,8 @@ const CONTENT_LINKS = [
   { to: "/glossario", label: "Glossário" },
   { to: "/faq", label: "Perguntas Frequentes" },
 ] as const;
+
+
 
 
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
