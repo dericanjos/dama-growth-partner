@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Headset, LineChart, Target, Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { StatsBand } from "@/components/home/StatsBand";
+import { Testimonials } from "@/components/home/Testimonials";
+import { PatientTestimonials } from "@/components/home/PatientTestimonials";
 import { ORGANIZACAO } from "@/config/organizacao";
 
 const PAGE_URL = `${ORGANIZACAO.site}/dama-estrategica`;
@@ -260,6 +263,10 @@ function DamaEstrategicaPage() {
           </div>
         </div>
       </section>
+
+      <StatsBand />
+      <Testimonials />
+      <PatientTestimonials />
 
       {/* PARA QUEM */}
       <section className="bg-[var(--cream)] py-24 md:py-28">

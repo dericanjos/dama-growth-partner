@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { organizationSchema } from "@/config/organizacao";
 import { Hero } from "@/components/home/Hero";
-import { StatsBand } from "@/components/home/StatsBand";
 import { WhoWeAreShort } from "@/components/home/WhoWeAreShort";
 import { SolutionOverview } from "@/components/home/SolutionOverview";
 import { MethodOverview } from "@/components/home/MethodOverview";
-import { Testimonials } from "@/components/home/Testimonials";
-import { PatientTestimonials } from "@/components/home/PatientTestimonials";
+import { VerticalsOverview } from "@/components/home/VerticalsOverview";
 import { BlogHighlights } from "@/components/home/BlogHighlights";
 import { ClosingCTA } from "@/components/home/ClosingCTA";
 
@@ -14,7 +12,7 @@ const ORG_JSONLD = {
   "@context": "https://schema.org",
   ...organizationSchema({
     description:
-      "Operação comercial estratégica para médicos. Time dedicado que converte leads em pacientes particulares com processo estruturado.",
+      "Operação Comercial Estratégica para Médicos. O Grupo DAMA Health estrutura a frente comercial de consultórios particulares com método, pessoas, tecnologia e dados.",
     founder: { "@type": "Person", name: "Jéssica Anjos" },
     contactPoint: {
       "@type": "ContactPoint",
@@ -37,13 +35,19 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Operação comercial estratégica para médicos. Time dedicado que converte leads em consultas. 90+ médicos parceiros em 16 estados.",
+          "Operação Comercial Estratégica para Médicos. O Grupo DAMA Health estrutura a frente comercial de consultórios particulares com método, pessoas, tecnologia e dados.",
       },
       { property: "og:title", content: "Grupo DAMA | Solução Completa para Médicos" },
       {
         property: "og:description",
         content:
-          "Operação comercial, growth marketing e marketing 360 em uma operação só. 90+ médicos parceiros em 16 estados.",
+          "Operação Comercial Estratégica para Médicos. O Grupo DAMA Health estrutura a frente comercial de consultórios particulares com método, pessoas, tecnologia e dados.",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:description",
+        content:
+          "Operação Comercial Estratégica para Médicos. O Grupo DAMA Health estrutura a frente comercial de consultórios particulares com método, pessoas, tecnologia e dados.",
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/" },
       { property: "og:type", content: "website" },
@@ -66,12 +70,10 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <StatsBand />
       <WhoWeAreShort />
       <SolutionOverview />
       <MethodOverview />
-      <Testimonials />
-      <PatientTestimonials />
+      <VerticalsOverview />
       <BlogHighlights />
       <ClosingCTA />
     </>
