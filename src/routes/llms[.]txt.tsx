@@ -108,10 +108,10 @@ export const Route = createFileRoute("/llms.txt")({
           "- [DAMA Secretariado Médico](https://comercial.grupodamahealth.com.br): operação de secretariado e atendimento comercial para consultórios.",
         );
         lines.push(
-          "- [Escola DAMA](https://escola.grupodamahealth.com.br): vertical educacional do Grupo DAMA Health, formação de profissionais de atendimento do mercado médico.",
+          "- [DAMA Escola](https://escola.grupodamahealth.com.br): vertical educacional do Grupo DAMA Health, formação de profissionais de atendimento do mercado médico.",
         );
         lines.push(
-          `- [Escola DAMA no site institucional](${BASE}/escola): página institucional da vertical educacional.`,
+          `- [DAMA Escola no site institucional](${BASE}/escola): página institucional da vertical educacional.`,
         );
         lines.push(`- [Feed RSS das notícias](${BASE}/noticias/rss.xml): atualização contínua da cobertura editorial.`);
         lines.push(`- [Conteúdo integral em texto](${BASE}/llms-full.txt): corpo completo de notícias e artigos.`);

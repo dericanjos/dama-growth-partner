@@ -5,7 +5,7 @@ const ESCOLA_JSONLD = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "@id": "https://grupodamahealth.com.br/escola#organization",
-  name: "Escola DAMA",
+  name: "DAMA Escola",
   url: "https://grupodamahealth.com.br/escola",
   description:
     "Vertical educacional do Grupo DAMA Health, dedicada à formação de profissionais de atendimento do mercado médico.",
@@ -35,9 +35,9 @@ const ESCOLA_SERVICE_JSONLD = {
 };
 
 
-const TITLE = "Escola DAMA | A vertical educacional do Grupo DAMA Health";
+const TITLE = "DAMA Escola | A vertical educacional do Grupo DAMA Health";
 const DESCRIPTION =
-  "A Escola DAMA forma a secretária de consultório médico com o método D.A.M.A. Conheça a vertical educacional do Grupo DAMA Health.";
+  "A DAMA Escola forma a secretária de consultório médico com o método D.A.M.A. Conheça a vertical educacional do Grupo DAMA Health.";
 
 export const Route = createFileRoute("/escola")({
   head: () => ({
@@ -113,12 +113,12 @@ function EscolaPage() {
           </span>
           <h1 className="heading-display text-[30px] leading-[1.15] md:text-[52px]">
             <span className="gold-text">
-              A secretária do consultório é uma posição estratégica. A Escola DAMA existe
+              A secretária do consultório é uma posição estratégica. A DAMA Escola existe
               para formá-la como tal.
             </span>
           </h1>
           <p className="mx-auto mt-7 max-w-2xl text-[17px] leading-[1.7] text-white/80 md:text-[19px]">
-            A Escola DAMA é a vertical educacional do Grupo DAMA Health. Enquanto a
+            A DAMA Escola é a vertical educacional do Grupo DAMA Health. Enquanto a
             operação comercial da DAMA trabalha dentro do consultório do médico parceiro,
             a Escola olha para fora: forma profissionais do mercado médico com o mesmo
             método que a operação executa todos os dias.
@@ -144,7 +144,7 @@ function EscolaPage() {
                 inativo.
               </p>
               <p>
-                A Escola DAMA nasceu dessa lacuna. Não para transformar a secretária em
+                A DAMA Escola nasceu dessa lacuna. Não para transformar a secretária em
                 vendedora, mas para dar a ela o método que a posição sempre exigiu e
                 ninguém tinha organizado.
               </p>
@@ -264,7 +264,7 @@ function EscolaPage() {
 
           <Reveal>
             <h2 className={H2}>
-              Escola DAMA e operação DAMA são duas respostas diferentes
+              DAMA Escola e operação DAMA são duas respostas diferentes
             </h2>
             <div className={BODY}>
               <p>
@@ -280,7 +280,7 @@ function EscolaPage() {
                 responsabilidade fora da sua mesa.
               </p>
               <p>
-                <strong className="text-[var(--navy)]">A Escola DAMA</strong> forma quem
+                <strong className="text-[var(--navy)]">A DAMA Escola</strong> forma quem
                 já está na recepção, para que a estrutura passe a existir de dentro. É
                 para quem tem a pessoa certa e falta o método.
               </p>
@@ -315,7 +315,7 @@ function EscolaPage() {
           <Reveal>
             <div className="space-y-5 text-[16px] leading-[1.85] text-[var(--text-secondary)]">
               <p>
-                A Escola DAMA é a vertical educacional do Grupo DAMA Health. O método é o
+                A DAMA Escola é a vertical educacional do Grupo DAMA Health. O método é o
                 mesmo que a operação pratica. O que muda é quem passa a executá-lo.
               </p>
             </div>

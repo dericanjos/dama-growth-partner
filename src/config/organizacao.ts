@@ -76,7 +76,7 @@ export function organizationSchema(extra: Record<string, unknown> = {}) {
       {
         "@type": "EducationalOrganization",
         "@id": "https://grupodamahealth.com.br/escola#organization",
-        name: "Escola DAMA",
+        name: "DAMA Escola",
         url: "https://grupodamahealth.com.br/escola",
         sameAs: ["https://escola.grupodamahealth.com.br"],
       },
