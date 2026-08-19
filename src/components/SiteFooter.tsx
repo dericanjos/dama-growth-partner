@@ -38,6 +38,12 @@ export function SiteFooter() {
             <FooterLink to="/sobre">Quem Somos</FooterLink>
             <FooterLink to="/solucao">O que fazemos</FooterLink>
             <FooterLink to="/dama-estrategica">DAMA Estratégica</FooterLink>
+            <span className="pl-3">
+              <FooterLink to="/dama-estrategica/como-funciona">Como funciona a implantação</FooterLink>
+            </span>
+            <span className="pl-3">
+              <FooterLink to="/dama-estrategica/para-quem">Para quem foi construída</FooterLink>
+            </span>
             <FooterLink to="/escola">DAMA Escola</FooterLink>
             <FooterLink to="/dama-tech">DAMA Tech</FooterLink>
             <FooterLink to="/metodo">Método</FooterLink>

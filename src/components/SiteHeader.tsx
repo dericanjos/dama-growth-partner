@@ -3,16 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import damaLogo from "@/assets/dama-logo.webp";
 
-const NAV_LINKS = [
-  { to: "/", label: "Início" },
-  { to: "/sobre", label: "Quem Somos" },
+const QUEM_SOMOS_LINKS = [
+  { to: "/sobre", label: "A DAMA" },
+  { to: "/metodo", label: "O Método D.A.M.A" },
 ] as const;
 
 const VERTICAL_LINKS = [
   { to: "/dama-estrategica", label: "DAMA Estratégica" },
   { to: "/escola", label: "DAMA Escola" },
   { to: "/dama-tech", label: "DAMA Tech" },
-  { to: "/solucao", label: "Visão geral" },
 ] as const;
 
 const CONTENT_LINKS = [
@@ -27,15 +26,14 @@ type NavItem = { to: string; label: string };
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
 /**
- * O CTA do cabeçalho depende da rota. Só a página da vertical comercial
- * (/dama-estrategica) serve CTA de compra; o núcleo institucional serve
- * um convite de conversa.
+ * O CTA do cabeçalho depende da rota. Só a vertical comercial
+ * (/dama-estrategica e suas subpáginas) serve CTA de compra; o núcleo
+ * institucional serve um convite de conversa.
  */
-const CTA_COMPRA_ROTAS = new Set(["/dama-estrategica"]);
-
 function headerCta(pathname: string) {
   const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
-  return CTA_COMPRA_ROTAS.has(path)
+  const comercial = path === "/dama-estrategica" || path.startsWith("/dama-estrategica/");
+  return comercial
     ? { label: "Seja Parceiro", href: PARCERIA_URL, external: true as const }
     : { label: "Falar com a DAMA", href: "/contato", external: false as const };
 }
@@ -74,17 +72,20 @@ const TRIGGER_CLASS =
   "inline-flex items-center gap-1 whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] transition-colors hover:text-white";
 
 /**
- * Dropdown de navegação desktop.
+ * Dropdown de navegação desktop. O item principal é um link clicável que
+ * também abre o submenu no hover.
  * Os links ficam SEMPRE no DOM (SSR e crawler). A visibilidade é só por CSS.
  */
 function DesktopDropdown({
   id,
   label,
+  to,
   links,
   active,
 }: {
   id: string;
   label: string;
+  to: string;
   links: readonly NavItem[];
   active: boolean;
 }) {
@@ -118,13 +119,19 @@ function DesktopDropdown({
   };
 
   return (
-    <div ref={ref} className="relative" onMouseEnter={openNow} onMouseLeave={scheduleClose}>
-      <button
-        type="button"
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={openNow}
+      onMouseLeave={scheduleClose}
+      onFocus={openNow}
+    >
+      <Link
+        to={to}
         aria-haspopup="menu"
         aria-expanded={open}
         aria-controls={id}
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => setOpen(false)}
         className={`${TRIGGER_CLASS} ${active ? "text-white font-medium" : "text-white/80"}`}
       >
         {label}
@@ -132,7 +139,7 @@ function DesktopDropdown({
           className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           aria-hidden
         />
-      </button>
+      </Link>
 
       <ul
         id={id}
@@ -163,16 +170,21 @@ function DesktopDropdown({
   );
 }
 
-/** Accordion mobile. Links sempre no DOM, visibilidade só por CSS. */
+/**
+ * Accordion mobile. O item principal navega; a seta abre o submenu.
+ * Links sempre no DOM, visibilidade só por CSS.
+ */
 function MobileAccordion({
   id,
   label,
+  to,
   links,
   active,
   onNavigate,
 }: {
   id: string;
   label: string;
+  to: string;
   links: readonly NavItem[];
   active: boolean;
   onNavigate: () => void;
@@ -181,21 +193,28 @@ function MobileAccordion({
 
   return (
     <div className="border-b border-white/5">
-      <button
-        type="button"
-        aria-expanded={open}
-        aria-controls={id}
-        onClick={() => setOpen((v) => !v)}
-        className={`flex w-full items-center justify-between py-4 text-lg ${
-          active ? "text-[var(--gold)]" : "text-white/85"
-        }`}
-      >
-        <span>{label}</span>
-        <ChevronDown
-          className={`h-5 w-5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-          aria-hidden
-        />
-      </button>
+      <div className="flex w-full items-center justify-between">
+        <Link
+          to={to}
+          onClick={onNavigate}
+          className={`flex-1 py-4 text-lg ${active ? "text-[var(--gold)]" : "text-white/85"}`}
+        >
+          {label}
+        </Link>
+        <button
+          type="button"
+          aria-label={`${open ? "Fechar" : "Abrir"} submenu de ${label}`}
+          aria-expanded={open}
+          aria-controls={id}
+          onClick={() => setOpen((v) => !v)}
+          className="inline-flex h-11 w-11 items-center justify-center text-white/70"
+        >
+          <ChevronDown
+            className={`h-5 w-5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+            aria-hidden
+          />
+        </button>
+      </div>
       <ul
         id={id}
         aria-hidden={!open}
@@ -230,6 +249,8 @@ export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const contentActive = CONTENT_LINKS.some((link) => pathname.startsWith(link.to));
   const verticalActive = VERTICAL_LINKS.some((link) => pathname.startsWith(link.to));
+  const quemSomosActive = QUEM_SOMOS_LINKS.some((link) => pathname.startsWith(link.to));
+  const fazemosActive = verticalActive || pathname.startsWith("/solucao");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -281,36 +302,35 @@ export function SiteHeader() {
 
         {/* Desktop nav */}
         <nav className="hidden min-w-0 flex-1 items-center justify-center gap-[clamp(0.45rem,1.15vw,1.75rem)] md:flex xl:gap-8">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              activeOptions={{ exact: link.to === "/" }}
-              className="whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] text-white/80 transition-colors hover:text-white"
-              activeProps={{ className: "text-white font-medium" }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          <Link
+            to="/"
+            activeOptions={{ exact: true }}
+            className="whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] text-white/80 transition-colors hover:text-white"
+            activeProps={{ className: "text-white font-medium" }}
+          >
+            Início
+          </Link>
+
+          <DesktopDropdown
+            id="desktop-quem-somos-menu"
+            label="Quem Somos"
+            to="/sobre"
+            links={QUEM_SOMOS_LINKS}
+            active={quemSomosActive}
+          />
 
           <DesktopDropdown
             id="desktop-verticals-menu"
             label="O que fazemos"
+            to="/solucao"
             links={VERTICAL_LINKS}
-            active={verticalActive}
+            active={fazemosActive}
           />
-
-          <Link
-            to="/metodo"
-            className="whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] text-white/80 transition-colors hover:text-white"
-            activeProps={{ className: "text-white font-medium" }}
-          >
-            Método
-          </Link>
 
           <DesktopDropdown
             id="desktop-content-menu"
             label="Conteúdo"
+            to="/noticias"
             links={CONTENT_LINKS}
             active={contentActive}
           />
@@ -350,39 +370,38 @@ export function SiteHeader() {
         aria-hidden={!open}
       >
         <nav className="container-dama flex min-h-[calc(100dvh-5rem)] flex-col gap-1 pb-12 pt-8">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              activeOptions={{ exact: link.to === "/" }}
-              onClick={() => setOpen(false)}
-              className="border-b border-white/5 py-4 text-lg text-white/85"
-              activeProps={{ className: "text-[var(--gold)]" }}
-            >
-              {link.label}
-            </Link>
-          ))}
-
-          <MobileAccordion
-            id="mobile-verticals-submenu"
-            label="O que fazemos"
-            links={VERTICAL_LINKS}
-            active={verticalActive}
-            onNavigate={() => setOpen(false)}
-          />
-
           <Link
-            to="/metodo"
+            to="/"
+            activeOptions={{ exact: true }}
             onClick={() => setOpen(false)}
             className="border-b border-white/5 py-4 text-lg text-white/85"
             activeProps={{ className: "text-[var(--gold)]" }}
           >
-            Método
+            Início
           </Link>
+
+          <MobileAccordion
+            id="mobile-quem-somos-submenu"
+            label="Quem Somos"
+            to="/sobre"
+            links={QUEM_SOMOS_LINKS}
+            active={quemSomosActive}
+            onNavigate={() => setOpen(false)}
+          />
+
+          <MobileAccordion
+            id="mobile-verticals-submenu"
+            label="O que fazemos"
+            to="/solucao"
+            links={VERTICAL_LINKS}
+            active={fazemosActive}
+            onNavigate={() => setOpen(false)}
+          />
 
           <MobileAccordion
             id="mobile-content-submenu"
             label="Conteúdo"
+            to="/noticias"
             links={CONTENT_LINKS}
             active={contentActive}
             onNavigate={() => setOpen(false)}
