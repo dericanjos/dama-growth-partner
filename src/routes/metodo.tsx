@@ -302,28 +302,30 @@ function MethodPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* FECHO */}
       <section className="surface-dark relative overflow-hidden py-24 md:py-28">
         <div className="absolute inset-0 hero-glow opacity-70" aria-hidden />
         <div className="container-dama relative mx-auto max-w-2xl text-center">
           <h2 className="heading-display text-[28px] md:text-[42px]">
-            <span className="gold-text">Quer o Método D.A.M.A operando no seu consultório?</span>
+            <span className="gold-text">O método é o que a DAMA garante.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.75] text-white/70 md:text-base">
-            Entenda como estruturamos consultórios para crescerem com previsibilidade e consistência através de processos bem definidos.
+            As etapas acima descrevem como a estrutura é construída dentro do consultório, com
+            indicadores acompanhados e correção de rota quando o dado pedir.
           </p>
-          <div className="mt-10 flex justify-center">
-            <a
-              href="https://comercial.grupodamahealth.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold"
-            >
-              Quero ser parceiro <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
+          <p className="mt-8 text-[15px] leading-[1.85] text-white/70">
+            <Link to="/solucao" className="text-[var(--gold-light)] underline underline-offset-4">
+              Ver as três frentes da operação
+            </Link>
+          </p>
+          <p className="mt-3 text-[15px] leading-[1.85] text-white/70">
+            <Link to="/contato" className="text-[var(--gold-light)] underline underline-offset-4">
+              Falar com a DAMA
+            </Link>
+          </p>
         </div>
       </section>
+
     </>
   );
 }
