@@ -388,16 +388,15 @@ function PostPage() {
               Quer aplicar essas estratégias no seu consultório?
             </h3>
             <p className="mx-auto mt-3 max-w-md text-[15px] text-white/70">
-              Conheça a parceria que coloca uma operação comercial inteira a operar pelo seu consultório.
+              Quer entender como a operação comercial funciona na prática?{" "}
+              <Link
+                to="/dama-estrategica"
+                className="text-[var(--gold)] underline underline-offset-4 hover:text-[var(--gold-light)]"
+              >
+                Veja a página da DAMA Estratégica
+              </Link>
+              .
             </p>
-            <a
-              href="https://comercial.grupodamahealth.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold mt-7"
-            >
-              Conhecer a Parceria DAMA →
-            </a>
           </div>
 
           {latestNews.length > 0 && (
