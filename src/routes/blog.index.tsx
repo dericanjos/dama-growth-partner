@@ -64,6 +64,13 @@ export const Route = createFileRoute("/blog/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://grupodamahealth.com.br/blog" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Blog | Grupo DAMA" },
+      {
+        name: "twitter:description",
+        content:
+          "Insights para médicos que pensam como empresários. Crescimento, marketing e mercado.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/blog" }],
     scripts: [
