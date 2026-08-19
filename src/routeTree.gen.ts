@@ -20,6 +20,7 @@ import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
 import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as EscolaRouteImport } from './routes/escola'
+import { Route as EcossistemaRouteImport } from './routes/ecossistema'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
@@ -88,6 +89,11 @@ const EscolaRoute = EscolaRouteImport.update({
   path: '/escola',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EcossistemaRoute = EcossistemaRouteImport.update({
+  id: '/ecossistema',
+  path: '/ecossistema',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
@@ -154,6 +160,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
+  '/ecossistema': typeof EcossistemaRoute
   '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
@@ -178,6 +185,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
+  '/ecossistema': typeof EcossistemaRoute
   '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
+  '/ecossistema': typeof EcossistemaRoute
   '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
   '/glossario': typeof GlossarioRoute
@@ -231,6 +240,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/contato'
+    | '/ecossistema'
     | '/escola'
     | '/faq'
     | '/glossario'
@@ -255,6 +265,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contato'
+    | '/ecossistema'
     | '/escola'
     | '/faq'
     | '/glossario'
@@ -280,6 +291,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/contato'
+    | '/ecossistema'
     | '/escola'
     | '/faq'
     | '/glossario'
@@ -306,6 +318,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
+  EcossistemaRoute: typeof EcossistemaRoute
   EscolaRoute: typeof EscolaRoute
   FaqRoute: typeof FaqRoute
   GlossarioRoute: typeof GlossarioRoute
@@ -402,6 +415,13 @@ declare module '@tanstack/react-router' {
       path: '/escola'
       fullPath: '/escola'
       preLoaderRoute: typeof EscolaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ecossistema': {
+      id: '/ecossistema'
+      path: '/ecossistema'
+      fullPath: '/ecossistema'
+      preLoaderRoute: typeof EcossistemaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -510,6 +530,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
+  EcossistemaRoute: EcossistemaRoute,
   EscolaRoute: EscolaRoute,
   FaqRoute: FaqRoute,
   GlossarioRoute: GlossarioRoute,
