@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Search, Megaphone, CalendarCheck, Activity } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Search, Megaphone, CalendarCheck, Activity } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
 const FAQ_JSONLD = {
