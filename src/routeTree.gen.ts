@@ -30,6 +30,7 @@ import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as NoticiasRssDotxmlRouteImport } from './routes/noticias.rss[.]xml'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
+import { Route as DamaEstrategicaComoFuncionaRouteImport } from './routes/dama-estrategica_.como-funciona'
 import { Route as BlogTimeComercialTerceirizadoConsultorioRouteImport } from './routes/blog.time-comercial-terceirizado-consultorio'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AutorJessicaAnjosRouteImport } from './routes/autor.jessica-anjos'
@@ -141,6 +142,12 @@ const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
   path: '/noticias/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DamaEstrategicaComoFuncionaRoute =
+  DamaEstrategicaComoFuncionaRouteImport.update({
+    id: '/dama-estrategica_/como-funciona',
+    path: '/dama-estrategica/como-funciona',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogTimeComercialTerceirizadoConsultorioRoute =
   BlogTimeComercialTerceirizadoConsultorioRouteImport.update({
     id: '/time-comercial-terceirizado-consultorio',
@@ -191,6 +198,7 @@ export interface FileRoutesByFullPath {
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/time-comercial-terceirizado-consultorio': typeof BlogTimeComercialTerceirizadoConsultorioRoute
+  '/dama-estrategica/como-funciona': typeof DamaEstrategicaComoFuncionaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog/': typeof BlogIndexRoute
@@ -218,6 +226,7 @@ export interface FileRoutesByTo {
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/time-comercial-terceirizado-consultorio': typeof BlogTimeComercialTerceirizadoConsultorioRoute
+  '/dama-estrategica/como-funciona': typeof DamaEstrategicaComoFuncionaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog': typeof BlogIndexRoute
@@ -247,6 +256,7 @@ export interface FileRoutesById {
   '/autor/jessica-anjos': typeof AutorJessicaAnjosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/time-comercial-terceirizado-consultorio': typeof BlogTimeComercialTerceirizadoConsultorioRoute
+  '/dama-estrategica_/como-funciona': typeof DamaEstrategicaComoFuncionaRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/rss.xml': typeof NoticiasRssDotxmlRoute
   '/blog/': typeof BlogIndexRoute
@@ -277,6 +287,7 @@ export interface FileRouteTypes {
     | '/autor/jessica-anjos'
     | '/blog/$slug'
     | '/blog/time-comercial-terceirizado-consultorio'
+    | '/dama-estrategica/como-funciona'
     | '/noticias/$slug'
     | '/noticias/rss.xml'
     | '/blog/'
@@ -304,6 +315,7 @@ export interface FileRouteTypes {
     | '/autor/jessica-anjos'
     | '/blog/$slug'
     | '/blog/time-comercial-terceirizado-consultorio'
+    | '/dama-estrategica/como-funciona'
     | '/noticias/$slug'
     | '/noticias/rss.xml'
     | '/blog'
@@ -332,6 +344,7 @@ export interface FileRouteTypes {
     | '/autor/jessica-anjos'
     | '/blog/$slug'
     | '/blog/time-comercial-terceirizado-consultorio'
+    | '/dama-estrategica_/como-funciona'
     | '/noticias/$slug'
     | '/noticias/rss.xml'
     | '/blog/'
@@ -359,6 +372,7 @@ export interface RootRouteChildren {
   ApiNoticiasDotjsonRoute: typeof ApiNoticiasDotjsonRoute
   AutorDericAnjosRoute: typeof AutorDericAnjosRoute
   AutorJessicaAnjosRoute: typeof AutorJessicaAnjosRoute
+  DamaEstrategicaComoFuncionaRoute: typeof DamaEstrategicaComoFuncionaRoute
   NoticiasSlugRoute: typeof NoticiasSlugRoute
   NoticiasRssDotxmlRoute: typeof NoticiasRssDotxmlRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
@@ -513,6 +527,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NoticiasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dama-estrategica_/como-funciona': {
+      id: '/dama-estrategica_/como-funciona'
+      path: '/dama-estrategica/como-funciona'
+      fullPath: '/dama-estrategica/como-funciona'
+      preLoaderRoute: typeof DamaEstrategicaComoFuncionaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/time-comercial-terceirizado-consultorio': {
       id: '/blog/time-comercial-terceirizado-consultorio'
       path: '/time-comercial-terceirizado-consultorio'
@@ -587,6 +608,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiNoticiasDotjsonRoute: ApiNoticiasDotjsonRoute,
   AutorDericAnjosRoute: AutorDericAnjosRoute,
   AutorJessicaAnjosRoute: AutorJessicaAnjosRoute,
+  DamaEstrategicaComoFuncionaRoute: DamaEstrategicaComoFuncionaRoute,
   NoticiasSlugRoute: NoticiasSlugRoute,
   NoticiasRssDotxmlRoute: NoticiasRssDotxmlRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
