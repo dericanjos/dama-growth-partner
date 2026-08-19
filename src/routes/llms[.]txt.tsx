@@ -11,7 +11,7 @@ const INSTITUTIONAL: Array<{ path: string; label: string; line: string }> = [
   { path: "/solucao", label: "O que fazemos", line: "Visão geral das três verticais do Grupo DAMA Health: DAMA Estratégica, DAMA Escola e DAMA Tech, com o público de cada uma." },
   { path: "/dama-estrategica", label: "DAMA Estratégica", line: "A operação comercial estratégica: operação comercial, growth e marketing médico dentro do consultório do médico parceiro." },
   { path: "/escola", label: "DAMA Escola", line: "Vertical educacional do Grupo DAMA Health, dedicada à formação de profissionais de atendimento do mercado médico." },
-  { path: "/dama-tech", label: "DAMA Tech", line: "Vertical de tecnologia: Plataforma de Atendimento DAMA, App DAMA e CRM DAMA, a camada comercial entre o primeiro contato e a consulta." },
+  { path: "/dama-tech", label: "DAMA Tech", line: "Vertical de tecnologia: a Plataforma de Atendimento DAMA, a infraestrutura da operação comercial dentro do consultório, com o método D.A.M.A embutido na rotina de quem atende." },
   { path: "/metodo", label: "Método", line: "Como funciona o processo comercial estruturado, etapa por etapa." },
   { path: "/contato", label: "Contato", line: "Canais oficiais de contato com o setor comercial." },
   { path: "/faq", label: "Perguntas Frequentes", line: "Respostas às dúvidas mais comuns de médicos parceiros." },
