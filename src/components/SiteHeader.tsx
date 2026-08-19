@@ -6,19 +6,13 @@ import damaLogo from "@/assets/dama-logo.webp";
 const QUEM_SOMOS_LINKS = [
   { to: "/sobre", label: "A DAMA" },
   { to: "/metodo", label: "O Método D.A.M.A" },
+  { to: "/faq", label: "Perguntas Frequentes" },
 ] as const;
 
 const VERTICAL_LINKS = [
   { to: "/dama-estrategica", label: "DAMA Estratégica" },
   { to: "/escola", label: "DAMA Escola" },
   { to: "/dama-tech", label: "DAMA Tech" },
-] as const;
-
-const CONTENT_LINKS = [
-  { to: "/noticias", label: "Notícias Médicas" },
-  { to: "/blog", label: "Blog" },
-  { to: "/glossario", label: "Glossário" },
-  { to: "/faq", label: "Perguntas Frequentes" },
 ] as const;
 
 type NavItem = { to: string; label: string };
