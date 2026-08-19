@@ -70,6 +70,14 @@ export const Route = createFileRoute("/llms.txt")({
         }
         lines.push("");
 
+        lines.push("## Índices de conteúdo");
+        lines.push("");
+        lines.push(`- [Notícias](${BASE}/noticias): índice da cobertura editorial, com filtro por categoria.`);
+        lines.push(`- [Notícias, página 2](${BASE}/noticias?page=2): continuação do índice de notícias.`);
+        lines.push(`- [Notícias, página 3](${BASE}/noticias?page=3): continuação do índice de notícias.`);
+        lines.push(`- [Blog](${BASE}/blog): índice dos artigos sobre gestão, comercial e marketing médico.`);
+        lines.push("");
+
         lines.push("## Notícias");
         lines.push("");
         for (const n of news) {
@@ -77,6 +85,7 @@ export const Route = createFileRoute("/llms.txt")({
           lines.push(`- [${n.title}](${BASE}/noticias/${n.slug}): ${line}`);
         }
         lines.push("");
+
 
         lines.push("## Blog");
         lines.push("");
