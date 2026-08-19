@@ -296,18 +296,17 @@ function EscolaPage() {
                 A Escola DAMA é a vertical educacional do Grupo DAMA Health. O método é o
                 mesmo que a operação pratica. O que muda é quem passa a executá-lo.
               </p>
-              <p>
-                <a
-                  href="https://escola.grupodamahealth.com.br"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--gold-deep)] underline underline-offset-4 hover:opacity-80"
-                >
-                  Conhecer a Formação Secretária D.A.M.A <span aria-hidden>→</span>
-                </a>
-              </p>
             </div>
+            <a
+              href="https://escola.grupodamahealth.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold mt-8"
+            >
+              Conhecer a Formação Secretária D.A.M.A <span aria-hidden>→</span>
+            </a>
           </Reveal>
+
         </div>
       </section>
     </>
