@@ -21,6 +21,7 @@ import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as EscolaRouteImport } from './routes/escola'
 import { Route as EcossistemaRouteImport } from './routes/ecossistema'
+import { Route as DamaTechRouteImport } from './routes/dama-tech'
 import { Route as DamaEstrategicaRouteImport } from './routes/dama-estrategica'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -95,6 +96,11 @@ const EcossistemaRoute = EcossistemaRouteImport.update({
   path: '/ecossistema',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DamaTechRoute = DamaTechRouteImport.update({
+  id: '/dama-tech',
+  path: '/dama-tech',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DamaEstrategicaRoute = DamaEstrategicaRouteImport.update({
   id: '/dama-estrategica',
   path: '/dama-estrategica',
@@ -167,6 +173,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/dama-estrategica': typeof DamaEstrategicaRoute
+  '/dama-tech': typeof DamaTechRoute
   '/ecossistema': typeof EcossistemaRoute
   '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
@@ -193,6 +200,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/dama-estrategica': typeof DamaEstrategicaRoute
+  '/dama-tech': typeof DamaTechRoute
   '/ecossistema': typeof EcossistemaRoute
   '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
@@ -221,6 +229,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/dama-estrategica': typeof DamaEstrategicaRoute
+  '/dama-tech': typeof DamaTechRoute
   '/ecossistema': typeof EcossistemaRoute
   '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
@@ -250,6 +259,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contato'
     | '/dama-estrategica'
+    | '/dama-tech'
     | '/ecossistema'
     | '/escola'
     | '/faq'
@@ -276,6 +286,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/dama-estrategica'
+    | '/dama-tech'
     | '/ecossistema'
     | '/escola'
     | '/faq'
@@ -303,6 +314,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contato'
     | '/dama-estrategica'
+    | '/dama-tech'
     | '/ecossistema'
     | '/escola'
     | '/faq'
@@ -331,6 +343,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
   DamaEstrategicaRoute: typeof DamaEstrategicaRoute
+  DamaTechRoute: typeof DamaTechRoute
   EcossistemaRoute: typeof EcossistemaRoute
   EscolaRoute: typeof EscolaRoute
   FaqRoute: typeof FaqRoute
@@ -435,6 +448,13 @@ declare module '@tanstack/react-router' {
       path: '/ecossistema'
       fullPath: '/ecossistema'
       preLoaderRoute: typeof EcossistemaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dama-tech': {
+      id: '/dama-tech'
+      path: '/dama-tech'
+      fullPath: '/dama-tech'
+      preLoaderRoute: typeof DamaTechRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dama-estrategica': {
@@ -551,6 +571,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
   DamaEstrategicaRoute: DamaEstrategicaRoute,
+  DamaTechRoute: DamaTechRoute,
   EcossistemaRoute: EcossistemaRoute,
   EscolaRoute: EscolaRoute,
   FaqRoute: FaqRoute,
