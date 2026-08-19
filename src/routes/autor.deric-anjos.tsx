@@ -34,6 +34,9 @@ export const Route = createFileRoute("/autor/deric-anjos")({
       },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: AUTHOR_URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Deric Anjos — Head de Growth | Grupo DAMA" },
+      { name: "twitter:description", content: AUTHOR_DESC },
     ],
     links: [
       { rel: "canonical", href: AUTHOR_URL },

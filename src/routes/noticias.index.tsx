@@ -106,6 +106,9 @@ export const Route = createFileRoute("/noticias/")({
         { property: "og:description", content: description },
         { property: "og:type", content: "website" },
         { property: "og:url", content: canonical },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
       ],
       links,
       scripts: [
