@@ -106,9 +106,9 @@ export function SiteFooter() {
 function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="eyebrow mb-4 text-white/85" style={{ color: "var(--gold)" }}>
+      <h2 className="eyebrow mb-4 text-white/85" style={{ color: "var(--gold)" }}>
         {title}
-      </h4>
+      </h2>
       <div className="flex flex-col gap-3">{children}</div>
     </div>
   );

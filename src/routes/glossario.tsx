@@ -159,6 +159,7 @@ function GlossarioPage() {
     hasDefinedTerm: TERMS.map((t) => ({
       "@type": "DefinedTerm",
       "@id": `https://grupodamahealth.com.br/glossario#${t.id}`,
+      url: `https://grupodamahealth.com.br/glossario#${t.id}`,
       name: t.name,
       description: t.description,
       inDefinedTermSet: "https://grupodamahealth.com.br/glossario",
@@ -191,6 +192,7 @@ function GlossarioPage() {
       {/* Index of terms */}
       <section className="border-b border-[var(--border)] bg-[var(--cream)] py-8">
         <div className="container-dama mx-auto max-w-4xl">
+          <h2 className="sr-only">Índice de termos</h2>
           <div className="flex flex-wrap gap-2">
             {TERMS.map((t) => (
               <a
@@ -208,15 +210,20 @@ function GlossarioPage() {
       {/* Terms */}
       <section className="bg-[var(--cream)] py-16 md:py-20">
         <div className="container-dama mx-auto max-w-3xl">
+          <h2 className="sr-only">Termos e definições</h2>
           <dl className="space-y-10">
             {TERMS.map((t) => (
               <div
                 key={t.id}
-                id={t.id}
                 className="scroll-mt-28 border-b border-[var(--border)] pb-8 last:border-0"
               >
-                <dt className="font-serif text-[22px] font-semibold text-[var(--navy)] md:text-[26px]">
-                  {t.name}
+                <dt>
+                  <h3
+                    id={t.id}
+                    className="scroll-mt-28 font-serif text-[22px] font-semibold text-[var(--navy)] md:text-[26px]"
+                  >
+                    {t.name}
+                  </h3>
                 </dt>
                 <dd className="mt-3 text-[16px] leading-[1.75] text-[var(--text-secondary)]">
                   {t.description}
@@ -224,6 +231,7 @@ function GlossarioPage() {
               </div>
             ))}
           </dl>
+
 
           {/* CTA */}
           <div

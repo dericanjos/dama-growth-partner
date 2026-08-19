@@ -130,32 +130,34 @@ function FaqPage() {
 
       <section className="bg-[var(--cream)] py-16 md:py-20">
         <div className="container-dama max-w-[720px]">
+          <h2 className="sr-only">Perguntas e respostas</h2>
           <ul className="flex flex-col gap-3">
             {FAQS.map((f) => {
               const isOpen = openId === f.id;
               return (
                 <li
                   key={f.id}
-                  id={f.id}
                   className="card-dama overflow-hidden scroll-mt-28"
                 >
-                  <button
-                    type="button"
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-panel-${f.id}`}
-                    onClick={() => setOpenId(isOpen ? "" : f.id)}
-                    className="flex w-full items-start justify-between gap-4 px-5 py-5 text-left md:px-6"
-                  >
-                    <span className="font-serif text-lg font-semibold text-[var(--navy)] md:text-xl">
-                      {f.q}
-                    </span>
-                    <span
-                      aria-hidden
-                      className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--gold-soft)] text-[var(--navy)] transition-transform"
+                  <h3 id={f.id} className="m-0 scroll-mt-28 text-inherit font-normal">
+                    <button
+                      type="button"
+                      aria-expanded={isOpen}
+                      aria-controls={`faq-panel-${f.id}`}
+                      onClick={() => setOpenId(isOpen ? "" : f.id)}
+                      className="flex w-full items-start justify-between gap-4 px-5 py-5 text-left md:px-6"
                     >
-                      {isOpen ? <X className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-                    </span>
-                  </button>
+                      <span className="font-serif text-lg font-semibold text-[var(--navy)] md:text-xl">
+                        {f.q}
+                      </span>
+                      <span
+                        aria-hidden
+                        className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--gold-soft)] text-[var(--navy)] transition-transform"
+                      >
+                        {isOpen ? <X className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                      </span>
+                    </button>
+                  </h3>
                   <div
                     id={`faq-panel-${f.id}`}
                     role="region"
