@@ -133,10 +133,15 @@ function excerpt(text: string, max = 200) {
     )
     .filter((line) => line.length > 0 && !BLOCK_HEADINGS.test(line.replace(/[*_#]/g, "").trim()));
 
-  const first = body.findIndex((line) => line.replace(/[^\wÀ-ÿ]/g, "").length > 40);
+  const isLong = (line: string) => line.replace(/[^\wÀ-ÿ]/g, "").length > 40;
+  const isList = (line: string) => /^([-*+]|\d+\.)\s/.test(line);
+  let first = body.findIndex((line) => isLong(line) && !isList(line));
+  if (first === -1) first = body.findIndex(isLong);
   const plain = body
     .slice(first === -1 ? 0 : first)
+    .map((line) => line.replace(/^([-*+]|\d+\.)\s+/, ""))
     .join(" ")
+
     .replace(/\[(.*?)\]\(.*?\)/g, "$1")
     .replace(/[#*_`>~]/g, "")
     .replace(/\s+/g, " ")
