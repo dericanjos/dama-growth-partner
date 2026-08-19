@@ -36,9 +36,11 @@ export function SiteFooter() {
           <FooterCol title="Navegação">
             <FooterLink to="/">Início</FooterLink>
             <FooterLink to="/sobre">Quem Somos</FooterLink>
-            <FooterLink to="/solucao">Nossa Solução</FooterLink>
+            <FooterLink to="/solucao">O que fazemos</FooterLink>
+            <FooterLink to="/dama-estrategica">DAMA Estratégica</FooterLink>
+            <FooterLink to="/escola">DAMA Escola</FooterLink>
+            <FooterLink to="/dama-tech">DAMA Tech</FooterLink>
             <FooterLink to="/metodo">Método</FooterLink>
-            <FooterLink to="/escola">Escola DAMA</FooterLink>
             <FooterLink to="/blog">Blog</FooterLink>
             <FooterLink to="/glossario">Glossário</FooterLink>
             <FooterLink to="/noticias">Notícias Médicas</FooterLink>
