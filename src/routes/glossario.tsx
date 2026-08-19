@@ -159,6 +159,7 @@ function GlossarioPage() {
     hasDefinedTerm: TERMS.map((t) => ({
       "@type": "DefinedTerm",
       "@id": `https://grupodamahealth.com.br/glossario#${t.id}`,
+      url: `https://grupodamahealth.com.br/glossario#${t.id}`,
       name: t.name,
       description: t.description,
       inDefinedTermSet: "https://grupodamahealth.com.br/glossario",
