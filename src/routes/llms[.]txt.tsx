@@ -70,6 +70,14 @@ export const Route = createFileRoute("/llms.txt")({
         }
         lines.push("");
 
+        lines.push("## Índices de conteúdo");
+        lines.push("");
+        lines.push(`- [Notícias](${BASE}/noticias): índice da cobertura editorial, com filtro por categoria.`);
+        lines.push(`- [Notícias, página 2](${BASE}/noticias?page=2): continuação do índice de notícias.`);
+        lines.push(`- [Notícias, página 3](${BASE}/noticias?page=3): continuação do índice de notícias.`);
+        lines.push(`- [Blog](${BASE}/blog): índice dos artigos sobre gestão, comercial e marketing médico.`);
+        lines.push("");
+
         lines.push("## Notícias");
         lines.push("");
         for (const n of news) {
@@ -77,6 +85,7 @@ export const Route = createFileRoute("/llms.txt")({
           lines.push(`- [${n.title}](${BASE}/noticias/${n.slug}): ${line}`);
         }
         lines.push("");
+
 
         lines.push("## Blog");
         lines.push("");
@@ -108,10 +117,10 @@ export const Route = createFileRoute("/llms.txt")({
           "- [DAMA Secretariado Médico](https://comercial.grupodamahealth.com.br): operação de secretariado e atendimento comercial para consultórios.",
         );
         lines.push(
-          "- [Escola DAMA](https://escola.grupodamahealth.com.br): vertical educacional do Grupo DAMA Health, formação de profissionais de atendimento do mercado médico.",
+          "- [DAMA Escola](https://escola.grupodamahealth.com.br): vertical educacional do Grupo DAMA Health, formação de profissionais de atendimento do mercado médico.",
         );
         lines.push(
-          `- [Escola DAMA no site institucional](${BASE}/escola): página institucional da vertical educacional.`,
+          `- [DAMA Escola no site institucional](${BASE}/escola): página institucional da vertical educacional.`,
         );
         lines.push(`- [Feed RSS das notícias](${BASE}/noticias/rss.xml): atualização contínua da cobertura editorial.`);
         lines.push(`- [Conteúdo integral em texto](${BASE}/llms-full.txt): corpo completo de notícias e artigos.`);

@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 import { AuthorAvatar } from "@/components/AuthorAvatar";
-import jessicaPhoto from "@/assets/jessica-anjos.webp";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { formatDateBR, BLOG_POSTS } from "@/data/blog";
 import { listNewsByAuthor, type NewsArticleListItem } from "@/lib/news.functions";
@@ -79,7 +78,7 @@ function AuthorPage() {
     <>
       <section className="surface-dark hero-glow relative pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="container-dama mx-auto max-w-3xl text-center">
-          <AuthorAvatar name="Jéssica Anjos" foto={jessicaPhoto} alt="Jéssica Anjos, Fundadora do Grupo DAMA" />
+          <AuthorAvatar name="Jéssica Anjos" foto="/autores/jessica-anjos.webp" alt="Jéssica Anjos, Fundadora do Grupo DAMA" />
           <h1 className="heading-display text-[36px] md:text-[52px]">
             <span className="gold-text">Jéssica Anjos</span>
           </h1>

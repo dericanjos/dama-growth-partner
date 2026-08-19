@@ -117,15 +117,35 @@ export const Route = createFileRoute("/noticias/")({
   component: NewsPage,
 });
 
+/** Cabeçalhos de bloco que não devem aparecer no resumo do card. */
+const BLOCK_HEADINGS =
+  /^(em resumo|em n[úu]meros|perguntas frequentes|refer[êe]ncias|fonte oficial)\s*:?\s*$/i;
+
 function excerpt(text: string, max = 200) {
-  const plain = text
+  const body = text
     .replace(/```[\s\S]*?```/g, "")
-    .replace(/[#*_`>~\-]/g, "")
+    .split("\n")
+    .filter((line) => !/^\s{0,3}#{1,6}\s/.test(line))
+    .map((line) => line.replace(/\*\*(.*?)\*\*/g, "$1").trim())
+    .filter((line) => line.length > 0 && !BLOCK_HEADINGS.test(line.replace(/[*_#]/g, "").trim()));
+
+
+  const isLong = (line: string) => line.replace(/[^\wÀ-ÿ]/g, "").length > 40;
+  const isList = (line: string) => /^([-*+]|\d+\.)\s/.test(line);
+  let first = body.findIndex((line) => isLong(line) && !isList(line));
+  if (first === -1) first = body.findIndex(isLong);
+  const plain = body
+    .slice(first === -1 ? 0 : first)
+    .map((line) => line.replace(/^([-*+]|\d+\.)\s+/, ""))
+    .join(" ")
+
     .replace(/\[(.*?)\]\(.*?\)/g, "$1")
+    .replace(/[#*_`>~]/g, "")
     .replace(/\s+/g, " ")
     .trim();
   return plain.length > max ? `${plain.slice(0, max).trim()}…` : plain;
 }
+
 
 interface LoaderData {
   items: NewsArticleListItem[];

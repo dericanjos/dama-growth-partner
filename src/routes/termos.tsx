@@ -44,7 +44,8 @@ function TermsPage() {
           <h2 className="font-serif text-xl text-[var(--navy)]">3. Links Externos</h2>
           <p>
             O site pode conter links para domínios de terceiros, incluindo
-            comercial.grupodamahealth.com.br. Não nos responsabilizamos pelo conteúdo
+            comercial.grupodamahealth.com.br e escola.grupodamahealth.com.br. Não nos
+            responsabilizamos pelo conteúdo
             de páginas externas.
           </p>
 

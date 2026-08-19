@@ -11,7 +11,7 @@ const FAQS: FaqItem[] = [
   {
     id: "ia-pessoas",
     q: "O atendimento aos meus pacientes é feito por IA ou por pessoas?",
-    a: "Pessoas, sempre. A operação comercial da DAMA é formado por profissionais treinados pra atender cada paciente com escuta real, linguagem natural e técnica de venda consultiva. Aqui não tem chatbot, não tem resposta automática genérica e o atendimento humano não é delegado pra IA em nenhum momento. O paciente do nosso parceiro precisa sentir, já na primeira mensagem no WhatsApp, o mesmo cuidado que teria dentro do consultório.",
+    a: "Pessoas, sempre. A operação comercial da DAMA é formada por profissionais treinados pra atender cada paciente com escuta real, linguagem natural e técnica de venda consultiva. Aqui não tem chatbot, não tem resposta automática genérica e o atendimento humano não é delegado pra IA em nenhum momento. O paciente do nosso parceiro precisa sentir, já na primeira mensagem no WhatsApp, o mesmo cuidado que teria dentro do consultório.",
   },
   {
     id: "preco",
@@ -41,7 +41,7 @@ const FAQS: FaqItem[] = [
   {
     id: "diferenca-agencia",
     q: "Qual a diferença entre o Grupo DAMA e uma agência de marketing comum?",
-    a: "A diferença está numa palavra: completude. Agência de marketing trabalha uma fatia da operação, geralmente tráfego pago ou presença digital, e devolve cliques pra você se virar com eles. A DAMA é uma solução completa, que opera de forma integrada todas as frentes que decidem o crescimento real de um consultório: Operação Comercial humanizado, Growth orientado por dados, Marketing Médico estratégico e Tecnologia exclusiva, tudo amarrado pelo método D.A.M.A. Marketing sem comercial é dinheiro jogado fora. Comercial sem marketing é operação sem combustível. E os dois sem método viram tiro no escuro. Tentar resolver tudo isso contratando agência, closer freelancer e consultor de growth separadamente também não funciona, porque cada um otimiza pelo resultado dele e ninguém otimiza pelo seu. A DAMA é a operação inteira do crescimento do seu consultório dentro de uma única estrutura. Não somos agência. Somos o ecossistema completo.",
+    a: "A diferença está numa palavra: completude. Agência de marketing trabalha uma fatia da operação, geralmente tráfego pago ou presença digital, e devolve cliques pra você se virar com eles. A DAMA é uma solução completa, que opera de forma integrada todas as frentes que decidem o crescimento real de um consultório: Operação Comercial humanizada, Growth orientado por dados, Marketing Médico estratégico e Tecnologia exclusiva, tudo amarrado pelo método D.A.M.A. Marketing sem comercial é dinheiro jogado fora. Comercial sem marketing é operação sem combustível. E os dois sem método viram tiro no escuro. Tentar resolver tudo isso contratando agência, closer freelancer e consultor de growth separadamente também não funciona, porque cada um otimiza pelo resultado dele e ninguém otimiza pelo seu. A DAMA é a operação inteira do crescimento do seu consultório dentro de uma única estrutura. Não somos agência. Somos o ecossistema completo.",
   },
   {
     id: "qualidade-atendimento",

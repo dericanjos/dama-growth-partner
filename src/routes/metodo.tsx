@@ -315,7 +315,7 @@ function MethodPage() {
           </p>
           <p className="mt-8 text-[15px] leading-[1.85] text-white/70">
             <Link to="/solucao" className="text-[var(--gold-light)] underline underline-offset-4">
-              Ver as três frentes da operação
+              Ver as três verticais do Grupo DAMA Health
             </Link>
           </p>
           <p className="mt-3 text-[15px] leading-[1.85] text-white/70">

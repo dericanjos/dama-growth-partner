@@ -11,7 +11,7 @@ export const Route = createFileRoute("/contato")({
       {
         name: "description",
         content:
-          "Canal institucional do Grupo DAMA Health. Fale com a gente sobre imprensa, parcerias, a Escola DAMA, a operação comercial ou qualquer outro assunto.",
+          "Canal institucional do Grupo DAMA Health. Fale com a gente sobre imprensa, parcerias, a DAMA Escola, a operação comercial ou qualquer outro assunto.",
       },
       { property: "og:title", content: "Contato | Grupo DAMA Health" },
       { property: "og:description", content: "Canal institucional do Grupo DAMA Health." },
@@ -28,7 +28,7 @@ const WA_URL =
 
 const ATALHOS: Array<{ to: string; label: string; text: string }> = [
   { to: "/metodo", label: "/metodo", text: "Como funciona o método D.A.M.A, etapa por etapa." },
-  { to: "/solucao", label: "/solucao", text: "As três frentes que operam dentro do consultório." },
+  { to: "/solucao", label: "/solucao", text: "As três verticais do Grupo DAMA Health." },
   { to: "/faq", label: "/faq", text: "As perguntas que mais recebemos, respondidas." },
   { to: "/glossario", label: "/glossario", text: "Vinte termos do mercado médico, explicados." },
 ];
@@ -255,7 +255,7 @@ function ContactPage() {
                   </a>
                 </li>
                 <li>
-                  Conhecer a Escola DAMA{" "}
+                  Conhecer a DAMA Escola{" "}
                   <Link
                     to="/escola"
                     className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"

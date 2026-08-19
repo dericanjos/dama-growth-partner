@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import jessicaPhoto from "@/assets/jessica-anjos.webp";
 
 const ABOUT_ORG_JSONLD = {
   "@context": "https://schema.org",
@@ -18,7 +17,7 @@ const ABOUT_ORG_JSONLD = {
     {
       "@type": "EducationalOrganization",
       "@id": "https://grupodamahealth.com.br/escola#organization",
-      name: "Escola DAMA",
+      name: "DAMA Escola",
       url: "https://grupodamahealth.com.br/escola",
       sameAs: ["https://escola.grupodamahealth.com.br"],
     },
@@ -98,7 +97,7 @@ const TIMELINE = [
   { year: "2023", title: "Primeiros parceiros", text: "Os primeiros médicos parceiros validam o método. As taxas de conversão dobram." },
   { year: "2024", title: "Expansão nacional", text: "A operação ultrapassa fronteiras estaduais. O time interno cresce e o marketing passa a integrar a nossa solução." },
   { year: "2025", title: "Operação Integrada", text: "Operação Comercial, Growth, Marketing Médico e Tecnologia Avançada passam a operar de forma unificada. Nasce o ecossistema estratégico de soluções do Grupo DAMA Health." },
-  { year: "2026", title: "Grupo DAMA", text: "+90 médicos parceiros, presença em +16 Estados e +25 mil consultas agendadas. O grupo DAMA se consolida como referência altamente indicada pelos seus clientes e inicia sua fase de expansão nacional." },
+  { year: "2026", title: "Grupo DAMA", text: "+90 médicos parceiros, presença em +16 Estados e +25 mil consultas agendadas. O Grupo DAMA se consolida como referência altamente indicada pelos seus clientes e inicia sua fase de expansão nacional." },
   { year: "2027", title: "Expansão do Ecossistema", text: "Novas verticais passam a integrar o Grupo DAMA, ampliando a estrutura de soluções estratégicas para médicos em todo o Brasil a fim de potencializar os seus resultados." },
 ];
 
@@ -164,7 +163,7 @@ function AboutPage() {
             <div className="grid md:grid-cols-[260px_1fr]">
               <div className="hidden bg-[var(--navy)] md:block">
                 <img
-                  src={jessicaPhoto}
+                  src="/autores/jessica-anjos.webp"
                   alt="Jéssica Anjos, Fundadora do Grupo DAMA"
                   width={484}
                   height={600}

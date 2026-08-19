@@ -69,18 +69,31 @@ export function organizationSchema(extra: Record<string, unknown> = {}) {
     subOrganization: [
       {
         "@type": "Organization",
-        "@id": "https://comercial.grupodamahealth.com.br/#organization",
-        name: "DAMA Secretariado Médico",
-        url: "https://comercial.grupodamahealth.com.br",
+        "@id": "https://grupodamahealth.com.br/dama-estrategica#organization",
+        name: "DAMA Estratégica",
+        url: "https://grupodamahealth.com.br/dama-estrategica",
       },
       {
         "@type": "EducationalOrganization",
         "@id": "https://grupodamahealth.com.br/escola#organization",
-        name: "Escola DAMA",
+        name: "DAMA Escola",
         url: "https://grupodamahealth.com.br/escola",
         sameAs: ["https://escola.grupodamahealth.com.br"],
       },
+      {
+        "@type": "Organization",
+        "@id": "https://grupodamahealth.com.br/dama-tech#organization",
+        name: "DAMA Tech",
+        url: "https://grupodamahealth.com.br/dama-tech",
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://comercial.grupodamahealth.com.br/#organization",
+        name: "DAMA Secretariado Médico",
+        url: "https://comercial.grupodamahealth.com.br",
+      },
     ],
+
     url: ORGANIZACAO.site,
     logo: {
       "@type": "ImageObject",
