@@ -1,8 +1,7 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import damaQueen from "@/assets/dama-queen.webp";
-
-const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
 export function ClosingCTA() {
   return (
@@ -29,7 +28,8 @@ export function ClosingCTA() {
             seus resultados no longo prazo.
           </p>
           <p className="mx-auto mt-3 max-w-xl text-base text-white/60 md:text-lg">
-            Descubra como a DAMA pode alavancar o seu faturamento ainda esse ano.
+            O Grupo DAMA Health é uma Operação Comercial Estratégica para
+            Médicos. Estrutura, método e dados para consultórios particulares.
           </p>
         </Reveal>
 
@@ -37,14 +37,9 @@ export function ClosingCTA() {
           delay={120}
           className="mt-14 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
         >
-          <a
-            href={PARCERIA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-gold"
-          >
-            Conhecer a operação <ArrowRight className="h-4 w-4" />
-          </a>
+          <Link to="/contato" className="btn-gold">
+            Falar com a DAMA <ArrowRight className="h-4 w-4" />
+          </Link>
         </Reveal>
       </div>
     </section>

@@ -3,7 +3,6 @@ import { Reveal } from "@/components/Reveal";
 import gil from "@/assets/testimonials/gil.webp";
 import evelin from "@/assets/testimonials/evelin.webp";
 import ulyscelio from "@/assets/testimonials/ulyscelio.webp";
-import simone from "@/assets/testimonials/simone.webp";
 import brunaB from "@/assets/testimonials/bruna-bressanelli.webp";
 import mariana from "@/assets/testimonials/mariana.webp";
 import luan from "@/assets/testimonials/luan.webp";
@@ -36,12 +35,6 @@ const TESTIMONIALS: T[] = [
     specialty: "Neurocirurgião",
     text: "Tenho muito orgulho do trabalho que construímos ao longo desses 2 anos. Não canso de encher o tanque de vocês, cultura é tudo!",
     photo: ulyscelio,
-  },
-  {
-    name: "Dra. Simone Godoy",
-    specialty: "Pediatra",
-    text: "Desde que comecei com a DAMA, venho recebendo diversos feedbacks positivos dos pacientes. Minhas taxas de conversão aumentaram e eu consegui abrir agenda em mais dias e aumentar o valor da minha consulta.",
-    photo: simone,
   },
   {
     name: "Dra. Bruna Bressanelli",
