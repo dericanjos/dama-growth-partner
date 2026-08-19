@@ -250,7 +250,7 @@ function ContactPage() {
                     className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
                   >
                     DAMA Estratégica
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   Conhecer a DAMA Escola{" "}
