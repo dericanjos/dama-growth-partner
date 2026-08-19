@@ -21,6 +21,8 @@ import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as EscolaRouteImport } from './routes/escola'
 import { Route as EcossistemaRouteImport } from './routes/ecossistema'
+import { Route as DamaTechRouteImport } from './routes/dama-tech'
+import { Route as DamaEstrategicaRouteImport } from './routes/dama-estrategica'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
@@ -94,6 +96,16 @@ const EcossistemaRoute = EcossistemaRouteImport.update({
   path: '/ecossistema',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DamaTechRoute = DamaTechRouteImport.update({
+  id: '/dama-tech',
+  path: '/dama-tech',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DamaEstrategicaRoute = DamaEstrategicaRouteImport.update({
+  id: '/dama-estrategica',
+  path: '/dama-estrategica',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
@@ -160,6 +172,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
+  '/dama-estrategica': typeof DamaEstrategicaRoute
+  '/dama-tech': typeof DamaTechRoute
   '/ecossistema': typeof EcossistemaRoute
   '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
@@ -185,6 +199,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
+  '/dama-estrategica': typeof DamaEstrategicaRoute
+  '/dama-tech': typeof DamaTechRoute
   '/ecossistema': typeof EcossistemaRoute
   '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
@@ -212,6 +228,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
+  '/dama-estrategica': typeof DamaEstrategicaRoute
+  '/dama-tech': typeof DamaTechRoute
   '/ecossistema': typeof EcossistemaRoute
   '/escola': typeof EscolaRoute
   '/faq': typeof FaqRoute
@@ -240,6 +258,8 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/contato'
+    | '/dama-estrategica'
+    | '/dama-tech'
     | '/ecossistema'
     | '/escola'
     | '/faq'
@@ -265,6 +285,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contato'
+    | '/dama-estrategica'
+    | '/dama-tech'
     | '/ecossistema'
     | '/escola'
     | '/faq'
@@ -291,6 +313,8 @@ export interface FileRouteTypes {
     | '/'
     | '/blog'
     | '/contato'
+    | '/dama-estrategica'
+    | '/dama-tech'
     | '/ecossistema'
     | '/escola'
     | '/faq'
@@ -318,6 +342,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
+  DamaEstrategicaRoute: typeof DamaEstrategicaRoute
+  DamaTechRoute: typeof DamaTechRoute
   EcossistemaRoute: typeof EcossistemaRoute
   EscolaRoute: typeof EscolaRoute
   FaqRoute: typeof FaqRoute
@@ -422,6 +448,20 @@ declare module '@tanstack/react-router' {
       path: '/ecossistema'
       fullPath: '/ecossistema'
       preLoaderRoute: typeof EcossistemaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dama-tech': {
+      id: '/dama-tech'
+      path: '/dama-tech'
+      fullPath: '/dama-tech'
+      preLoaderRoute: typeof DamaTechRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dama-estrategica': {
+      id: '/dama-estrategica'
+      path: '/dama-estrategica'
+      fullPath: '/dama-estrategica'
+      preLoaderRoute: typeof DamaEstrategicaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -530,6 +570,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
+  DamaEstrategicaRoute: DamaEstrategicaRoute,
+  DamaTechRoute: DamaTechRoute,
   EcossistemaRoute: EcossistemaRoute,
   EscolaRoute: EscolaRoute,
   FaqRoute: FaqRoute,

@@ -16,6 +16,25 @@ const ESCOLA_JSONLD = {
   sameAs: ["https://escola.grupodamahealth.com.br"],
 };
 
+const ESCOLA_SERVICE_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://grupodamahealth.com.br/escola#service",
+  name: "DAMA Escola",
+  url: "https://grupodamahealth.com.br/escola",
+  provider: { "@id": "https://grupodamahealth.com.br/#organization" },
+  description:
+    "Formação Secretária D.A.M.A: formação de profissionais de atendimento do mercado médico com o método D.A.M.A.",
+  areaServed: { "@type": "Country", name: "BR" },
+  serviceType: "Formação de profissionais de atendimento do mercado médico",
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "Profissionais de saúde com consultório particular e profissionais de atendimento da saúde privada",
+  },
+};
+
+
 const TITLE = "Escola DAMA | A vertical educacional do Grupo DAMA Health";
 const DESCRIPTION =
   "A Escola DAMA forma a secretária de consultório médico com o método D.A.M.A. Conheça a vertical educacional do Grupo DAMA Health.";
@@ -33,7 +52,10 @@ export const Route = createFileRoute("/escola")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/escola" }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(ESCOLA_JSONLD) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(ESCOLA_JSONLD) },
+      { type: "application/ld+json", children: JSON.stringify(ESCOLA_SERVICE_JSONLD) },
+    ],
   }),
   component: EscolaPage,
 });
@@ -296,18 +318,17 @@ function EscolaPage() {
                 A Escola DAMA é a vertical educacional do Grupo DAMA Health. O método é o
                 mesmo que a operação pratica. O que muda é quem passa a executá-lo.
               </p>
-              <p>
-                <a
-                  href="https://escola.grupodamahealth.com.br"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--gold-deep)] underline underline-offset-4 hover:opacity-80"
-                >
-                  Conhecer a Formação Secretária D.A.M.A <span aria-hidden>→</span>
-                </a>
-              </p>
             </div>
+            <a
+              href="https://escola.grupodamahealth.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold mt-8"
+            >
+              Conhecer a Formação Secretária D.A.M.A <span aria-hidden>→</span>
+            </a>
           </Reveal>
+
         </div>
       </section>
     </>

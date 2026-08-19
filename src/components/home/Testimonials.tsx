@@ -9,7 +9,7 @@ import mariana from "@/assets/testimonials/mariana.webp";
 import luan from "@/assets/testimonials/luan.webp";
 import brunaP from "@/assets/testimonials/bruna-porto.webp";
 import joao from "@/assets/testimonials/joao.webp";
-import larissa from "@/assets/testimonials/larissa.webp";
+
 
 interface T {
   name: string;
@@ -73,12 +73,6 @@ const TESTIMONIALS: T[] = [
     text: "Vocês são incríveis!",
     photo: joao,
   },
-  {
-    name: "Dra. Larissa Quitude",
-    specialty: "Pediatra",
-    text: "Jessica, bom dia! Só para deixar você e a equipe cientes: iniciamos há 1 mês e, ontem, quando fui contabilizar, percebi que, mesmo ainda estando na metade do mês, já alcançamos o melhor faturamento do consultório até agora. Queria agradecer a vocês pelo trabalho e dedicação. Estou muito feliz com os resultados que já estamos conquistando juntas.",
-    photo: larissa,
-  },
 ];
 
 export function Testimonials() {
@@ -100,7 +94,11 @@ export function Testimonials() {
             <Reveal
               key={t.name}
               delay={(i % 3) * 90}
-              className="card-dama group flex flex-col p-7 hover:[&]:[transform:translateY(-3px)] hover:border-[color-mix(in_oklab,var(--gold)_50%,var(--border))]"
+              className={`card-dama group flex flex-col p-7 hover:[&]:[transform:translateY(-3px)] hover:border-[color-mix(in_oklab,var(--gold)_50%,var(--border))] ${
+                i === TESTIMONIALS.length - 1 && TESTIMONIALS.length % 2 === 1
+                  ? "md:col-span-2 lg:col-span-1"
+                  : ""
+              }`}
             >
               <Quote className="h-7 w-7 text-[var(--gold)]" strokeWidth={1.5} />
               <p className="mt-5 flex-1 text-[14.5px] leading-relaxed text-[var(--text-secondary)]">
