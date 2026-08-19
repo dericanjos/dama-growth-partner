@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Headset, LineChart, Target, Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { StatsBand } from "@/components/home/StatsBand";
@@ -293,6 +293,41 @@ function DamaEstrategicaPage() {
                 barato para os dois lados do que descobrir depois.
               </p>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* NESTA SEÇÃO */}
+      <section className="bg-[var(--cream)] pb-24 md:pb-28">
+        <div className="container-dama mx-auto max-w-3xl">
+          <Reveal>
+            <h2 className="heading-display text-[26px] leading-[1.2] text-[var(--navy)] md:text-[38px]">
+              Nesta seção
+            </h2>
+            <ul className="mt-8 space-y-6 list-none">
+              <li>
+                <Link
+                  to="/dama-estrategica/como-funciona"
+                  className="font-medium text-[var(--navy)] underline-offset-4 hover:underline"
+                >
+                  Como funciona a implantação <span aria-hidden>&rarr;</span>
+                </Link>
+                <p className="mt-2 text-[15.5px] leading-[1.8] text-[var(--text-secondary)]">
+                  Do contrato ao go-live, etapa por etapa, com dono e prazo.
+                </p>
+              </li>
+              <li>
+                <Link
+                  to="/dama-estrategica/para-quem"
+                  className="font-medium text-[var(--navy)] underline-offset-4 hover:underline"
+                >
+                  Para quem esta operação foi construída <span aria-hidden>&rarr;</span>
+                </Link>
+                <p className="mt-2 text-[15.5px] leading-[1.8] text-[var(--text-secondary)]">
+                  Os critérios de entrada, e os de recusa.
+                </p>
+              </li>
+            </ul>
           </Reveal>
         </div>
       </section>
