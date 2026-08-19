@@ -17,6 +17,13 @@ export const Route = createFileRoute("/glossario")({
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/glossario" },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Glossário de Operação Comercial Médica" },
+      {
+        name: "twitter:description",
+        content:
+          "Termos essenciais de operação comercial para consultórios médicos.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/glossario" }],
   }),

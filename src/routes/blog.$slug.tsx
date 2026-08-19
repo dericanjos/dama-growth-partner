@@ -51,6 +51,8 @@ export const Route = createFileRoute("/blog/$slug")({
         { name: "description", content: desc },
         { property: "og:title", content: post.title },
         { property: "og:description", content: desc },
+        { name: "twitter:title", content: post.title },
+        { name: "twitter:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
         ...(tags.length > 0 ? [{ name: "keywords", content: tags.join(", ") }] : []),
