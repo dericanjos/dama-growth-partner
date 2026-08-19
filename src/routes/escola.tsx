@@ -16,6 +16,25 @@ const ESCOLA_JSONLD = {
   sameAs: ["https://escola.grupodamahealth.com.br"],
 };
 
+const ESCOLA_SERVICE_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://grupodamahealth.com.br/escola#service",
+  name: "DAMA Escola",
+  url: "https://grupodamahealth.com.br/escola",
+  provider: { "@id": "https://grupodamahealth.com.br/#organization" },
+  description:
+    "Formação Secretária D.A.M.A: formação de profissionais de atendimento do mercado médico com o método D.A.M.A.",
+  areaServed: { "@type": "Country", name: "BR" },
+  serviceType: "Formação de profissionais de atendimento do mercado médico",
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "Profissionais de saúde com consultório particular e profissionais de atendimento da saúde privada",
+  },
+};
+
+
 const TITLE = "Escola DAMA | A vertical educacional do Grupo DAMA Health";
 const DESCRIPTION =
   "A Escola DAMA forma a secretária de consultório médico com o método D.A.M.A. Conheça a vertical educacional do Grupo DAMA Health.";
