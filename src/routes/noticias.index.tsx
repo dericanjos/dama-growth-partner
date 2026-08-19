@@ -117,15 +117,33 @@ export const Route = createFileRoute("/noticias/")({
   component: NewsPage,
 });
 
+/** Cabeçalhos de bloco que não devem aparecer no resumo do card. */
+const BLOCK_HEADINGS =
+  /^(em resumo|em n[úu]meros|perguntas frequentes|refer[êe]ncias|fonte oficial)\s*:?\s*$/i;
+
 function excerpt(text: string, max = 200) {
-  const plain = text
+  const body = text
     .replace(/```[\s\S]*?```/g, "")
-    .replace(/[#*_`>~\-]/g, "")
+    .split("\n")
+    .map((line) =>
+      line
+        .replace(/^\s{0,3}#{1,6}\s*/, "")
+        .replace(/\*\*(.*?)\*\*/g, "$1")
+        .trim(),
+    )
+    .filter((line) => line.length > 0 && !BLOCK_HEADINGS.test(line.replace(/[*_#]/g, "").trim()));
+
+  const first = body.findIndex((line) => line.replace(/[^\wÀ-ÿ]/g, "").length > 40);
+  const plain = body
+    .slice(first === -1 ? 0 : first)
+    .join(" ")
     .replace(/\[(.*?)\]\(.*?\)/g, "$1")
+    .replace(/[#*_`>~]/g, "")
     .replace(/\s+/g, " ")
     .trim();
   return plain.length > max ? `${plain.slice(0, max).trim()}…` : plain;
 }
+
 
 interface LoaderData {
   items: NewsArticleListItem[];
