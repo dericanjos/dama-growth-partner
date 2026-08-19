@@ -94,7 +94,11 @@ export function Testimonials() {
             <Reveal
               key={t.name}
               delay={(i % 3) * 90}
-              className="card-dama group flex flex-col p-7 hover:[&]:[transform:translateY(-3px)] hover:border-[color-mix(in_oklab,var(--gold)_50%,var(--border))]"
+              className={`card-dama group flex flex-col p-7 hover:[&]:[transform:translateY(-3px)] hover:border-[color-mix(in_oklab,var(--gold)_50%,var(--border))] ${
+                i === TESTIMONIALS.length - 1 && TESTIMONIALS.length % 2 === 1
+                  ? "md:col-span-2 lg:col-span-1"
+                  : ""
+              }`}
             >
               <Quote className="h-7 w-7 text-[var(--gold)]" strokeWidth={1.5} />
               <p className="mt-5 flex-1 text-[14.5px] leading-relaxed text-[var(--text-secondary)]">
