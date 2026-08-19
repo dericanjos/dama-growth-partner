@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { organizationSchema } from "@/config/organizacao";
 import { Hero } from "@/components/home/Hero";
 import { WhoWeAreShort } from "@/components/home/WhoWeAreShort";
-import { SolutionOverview } from "@/components/home/SolutionOverview";
 import { MethodOverview } from "@/components/home/MethodOverview";
 import { VerticalsOverview } from "@/components/home/VerticalsOverview";
 import { BlogHighlights } from "@/components/home/BlogHighlights";
@@ -72,7 +71,6 @@ function HomePage() {
     <>
       <Hero />
       <WhoWeAreShort />
-      <SolutionOverview />
       <MethodOverview />
       <VerticalsOverview />
       <BlogHighlights />
