@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
@@ -89,16 +89,16 @@ const VALUES = [
   { icon: ShieldCheck, label: "Responsabilidade", text: "Cuidamos dos detalhes como quem cuida do próprio negócio." },
   { icon: Handshake, label: "Confiabilidade", text: "Médico parceiro dorme tranquilo porque sabe que pode confiar na nossa equipe." },
   { icon: Sparkles, label: "Honestidade", text: "A verdade é inegociável, mesmo quando exige conversas difíceis." },
-  { icon: Flame, label: "Determinação", text: "Não soltamos a mão até a meta virar realidade. Aqui focamos em entregar resultado e não serviço." },
+  { icon: Flame, label: "Determinação", text: "Não soltamos a mão no meio do caminho. Aqui o compromisso é com o método aplicado até o fim, não com discurso." },
 ];
 
 const TIMELINE = [
   { year: "2022", title: "Fundação", text: "Jéssica Anjos cria a DAMA como time de atendimento comercial para consultórios médicos." },
-  { year: "2023", title: "Primeiros parceiros", text: "Os primeiros médicos parceiros validam o método. As taxas de conversão dobram." },
+  { year: "2023", title: "Primeiros parceiros", text: "Os primeiros médicos parceiros validam o método. A operação passa a rodar com indicadores semanais e correção de rota." },
   { year: "2024", title: "Expansão nacional", text: "A operação ultrapassa fronteiras estaduais. O time interno cresce e o marketing passa a integrar a nossa solução." },
   { year: "2025", title: "Operação Integrada", text: "Operação Comercial, Growth, Marketing Médico e Tecnologia Avançada passam a operar de forma unificada. Nasce o ecossistema estratégico de soluções do Grupo DAMA Health." },
-  { year: "2026", title: "Grupo DAMA", text: "+90 médicos parceiros, presença em +16 Estados e +25 mil consultas agendadas. O Grupo DAMA se consolida como referência altamente indicada pelos seus clientes e inicia sua fase de expansão nacional." },
-  { year: "2027", title: "Expansão do Ecossistema", text: "Novas verticais passam a integrar o Grupo DAMA, ampliando a estrutura de soluções estratégicas para médicos em todo o Brasil a fim de potencializar os seus resultados." },
+  { year: "2026", title: "Grupo DAMA", text: "Até agosto de 2026: +90 médicos parceiros, presença em +16 Estados e +25 mil consultas agendadas. As três verticais passam a existir formalmente: DAMA Estratégica, DAMA Escola e DAMA Tech. O Grupo DAMA se consolida como referência altamente indicada pelos seus clientes e inicia sua fase de expansão nacional." },
+  { year: "2027", title: "Expansão do Ecossistema", text: "Projeção para 2027: novas frentes passam a integrar o Grupo DAMA, ampliando a estrutura de soluções estratégicas para médicos em todo o Brasil a fim de potencializar os seus resultados." },
 ];
 
 function AboutPage() {
@@ -268,14 +268,9 @@ function AboutPage() {
             Quer entender como isso funciona na prática? Fale diretamente com a nossa equipe.
           </p>
           <div className="mt-10 flex items-center justify-center">
-            <a
-              href="https://comercial.grupodamahealth.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold"
-            >
-              Quero ser parceiro <ArrowRight className="h-4 w-4" />
-            </a>
+            <Link to="/contato" className="btn-gold">
+              Falar com a DAMA <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

@@ -26,6 +26,50 @@ type NavItem = { to: string; label: string };
 
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
+/**
+ * O CTA do cabeçalho depende da rota. Só a página da vertical comercial
+ * (/dama-estrategica) serve CTA de compra; o núcleo institucional serve
+ * um convite de conversa.
+ */
+const CTA_COMPRA_ROTAS = new Set(["/dama-estrategica"]);
+
+function headerCta(pathname: string) {
+  const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  return CTA_COMPRA_ROTAS.has(path)
+    ? { label: "Seja Parceiro", href: PARCERIA_URL, external: true as const }
+    : { label: "Falar com a DAMA", href: "/contato", external: false as const };
+}
+
+function HeaderCta({
+  pathname,
+  className,
+  onNavigate,
+}: {
+  pathname: string;
+  className: string;
+  onNavigate?: () => void;
+}) {
+  const cta = headerCta(pathname);
+  if (cta.external) {
+    return (
+      <a
+        href={cta.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onNavigate}
+        className={className}
+      >
+        {cta.label} <span aria-hidden>&rarr;</span>
+      </a>
+    );
+  }
+  return (
+    <Link to={cta.href} onClick={onNavigate} className={className}>
+      {cta.label} <span aria-hidden>&rarr;</span>
+    </Link>
+  );
+}
+
 const TRIGGER_CLASS =
   "inline-flex items-center gap-1 whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] transition-colors hover:text-white";
 
@@ -281,14 +325,10 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden md:block shrink-0">
-          <a
-            href={PARCERIA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <HeaderCta
+            pathname={pathname}
             className="btn-gold !px-3 !py-2 !text-xs whitespace-nowrap lg:!px-4 lg:!text-sm"
-          >
-            Seja Parceiro <span aria-hidden>→</span>
-          </a>
+          />
         </div>
 
         {/* Mobile toggle */}
@@ -357,15 +397,11 @@ export function SiteHeader() {
             Contato
           </Link>
 
-          <a
-            href={PARCERIA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
+          <HeaderCta
+            pathname={pathname}
+            onNavigate={() => setOpen(false)}
             className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-[var(--gold)] px-6 py-3.5 text-base font-medium text-[var(--navy)]"
-          >
-            Seja Parceiro <span aria-hidden>→</span>
-          </a>
+          />
         </nav>
       </div>
     </header>

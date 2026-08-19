@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Plus, X } from "lucide-react";
 
-const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 const OG_IMAGE = "https://grupodamahealth.com.br/og-image.png";
 
 type FaqItem = { id: string; q: string; a: string };
@@ -16,12 +15,12 @@ const FAQS: FaqItem[] = [
   {
     id: "preco",
     q: "Quanto custa a parceria?",
-    a: "Cada parceria é montada de forma personalizada, então o investimento varia bastante. Depende do estágio em que o consultório está hoje, da especialidade, do volume de pacientes que a estrutura precisa atender e dos pilares que entram na operação (Operação Comercial, Growth, Marketing Médico ou os três juntos). Por isso a gente não trabalha com tabela fixa: o valor é apresentado dentro da reunião de diagnóstico, depois que conhecemos o cenário real do seu consultório. A reunião é gratuita e dá pra agendar pelo botão Seja Parceiro.",
+    a: "O investimento é definido depois do diagnóstico, ancorado na matemática do seu caso. Não trabalhamos com tabela pública nem com desconto para fechar rápido. Para conhecer a operação comercial em detalhe, veja a página da DAMA Estratégica.",
   },
   {
     id: "tempo-resultado",
     q: "Em quanto tempo eu vejo resultado?",
-    a: "Resposta honesta: depende. E qualquer empresa que prometer prazo fixo, na real, tá te enganando. O que dá pra garantir é o ritmo do método. Em geral os primeiros impactos aparecem já nas primeiras semanas, com queda de no-show e melhora na conversão dos leads. Os resultados mais estruturais, tipo aumento previsível de faturamento e construção de recorrência, costumam consolidar entre 3 e 12 meses. Esse ritmo varia conforme especialidade, região, ticket médio e o volume de pacientes que sua estrutura aguenta atender bem.",
+    a: "A DAMA não data resultado, e desconfie de quem data. O que a operação compromete é a construção: o método aplicado, a estrutura rodando e a leitura honesta da evolução contra o seu próprio ponto de partida. O que dá para dizer com precisão é o que começa a existir desde a primeira semana: tempo de resposta medido, follow-up acontecendo, falta sendo remarcada e número registrado. O resto depende da sua especialidade, do seu ticket e do que já existia antes.",
   },
   {
     id: "especialidades",
@@ -46,7 +45,7 @@ const FAQS: FaqItem[] = [
   {
     id: "qualidade-atendimento",
     q: "Como sei que o atendimento aos meus pacientes vai manter a qualidade que eu construí?",
-    a: "A gente cuida disso em três frentes que andam juntas. Primeiro, o treinamento: o time DAMA passa por imersão no método D.A.M.A. antes de assumir qualquer parceria, com scripts adaptados à sua especialidade e ao tom da sua marca. Depois vem a auditoria contínua dos atendimentos, feita por cliente oculto, escuta de chamadas e revisão das conversas. Por último, você tem visibilidade dos atendimentos em tempo real e canal direto com quem está cuidando do seu consultório no dia a dia. Como referência, num teste de cliente oculto recente, o atendimento de um dos nossos parceiros foi avaliado como o melhor entre todos os consultórios testados.",
+    a: "A gente cuida disso em três frentes que andam juntas. Primeiro, o treinamento: o time DAMA passa por imersão no método D.A.M.A. antes de assumir qualquer parceria, com scripts adaptados à sua especialidade e ao tom da sua marca. Depois vem a auditoria contínua dos atendimentos, feita por cliente oculto, escuta de chamadas e revisão das conversas. Por último, você tem visibilidade dos atendimentos em tempo real e canal direto com quem está cuidando do seu consultório no dia a dia.",
   },
   {
     id: "cfm",
@@ -81,13 +80,13 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Tire as principais dúvidas sobre o Grupo DAMA: como funciona, preço, especialidades atendidas, qualidade do atendimento, normas do CFM e mais.",
+          "Tire as principais dúvidas sobre o Grupo DAMA: como funciona, método, especialidades atendidas, qualidade do atendimento, normas do CFM e mais.",
       },
       { property: "og:title", content: "Perguntas Frequentes (FAQ) | Grupo DAMA" },
       {
         property: "og:description",
         content:
-          "Tire as principais dúvidas sobre o Grupo DAMA: como funciona, preço, especialidades atendidas, qualidade do atendimento, normas do CFM e mais.",
+          "Tire as principais dúvidas sobre o Grupo DAMA: como funciona, método, especialidades atendidas, qualidade do atendimento, normas do CFM e mais.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://grupodamahealth.com.br/faq" },
@@ -99,7 +98,7 @@ export const Route = createFileRoute("/faq")({
       {
         name: "twitter:description",
         content:
-          "Tire as principais dúvidas sobre o Grupo DAMA: como funciona, preço, especialidades, CFM e mais.",
+          "Tire as principais dúvidas sobre o Grupo DAMA: como funciona, método, especialidades, CFM e mais.",
       },
       { name: "twitter:image", content: OG_IMAGE },
     ],
@@ -180,18 +179,12 @@ function FaqPage() {
               Não encontrou sua dúvida aqui?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-[var(--text-secondary)]">
-              Fale direto com a nossa equipe. A reunião de diagnóstico é gratuita e tira todas as
-              dúvidas que você ainda tem.
+              Fale direto com a nossa equipe e tire as dúvidas que ainda restaram.
             </p>
             <div className="mt-6">
-              <a
-                href={PARCERIA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold"
-              >
-                Quero ser parceiro <span aria-hidden>→</span>
-              </a>
+              <Link to="/contato" className="btn-gold">
+                Falar com a DAMA <span aria-hidden>→</span>
+              </Link>
             </div>
             <p className="mt-5 text-sm text-[var(--text-muted)]">
               Prefere outro canal?{" "}
