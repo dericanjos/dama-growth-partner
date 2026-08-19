@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import jessicaPhoto from "@/assets/jessica-anjos.webp";
 
 const ABOUT_ORG_JSONLD = {
   "@context": "https://schema.org",
@@ -164,7 +163,7 @@ function AboutPage() {
             <div className="grid md:grid-cols-[260px_1fr]">
               <div className="hidden bg-[var(--navy)] md:block">
                 <img
-                  src={jessicaPhoto}
+                  src="/autores/jessica-anjos.webp"
                   alt="Jéssica Anjos, Fundadora do Grupo DAMA"
                   width={484}
                   height={600}
