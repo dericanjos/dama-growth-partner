@@ -11,6 +11,7 @@ const INSTITUTIONAL: Array<{ path: string; label: string; line: string }> = [
   { path: "/solucao", label: "Nossa Solução", line: "O que está incluído na operação comercial, growth e marketing médico." },
   { path: "/metodo", label: "Método", line: "Como funciona o processo comercial estruturado, etapa por etapa." },
   { path: "/escola", label: "Escola DAMA", line: "Vertical educacional do Grupo DAMA Health, dedicada à formação de profissionais de atendimento do mercado médico." },
+  { path: "/ecossistema", label: "Ecossistema", line: "As frentes do Grupo DAMA Health: institucional, operação comercial, Escola DAMA e conteúdo, com o público de cada uma." },
   { path: "/contato", label: "Contato", line: "Canais oficiais de contato com o setor comercial." },
   { path: "/faq", label: "Perguntas Frequentes", line: "Respostas às dúvidas mais comuns de médicos parceiros." },
   { path: "/glossario", label: "Glossário", line: "Definição de 20 termos do mercado médico e da saúde suplementar." },
