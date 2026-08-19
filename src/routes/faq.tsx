@@ -45,7 +45,7 @@ const FAQS: FaqItem[] = [
   {
     id: "qualidade-atendimento",
     q: "Como sei que o atendimento aos meus pacientes vai manter a qualidade que eu construí?",
-    a: "A gente cuida disso em três frentes que andam juntas. Primeiro, o treinamento: o time DAMA passa por imersão no método D.A.M.A. antes de assumir qualquer parceria, com scripts adaptados à sua especialidade e ao tom da sua marca. Depois vem a auditoria contínua dos atendimentos, feita por cliente oculto, escuta de chamadas e revisão das conversas. Por último, você tem visibilidade dos atendimentos em tempo real e canal direto com quem está cuidando do seu consultório no dia a dia.",
+    a: "A gente cuida disso em três frentes que andam juntas. Primeiro, o treinamento: o time DAMA passa por imersão no método D.A.M.A. antes de assumir qualquer parceria, com scripts adaptados à sua especialidade e ao tom da sua marca. Depois vem a auditoria contínua dos atendimentos, feita por avaliação anônima de atendimento, escuta de chamadas e revisão das conversas. Por último, você tem visibilidade dos atendimentos em tempo real e canal direto com quem está cuidando do seu consultório no dia a dia.",
   },
   {
     id: "cfm",
