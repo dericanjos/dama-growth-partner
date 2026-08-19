@@ -70,6 +70,13 @@ export const Route = createFileRoute("/sobre")({
           "A história do Grupo DAMA e da fundadora Jéssica Anjos — autoridade, método e atendimento humanizado.",
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/sobre" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Quem Somos | Grupo DAMA" },
+      {
+        name: "twitter:description",
+        content:
+          "A história do Grupo DAMA e da fundadora Jéssica Anjos — autoridade, método e atendimento humanizado.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/sobre" }],
     scripts: [

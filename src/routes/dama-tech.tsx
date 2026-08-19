@@ -36,6 +36,8 @@ export const Route = createFileRoute("/dama-tech")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: PAGE_URL },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: PAGE_URL }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(SERVICE_JSONLD) }],

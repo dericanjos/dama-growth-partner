@@ -44,6 +44,7 @@ export const Route = createFileRoute("/")({
           "Operação Comercial Estratégica para Médicos. O Grupo DAMA Health estrutura a frente comercial de consultórios particulares com método, pessoas, tecnologia e dados.",
       },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Grupo DAMA | Solução Completa para Médicos" },
       {
         name: "twitter:description",
         content:

@@ -17,6 +17,13 @@ export const Route = createFileRoute("/glossario")({
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/glossario" },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Glossário de Operação Comercial Médica" },
+      {
+        name: "twitter:description",
+        content:
+          "Termos essenciais de operação comercial para consultórios médicos.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/glossario" }],
   }),
@@ -246,17 +253,15 @@ function GlossarioPage() {
               Quer entender como esses conceitos se aplicam ao seu consultório?
             </h2>
             <p className="mx-auto mt-3 max-w-md text-[15px] text-white/70">
-              Conheça como a DAMA trabalha a operação comercial de médicos
-              parceiros em 16 estados.
+              Quer entender como a operação comercial funciona na prática?{" "}
+              <Link
+                to="/dama-estrategica"
+                className="text-[var(--gold)] underline underline-offset-4 hover:text-[var(--gold-light)]"
+              >
+                Veja a página da DAMA Estratégica
+              </Link>
+              .
             </p>
-            <a
-              href="https://comercial.grupodamahealth.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gold mt-7"
-            >
-              Conhecer a Parceria DAMA →
-            </a>
             <div className="mt-4">
               <Link
                 to="/blog"

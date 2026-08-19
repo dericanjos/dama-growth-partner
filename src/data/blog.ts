@@ -479,7 +479,7 @@ A escolha entre treinar e terceirizar não é uma questão de certo ou errado. �
 
 Se você quer entender qual desses caminhos faz mais sentido pro seu consultório hoje, a DAMA pode te mostrar como a operação comercial estruturada funciona na prática.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 `,
   },
   {
@@ -597,7 +597,7 @@ A transição não é fácil. Mas pra maioria dos médicos que atendemos na DAMA
 
 Se você está considerando reduzir ou sair do convênio, o primeiro passo é entender quanto da sua operação realmente depende dele e quanto você precisa construir antes de cortar. Na DAMA, essa análise é parte do processo.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -719,7 +719,7 @@ Se a taxa de faltas do seu consultório está acima de 15%, vale implementar pel
 
 E se você quer estruturar a operação comercial completa, da captação à consulta confirmada, a DAMA pode te mostrar como isso funciona na prática.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -844,7 +844,7 @@ Se você se identificou com 3 ou mais desses sinais, o próximo passo não é in
 
 Na DAMA, isso é o que o [Método D.A.M.A](https://grupodamahealth.com.br/metodo) estrutura. Cada consultório tem uma realidade diferente, e o processo é adaptado ao momento de cada um.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -963,7 +963,7 @@ A Resolução 2.336/2023 abriu espaço pra muito mais do que a maioria dos médi
 
 Se você quer entender como construir uma presença digital e uma operação comercial que funcionem dentro das normas e gerem resultado real, conheça como a DAMA trabalha.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -1089,7 +1089,7 @@ A pergunta não é "quanto custa terceirizar." A pergunta é "quanto está custa
 
 Se o seu consultório apresenta 3 ou mais dos sinais que listei, vale entender como uma operação comercial terceirizada funciona na prática e se faz sentido pro momento do seu consultório.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -1212,7 +1212,7 @@ Se você nunca fez essa conta pro seu consultório, esse é o exercício mais va
 
 E se quiser entender como uma operação comercial se encaixa na realidade do seu consultório, a gente pode te mostrar.
 
-[Conheça como funciona →](https://comercial.grupodamahealth.com.br)
+[Conheça como funciona →](/dama-estrategica)
 
 ## Referências
 
@@ -1325,7 +1325,7 @@ O marketing é uma peça fundamental. Mas é só uma peça. Sem as outras peças
 
 Se o seu consultório investe em marketing mas a agenda continua com espaços vazios, o problema provavelmente não é o marketing. É o que acontece entre o lead e a consulta. Na DAMA, a gente entende onde o funil trava antes de propor qualquer solução.
 
-[Conheça como funciona →](https://comercial.grupodamahealth.com.br)
+[Conheça como funciona →](/dama-estrategica)
 
 ## Referências
 
@@ -1436,7 +1436,7 @@ Esse é o ponto. Operação comercial não é um luxo de clínica grande. É a d
 
 Se você percebeu que o seu consultório não tem essas etapas estruturadas, o próximo passo é entender como uma operação comercial se encaixa na sua realidade. Cada consultório tem um momento diferente, e a solução precisa fazer sentido pra esse momento.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -1570,7 +1570,7 @@ Se não tem site, esse é um dos investimentos com maior retorno de longo prazo 
 
 E se quiser estruturar a presença digital inteira (site, Google, redes sociais e operação comercial que converte), a DAMA pode te mostrar como isso funciona na prática.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -1689,7 +1689,7 @@ Se o seu consultório quer investir em tráfego pago mas não tem certeza de que
 
 Na DAMA, a gente estrutura o processo inteiro antes de ligar a torneira do tráfego. Porque quando a torneira abre e a operação está pronta, o resultado aparece rápido.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -1804,7 +1804,7 @@ Se o seu consultório ainda não tem Google Meu Negócio, esse é o passo mais u
 
 E se quiser ir além do básico, construindo presença orgânica com SEO, blog otimizado e operação comercial que converte, a DAMA pode te mostrar como isso funciona.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -1903,7 +1903,7 @@ Na DAMA, o [Método D.A.M.A](https://grupodamahealth.com.br/metodo) estrutura ex
 
 Se você leu até aqui, já entende mais sobre marketing médico do que 41% dos consultórios que não investem nada. O próximo passo é decidir se vai fazer sozinho (começando pelos 3 passos básicos) ou se quer alguém que cuide disso pra você.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 
@@ -2020,7 +2020,7 @@ Redes sociais são o canal mais acessível pra construir autoridade e atrair pac
 
 Se você quer estruturar a presença digital e a operação comercial do seu consultório de forma integrada, a DAMA pode te mostrar como isso funciona.
 
-[Conheça como a DAMA trabalha →](https://comercial.grupodamahealth.com.br)
+[Conheça como a DAMA trabalha →](/dama-estrategica)
 
 ## Referências
 

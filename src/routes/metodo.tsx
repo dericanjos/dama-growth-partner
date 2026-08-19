@@ -79,6 +79,13 @@ export const Route = createFileRoute("/metodo")({
           "Diagnosticar, Atrair, Marcar, Acompanhar — o método que guia a operação DAMA.",
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/metodo" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Método D.A.M.A | Grupo DAMA" },
+      {
+        name: "twitter:description",
+        content:
+          "Diagnosticar, Atrair, Marcar, Acompanhar — o método que guia a operação DAMA.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/metodo" }],
     scripts: [
