@@ -312,23 +312,36 @@ function SolutionPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* FECHO INSTITUCIONAL */}
       <section className="bg-[var(--cream)] py-24 md:py-28">
         <div className="container-dama mx-auto max-w-2xl text-center">
           <Reveal>
-            <p className="font-serif text-[20px] italic leading-[1.6] text-[var(--navy)] md:text-[26px]">
-              A operação é exclusiva e seletiva. O primeiro passo não é uma
-              proposta, é um diagnóstico: olhar os seus números junto com você e
-              mostrar onde a receita está escapando.
+            <p className="text-[16px] leading-[1.85] text-[var(--text-secondary)]">
+              As três frentes descritas aqui compõem a operação comercial da DAMA, oferecida a
+              médicos parceiros em processo seletivo próprio.
             </p>
-            <div className="mt-10 flex items-center justify-center">
-              <Link to="/contato" className="btn-gold">
-                Solicitar diagnóstico da operação <ArrowRight className="h-4 w-4" />
+            <p className="mt-6 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
+              <a
+                href="https://comercial.grupodamahealth.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
+              >
+                Conhecer a operação comercial
+              </a>
+            </p>
+            <p className="mt-3 text-[15.5px] leading-[1.85] text-[var(--text-secondary)]">
+              <Link
+                to="/contato"
+                className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
+              >
+                Falar com a DAMA
               </Link>
-            </div>
+            </p>
           </Reveal>
         </div>
       </section>
+
     </>
   );
 }
