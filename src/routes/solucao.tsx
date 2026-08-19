@@ -139,13 +139,12 @@ function SolutionPage() {
             <div className={BODY}>
               <p>
                 A vertical de tecnologia. É a infraestrutura da operação transformada
-                em produto: a plataforma que sustenta o atendimento, o aplicativo do
-                médico parceiro e o CRM.
+                em produto: a plataforma que sustenta o atendimento comercial dentro do
+                consultório, com o método embutido na rotina de quem atende.
               </p>
               <p>
-                <strong className="text-[var(--navy)]">Para quem:</strong> médicos
-                parceiros da operação, e médicos que querem a ferramenta sem
-                contratar a operação inteira.
+                <strong className="text-[var(--navy)]">Para quem:</strong> consultórios
+                que operam com a estrutura da DAMA.
               </p>
               <p>
                 <Link to="/dama-tech" className={LINK}>
