@@ -245,14 +245,12 @@ function ContactPage() {
               <ul className="mt-4 space-y-3 text-[15px] leading-[1.75] text-[var(--text-secondary)]">
                 <li>
                   Conhecer a operação comercial para consultórios{" "}
-                  <a
-                    href="https://comercial.grupodamahealth.com.br"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/dama-estrategica"
                     className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
                   >
-                    comercial.grupodamahealth.com.br
-                  </a>
+                    DAMA Estratégica
+                  </Link>
                 </li>
                 <li>
                   Conhecer a DAMA Escola{" "}
