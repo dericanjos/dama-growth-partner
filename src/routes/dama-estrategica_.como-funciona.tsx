@@ -273,8 +273,9 @@ function ComoFuncionaPage() {
 
           <Reveal className="mt-16">
             <p className="font-serif text-[19px] leading-[1.65] text-[var(--navy)] md:text-[21px]">
-              Nenhuma dessas etapas tem data de resultado prometida. O que tem data é a
-              construção.
+              Resultado não é sorte. É método. E método é isto: dezessete marcos,
+              cada um com dono, prazo e critério de pronto, e um gate que reprova quando
+              não está pronto.
             </p>
           </Reveal>
         </div>

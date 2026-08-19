@@ -6,19 +6,13 @@ import damaLogo from "@/assets/dama-logo.webp";
 const QUEM_SOMOS_LINKS = [
   { to: "/sobre", label: "A DAMA" },
   { to: "/metodo", label: "O Método D.A.M.A" },
+  { to: "/faq", label: "Perguntas Frequentes" },
 ] as const;
 
 const VERTICAL_LINKS = [
   { to: "/dama-estrategica", label: "DAMA Estratégica" },
   { to: "/escola", label: "DAMA Escola" },
   { to: "/dama-tech", label: "DAMA Tech" },
-] as const;
-
-const CONTENT_LINKS = [
-  { to: "/noticias", label: "Notícias Médicas" },
-  { to: "/blog", label: "Blog" },
-  { to: "/glossario", label: "Glossário" },
-  { to: "/faq", label: "Perguntas Frequentes" },
 ] as const;
 
 type NavItem = { to: string; label: string };
@@ -247,7 +241,6 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const contentActive = CONTENT_LINKS.some((link) => pathname.startsWith(link.to));
   const verticalActive = VERTICAL_LINKS.some((link) => pathname.startsWith(link.to));
   const quemSomosActive = QUEM_SOMOS_LINKS.some((link) => pathname.startsWith(link.to));
   const fazemosActive = verticalActive || pathname.startsWith("/solucao");
@@ -327,13 +320,21 @@ export function SiteHeader() {
             active={fazemosActive}
           />
 
-          <DesktopDropdown
-            id="desktop-content-menu"
-            label="Conteúdo"
+          <Link
             to="/noticias"
-            links={CONTENT_LINKS}
-            active={contentActive}
-          />
+            className="whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] text-white/80 transition-colors hover:text-white"
+            activeProps={{ className: "text-white font-medium" }}
+          >
+            Notícias
+          </Link>
+
+          <Link
+            to="/blog"
+            className="whitespace-nowrap text-[clamp(0.78rem,1.55vw,0.95rem)] text-white/80 transition-colors hover:text-white"
+            activeProps={{ className: "text-white font-medium" }}
+          >
+            Blog
+          </Link>
 
           <Link
             to="/contato"
@@ -398,14 +399,23 @@ export function SiteHeader() {
             onNavigate={() => setOpen(false)}
           />
 
-          <MobileAccordion
-            id="mobile-content-submenu"
-            label="Conteúdo"
+          <Link
             to="/noticias"
-            links={CONTENT_LINKS}
-            active={contentActive}
-            onNavigate={() => setOpen(false)}
-          />
+            onClick={() => setOpen(false)}
+            className="border-b border-white/5 py-4 text-lg text-white/85"
+            activeProps={{ className: "text-[var(--gold)]" }}
+          >
+            Notícias
+          </Link>
+
+          <Link
+            to="/blog"
+            onClick={() => setOpen(false)}
+            className="border-b border-white/5 py-4 text-lg text-white/85"
+            activeProps={{ className: "text-[var(--gold)]" }}
+          >
+            Blog
+          </Link>
 
           <Link
             to="/contato"
