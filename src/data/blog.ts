@@ -44,7 +44,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "migracao-pacientes-planos-saude-consultorio-particular-2026",
     seoTitle: "Migração de Pacientes dos Planos: Como o Consultório Captura",
-    metaDescription: "Pacientes estão migrando dos planos de saúde pro atendimento particular. Veja como estruturar seu consultório pra capturar essa demanda nos próximos 12 meses.",
+    metaDescription: "Pacientes estão migrando dos planos de saúde pro atendimento particular. Veja como estruturar seu consultório pra capturar essa demanda.",
     relatedSlugs: [
       "como-sair-do-convenio-viver-de-paciente-particular",
       "por-que-marketing-sozinho-nao-lota-agenda",
