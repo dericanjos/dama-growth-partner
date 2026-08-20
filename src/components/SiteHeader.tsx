@@ -11,11 +11,12 @@ const QUEM_SOMOS_LINKS = [
 
 const VERTICAL_LINKS = [
   { to: "/dama-estrategica", label: "DAMA Estratégica" },
-  { to: "/escola", label: "DAMA Escola" },
+  { to: "https://escoladama.com.br", label: "DAMA Escola", external: true },
   { to: "/dama-tech", label: "DAMA Tech" },
 ] as const;
 
-type NavItem = { to: string; label: string };
+type NavItem = { to: string; label: string; external?: boolean };
+
 
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
