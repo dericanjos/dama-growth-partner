@@ -44,7 +44,15 @@ export function SiteFooter() {
             <span className="pl-3">
               <FooterLink to="/dama-estrategica/para-quem">Para quem foi construída</FooterLink>
             </span>
-            <FooterLink to="/escola">DAMA Escola</FooterLink>
+            <a
+              href="https://escoladama.com.br"
+              target="_blank"
+              rel="noopener"
+              className="text-sm text-white/60 transition-colors hover:text-[var(--gold)]"
+            >
+              DAMA Escola
+            </a>
+
             <FooterLink to="/dama-tech">DAMA Tech</FooterLink>
             <FooterLink to="/metodo">Método</FooterLink>
             <FooterLink to="/blog">Blog</FooterLink>

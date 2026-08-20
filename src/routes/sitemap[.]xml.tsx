@@ -21,7 +21,7 @@ const STATIC_PAGES: Entry[] = [
   { loc: "/dama-estrategica", changefreq: "monthly", priority: "0.9" },
   { loc: "/dama-estrategica/como-funciona", changefreq: "monthly", priority: "0.8" },
   { loc: "/dama-estrategica/para-quem", changefreq: "monthly", priority: "0.8" },
-  { loc: "/escola", changefreq: "monthly", priority: "0.8" },
+  
   { loc: "/dama-tech", changefreq: "monthly", priority: "0.8" },
   { loc: "/metodo", changefreq: "monthly", priority: "0.8" },
   { loc: "/contato", changefreq: "yearly", priority: "0.6" },
