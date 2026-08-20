@@ -145,6 +145,8 @@ function AuthorPage() {
                       alt={n.cover_image_alt ?? n.title}
                       loading="lazy"
                       decoding="async"
+                      width={800}
+                      height={450}
                       className="h-40 w-full object-cover"
                     />
                   )}
