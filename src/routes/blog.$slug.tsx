@@ -35,7 +35,15 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Artigo | Blog · Grupo DAMA" }] };
     const { post } = loaderData;
-    const desc = (post.metaDescription && post.metaDescription.trim()) || post.excerpt.slice(0, 155);
+    const clampDesc = (text: string, max = 155) => {
+      const plain = text.replace(/\s+/g, " ").trim();
+      if (plain.length <= max) return plain;
+      const cut = plain.slice(0, max - 1);
+      const lastSpace = cut.lastIndexOf(" ");
+      const body = (lastSpace > 60 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.]+$/, "");
+      return `${body}…`;
+    };
+    const desc = clampDesc((post.metaDescription && post.metaDescription.trim()) || post.excerpt);
     const url = `https://grupodamahealth.com.br/blog/${post.slug}`;
     const authorName = post.author ?? "Deric Anjos";
     const isJessica = authorName.toLowerCase().includes("jéssica") || authorName.toLowerCase().includes("jessica");
