@@ -9,7 +9,7 @@ import { ORGANIZACAO } from "@/config/organizacao";
 
 const PAGE_URL = `${ORGANIZACAO.site}/dama-estrategica`;
 
-const TITLE = "DAMA Estratégica | Operação comercial para consultórios médicos";
+const TITLE = "DAMA Estratégica | Operação comercial para consultórios";
 const DESCRIPTION =
   "Operação comercial, growth e marketing médico em uma estrutura só, dentro do consultório do médico parceiro. Conheça a DAMA Estratégica.";
 
