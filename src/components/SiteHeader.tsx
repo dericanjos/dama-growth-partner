@@ -11,11 +11,12 @@ const QUEM_SOMOS_LINKS = [
 
 const VERTICAL_LINKS = [
   { to: "/dama-estrategica", label: "DAMA Estratégica" },
-  { to: "/escola", label: "DAMA Escola" },
+  { to: "https://escoladama.com.br", label: "DAMA Escola", external: true },
   { to: "/dama-tech", label: "DAMA Tech" },
 ] as const;
 
-type NavItem = { to: string; label: string };
+type NavItem = { to: string; label: string; external?: boolean };
+
 
 const PARCERIA_URL = "https://comercial.grupodamahealth.com.br";
 
@@ -147,18 +148,33 @@ function DesktopDropdown({
       >
         {links.map((link) => (
           <li key={link.to} role="none">
-            <Link
-              to={link.to}
-              role="menuitem"
-              tabIndex={open ? 0 : -1}
-              onClick={() => setOpen(false)}
-              className="block px-4 py-2 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
-              activeProps={{ className: "text-[var(--gold)] font-medium" }}
-            >
-              {link.label}
-            </Link>
+            {link.external ? (
+              <a
+                href={link.to}
+                target="_blank"
+                rel="noopener"
+                role="menuitem"
+                tabIndex={open ? 0 : -1}
+                onClick={() => setOpen(false)}
+                className="block px-4 py-2 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                to={link.to}
+                role="menuitem"
+                tabIndex={open ? 0 : -1}
+                onClick={() => setOpen(false)}
+                className="block px-4 py-2 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                activeProps={{ className: "text-[var(--gold)] font-medium" }}
+              >
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
+
       </ul>
     </div>
   );
@@ -220,17 +236,31 @@ function MobileAccordion({
       >
         {links.map((link) => (
           <li key={link.to}>
-            <Link
-              to={link.to}
-              tabIndex={open ? 0 : -1}
-              onClick={onNavigate}
-              className="block py-2.5 text-base text-white/75"
-              activeProps={{ className: "text-[var(--gold)]" }}
-            >
-              {link.label}
-            </Link>
+            {link.external ? (
+              <a
+                href={link.to}
+                target="_blank"
+                rel="noopener"
+                tabIndex={open ? 0 : -1}
+                onClick={onNavigate}
+                className="block py-2.5 text-base text-white/75"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                to={link.to}
+                tabIndex={open ? 0 : -1}
+                onClick={onNavigate}
+                className="block py-2.5 text-base text-white/75"
+                activeProps={{ className: "text-[var(--gold)]" }}
+              >
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
+
       </ul>
     </div>
   );

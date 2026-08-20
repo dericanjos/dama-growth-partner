@@ -16,9 +16,9 @@ const ABOUT_ORG_JSONLD = {
     },
     {
       "@type": "EducationalOrganization",
-      "@id": "https://grupodamahealth.com.br/escola#organization",
+      "@id": "https://escoladama.com.br/#organizacao",
       name: "DAMA Escola",
-      url: "https://grupodamahealth.com.br/escola",
+      url: "https://escoladama.com.br",
       sameAs: ["https://escola.grupodamahealth.com.br"],
     },
   ],

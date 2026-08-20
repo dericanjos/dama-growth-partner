@@ -33,7 +33,7 @@ const ITEMLIST_JSONLD = {
       name: "DAMA Estratégica",
       url: `${ORGANIZACAO.site}/dama-estrategica`,
     },
-    { "@type": "ListItem", position: 2, name: "DAMA Escola", url: `${ORGANIZACAO.site}/escola` },
+    { "@type": "ListItem", position: 2, name: "DAMA Escola", url: "https://escoladama.com.br" },
     { "@type": "ListItem", position: 3, name: "DAMA Tech", url: `${ORGANIZACAO.site}/dama-tech` },
   ],
 };
@@ -129,9 +129,14 @@ function SolutionPage() {
                 posição.
               </p>
               <p>
-                <Link to="/escola" className={LINK}>
+                <a
+                  href="https://escoladama.com.br"
+                  target="_blank"
+                  rel="noopener"
+                  className={LINK}
+                >
                   Conhecer a DAMA Escola
-                </Link>
+                </a>
               </p>
             </div>
           </Reveal>
