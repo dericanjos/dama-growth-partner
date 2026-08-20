@@ -43,7 +43,7 @@ export function AuthorAvatar({ name, foto, alt, className = "" }: AuthorAvatarPr
       style={{ borderColor: "var(--gold)" }}
       aria-hidden
     >
-      <span className="font-serif text-4xl tracking-[0.06em] text-[var(--gold-deep)] md:text-5xl">
+      <span className="font-serif text-4xl tracking-[0.06em] text-[var(--gold-ink)] md:text-5xl">
         {initials(name)}
       </span>
     </div>

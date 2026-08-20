@@ -53,7 +53,7 @@ function renderInline(text: string, keyPrefix: string): ReactNode[] {
         key={`${keyPrefix}-a-${i++}`}
         href={href}
         {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        className="font-medium text-[var(--gold-deep)] underline decoration-[color-mix(in_oklab,var(--gold)_50%,transparent)] underline-offset-4 transition-colors hover:text-[var(--navy)]"
+        className="font-medium text-[var(--gold-ink)] underline decoration-[color-mix(in_oklab,var(--gold)_50%,transparent)] underline-offset-4 transition-colors hover:text-[var(--navy)]"
       >
         {label}
       </a>,

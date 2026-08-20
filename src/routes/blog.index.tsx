@@ -211,7 +211,7 @@ function BlogIndex() {
                     >
                       {post.excerpt}
                     </p>
-                    <span className="mt-auto pt-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                    <span className="mt-auto pt-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
                       Ler artigo →
                     </span>
                   </div>

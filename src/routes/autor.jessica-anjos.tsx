@@ -163,7 +163,7 @@ function AuthorPublications({
                         {formatDateBR(n.published_at)}
                       </span>
                     </div>
-                    <h3 className="font-serif text-[17px] font-semibold leading-[1.35] text-[var(--navy)] group-hover:text-[var(--gold-deep)]">
+                    <h3 className="font-serif text-[17px] font-semibold leading-[1.35] text-[var(--navy)] group-hover:text-[var(--gold-ink)]">
                       {n.title}
                     </h3>
                   </div>
@@ -200,7 +200,7 @@ function AuthorPublications({
                   <p className="mt-3 text-[12px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
                     {formatDateBR(p.date)}
                   </p>
-                  <span className="mt-4 inline-block text-xs font-semibold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                  <span className="mt-4 inline-block text-xs font-semibold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
                     Ler →
                   </span>
                 </Link>

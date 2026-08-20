@@ -95,8 +95,12 @@ function ContatoForm() {
 
   if (status === "done") {
     return (
-      <div className="flex items-start gap-4 rounded-xl border border-[var(--gold)]/40 bg-[var(--gold-soft)] p-6">
-        <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-[var(--gold-deep)]" />
+      <div
+        role="status"
+        aria-live="polite"
+        className="flex items-start gap-4 rounded-xl border border-[var(--gold)]/40 bg-[var(--gold-soft)] p-6"
+      >
+        <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-[var(--gold-ink)]" />
         <p className="text-[15.5px] leading-[1.75] text-[var(--navy)]">{mensagemOk}</p>
       </div>
     );
@@ -161,7 +165,11 @@ function ContatoForm() {
           .
         </span>
       </label>
-      {erro ? <p className="text-[13.5px] text-red-700">{erro}</p> : null}
+      {erro ? (
+        <p role="alert" className="text-[13.5px] text-red-700">
+          {erro}
+        </p>
+      ) : null}
       <button
         type="submit"
         disabled={status === "sending"}
@@ -266,7 +274,7 @@ function ContactPage() {
                   Conhecer a operação comercial para consultórios{" "}
                   <Link
                     to="/dama-estrategica"
-                    className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
+                    className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-ink)]"
                   >
                     DAMA Estratégica
                   </Link>
@@ -277,7 +285,7 @@ function ContactPage() {
                     href="https://escoladama.com.br"
                     target="_blank"
                     rel="noopener"
-                    className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
+                    className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-ink)]"
                   >
                     escoladama.com.br
                   </a>
@@ -286,7 +294,7 @@ function ContactPage() {
                   Ler o que publicamos sobre o mercado médico{" "}
                   <Link
                     to="/noticias"
-                    className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
+                    className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-ink)]"
                   >
                     /noticias
                   </Link>

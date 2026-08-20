@@ -66,7 +66,7 @@ export const Route = createFileRoute("/solucao")({
 const H2 = "heading-display text-[26px] leading-[1.2] text-[var(--navy)] md:text-[36px]";
 const BODY = "mt-6 space-y-5 text-[16px] leading-[1.85] text-[var(--text-secondary)]";
 const LINK =
-  "text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]";
+  "text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-ink)]";
 
 function SolutionPage() {
   return (

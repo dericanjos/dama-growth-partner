@@ -315,7 +315,7 @@ function NewsArticlePage() {
               aria-labelledby="faq-heading"
               className="mt-12 rounded-[12px] border border-[var(--border)] bg-white p-6 md:p-8"
             >
-              <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+              <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
                 ❓ FAQ
               </div>
               <h2
@@ -351,7 +351,7 @@ function NewsArticlePage() {
               borderLeftColor: "var(--gold)",
             }}
           >
-            <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+            <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
               📋 Fonte oficial
             </div>
             <p className="text-[14.5px] leading-[1.65] text-[var(--navy)]/85">
@@ -361,7 +361,7 @@ function NewsArticlePage() {
                   href={article.source_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-semibold text-[var(--gold-deep)] underline-offset-2 hover:underline"
+                  className="inline-flex items-center gap-1 font-semibold text-[var(--gold-ink)] underline-offset-2 hover:underline"
                 >
                   {article.source_name}
                   <ExternalLink className="h-3.5 w-3.5" />
@@ -376,7 +376,7 @@ function NewsArticlePage() {
 
           {tags.length > 0 && (
             <div className="mt-10">
-              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
                 Tópicos
               </div>
               <ul className="flex flex-wrap gap-2">
@@ -400,7 +400,7 @@ function NewsArticlePage() {
             if (latestBlog.length === 0) return null;
             return (
               <aside className="mt-10 rounded-[12px] border border-[var(--border)] bg-white p-6">
-                <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
                   📖 No blog
                 </div>
                 <ul className="space-y-2">
@@ -409,7 +409,7 @@ function NewsArticlePage() {
                       <Link
                         to="/blog/$slug"
                         params={{ slug: p.slug }}
-                        className="text-[14.5px] font-medium text-[var(--navy)] underline-offset-2 hover:text-[var(--gold-deep)] hover:underline"
+                        className="text-[14.5px] font-medium text-[var(--navy)] underline-offset-2 hover:text-[var(--gold-ink)] hover:underline"
                       >
                         {p.title}
                       </Link>
@@ -427,7 +427,7 @@ function NewsArticlePage() {
           <div className="mt-12 text-center">
             <Link
               to="/noticias"
-              className="text-sm font-medium text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
+              className="text-sm font-medium text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-ink)]"
             >
               ← Voltar para todas as notícias
             </Link>
@@ -469,7 +469,7 @@ function NewsArticlePage() {
                           {formatDateBR(n.published_at)}
                         </span>
                       </div>
-                      <h3 className="font-serif text-[17px] font-semibold leading-[1.35] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-deep)] md:text-[18px]">
+                      <h3 className="font-serif text-[17px] font-semibold leading-[1.35] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-ink)] md:text-[18px]">
                         {n.title}
                       </h3>
                     </div>

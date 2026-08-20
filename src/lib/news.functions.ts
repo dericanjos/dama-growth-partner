@@ -32,6 +32,24 @@ export interface NewsArticleListItem {
 
 export interface NewsArticleFull extends NewsArticleListItem {}
 
+/*
+ * Colunas leves para LISTAGENS: sem `content` completo e sem `faq`.
+ * Evita duplicar o corpo inteiro de cada notícia no payload de hidratação.
+ */
+const SELECT_LIST_COLUMNS =
+  "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, meta_description, tags, update_date, update_text, update_link_slug, update_link_label";
+
+const LIST_EXCERPT_CHARS = 320;
+
+function toListItem(row: Record<string, unknown>): NewsArticleListItem {
+  const content = typeof row["content"] === "string" ? (row["content"] as string) : "";
+  return {
+    ...(row as unknown as NewsArticleListItem),
+    content: content.length > LIST_EXCERPT_CHARS ? content.slice(0, LIST_EXCERPT_CHARS) : content,
+    faq: [],
+  };
+}
+
 const SELECT_COLUMNS =
   "id, slug, title, subtitle, content, source_name, source_url, category, author, cover_image, cover_image_alt, published_at, seo_title, meta_description, tags, faq, update_date, update_text, update_link_slug, update_link_label";
 
@@ -62,7 +80,7 @@ export const listPublishedNews = createServerFn({ method: "GET" })
       let query = supabaseAdmin
         .from("news_articles")
         .select(
-          SELECT_COLUMNS,
+          SELECT_LIST_COLUMNS,
           { count: "exact" },
         )
         .eq("is_published", true)
@@ -79,7 +97,7 @@ export const listPublishedNews = createServerFn({ method: "GET" })
         return { items: [], total: 0, page, pageSize: PAGE_SIZE };
       }
       return {
-        items: (rows ?? []) as unknown as NewsArticleListItem[],
+        items: (rows ?? []).map((r) => toListItem(r as Record<string, unknown>)),
         total: count ?? 0,
         page,
         pageSize: PAGE_SIZE,
@@ -133,7 +151,7 @@ export const listNewsByAuthor = createServerFn({ method: "GET" })
     const { data: rows, error } = await supabaseAdmin
       .from("news_articles")
       .select(
-        SELECT_COLUMNS,
+        SELECT_LIST_COLUMNS,
       )
       .eq("is_published", true)
       .eq("author", data.author)
@@ -142,7 +160,7 @@ export const listNewsByAuthor = createServerFn({ method: "GET" })
       console.error("Erro ao listar notícias por autor:", error);
       return { items: [] };
     }
-    return { items: (rows ?? []) as unknown as NewsArticleListItem[] };
+    return { items: (rows ?? []).map((r) => toListItem(r as Record<string, unknown>)) };
   });
 
 
@@ -163,27 +181,27 @@ export const listRelatedNews = createServerFn({ method: "GET" })
     // Try same-category first
     const { data: catRows } = await supabaseAdmin
       .from("news_articles")
-      .select(SELECT_COLUMNS)
+      .select(SELECT_LIST_COLUMNS)
       .eq("is_published", true)
       .eq("category", data.category)
       .neq("slug", data.slug)
       .order("published_at", { ascending: false })
       .limit(limit);
 
-    let items = (catRows ?? []) as unknown as NewsArticleListItem[];
+    let items = (catRows ?? []).map((r) => toListItem(r as Record<string, unknown>));
 
     // Fallback: any tag overlap
     if (items.length < limit && data.tags.length > 0) {
       const { data: tagRows } = await supabaseAdmin
         .from("news_articles")
-        .select(SELECT_COLUMNS)
+        .select(SELECT_LIST_COLUMNS)
         .eq("is_published", true)
         .neq("slug", data.slug)
         .overlaps("tags", data.tags)
         .order("published_at", { ascending: false })
         .limit(limit);
       const seen = new Set(items.map((i) => i.id));
-      for (const row of (tagRows ?? []) as unknown as NewsArticleListItem[]) {
+      for (const row of (tagRows ?? []).map((r) => toListItem(r as Record<string, unknown>))) {
         if (!seen.has(row.id)) {
           items.push(row);
           seen.add(row.id);
@@ -196,13 +214,13 @@ export const listRelatedNews = createServerFn({ method: "GET" })
     if (items.length < limit) {
       const { data: latestRows } = await supabaseAdmin
         .from("news_articles")
-        .select(SELECT_COLUMNS)
+        .select(SELECT_LIST_COLUMNS)
         .eq("is_published", true)
         .neq("slug", data.slug)
         .order("published_at", { ascending: false })
         .limit(limit);
       const seen = new Set(items.map((i) => i.id));
-      for (const row of (latestRows ?? []) as unknown as NewsArticleListItem[]) {
+      for (const row of (latestRows ?? []).map((r) => toListItem(r as Record<string, unknown>))) {
         if (!seen.has(row.id)) {
           items.push(row);
           seen.add(row.id);

@@ -53,12 +53,13 @@ export const Route = createRootRoute({
           { rel: "icon", type: "image/png", href: "/favicon.png" },
           { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
           { rel: "manifest", href: "/manifest.json" },
-          { rel: "preconnect", href: "https://fonts.googleapis.com" },
-          { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap",
-      },
+          {
+            rel: "preload",
+            href: "/fonts/dm-sans-latin.woff2",
+            as: "font",
+            type: "font/woff2",
+            crossOrigin: "anonymous",
+          },
         ],
       };
     }
@@ -101,11 +102,12 @@ export const Route = createRootRoute({
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/manifest.json" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap",
+        rel: "preload",
+        href: "/fonts/dm-sans-latin.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
       },
     ],
     scripts: [
@@ -159,8 +161,11 @@ function RootComponent() {
     <div className="flex min-h-screen flex-col">
       <link rel="alternate" hrefLang="pt-BR" href={canonical} />
       <link rel="alternate" hrefLang="x-default" href={canonical} />
+      <a href="#conteudo" className="skip-link">
+        Pular para o conteúdo
+      </a>
       <SiteHeader />
-      <main className="flex-1">
+      <main id="conteudo" className="flex-1">
         <Outlet />
       </main>
       <SiteFooter />

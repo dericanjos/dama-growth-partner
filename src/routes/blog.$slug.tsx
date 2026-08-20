@@ -329,7 +329,7 @@ function PostPage() {
               aria-labelledby="faq-heading"
               className="mt-12 rounded-[12px] border border-[var(--border)] bg-white p-6 md:p-8"
             >
-              <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+              <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
                 ❓ FAQ
               </div>
               <h2
@@ -359,7 +359,7 @@ function PostPage() {
 
           {tags.length > 0 && (
             <div className="mt-10">
-              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
                 Tópicos
               </div>
               <ul className="flex flex-wrap gap-2">
@@ -409,7 +409,7 @@ function PostPage() {
 
           {latestNews.length > 0 && (
             <aside className="mt-12 rounded-[12px] border border-[var(--border)] bg-white p-6">
-              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+              <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
                 📰 Notícias recentes
               </div>
               <ul className="space-y-2">
@@ -418,7 +418,7 @@ function PostPage() {
                     <Link
                       to="/noticias/$slug"
                       params={{ slug: n.slug }}
-                      className="text-[14.5px] font-medium text-[var(--navy)] underline-offset-2 hover:text-[var(--gold-deep)] hover:underline"
+                      className="text-[14.5px] font-medium text-[var(--navy)] underline-offset-2 hover:text-[var(--gold-ink)] hover:underline"
                     >
                       {n.title}
                     </Link>
@@ -460,7 +460,7 @@ function PostPage() {
                   )}
                   <div className="p-5">
                     <CategoryBadge category={p.category} />
-                    <h3 className="mt-3 font-serif text-[16px] font-semibold leading-[1.4] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-deep)]">
+                    <h3 className="mt-3 font-serif text-[16px] font-semibold leading-[1.4] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-ink)]">
                       {p.title}
                     </h3>
                   </div>

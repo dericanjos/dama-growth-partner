@@ -1,0 +1,1 @@
+UPDATE public.news_articles SET source_url = NULL WHERE slug = 'conitec-15-anos-incorporacao-tecnologias-sus-2026';
