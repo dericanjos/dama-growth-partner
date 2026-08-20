@@ -614,6 +614,7 @@ Se você está considerando reduzir ou sair do convênio, o primeiro passo é en
   },
   {
     slug: "como-reduzir-faltas-no-consultorio",
+    metaDescription: "A taxa de faltas no seu consultório pode passar de 20%. Veja 5 estratégias pra reduzir no-shows e recuperar até R$76 mil por ano em receita.",
     seoTitle: "Como Reduzir Faltas no Consultório Médico",
     relatedSlugs: ["7-sinais-consultorio-perdendo-dinheiro", "quanto-medico-perde-sem-processo-comercial"],
     faqSchema: [{"question": "Como reduzir faltas de pacientes no consultório?", "answer": "As 5 estratégias mais eficazes são: confirmação em dois estágios (48h e 2h antes), lista de espera ativa, política clara de cancelamento, encurtamento do tempo entre agendamento e consulta, e acompanhamento comercial pós-agendamento."}, {"question": "Qual a taxa média de no-show em consultórios no Brasil?", "answer": "A taxa média de faltas em consultórios brasileiros varia entre 20% e 30%. Em Piracicaba, a Secretaria Municipal de Saúde registrou 23% de no-show no primeiro trimestre de 2026."}, {"question": "Lembretes automáticos reduzem faltas em consultório?", "answer": "Sim. Um projeto piloto do governo do Ceará com lembretes automáticos por WhatsApp reduziu faltas em quase 19%. A confirmação em dois estágios (48h e 2h antes) tem impacto ainda maior."}],
@@ -736,6 +737,7 @@ E se você quer estruturar a operação comercial completa, da captação à con
   },
   {
     slug: "7-sinais-consultorio-perdendo-dinheiro",
+    metaDescription: "Seu consultório pode estar perdendo mais de R$10 mil por mês. Veja os 7 sinais mais comuns e o que fazer com cada um. Dados reais de 2026.",
     updateNotice: {
       date: "2026-08-18",
       text: "Este texto foi revisado em agosto de 2026. Os dados demográficos e de mercado foram atualizados para as edições mais recentes das fontes, e três afirmações cujo dado não foi localizado na fonte original foram corrigidas ou removidas. A tese do texto não mudou.",
@@ -1454,6 +1456,7 @@ Dados verificados em agosto de 2026. Demografia Médica 2025 (base dezembro de 2
   },
   {
     slug: "seu-site-medico-esta-afastando-pacientes",
+    metaDescription: "Seu site é seu consultório digital. Se ele é lento ou amador, o paciente vai embora. Veja o que ele espera encontrar em 2026.",
     seoTitle: "Seu Site Médico Está Afastando Pacientes?",
     relatedSlugs: ["por-que-consultorio-precisa-aparecer-no-google", "trafego-pago-consultorio-medico-vale-investimento"],
     title: "Seu Site Médico Está Afastando Pacientes? O que Eles Esperam Encontrar",
@@ -1587,6 +1590,7 @@ E se quiser estruturar a presença digital inteira (site, Google, redes sociais 
   },
   {
     slug: "trafego-pago-consultorio-medico-vale-investimento",
+    metaDescription: "Vale investir em Google Ads e Meta Ads pro consultório? Entenda quando funciona, quando é desperdício e quanto esperar de retorno em 2026.",
     seoTitle: "Tráfego Pago pra Consultório Médico: Vale?",
     relatedSlugs: ["por-que-consultorio-precisa-aparecer-no-google", "seu-site-medico-esta-afastando-pacientes", "por-que-marketing-sozinho-nao-lota-agenda"],
     title: "Tráfego Pago para Consultório Médico: Vale o Investimento?",
@@ -1706,6 +1710,7 @@ Na DAMA, a gente estrutura o processo inteiro antes de ligar a torneira do tráf
   },
   {
     slug: "por-que-consultorio-precisa-aparecer-no-google",
+    metaDescription: "Quando o paciente pesquisa sua especialidade no Google, quem ele encontra? Entenda o que exige aparecer e por onde começar.",
     seoTitle: "Por que Seu Consultório Precisa do Google",
     relatedSlugs: ["trafego-pago-consultorio-medico-vale-investimento", "seu-site-medico-esta-afastando-pacientes"],
     title: "Por que Seu Consultório Precisa Aparecer no Google (e o que Isso Exige)",
@@ -1918,6 +1923,7 @@ Se você leu até aqui, já entende mais sobre marketing médico do que 41% dos 
   },
   {
     slug: "redes-sociais-captacao-pacientes-consultorio-2026",
+    metaDescription: "Redes sociais atraem pacientes, mas não convertem sozinhas. Entenda o papel real do Instagram e do LinkedIn na captação de pacientes.",
     relatedSlugs: ["marketing-medico-2026-panorama-completo", "por-que-consultorio-precisa-aparecer-no-google"],
     title: "O Papel das Redes Sociais na Captação de Pacientes em 2026",
     seoTitle: "Redes Sociais na Captação de Pacientes 2026",
