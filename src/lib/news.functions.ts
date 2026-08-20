@@ -151,7 +151,7 @@ export const listNewsByAuthor = createServerFn({ method: "GET" })
     const { data: rows, error } = await supabaseAdmin
       .from("news_articles")
       .select(
-        SELECT_COLUMNS,
+        SELECT_LIST_COLUMNS,
       )
       .eq("is_published", true)
       .eq("author", data.author)
