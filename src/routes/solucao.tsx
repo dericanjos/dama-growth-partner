@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -54,6 +55,7 @@ export const Route = createFileRoute("/solucao")({
     ],
     links: [{ rel: "canonical", href: PAGE_URL }],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("O que fazemos", "/solucao")) },
       { type: "application/ld+json", children: JSON.stringify(WEBPAGE_JSONLD) },
       { type: "application/ld+json", children: JSON.stringify(ITEMLIST_JSONLD) },
     ],

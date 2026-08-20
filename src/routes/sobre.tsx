@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -80,6 +81,7 @@ export const Route = createFileRoute("/sobre")({
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/sobre" }],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("Quem Somos", "/sobre")) },
       {
         type: "application/ld+json",
         children: JSON.stringify(ABOUT_ORG_JSONLD),

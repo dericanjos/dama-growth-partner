@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, Megaphone, CalendarCheck, Activity } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -89,6 +90,7 @@ export const Route = createFileRoute("/metodo")({
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/metodo" }],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("Método D.A.M.A", "/metodo")) },
       { type: "application/ld+json", children: JSON.stringify(FAQ_JSONLD) },
       { type: "application/ld+json", children: JSON.stringify(HOWTO_JSONLD) },
     ],
