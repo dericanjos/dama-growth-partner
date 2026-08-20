@@ -214,13 +214,13 @@ function DamaEstrategicaPage() {
                   </div>
 
                   <div className="p-8 md:p-12">
-                    <h3 className="text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--gold-deep)]">
+                    <h3 className="text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--gold-ink)]">
                       {p.listTitle}
                     </h3>
                     <ul className="mt-6 space-y-4">
                       {p.deliveries.map((d) => (
                         <li key={d} className="flex items-start gap-3">
-                          <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--gold)]/15 text-[var(--gold-deep)]">
+                          <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--gold)]/15 text-[var(--gold-ink)]">
                             <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
                           </span>
                           <span className="text-[15px] leading-[1.6] text-[var(--text-secondary)]">

@@ -193,7 +193,7 @@ function MethodPage() {
                     key={s.title}
                     className="flex flex-col items-center text-center"
                   >
-                    <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-[var(--gold)]/40 bg-[var(--gold-soft)] font-serif text-5xl text-[var(--gold-deep)] md:h-24 md:w-24 md:text-6xl">
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-[var(--gold)]/40 bg-[var(--gold-soft)] font-serif text-5xl text-[var(--gold-ink)] md:h-24 md:w-24 md:text-6xl">
                       {s.letter}
                     </div>
                     <div className="mt-3 font-serif text-[18px] text-[var(--navy)] md:text-[20px]">
@@ -202,7 +202,7 @@ function MethodPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-10 flex items-center justify-center gap-3 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--gold-deep)]">
+              <div className="mt-10 flex items-center justify-center gap-3 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--gold-ink)]">
                 <span className="h-px w-10 bg-[var(--gold)]/40" />
                 Ciclo contínuo
                 <span className="h-px w-10 bg-[var(--gold)]/40" />
@@ -227,7 +227,7 @@ function MethodPage() {
                     {s.letter}
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--gold-deep)]">
+                    <div className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--gold-ink)]">
                       <s.icon className="h-3.5 w-3.5" />
                       Etapa {String(i + 1).padStart(2, "0")}
                     </div>

@@ -105,7 +105,7 @@ function DamaTechPage() {
             <ul className="mt-6 space-y-3 text-[16px] leading-[1.6] text-[var(--text-secondary)]">
               {LIST_ITEMS.map(([label, rest]) => (
                 <li key={label} className="flex gap-2">
-                  <span className="text-[var(--gold-deep)]" aria-hidden>•</span>
+                  <span className="text-[var(--gold-ink)]" aria-hidden>•</span>
                   <span>
                     <strong className="text-[var(--navy)]">{label}</strong>, {rest}
                   </span>

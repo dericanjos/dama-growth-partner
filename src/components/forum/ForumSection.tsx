@@ -202,7 +202,7 @@ export function ForumSection({ blogSlug, initialQuestions }: Props) {
     >
       <header className="mb-6">
         <h2 className="flex items-center gap-2 font-serif text-[22px] font-semibold text-[var(--navy)] md:text-[26px]">
-          <MessageCircle className="h-6 w-6 text-[var(--gold-deep)]" />
+          <MessageCircle className="h-6 w-6 text-[var(--gold-ink)]" />
           Perguntas sobre este artigo
         </h2>
         <p className="mt-1 text-[14px] text-[var(--navy)]/70">
@@ -262,7 +262,7 @@ export function ForumSection({ blogSlug, initialQuestions }: Props) {
                   {q.answers.map((a) => (
                     <li key={a.id}>
                       <p className="text-[14.5px] leading-[1.6] text-[var(--navy)]/90">
-                        <strong className="font-semibold text-[var(--gold-deep)]">
+                        <strong className="font-semibold text-[var(--gold-ink)]">
                           R:
                         </strong>{" "}
                         {a.answer_text}
@@ -327,7 +327,7 @@ export function ForumSection({ blogSlug, initialQuestions }: Props) {
                     setAnsweringId(q.id);
                     setAnswerText("");
                   }}
-                  className="mt-3 text-sm font-medium text-[var(--gold-deep)] hover:underline"
+                  className="mt-3 text-sm font-medium text-[var(--gold-ink)] hover:underline"
                 >
                   Responder esta pergunta
                 </button>
@@ -342,7 +342,7 @@ export function ForumSection({ blogSlug, initialQuestions }: Props) {
           <button
             type="button"
             onClick={() => setShowAll(true)}
-            className="text-sm font-medium text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
+            className="text-sm font-medium text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-ink)]"
           >
             Ver mais perguntas ({questions.length - 10} restantes)
           </button>

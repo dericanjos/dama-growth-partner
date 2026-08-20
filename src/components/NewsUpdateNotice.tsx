@@ -36,7 +36,7 @@ export function NewsUpdateNotice({
             <Link
               to="/noticias/$slug"
               params={{ slug: linkSlug }}
-              className="font-medium text-[var(--gold-deep)] underline"
+              className="font-medium text-[var(--gold-ink)] underline"
             >
               {linkLabel}
             </Link>

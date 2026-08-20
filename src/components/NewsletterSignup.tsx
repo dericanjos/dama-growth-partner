@@ -60,7 +60,7 @@ export function NewsletterSignup({ origem, className = "" }: { origem: string; c
       aria-labelledby={`newsletter-title-${origem}`}
       className={`rounded-[14px] border border-[var(--border)] bg-white p-6 md:p-8 ${className}`}
     >
-      <div className="mb-3 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+      <div className="mb-3 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
         <Mail className="h-3.5 w-3.5" aria-hidden /> Newsletter DAMA
       </div>
       <h2
@@ -79,7 +79,7 @@ export function NewsletterSignup({ origem, className = "" }: { origem: string; c
           role="status"
           className="mt-6 flex items-start gap-2 rounded-[10px] border border-[color-mix(in_oklab,var(--gold)_45%,var(--border))] bg-[var(--cream)] p-4 text-[14.5px] text-[var(--navy)]"
         >
-          <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold-deep)]" aria-hidden />
+          <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold-ink)]" aria-hidden />
           {mensagem}
         </p>
       ) : (
@@ -140,7 +140,7 @@ export function NewsletterSignup({ origem, className = "" }: { origem: string; c
             />
             <span>
               Concordo com o uso dos meus dados para receber a newsletter, conforme a{" "}
-              <Link to="/privacidade" className="font-medium text-[var(--gold-deep)] underline underline-offset-2">
+              <Link to="/privacidade" className="font-medium text-[var(--gold-ink)] underline underline-offset-2">
                 Política de Privacidade
               </Link>
               .

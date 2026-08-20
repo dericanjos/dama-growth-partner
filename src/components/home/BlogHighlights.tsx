@@ -42,7 +42,7 @@ export function BlogHighlights() {
                 <p className="mt-3 flex-1 text-[14px] leading-[1.65] text-[var(--text-secondary)]">
                   {post.excerpt}
                 </p>
-                <span className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--gold-deep)]">
+                <span className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--gold-ink)]">
                   Ler artigo →
                 </span>
               </Link>
@@ -53,7 +53,7 @@ export function BlogHighlights() {
         <Reveal delay={300} className="mt-12 text-center">
           <Link
             to="/blog"
-            className="group inline-flex items-center gap-2 text-sm font-medium text-[var(--navy)] transition-colors hover:text-[var(--gold-deep)]"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-[var(--navy)] transition-colors hover:text-[var(--gold-ink)]"
           >
             Ver todos os artigos
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

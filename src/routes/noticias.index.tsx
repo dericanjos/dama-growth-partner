@@ -245,7 +245,7 @@ function NewsPage() {
                           {formatDateBR(n.published_at)}
                         </span>
                       </div>
-                      <h2 className="font-serif text-[20px] font-semibold leading-[1.35] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-deep)] md:text-[22px]">
+                      <h2 className="font-serif text-[20px] font-semibold leading-[1.35] text-[var(--navy)] transition-colors group-hover:text-[var(--gold-ink)] md:text-[22px]">
                         {n.title}
                       </h2>
                       {n.subtitle && (
@@ -257,10 +257,10 @@ function NewsPage() {
                         {excerpt(n.content, 200)}
                       </p>
                       <div className="mt-4 flex items-center justify-between">
-                        <span className="text-[12px] uppercase tracking-[0.14em] text-[var(--gold-deep)]">
+                        <span className="text-[12px] uppercase tracking-[0.14em] text-[var(--gold-ink)]">
                           Fonte: {n.source_name}
                         </span>
-                        <span className="text-[13px] font-medium text-[var(--gold-deep)] group-hover:underline">
+                        <span className="text-[13px] font-medium text-[var(--gold-ink)] group-hover:underline">
                           Ler notícia completa →
                         </span>
                       </div>

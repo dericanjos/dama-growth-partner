@@ -158,7 +158,7 @@ function AboutPage() {
             <p className="font-serif text-[20px] italic text-[var(--navy)] md:text-[22px]">
               “Médicos deveriam investir sua energia salvando vidas, e não tentando sustentar sozinhos o crescimento do próprio consultório.”
             </p>
-            <p className="text-[14px] uppercase tracking-[0.18em] text-[var(--gold-deep)]">
+            <p className="text-[14px] uppercase tracking-[0.18em] text-[var(--gold-ink)]">
               Jéssica Anjos
             </p>
           </Reveal>
@@ -253,7 +253,7 @@ function AboutPage() {
                     aria-hidden
                     className="absolute -left-[42px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--gold)] ring-4 ring-[var(--cream)] md:-left-[50px]"
                   />
-                  <div className="font-serif text-[28px] text-[var(--gold-deep)]">{m.year}</div>
+                  <div className="font-serif text-[28px] text-[var(--gold-ink)]">{m.year}</div>
                   <h3 className="mt-1 font-serif text-[20px] text-[var(--navy)]">{m.title}</h3>
                   <p className="mt-2 text-[15px] leading-[1.75] text-[var(--text-secondary)]">{m.text}</p>
                 </li>
