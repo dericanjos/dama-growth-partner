@@ -33,7 +33,7 @@ export const Route = createFileRoute("/blog/$slug")({
     return { post, questions, latestNews };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Artigo | Blog — Grupo DAMA" }] };
+    if (!loaderData) return { meta: [{ title: "Artigo | Blog · Grupo DAMA" }] };
     const { post } = loaderData;
     const desc = (post.metaDescription && post.metaDescription.trim()) || post.excerpt.slice(0, 155);
     const url = `https://grupodamahealth.com.br/blog/${post.slug}`;

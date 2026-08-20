@@ -3,7 +3,7 @@ import { Check, Copy, Linkedin } from "lucide-react";
 
 export function ShareButtons({ title, url }: { title: string; url: string }) {
   const [copied, setCopied] = useState(false);
-  const wa = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${title} — ${url}`)}`;
+  const wa = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${title} · ${url}`)}`;
   const li = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
 
   const onCopy = async () => {

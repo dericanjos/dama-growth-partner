@@ -254,7 +254,7 @@ export function ForumSection({ blogSlug, initialQuestions }: Props) {
                 <strong className="font-semibold">P:</strong> {q.question_text}
               </p>
               <p className="mt-2 text-[12px] uppercase tracking-[0.12em] text-[var(--navy)]/55">
-                — {authorLine(q.user, q.created_at)}
+                · {authorLine(q.user, q.created_at)}
               </p>
 
               {q.answers.length > 0 && (
@@ -268,7 +268,7 @@ export function ForumSection({ blogSlug, initialQuestions }: Props) {
                         {a.answer_text}
                       </p>
                       <p className="mt-1 text-[12px] uppercase tracking-[0.12em] text-[var(--navy)]/55">
-                        — {authorLine(a.user, a.created_at)}
+                        · {authorLine(a.user, a.created_at)}
                       </p>
                     </li>
                   ))}
