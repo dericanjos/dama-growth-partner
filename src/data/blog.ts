@@ -44,7 +44,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "migracao-pacientes-planos-saude-consultorio-particular-2026",
     seoTitle: "Migração de Pacientes dos Planos: Como o Consultório Captura",
-    metaDescription: "Pacientes estão migrando dos planos de saúde pro atendimento particular. Veja como estruturar seu consultório pra capturar essa demanda nos próximos 12 meses.",
+    metaDescription: "Pacientes estão migrando dos planos de saúde pro atendimento particular. Veja como estruturar seu consultório pra capturar essa demanda.",
     relatedSlugs: [
       "como-sair-do-convenio-viver-de-paciente-particular",
       "por-que-marketing-sozinho-nao-lota-agenda",
@@ -986,7 +986,7 @@ Se você quer entender como construir uma presença digital e uma operação com
       date: "2026-08-18",
       text: "Este texto foi revisado em agosto de 2026. Os dados demográficos e de mercado foram atualizados para as edições mais recentes das fontes, e três afirmações cujo dado não foi localizado na fonte original foram corrigidas ou removidas. A tese do texto não mudou.",
     },
-    seoTitle: "Operação Comercial Terceirizada para Consultório | Grupo DAMA",
+    seoTitle: "Operação Comercial Terceirizada para Consultório | DAMA",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "como-sair-do-convenio-viver-de-paciente-particular"],
     coverImage: "/blog/operacao-comercial-terceirizada-consultorio.webp",
     coverImageAlt: "Capa do artigo: Operação Comercial Terceirizada para Consultório: Vale a Pena? Grupo DAMA Health.",
