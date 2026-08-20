@@ -1,13 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+const TERMS_TITLE = "Termos de Uso | Grupo DAMA";
+const TERMS_DESC = "Termos de uso do site do Grupo DAMA.";
+const TERMS_URL = "https://grupodamahealth.com.br/termos";
+
 export const Route = createFileRoute("/termos")({
   head: () => ({
     meta: [
-      { title: "Termos de Uso | Grupo DAMA" },
-      { name: "description", content: "Termos de uso do site do Grupo DAMA." },
+      { title: TERMS_TITLE },
+      { name: "description", content: TERMS_DESC },
       { name: "robots", content: "index, follow" },
+      { property: "og:title", content: TERMS_TITLE },
+      { property: "og:description", content: TERMS_DESC },
+      { property: "og:url", content: TERMS_URL },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TERMS_TITLE },
+      { name: "twitter:description", content: TERMS_DESC },
     ],
-    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/termos" }],
+    links: [{ rel: "canonical", href: TERMS_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": `${TERMS_URL}#webpage`,
+          url: TERMS_URL,
+          name: TERMS_TITLE,
+          description: TERMS_DESC,
+          inLanguage: "pt-BR",
+          isPartOf: { "@id": "https://grupodamahealth.com.br/#website" },
+        }),
+      },
+    ],
   }),
   component: TermsPage,
 });
