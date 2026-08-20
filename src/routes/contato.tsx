@@ -257,12 +257,14 @@ function ContactPage() {
                 </li>
                 <li>
                   Conhecer a DAMA Escola{" "}
-                  <Link
-                    to="/escola"
+                  <a
+                    href="https://escoladama.com.br"
+                    target="_blank"
+                    rel="noopener"
                     className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-deep)]"
                   >
-                    /escola
-                  </Link>
+                    escoladama.com.br
+                  </a>
                 </li>
                 <li>
                   Ler o que publicamos sobre o mercado médico{" "}

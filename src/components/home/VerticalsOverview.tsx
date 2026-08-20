@@ -11,7 +11,8 @@ const VERTICAIS = [
   {
     title: "DAMA Escola",
     text: "A vertical educacional, que forma profissionais de atendimento do mercado médico.",
-    to: "/escola",
+    to: "https://escoladama.com.br",
+    external: true,
   },
   {
     title: "DAMA Tech",
@@ -45,12 +46,23 @@ export function VerticalsOverview() {
               <p className="mt-4 flex-1 text-[14.5px] leading-relaxed text-[var(--text-secondary)]">
                 {v.text}
               </p>
-              <Link
-                to={v.to}
-                className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--navy)] underline-offset-4 hover:underline"
-              >
-                Conhecer {v.title} <ArrowRight className="h-4 w-4" />
-              </Link>
+              {"external" in v && v.external ? (
+                <a
+                  href={v.to}
+                  target="_blank"
+                  rel="noopener"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--navy)] underline-offset-4 hover:underline"
+                >
+                  Conhecer {v.title} <ArrowRight className="h-4 w-4" />
+                </a>
+              ) : (
+                <Link
+                  to={v.to}
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--navy)] underline-offset-4 hover:underline"
+                >
+                  Conhecer {v.title} <ArrowRight className="h-4 w-4" />
+                </Link>
+              )}
             </Reveal>
           ))}
         </div>
