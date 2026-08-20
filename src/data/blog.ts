@@ -986,7 +986,7 @@ Se você quer entender como construir uma presença digital e uma operação com
       date: "2026-08-18",
       text: "Este texto foi revisado em agosto de 2026. Os dados demográficos e de mercado foram atualizados para as edições mais recentes das fontes, e três afirmações cujo dado não foi localizado na fonte original foram corrigidas ou removidas. A tese do texto não mudou.",
     },
-    seoTitle: "Operação Comercial Terceirizada para Consultório | Grupo DAMA Health",
+    seoTitle: "Operação Comercial Terceirizada para Consultório | Grupo DAMA",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "como-sair-do-convenio-viver-de-paciente-particular"],
     coverImage: "/blog/operacao-comercial-terceirizada-consultorio.webp",
     coverImageAlt: "Capa do artigo: Operação Comercial Terceirizada para Consultório: Vale a Pena? Grupo DAMA Health.",

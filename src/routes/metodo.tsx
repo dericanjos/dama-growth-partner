@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, Megaphone, CalendarCheck, Activity } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -70,13 +71,13 @@ export const Route = createFileRoute("/metodo")({
       {
         name: "description",
         content:
-          "Método D.A.M.A — a filosofia proprietária do Grupo DAMA. Quatro pilares que transformam consultórios em operações previsíveis.",
+          "Método D.A.M.A, a filosofia proprietária do Grupo DAMA. Quatro pilares que transformam consultórios em operações previsíveis.",
       },
       { property: "og:title", content: "Método D.A.M.A | Grupo DAMA" },
       {
         property: "og:description",
         content:
-          "Diagnosticar, Atrair, Marcar, Acompanhar — o método que guia a operação DAMA.",
+          "Diagnosticar, Atrair, Marcar, Acompanhar: o método que guia a operação DAMA.",
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/metodo" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -84,11 +85,12 @@ export const Route = createFileRoute("/metodo")({
       {
         name: "twitter:description",
         content:
-          "Diagnosticar, Atrair, Marcar, Acompanhar — o método que guia a operação DAMA.",
+          "Diagnosticar, Atrair, Marcar, Acompanhar: o método que guia a operação DAMA.",
       },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/metodo" }],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("Método D.A.M.A", "/metodo")) },
       { type: "application/ld+json", children: JSON.stringify(FAQ_JSONLD) },
       { type: "application/ld+json", children: JSON.stringify(HOWTO_JSONLD) },
     ],

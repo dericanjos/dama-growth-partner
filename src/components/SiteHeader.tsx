@@ -304,7 +304,7 @@ export function SiteHeader() {
           to="/"
           className="group flex items-center gap-3 leading-none shrink-0"
           onClick={() => setOpen(false)}
-          aria-label="Grupo DAMA — Início"
+          aria-label="Grupo DAMA · Início"
         >
           <img
             src={damaLogo}

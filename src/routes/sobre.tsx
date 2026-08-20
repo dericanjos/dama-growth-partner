@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Heart, HandHeart, GraduationCap, ShieldCheck, Handshake, Sparkles, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -57,7 +58,7 @@ const ABOUT_ORG_JSONLD = {
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Quem Somos | Grupo DAMA — A história por trás da operação" },
+      { title: "Quem Somos | Grupo DAMA · A história por trás da operação" },
       {
         name: "description",
         content:
@@ -67,7 +68,7 @@ export const Route = createFileRoute("/sobre")({
       {
         property: "og:description",
         content:
-          "A história do Grupo DAMA e da fundadora Jéssica Anjos — autoridade, método e atendimento humanizado.",
+          "A história do Grupo DAMA e da fundadora Jéssica Anjos: autoridade, método e atendimento humanizado.",
       },
       { property: "og:url", content: "https://grupodamahealth.com.br/sobre" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -75,11 +76,12 @@ export const Route = createFileRoute("/sobre")({
       {
         name: "twitter:description",
         content:
-          "A história do Grupo DAMA e da fundadora Jéssica Anjos — autoridade, método e atendimento humanizado.",
+          "A história do Grupo DAMA e da fundadora Jéssica Anjos: autoridade, método e atendimento humanizado.",
       },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/sobre" }],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("Quem Somos", "/sobre")) },
       {
         type: "application/ld+json",
         children: JSON.stringify(ABOUT_ORG_JSONLD),

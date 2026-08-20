@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Headset, LineChart, Target, Check } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -8,7 +9,7 @@ import { ORGANIZACAO } from "@/config/organizacao";
 
 const PAGE_URL = `${ORGANIZACAO.site}/dama-estrategica`;
 
-const TITLE = "DAMA Estratégica | Operação comercial para consultórios médicos";
+const TITLE = "DAMA Estratégica | Operação comercial para consultórios";
 const DESCRIPTION =
   "Operação comercial, growth e marketing médico em uma estrutura só, dentro do consultório do médico parceiro. Conheça a DAMA Estratégica.";
 
@@ -44,7 +45,10 @@ export const Route = createFileRoute("/dama-estrategica")({
       { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: PAGE_URL }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(SERVICE_JSONLD) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(SERVICE_JSONLD) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("DAMA Estratégica", "/dama-estrategica")) },
+    ],
   }),
   component: DamaEstrategicaPage,
 });

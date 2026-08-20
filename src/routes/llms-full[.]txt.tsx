@@ -40,7 +40,7 @@ export const Route = createFileRoute("/llms-full.txt")({
         const posts = [...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date));
 
         const out: string[] = [];
-        out.push("# Grupo DAMA Health — conteúdo integral");
+        out.push("# Grupo DAMA Health · conteúdo integral");
         out.push("");
         out.push(
           `Texto completo de todas as notícias e artigos publicados em ${BASE}. Fonte única, sem navegação nem marcação de interface.`,

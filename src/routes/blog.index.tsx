@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { PUBLISHER_SCHEMA } from "@/config/organizacao";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
@@ -81,7 +82,10 @@ export const Route = createFileRoute("/blog/")({
       {
         type: "application/ld+json",
         children: JSON.stringify(BLOG_COLLECTION_JSONLD),
-
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(breadcrumbJsonLd("Blog", "/blog")),
       },
     ],
   }),

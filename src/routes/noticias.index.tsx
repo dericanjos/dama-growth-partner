@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Newspaper } from "lucide-react";
 import { CategoryBadge } from "@/components/CategoryBadge";
@@ -113,6 +114,7 @@ export const Route = createFileRoute("/noticias/")({
       links,
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(collectionSchema) },
+        { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("Notícias", "/noticias")) },
       ],
     };
   },

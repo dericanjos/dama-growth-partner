@@ -25,9 +25,9 @@ export const Route = createFileRoute("/autor/deric-anjos")({
   loader: () => listNewsByAuthor({ data: { author: AUTHOR_NAME } }),
   head: () => ({
     meta: [
-      { title: "Deric Anjos — Head de Growth | Grupo DAMA" },
+      { title: "Deric Anjos · Head de Growth | Grupo DAMA" },
       { name: "description", content: AUTHOR_DESC },
-      { property: "og:title", content: "Deric Anjos — Head de Growth | Grupo DAMA" },
+      { property: "og:title", content: "Deric Anjos · Head de Growth | Grupo DAMA" },
       {
         property: "og:description",
         content: "Conheça o profissional por trás dos artigos do blog do Grupo DAMA.",
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/autor/deric-anjos")({
       { property: "og:type", content: "profile" },
       { property: "og:url", content: AUTHOR_URL },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Deric Anjos — Head de Growth | Grupo DAMA" },
+      { name: "twitter:title", content: "Deric Anjos · Head de Growth | Grupo DAMA" },
       {
         name: "twitter:description",
         content: "Conheça o profissional por trás dos artigos do blog do Grupo DAMA.",
@@ -145,6 +145,8 @@ function AuthorPage() {
                       alt={n.cover_image_alt ?? n.title}
                       loading="lazy"
                       decoding="async"
+                      width={800}
+                      height={450}
                       className="h-40 w-full object-cover"
                     />
                   )}

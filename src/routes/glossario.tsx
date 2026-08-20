@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/glossario")({
@@ -26,6 +27,9 @@ export const Route = createFileRoute("/glossario")({
       },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/glossario" }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("Glossário", "/glossario")) },
+    ],
   }),
   component: GlossarioPage,
 });

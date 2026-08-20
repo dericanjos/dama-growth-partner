@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { ORGANIZACAO } from "@/config/organizacao";
@@ -40,7 +41,10 @@ export const Route = createFileRoute("/dama-tech")({
       { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: PAGE_URL }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(SERVICE_JSONLD) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(SERVICE_JSONLD) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("DAMA Tech", "/dama-tech")) },
+    ],
   }),
   component: DamaTechPage,
 });

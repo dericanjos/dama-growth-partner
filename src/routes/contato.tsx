@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/config/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
@@ -21,6 +22,21 @@ export const Route = createFileRoute("/contato")({
       { property: "og:url", content: "https://grupodamahealth.com.br/contato" },
     ],
     links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/contato" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "@id": "https://grupodamahealth.com.br/contato#webpage",
+          url: "https://grupodamahealth.com.br/contato",
+          name: "Contato | Grupo DAMA",
+          inLanguage: "pt-BR",
+          isPartOf: { "@id": "https://grupodamahealth.com.br/#website" },
+        }),
+      },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd("Contato", "/contato")) },
+    ],
   }),
   component: ContactPage,
 });
