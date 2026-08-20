@@ -47,7 +47,12 @@ function plainExcerpt(text: string, max = 155) {
     .replace(/\[(.*?)\]\(.*?\)/g, "$1")
     .replace(/\s+/g, " ")
     .trim();
-  return plain.length > max ? `${plain.slice(0, max).trim()}…` : plain;
+  if (plain.length <= max) return plain;
+  // O reticências conta no limite: corta em palavra inteira dentro de max - 1.
+  const cut = plain.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(" ");
+  const body = (lastSpace > 60 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.]+$/, "");
+  return `${body}…`;
 }
 
 const SITE_URL = "https://grupodamahealth.com.br";
