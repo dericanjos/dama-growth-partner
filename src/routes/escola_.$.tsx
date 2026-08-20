@@ -1,13 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 /**
- * Página descontinuada em 20/08/2026. A DAMA Escola passou a ter site próprio
- * em https://escoladama.com.br. Mantida apenas como redirecionamento
- * permanente (301) no nível do servidor, preservando o sinal já indexado.
+ * Qualquer subcaminho abaixo de /escola também redireciona 301 para o site
+ * próprio da DAMA Escola.
  */
 const DESTINO = "https://escoladama.com.br/";
 
-export const Route = createFileRoute("/escola")({
+export const Route = createFileRoute("/escola_/$")({
   server: {
     handlers: {
       GET: () =>
