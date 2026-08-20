@@ -31,7 +31,7 @@ function PrivacyPage() {
           <p>
             O Grupo DAMA respeita sua privacidade e está comprometido com a
             proteção dos seus dados pessoais, em conformidade com a Lei Geral de
-            Proteção de Dados (Lei 13.709/2018 — LGPD).
+            Proteção de Dados (Lei 13.709/2018, a LGPD).
           </p>
 
           <h2 className="font-serif text-xl text-[var(--navy)]">1. Dados que coletamos</h2>

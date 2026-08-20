@@ -101,7 +101,7 @@ export function Testimonials() {
                 {t.photo ? (
                   <img
                     src={t.photo}
-                    alt={`${t.name} — ${t.specialty}`}
+                    alt={`${t.name} · ${t.specialty}`}
                     loading="lazy"
                     decoding="async"
                     width={48}
