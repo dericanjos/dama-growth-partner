@@ -1,16 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+const PRIV_TITLE = "Política de Privacidade | Grupo DAMA";
+const PRIV_DESC =
+  "Política de Privacidade e tratamento de dados do Grupo DAMA, em conformidade com a LGPD.";
+const PRIV_URL = "https://grupodamahealth.com.br/privacidade";
+
 export const Route = createFileRoute("/privacidade")({
   head: () => ({
     meta: [
-      { title: "Política de Privacidade | Grupo DAMA" },
-      {
-        name: "description",
-        content: "Política de Privacidade e tratamento de dados do Grupo DAMA, em conformidade com a LGPD.",
-      },
+      { title: PRIV_TITLE },
+      { name: "description", content: PRIV_DESC },
       { name: "robots", content: "index, follow" },
+      { property: "og:title", content: PRIV_TITLE },
+      { property: "og:description", content: PRIV_DESC },
+      { property: "og:url", content: PRIV_URL },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: PRIV_TITLE },
+      { name: "twitter:description", content: PRIV_DESC },
     ],
-    links: [{ rel: "canonical", href: "https://grupodamahealth.com.br/privacidade" }],
+    links: [{ rel: "canonical", href: PRIV_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": `${PRIV_URL}#webpage`,
+          url: PRIV_URL,
+          name: PRIV_TITLE,
+          description: PRIV_DESC,
+          inLanguage: "pt-BR",
+          isPartOf: { "@id": "https://grupodamahealth.com.br/#website" },
+        }),
+      },
+    ],
   }),
   component: PrivacyPage,
 });
