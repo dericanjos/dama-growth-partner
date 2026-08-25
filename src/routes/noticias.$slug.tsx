@@ -127,7 +127,13 @@ export const Route = createFileRoute("/noticias/$slug")({
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Início", item: `${SITE_URL}/` },
             { "@type": "ListItem", position: 2, name: "Notícias", item: `${SITE_URL}/noticias` },
-            { "@type": "ListItem", position: 3, name: article.title, item: url },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: article.category,
+              item: `${SITE_URL}/noticias?cat=${encodeURIComponent(article.category)}`,
+            },
+            { "@type": "ListItem", position: 4, name: article.title, item: url },
           ],
         }),
       },
