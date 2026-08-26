@@ -113,6 +113,7 @@ export const Route = createFileRoute("/noticias/$slug")({
             name: article.author,
             jobTitle: authorMeta.jobTitle,
             url: authorMeta.url,
+            sameAs: [authorMeta.url],
           },
           publisher: PUBLISHER_SCHEMA,
           mainEntityOfPage: { "@type": "WebPage", "@id": url },
