@@ -43,7 +43,7 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "migracao-pacientes-planos-saude-consultorio-particular-2026",
-    seoTitle: "Migração de Pacientes dos Planos: Como o Consultório Captura",
+    seoTitle: "Migração de Pacientes dos Planos de Saúde",
     metaDescription: "Pacientes estão migrando dos planos de saúde pro atendimento particular. Veja como estruturar seu consultório pra capturar essa demanda.",
     relatedSlugs: [
       "como-sair-do-convenio-viver-de-paciente-particular",
@@ -200,7 +200,7 @@ A migração silenciosa de pacientes pra fora dos planos é o cenário. Estar pr
   },
   {
     slug: "ia-consultorio-medico-nao-substitui-processo-comercial",
-    seoTitle: "IA no Consultório: Por que Não Substitui o Comercial",
+    seoTitle: "IA no Consultório Não Substitui o Comercial",
     metaDescription: "IA promete automatizar tudo no consultório, mas paciente em decisão de saúde precisa de humano. Entenda os limites da IA e o modelo certo de uso.",
     relatedSlugs: [
       "o-que-e-operacao-comercial-consultorio",
@@ -341,7 +341,7 @@ Quem implementar esse modelo nos próximos 12 meses ganha vantagem competitiva r
   },
   {
     slug: "treinamento-secretaria-vs-terceirizacao-operacao-comercial",
-    seoTitle: "Treinar Secretária ou Terceirizar Operação Comercial",
+    seoTitle: "Treinar Secretária ou Terceirizar o Comercial",
     metaDescription: "Treinar a secretária ou terceirizar a operação comercial? Comparativo completo de custo, escala e capacidade médica liberada pra você decidir.",
     relatedSlugs: [
       "operacao-comercial-terceirizada-consultorio",
@@ -988,7 +988,7 @@ Se você quer entender como construir uma presença digital e uma operação com
       date: "2026-08-18",
       text: "Este texto foi revisado em agosto de 2026. Os dados demográficos e de mercado foram atualizados para as edições mais recentes das fontes, e três afirmações cujo dado não foi localizado na fonte original foram corrigidas ou removidas. A tese do texto não mudou.",
     },
-    seoTitle: "Operação Comercial Terceirizada para Consultório | DAMA",
+    seoTitle: "Operação Comercial Terceirizada",
     relatedSlugs: ["o-que-e-operacao-comercial-consultorio", "como-sair-do-convenio-viver-de-paciente-particular"],
     coverImage: "/blog/operacao-comercial-terceirizada-consultorio.webp",
     coverImageAlt: "Capa do artigo: Operação Comercial Terceirizada para Consultório: Vale a Pena? Grupo DAMA Health.",

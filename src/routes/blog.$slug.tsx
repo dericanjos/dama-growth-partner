@@ -22,6 +22,20 @@ import { listLatestNews } from "@/lib/news.functions";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { NewsUpdateNotice } from "@/components/NewsUpdateNotice";
 
+const BRAND_SUFFIX = " | Grupo DAMA";
+const TITLE_MAX = 60;
+
+/** Garante o sufixo de marca no <title> sem passar de 60 caracteres. */
+function withBrand(base: string) {
+  const clean = base.replace(/\s*[|·]\s*Grupo DAMA( Health)?\s*$/i, "").trim();
+  const room = TITLE_MAX - BRAND_SUFFIX.length;
+  const head =
+    clean.length <= room
+      ? clean
+      : clean.slice(0, room).replace(/[\s,;:.\-|]+$/, "");
+  return `${head}${BRAND_SUFFIX}`;
+}
+
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
     const post = getPostBySlug(params.slug);
@@ -33,7 +47,7 @@ export const Route = createFileRoute("/blog/$slug")({
     return { post, questions, latestNews };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Artigo | Blog · Grupo DAMA" }] };
+    if (!loaderData) return { meta: [{ title: "Artigo do Blog | Grupo DAMA" }] };
     const { post } = loaderData;
     const clampDesc = (text: string, max = 155) => {
       const plain = text.replace(/\s+/g, " ").trim();
@@ -51,7 +65,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const authorUrl = isJessica
       ? "https://grupodamahealth.com.br/autor/jessica-anjos"
       : "https://grupodamahealth.com.br/autor/deric-anjos";
-    const titleText = post.seoTitle ?? post.title;
+    const titleText = withBrand(post.seoTitle ?? post.title);
     const tags = post.tags ?? [];
     return {
       meta: [
@@ -221,6 +235,11 @@ function PostPage() {
 
   return (
     <>
+      {/* React 19 hoists these into <head> — bypasses meta dedup so all article:tag entries render */}
+      {tags.map((tag: string, idx: number) => (
+        <meta key={`article-tag-${idx}`} property="article:tag" content={tag} />
+      ))}
+
       {/* Header navy */}
       <section className="surface-dark hero-glow relative pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="container-dama mx-auto max-w-3xl">
