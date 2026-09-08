@@ -21,22 +21,25 @@ import {
   type NewsArticleListItem,
 } from "@/lib/news.functions";
 
-function getAuthorMeta(author: string): { jobTitle: string; url: string } {
+function getAuthorMeta(author: string): { jobTitle: string; url: string; path: string } {
   if (author === "Deric Anjos") {
     return {
       jobTitle: "Head de Growth",
       url: "https://grupodamahealth.com.br/autor/deric-anjos",
+      path: "/autor/deric-anjos",
     };
   }
   if (author === "Jéssica Anjos") {
     return {
       jobTitle: "Fundadora",
       url: "https://grupodamahealth.com.br/autor/jessica-anjos",
+      path: "/autor/jessica-anjos",
     };
   }
   return {
     jobTitle: "Equipe DAMA",
     url: "https://grupodamahealth.com.br/sobre",
+    path: "/sobre",
   };
 }
 
@@ -274,7 +277,14 @@ function NewsArticlePage() {
             </p>
           )}
           <p className="mt-6 text-center text-sm uppercase tracking-[0.18em] text-white/55">
-            Por {article.author} · {getAuthorMeta(article.author).jobTitle}
+            Por{" "}
+            <Link
+              to={getAuthorMeta(article.author).path}
+              className="text-white/85 underline decoration-white/30 underline-offset-4 transition-colors hover:text-[var(--gold)] hover:decoration-[var(--gold)]"
+            >
+              {article.author}
+            </Link>{" "}
+            · {getAuthorMeta(article.author).jobTitle}
           </p>
 
           {tags.length > 0 && (
