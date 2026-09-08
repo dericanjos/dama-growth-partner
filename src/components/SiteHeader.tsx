@@ -152,7 +152,7 @@ function DesktopDropdown({
               <a
                 href={link.to}
                 target="_blank"
-                rel="noopener"
+                rel="noopener nofollow"
                 role="menuitem"
                 tabIndex={open ? 0 : -1}
                 onClick={() => setOpen(false)}
@@ -240,7 +240,7 @@ function MobileAccordion({
               <a
                 href={link.to}
                 target="_blank"
-                rel="noopener"
+                rel="noopener nofollow"
                 tabIndex={open ? 0 : -1}
                 onClick={onNavigate}
                 className="block py-2.5 text-base text-white/75"

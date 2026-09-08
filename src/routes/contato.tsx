@@ -284,7 +284,7 @@ function ContactPage() {
                   <a
                     href="https://escoladama.com.br"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener nofollow"
                     className="text-[var(--navy)] underline underline-offset-4 hover:text-[var(--gold-ink)]"
                   >
                     escoladama.com.br

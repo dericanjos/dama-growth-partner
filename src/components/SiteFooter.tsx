@@ -47,7 +47,7 @@ export function SiteFooter() {
             <a
               href="https://escoladama.com.br"
               target="_blank"
-              rel="noopener"
+              rel="noopener nofollow"
               className="text-sm text-white/60 transition-colors hover:text-[var(--gold)]"
             >
               DAMA Escola

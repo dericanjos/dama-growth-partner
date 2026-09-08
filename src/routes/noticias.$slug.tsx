@@ -94,6 +94,7 @@ export const Route = createFileRoute("/noticias/$slug")({
     const authorMeta = getAuthorMeta(article.author);
     const tags = article.tags ?? [];
     const faq = (article.faq ?? []) as FaqEntry[];
+    const modifiedAt = article.update_date || article.published_at;
 
     const scripts: Array<{ type: string; children: string }> = [
       {
@@ -105,7 +106,7 @@ export const Route = createFileRoute("/noticias/$slug")({
           description: desc,
           image: absoluteImage ? [absoluteImage] : undefined,
           datePublished: article.published_at,
-          dateModified: article.published_at,
+          dateModified: modifiedAt,
           articleSection: article.category,
           keywords: tags.length > 0 ? tags.join(", ") : undefined,
           author: {
@@ -168,13 +169,16 @@ export const Route = createFileRoute("/noticias/$slug")({
         ...(absoluteImage
           ? [
               { property: "og:image", content: absoluteImage },
+              ...(article.cover_image_alt
+                ? [{ property: "og:image:alt", content: article.cover_image_alt }]
+                : []),
               { name: "twitter:image", content: absoluteImage },
               { name: "twitter:card", content: "summary_large_image" },
             ]
           : []),
         { property: "article:author", content: authorMeta.url },
         { property: "article:published_time", content: article.published_at },
-        { property: "article:modified_time", content: article.published_at },
+        { property: "article:modified_time", content: modifiedAt },
         { property: "article:section", content: article.category },
         ...(tags.length > 0
           ? [{ name: "keywords", content: tags.join(", ") }]

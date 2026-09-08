@@ -50,7 +50,7 @@ export function VerticalsOverview() {
                 <a
                   href={v.to}
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener nofollow"
                   className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[var(--navy)] underline-offset-4 hover:underline"
                 >
                   Conhecer {v.title} <ArrowRight className="h-4 w-4" />
