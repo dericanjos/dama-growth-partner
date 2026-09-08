@@ -27,6 +27,37 @@ const securityHeadersMiddleware = createMiddleware({ type: "request" }).server(
   },
 );
 
+/**
+ * Normalização de barra final como 301 permanente.
+ * O roteador faz essa normalização com 307 (temporário), o que desperdiça
+ * sinal de SEO. Aqui a resposta é reescrita para 301.
+ */
+const permanentTrailingSlashMiddleware = createMiddleware({
+  type: "request",
+}).server(async ({ next, request }) => {
+  const url = new URL(request.url);
+  const isTrailing = url.pathname.length > 1 && url.pathname.endsWith("/");
+
+  const result = await next();
+
+  if (isTrailing && result.response.status === 307) {
+    const location = result.response.headers.get("location");
+    if (location) {
+      const headers = new Headers(result.response.headers);
+      return {
+        ...result,
+        response: new Response(null, { status: 301, headers }),
+      };
+    }
+  }
+
+  return result;
+});
+
 export const startInstance = createStart(() => ({
-  requestMiddleware: [securityHeadersMiddleware],
+  requestMiddleware: [
+    permanentTrailingSlashMiddleware,
+    securityHeadersMiddleware,
+  ],
 }));
+

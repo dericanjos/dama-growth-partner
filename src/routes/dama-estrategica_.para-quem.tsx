@@ -5,7 +5,7 @@ import { ORGANIZACAO } from "@/config/organizacao";
 const PARENT_URL = `${ORGANIZACAO.site}/dama-estrategica`;
 const PAGE_URL = `${PARENT_URL}/para-quem`;
 
-const TITLE = "Para quem esta operação foi construída | DAMA Estratégica";
+const TITLE = "Para quem a operação foi construída | Grupo DAMA";
 const DESCRIPTION =
   "Os critérios de entrada da operação comercial da DAMA, e os critérios de recusa. A operação é seletiva, e dizer não faz parte do método.";
 

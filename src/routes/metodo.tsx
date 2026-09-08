@@ -67,7 +67,7 @@ const HOWTO_JSONLD = {
 export const Route = createFileRoute("/metodo")({
   head: () => ({
     meta: [
-      { title: "Método D.A.M.A | Diagnosticar, Atrair, Marcar, Acompanhar" },
+      { title: "Método D.A.M.A: as quatro etapas | Grupo DAMA" },
       {
         name: "description",
         content:

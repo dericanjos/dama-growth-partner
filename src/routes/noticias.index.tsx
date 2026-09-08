@@ -62,7 +62,7 @@ export const Route = createFileRoute("/noticias/")({
     const totalPages = Math.max(1, Math.ceil(total / pageSize));
     const title =
       page > 1
-        ? `Notícias Médicas · Página ${page} · Grupo DAMA Health`
+        ? `Notícias Médicas: página ${page} | Grupo DAMA`
         : "Notícias Médicas | Grupo DAMA";
     const description =
       page > 1

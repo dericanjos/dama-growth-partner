@@ -6,7 +6,7 @@ import { ORGANIZACAO } from "@/config/organizacao";
 
 const PAGE_URL = `${ORGANIZACAO.site}/solucao`;
 
-const TITLE = "O que fazemos | As três verticais do Grupo DAMA Health";
+const TITLE = "O que fazemos: as três verticais | Grupo DAMA";
 const DESCRIPTION =
   "DAMA Estratégica, DAMA Escola e DAMA Tech: as três verticais do Grupo DAMA Health, o que é cada uma e para quem serve.";
 
@@ -134,7 +134,7 @@ function SolutionPage() {
                 <a
                   href="https://escoladama.com.br"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener nofollow"
                   className={LINK}
                 >
                   Conhecer a DAMA Escola

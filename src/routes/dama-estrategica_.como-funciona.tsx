@@ -5,7 +5,7 @@ import { ORGANIZACAO } from "@/config/organizacao";
 const PARENT_URL = `${ORGANIZACAO.site}/dama-estrategica`;
 const PAGE_URL = `${PARENT_URL}/como-funciona`;
 
-const TITLE = "Como funciona a implantação | DAMA Estratégica";
+const TITLE = "Como funciona a implantação | Grupo DAMA";
 const DESCRIPTION =
   "Do contrato ao go-live: briefing, diagnóstico, kickoff, construção e o checklist que libera o tráfego. Cada etapa com dono, prazo e critério de pronto.";
 

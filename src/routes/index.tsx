@@ -30,7 +30,7 @@ const ORG_JSONLD = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Grupo DAMA | Solução Completa para Médicos" },
+      { title: "Solução Completa para Médicos | Grupo DAMA" },
       {
         name: "description",
         content:

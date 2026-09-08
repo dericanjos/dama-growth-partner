@@ -5,7 +5,7 @@ import { ORGANIZACAO } from "@/config/organizacao";
 
 const PAGE_URL = `${ORGANIZACAO.site}/dama-tech`;
 
-const TITLE = "DAMA Tech | A plataforma que sustenta a operação DAMA";
+const TITLE = "DAMA Tech: a plataforma da operação | Grupo DAMA";
 const DESCRIPTION =
   "A Plataforma de Atendimento DAMA é a infraestrutura da operação comercial dentro do consultório, com o método D.A.M.A embutido na rotina.";
 
